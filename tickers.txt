@@ -1,0 +1,58 @@
+# Default universe: liquid US growth / momentum names
+# Edit freely — one ticker per line, '#' starts a comment
+
+# Mega-cap tech
+AAPL
+MSFT
+NVDA
+GOOGL
+AMZN
+META
+TSLA
+AVGO
+
+# Semis / hardware
+AMD
+ARM
+MU
+TSM
+ANET
+SMCI
+MRVL
+KLAC
+LRCX
+AMAT
+
+# Software / internet
+PLTR
+CRWD
+NET
+DDOG
+SNOW
+PANW
+NOW
+SHOP
+APP
+MDB
+ZS
+CRM
+
+# Fintech / consumer
+HOOD
+COIN
+SQ
+NU
+MELI
+AXON
+CELH
+DECK
+ELF
+
+# Industrials / energy / other momentum
+VRT
+ETN
+PWR
+CEG
+VST
+GEV
+URI
