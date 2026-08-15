@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 watchlist.csv
 watchlist.md
+.claude/

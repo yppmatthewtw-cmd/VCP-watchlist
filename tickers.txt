@@ -1,58 +1,93 @@
-# Default universe: liquid US growth / momentum names
-# Edit freely — one ticker per line, '#' starts a comment
+# AI-focused US stock universe (updated 2026-08)
+# One ticker per line, '#' starts a comment
 
-# Mega-cap tech
-AAPL
-MSFT
+# AI 晶片核心 (AI chip core)
 NVDA
+AMD
+AVGO
+TSM
+ARM
+MRVL
+
+# 半導體設備 / 記憶體 (semicap / memory)
+MU
+ASML
+LRCX
+AMAT
+KLAC
+TER
+
+# 二線晶片 / EDA (2nd-tier chips / EDA)
+ALAB
+CRDO
+MPWR
+SNPS
+CDNS
+QCOM
+INTC
+
+# AI 伺服器 / 硬體 (AI servers / hardware)
+SMCI
+DELL
+HPE
+ANET
+CLS
+JBL
+
+# 光通訊 / 網通 (optics / networking)
+FN
+COHR
+LITE
+CIEN
+AAOI
+MOD
+
+# 超大型雲 / 平台 (hyperscalers / platforms)
+MSFT
 GOOGL
 AMZN
 META
+ORCL
 TSLA
-AVGO
 
-# Semis / hardware
-AMD
-ARM
-MU
-TSM
-ANET
-SMCI
-MRVL
-KLAC
-LRCX
-AMAT
-
-# Software / internet
+# AI 軟體 (AI software)
 PLTR
-CRWD
-NET
-DDOG
-SNOW
-PANW
 NOW
-SHOP
-APP
-MDB
-ZS
 CRM
+SNOW
+DDOG
+APP
 
-# Fintech / consumer
-HOOD
-COIN
-SQ
-NU
-MELI
+# 資安 / 雲軟體 (cybersecurity / cloud software)
+CRWD
+PANW
+ZS
+NET
+MDB
+IOT
+
+# AI 小型 / 純概念 (AI small caps)
+AI
+SOUN
+BBAI
+TEM
+RDDT
 AXON
-CELH
-DECK
-ELF
+DUOL
 
-# Industrials / energy / other momentum
+# AI 電力 / 基建 (AI power / infrastructure)
 VRT
 ETN
 PWR
+GEV
 CEG
 VST
-GEV
-URI
+
+# 核能 / 新資料中心 (nuclear / neocloud datacenters)
+TLN
+OKLO
+SMR
+NBIS
+CRWV
+IREN
+APLD
