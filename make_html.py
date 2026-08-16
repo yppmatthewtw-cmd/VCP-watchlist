@@ -11,6 +11,8 @@ import html
 import json
 from datetime import datetime, timedelta, timezone
 
+from exchanges import EXCHANGE, missing, tv_url
+
 TIERS = {
     "A_VCP待突破": ("A", "VCP 緊縮・等待突破",
                     "趨勢模板通過、距 52 週高點 ≤10%、近 1 個月波動收斂 ±7% 內 — 最接近 Minervini VCP 買點。"),
@@ -49,8 +51,9 @@ def row_html(r, notes):
     ed_chip = f'<span class="chip chip-cal">財報 {esc(ed[5:].replace("-", "/"))}</span>' if ed else ""
     vol = r.get("vol_ratio")
     vol_cls = "dry" if isinstance(vol, (int, float)) and vol < 0.7 else ""
+    ex = EXCHANGE.get(t, "").upper()
     return f"""<tr>
-<td class="tk"><a href="https://stockcharts.com/acp/?s={t}" target="_blank" rel="noopener">{t}</a></td>
+<td class="tk"><a href="{tv_url(t)}" target="_blank" rel="noopener">{t}<small>{ex}</small></a></td>
 <td class="nm">{esc((r.get('name') or '')[:30])}</td>
 <td class="num">{price:,.2f}</td>
 <td class="num">{pivot:,.2f}</td>
@@ -76,6 +79,11 @@ def main():
     scan = json.load(open(args.scan_json))
     rows = scan.get("rows", [])
     notes = {n["ticker"]: n for n in scan.get("notes", [])}
+
+    unmapped = missing(r["ticker"] for r in rows)
+    if unmapped:
+        print(f"WARNING: no exchange mapping for {', '.join(unmapped)} "
+              "— links fall back to bare symbol")
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
@@ -95,7 +103,7 @@ def main():
             continue
         if cat == "D_趨勢弱":
             chips = "".join(
-                f'<a class="dchip" href="https://stockcharts.com/acp/?s={r["ticker"]}" target="_blank" '
+                f'<a class="dchip" href="{tv_url(r["ticker"])}" target="_blank" '
                 f'rel="noopener">{r["ticker"]}<small>−{r["off_high_pct"]:.0f}%</small></a>'
                 for r in sorted(cat_rows, key=lambda r: r["off_high_pct"]))
             body = f'<div class="dwrap">{chips}</div>'
@@ -172,7 +180,9 @@ th small {{ display: block; font-size: 10px; letter-spacing: 0; text-transform: 
 td {{ padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }}
 tbody tr:hover {{ background: var(--hover); }}
 td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; font-family: "SF Mono", "Cascadia Mono", Consolas, ui-monospace, monospace; font-size: 12.5px; white-space: nowrap; }}
-td.tk a {{ font-weight: 700; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }}
+td.tk {{ white-space: nowrap; }}
+td.tk a {{ display: inline-block; font-weight: 700; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }}
+td.tk a small {{ display: block; font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); border: 0; }}
 td.tk a:hover, td.tk a:focus-visible {{ border-bottom-color: var(--accent); outline: none; }}
 td.nm {{ color: var(--muted); font-size: 12.5px; white-space: nowrap; }}
 td.up {{ color: var(--up); }} td.dn {{ color: var(--dn); }} td.flat {{ color: var(--muted); }}
@@ -216,10 +226,10 @@ a {{ color: var(--accent); }}
 <li><b>緊縮度</b>：近 1 個月漲跌幅收斂 ±7% 內且貼近高點 → 基底右側收緊（VCP 特徵）。</li>
 <li><b>量能</b>：現量低於 50 日均量（量比 &lt; 1）→ 突破前典型量縮，表中金色標示 &lt; 0.7。</li>
 <li><b>動能</b>：6 個月 / 1 年漲幅確認主升趨勢仍在。</li>
-<li>「一底高於一底」「上升三角形」為結構推斷 — 點代號開 StockCharts 圖確認低點墊高與上緣壓力線。</li>
+<li>「一底高於一底」「上升三角形」為結構推斷 — 點代號開 TradingView 圖確認低點墊高與上緣壓力線。</li>
 </ol>
 <p><b>分數</b>（0–100）：均線結構 30 ＋ 距樞紐 15 ＋ 月線緊縮 15 ＋ 中長期動能 20 ＋ 量縮 10 ＋ 貼緊樞紐加成 5。</p>
-<p>資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 報價與價格統計；新聞驗證：網路搜尋。TSM 已換算為 ADR 價格。</p>
+<p>資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 報價與價格統計；新聞驗證：網路搜尋。TSM 已換算為 ADR 價格。圖表連結：TradingView（<code>?symbol=交易所:代號</code>，代號下方標示 NASDAQ / NYSE）。</p>
 <p class="disclaimer">本表為技術面選股輔助工具，非投資建議。財報日前後（NVDA/CRWD 8/26、PANW 8/17、MDB 9/1）波動風險高，形態最終以圖表確認為準。</p>
 </footer>
 </div>"""

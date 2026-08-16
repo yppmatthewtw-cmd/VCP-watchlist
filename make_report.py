@@ -7,7 +7,8 @@ Usage:
 The scan JSON is produced by the AI-universe scan workflow and has keys:
     market: str, rows: [...], notes: [...], failed: [...], discovered: [...]
 Each row carries price/MA/52-week stats plus a category and score.
-Every ticker is hyperlinked to StockCharts ACP: https://stockcharts.com/acp/?s=<TICKER>
+Every ticker is hyperlinked to its TradingView chart:
+https://www.tradingview.com/chart/?symbol=<exchange>:<symbol>
 """
 
 from __future__ import annotations
@@ -16,6 +17,8 @@ import argparse
 import csv
 import json
 from datetime import datetime, timedelta, timezone
+
+from exchanges import missing, tv_url
 
 CATS = {
     "A_VCP待突破": ("A 級｜VCP 緊縮・等待突破", "趨勢模板通過、距 52 週高點 ≤10%、近 1 個月波動收斂（±7% 內）——最接近 Minervini VCP 買點的一批。"),
@@ -28,7 +31,7 @@ CAT_ORDER = ["A_VCP待突破", "E_突破延伸中", "B_上升結構", "C_基底�
 
 
 def link(t: str) -> str:
-    return f"[{t}](https://stockcharts.com/acp/?s={t})"
+    return f"[{t}]({tv_url(t)})"
 
 
 def f1(x, suffix="") -> str:
@@ -54,6 +57,11 @@ def main() -> None:
     rows = scan.get("rows", [])
     notes = {n["ticker"]: n for n in scan.get("notes", [])}
 
+    unmapped = missing(r["ticker"] for r in rows)
+    if unmapped:
+        print(f"WARNING: no exchange mapping for {', '.join(unmapped)} "
+              "— links fall back to bare symbol")
+
     lines = [
         f"# VCP Watchlist (GitHub) {args.rev}",
         "",
@@ -61,7 +69,7 @@ def main() -> None:
         f"**模型：** {args.model}｜**版本：** {args.rev}",
         "",
         f"**資料基準：** 美股 {rows[0].get('as_of', '')[:10] if rows else ''} 收盤（Bigdata.com 報價：現價、52 週高低、50/200 日均線、多期漲跌幅、量能）。"
-        "每檔代號都連結到 StockCharts 互動圖，點開即可確認契約形態細節。",
+        "每檔代號都連結到 TradingView 互動圖，點開即可確認契約形態細節。",
         "",
         "> 本表為選股輔助工具，非投資建議。形態最終仍以圖表確認為準。",
         "",
@@ -113,7 +121,7 @@ def main() -> None:
         "2. **緊縮度**：近 1 個月漲跌幅收斂在 ±7% 以內且貼近高點 → 視為基底右側收緊（VCP / 平台整理特徵）。",
         "3. **量能**：現量低於 50 日均量 → 量縮（VCP 突破前的典型現象）。",
         "4. **動能**：6 個月 / 1 年漲幅確認主升趨勢仍在。",
-        "5. 「一底高於一底」與「上升三角形」需開圖確認——B 級為結構候選，請以連結圖表驗證低點墊高與上緣壓力線。",
+        "5. 「一底高於一底」與「上升三角形」需開圖確認——B 級為結構候選，請點代號開 TradingView 圖驗證低點墊高與上緣壓力線。",
         "",
         "**分數**（0–100）：均線結構 30 分＋距樞紐 15 分＋月線緊縮 15 分＋中長期動能 20 分＋量縮 10 分＋貼緊樞紐加成 5 分。",
         "",

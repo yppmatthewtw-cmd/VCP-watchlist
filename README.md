@@ -51,6 +51,27 @@ Outputs:
 | `--min-contractions` | `2` | Minimum number of contractions |
 | `--out` | `watchlist` | Output file basename |
 
+## AI watchlist reports
+
+The dated `VCP watchlist (Github)_R*` files are generated from a scan of the AI-focused
+universe. Rebuild them from a scan JSON with:
+
+```bash
+python make_report.py scan_R0_2026-08-15.json --rev R1 --model "Opus5"   # .md + .csv
+python make_html.py   scan_R0_2026-08-15.json --rev R1 --model "Opus5"   # .html
+```
+
+Every ticker links to its TradingView chart via `exchanges.py`, which maps each
+symbol to its exchange:
+
+```
+https://www.tradingview.com/chart/?symbol=nasdaq:nvda
+https://www.tradingview.com/chart/?symbol=nyse:iot
+```
+
+Both generators warn if a scanned ticker has no exchange mapping — add it to
+`NASDAQ` or `NYSE` in `exchanges.py` when the universe grows.
+
 ## Notes
 
 - Price data comes from Yahoo Finance via `yfinance`; a network connection is required.
