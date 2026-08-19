@@ -25,7 +25,7 @@ NASDAQ = [
 NYSE = [
     "TSM", "DELL", "HPE", "ANET", "CLS", "JBL", "FN", "COHR", "CIEN", "MOD",
     "ORCL", "NOW", "CRM", "SNOW", "NET", "AI", "BBAI", "RDDT", "IOT",
-    "VRT", "ETN", "PWR", "GEV", "VST", "SMR", "OKLO", "BE",
+    "VRT", "ETN", "PWR", "GEV", "VST", "SMR", "OKLO", "BE", "OUST",
 ]
 
 EXCHANGE = {t: "nasdaq" for t in NASDAQ}
