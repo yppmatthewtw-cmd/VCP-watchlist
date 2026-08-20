@@ -72,6 +72,19 @@ https://www.tradingview.com/chart/?symbol=nyse:iot
 Both generators warn if a scanned ticker has no exchange mapping — add it to
 `NASDAQ` or `NYSE` in `exchanges.py` when the universe grows.
 
+### History tracker
+
+`make_history.py` lines up every `scan_R*.json` snapshot (most recent 10) and
+renders each ticker's tier trajectory — who stayed on the watchlist, who was
+promoted, and who fell below the line:
+
+```bash
+python make_history.py --rev R3 --model "Opus5;high"
+```
+
+Tickers currently in tiers A/E/B render above the line; the rest render below
+it, split into "dropped out after qualifying" and "never qualified".
+
 ## Notes
 
 - Price data comes from Yahoo Finance via `yfinance`; a network connection is required.

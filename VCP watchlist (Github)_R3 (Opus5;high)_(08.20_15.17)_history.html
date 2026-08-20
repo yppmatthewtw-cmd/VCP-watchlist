@@ -1,0 +1,156 @@
+<title>VCP 分級軌跡追蹤</title>
+<style>
+:root {
+  --bg:#F5F6F4; --panel:#FFF; --ink:#1B2430; --muted:#5D6B7A; --line:#DDE2E0;
+  --accent:#B07B24; --accent-soft:#F3E8D3; --up:#17835C; --dn:#C24A3F;
+  --head:#EDEFEA; --hover:#F0F3EE;
+  --tA:#17835C; --tE:#B07B24; --tB:#2C6E9E; --tC:#7A8794; --tD:#A8B0B8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#0E1216; --panel:#151B21; --ink:#E4E9EC; --muted:#8B98A5; --line:#26303A;
+    --accent:#E5B15C; --accent-soft:#2A2418; --up:#3FB68B; --dn:#E0705F;
+    --head:#1A222A; --hover:#1C242D;
+    --tA:#3FB68B; --tE:#E5B15C; --tB:#5CA3D6; --tC:#6B7885; --tD:#4A555F;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#0E1216; --panel:#151B21; --ink:#E4E9EC; --muted:#8B98A5; --line:#26303A;
+  --accent:#E5B15C; --accent-soft:#2A2418; --up:#3FB68B; --dn:#E0705F;
+  --head:#1A222A; --hover:#1C242D;
+  --tA:#3FB68B; --tE:#E5B15C; --tB:#5CA3D6; --tC:#6B7885; --tD:#4A555F;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:15px/1.55 "Avenir Next","Segoe UI","PingFang TC","Microsoft JhengHei",system-ui,sans-serif; }
+.wrap { max-width:1240px; margin:0 auto; padding:28px 20px 60px; }
+.masthead { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px;
+  border-bottom:3px solid var(--ink); padding-bottom:14px; }
+.masthead h1 { font-size:29px; margin:0; letter-spacing:-0.01em; }
+.masthead h1 em { font-style:normal; color:var(--accent); }
+.meta { color:var(--muted); font-size:13px; }
+.lede { margin:16px 0 0; color:var(--muted); font-size:14px; max-width:76ch; }
+.lede b { color:var(--ink); }
+.legend { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 4px; }
+.lg { display:inline-flex; align-items:center; gap:7px; background:var(--panel);
+  border:1px solid var(--line); border-radius:6px; padding:5px 11px; font-size:12.5px; color:var(--muted); }
+.lg b { width:20px; height:20px; border-radius:4px; display:grid; place-items:center;
+  color:var(--bg); font-size:12px; }
+h2 { font-size:19px; margin:34px 0 4px; display:flex; align-items:center; gap:10px; }
+h2 span.n { color:var(--muted); font-size:13px; font-weight:400; }
+h2 .rule { flex:1; height:1px; background:var(--line); }
+.sec-note { margin:0 0 12px; color:var(--muted); font-size:13.5px; max-width:76ch; }
+.divider { display:flex; align-items:center; gap:14px; margin:42px 0 0; }
+.divider hr { flex:1; border:0; border-top:2px dashed var(--accent); margin:0; }
+.divider span { color:var(--accent); font-size:13px; font-weight:700; letter-spacing:0.08em; }
+.tblwrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+table { border-collapse:collapse; width:100%; font-size:13.5px; }
+th { background:var(--head); text-align:left; padding:7px 10px; font-size:11.5px;
+  text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); white-space:nowrap; }
+th small { display:block; font-size:10px; letter-spacing:0; text-transform:none; font-weight:400; }
+td { padding:7px 10px; border-top:1px solid var(--line); white-space:nowrap; }
+tbody tr:hover { background:var(--hover); }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums;
+  font-family:"SF Mono","Cascadia Mono",Consolas,ui-monospace,monospace; font-size:12.5px; }
+td.nm { color:var(--muted); font-size:12.5px; }
+td.tk a { display:inline-block; font-weight:700; color:var(--accent); text-decoration:none;
+  border-bottom:1px solid transparent; }
+td.tk a small { display:block; font-size:9.5px; font-weight:600; letter-spacing:0.06em; color:var(--muted); }
+td.tk a:hover, td.tk a:focus-visible { border-bottom-color:var(--accent); outline:none; }
+th.st, td.st { text-align:center; }
+td.st { font-variant-numeric:tabular-nums; }
+td.st b { display:inline-block; width:19px; height:19px; line-height:19px; border-radius:4px;
+  color:var(--bg); font-size:11.5px; }
+td.st i { display:block; font-style:normal; font-size:10.5px; color:var(--muted); margin-top:1px; }
+td.st.none { color:var(--muted); }
+.tA b, td.tA b { background:var(--tA); } .tE b, td.tE b { background:var(--tE); }
+.tB b, td.tB b { background:var(--tB); } .tC b, td.tC b { background:var(--tC); }
+.tD b, td.tD b { background:var(--tD); }
+td.tAb { color:var(--tA); font-weight:700; } td.tEb { color:var(--tE); font-weight:700; }
+td.tBb { color:var(--tB); font-weight:700; } td.tCb, td.tDb { color:var(--muted); }
+td.tr, th.tr { text-align:center; }
+.mv { font-size:13px; } .mv.up { color:var(--up); } .mv.dn { color:var(--dn); }
+.mv.fl { color:var(--muted); }
+td.up { color:var(--up); } td.dn { color:var(--dn); } td.pivot { color:var(--accent); font-weight:600; }
+.dwrap { display:flex; flex-wrap:wrap; gap:7px; }
+.dchip { display:inline-flex; flex-direction:column; background:var(--panel);
+  border:1px solid var(--line); border-radius:5px; padding:4px 10px; text-decoration:none;
+  color:var(--muted); font-size:12.5px; font-weight:700; }
+.dchip small { font-weight:400; font-size:10.5px; letter-spacing:0.02em; }
+.dchip:hover, .dchip:focus-visible { border-color:var(--accent); color:var(--ink); outline:none; }
+.method { margin-top:40px; border-top:1px solid var(--line); padding-top:18px;
+  color:var(--muted); font-size:13.5px; max-width:78ch; }
+.method h3 { color:var(--ink); font-size:15px; margin:0 0 8px; }
+.method ol { padding-left:20px; } .method li { margin:4px 0; }
+.disclaimer { margin-top:14px; font-size:12.5px; border-left:3px solid var(--dn); padding-left:12px; }
+a { color:var(--accent); }
+@media (max-width:640px) { .masthead h1 { font-size:23px; } }
+</style>
+<div class="wrap">
+<header class="masthead">
+  <h1>VCP 分級軌跡 <em>R3</em></h1>
+  <span class="meta">追蹤 3 次更新（最多保留最近 10 次）｜產生 2026.08.20 15:17 HKT｜Opus5;high</span>
+</header>
+<p class="lede">把歷次掃描並排，看每檔股票的<b>分級變化軌跡</b>。<b>線上</b>＝目前列於觀察名單（A／E／B 級）；
+<b>線下</b>＝目前不符合進場條件，其中「曾入選後跌出」是重點覆盤對象——若基底重新收緊，往往是下一輪 A 級的來源。</p>
+<div class="legend">
+  <span class="lg tA"><b>A</b> VCP 緊縮待突破</span>
+  <span class="lg tE"><b>E</b> 已突破延伸中</span>
+  <span class="lg tB"><b>B</b> 上升結構</span>
+  <span class="lg tC"><b>C</b> 基底修復中（線下）</span>
+  <span class="lg tD"><b>D</b> 趨勢偏弱（線下）</span>
+</div>
+
+<h2>各期掃描概況<span class="rule"></span></h2>
+<div class="tblwrap"><table>
+<thead><tr><th>版本</th><th>數據日期</th><th class="num">A</th><th class="num">E</th>
+<th class="num">B</th><th class="num">C</th><th class="num">D</th><th class="num">合計</th></tr></thead>
+<tbody><tr><td class="tk">R0</td><td class="nm">2026-08-14</td><td class="num tAb">5</td><td class="num tEb">3</td><td class="num tBb">15</td><td class="num tCb">14</td><td class="num tDb">36</td><td class="num">73</td></tr><tr><td class="tk">R1</td><td class="nm">2026-08-18</td><td class="num tAb">6</td><td class="num tEb">0</td><td class="num tBb">11</td><td class="num tCb">15</td><td class="num tDb">42</td><td class="num">74</td></tr><tr><td class="tk">R2</td><td class="nm">2026-08-19</td><td class="num tAb">5</td><td class="num tEb">0</td><td class="num tBb">10</td><td class="num tCb">18</td><td class="num tDb">41</td><td class="num">74</td></tr></tbody></table></div>
+
+<h2>▲ 線上｜目前觀察名單 <span class="n">15 檔</span><span class="rule"></span></h2>
+<p class="sec-note">依目前級別與分數排序。每格顯示該期級別與 VCP 評分（0–100）。</p>
+<div class="tblwrap"><table><thead><tr><th>代號</th><th>名稱</th><th class="st">R0<small>08/14</small></th><th class="st">R1<small>08/18</small></th><th class="st">R2<small>08/19</small></th><th class="tr">變化</th><th class="num">現價</th><th class="num">距樞紐</th><th class="num">1月</th></tr></thead><tbody><tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:panw" target="_blank" rel="noopener">PANW<small>NASDAQ</small></a></td><td class="nm">Palo Alto Networks, In</td><td class="st tE"><b>E</b><i>79.3</i></td><td class="st tA"><b>A</b><i>82</i></td><td class="st tA"><b>A</b><i>83.7</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">360.00</td><td class="num pivot">+10.8%</td><td class="num up">+0.5%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:crwd" target="_blank" rel="noopener">CRWD<small>NASDAQ</small></a></td><td class="nm">CrowdStrike Holdings, </td><td class="st tA"><b>A</b><i>87.3</i></td><td class="st tA"><b>A</b><i>81.3</i></td><td class="st tA"><b>A</b><i>81.3</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">212.92</td><td class="num pivot">+6.8%</td><td class="num up">+4.8%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:asml" target="_blank" rel="noopener">ASML<small>NASDAQ</small></a></td><td class="nm">ASML Holding N.V.</td><td class="st tA"><b>A</b><i>80</i></td><td class="st tA"><b>A</b><i>75.5</i></td><td class="st tA"><b>A</b><i>75.5</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">1,802.98</td><td class="num pivot">+10.9%</td><td class="num up">+3.2%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amzn" target="_blank" rel="noopener">AMZN<small>NASDAQ</small></a></td><td class="nm">Amazon.com, Inc.</td><td class="st tA"><b>A</b><i>69.6</i></td><td class="st tA"><b>A</b><i>65.8</i></td><td class="st tA"><b>A</b><i>65.7</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">260.10</td><td class="num pivot">+10.4%</td><td class="num up">+5.2%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:etn" target="_blank" rel="noopener">ETN<small>NYSE</small></a></td><td class="nm">Eaton Corporation plc</td><td class="st tB"><b>B</b><i>63.4</i></td><td class="st tA"><b>A</b><i>64</i></td><td class="st tA"><b>A</b><i>64</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">431.33</td><td class="num pivot">+10.8%</td><td class="num up">+4.9%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:net" target="_blank" rel="noopener">NET<small>NYSE</small></a></td><td class="nm">Cloudflare, Inc.</td><td class="st tB"><b>B</b><i>67.7</i></td><td class="st tB"><b>B</b><i>70.8</i></td><td class="st tB"><b>B</b><i>70.8</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">301.36</td><td class="num pivot">+10.2%</td><td class="num up">+8.5%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:dell" target="_blank" rel="noopener">DELL<small>NYSE</small></a></td><td class="nm">Dell Technologies Inc.</td><td class="st tB"><b>B</b><i>72.3</i></td><td class="st tB"><b>B</b><i>69.7</i></td><td class="st tB"><b>B</b><i>69.7</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">468.65</td><td class="num pivot">+9.7%</td><td class="num up">+18.2%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:iot" target="_blank" rel="noopener">IOT<small>NYSE</small></a></td><td class="nm">Samsara Inc.</td><td class="st tB"><b>B</b><i>62.1</i></td><td class="st tB"><b>B</b><i>67.8</i></td><td class="st tB"><b>B</b><i>67.8</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">39.58</td><td class="num pivot">+19.9%</td><td class="num up">+3.3%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:snow" target="_blank" rel="noopener">SNOW<small>NYSE</small></a></td><td class="nm">Snowflake Inc.</td><td class="st tE"><b>E</b><i>69.2</i></td><td class="st tB"><b>B</b><i>68.5</i></td><td class="st tB"><b>B</b><i>67.8</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">321.75</td><td class="num pivot">+6.3%</td><td class="num up">+19.9%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:hpe" target="_blank" rel="noopener">HPE<small>NYSE</small></a></td><td class="nm">Hewlett Packard Enterp</td><td class="st tB"><b>B</b><i>69.8</i></td><td class="st tB"><b>B</b><i>67</i></td><td class="st tB"><b>B</b><i>67</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">55.69</td><td class="num pivot">+15.4%</td><td class="num up">+21.5%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mdb" target="_blank" rel="noopener">MDB<small>NASDAQ</small></a></td><td class="nm">MongoDB, Inc.</td><td class="st tE"><b>E</b><i>68.4</i></td><td class="st tB"><b>B</b><i>63.2</i></td><td class="st tB"><b>B</b><i>63.1</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">434.00</td><td class="num pivot">+9.0%</td><td class="num up">+39.0%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:nvda" target="_blank" rel="noopener">NVDA<small>NASDAQ</small></a></td><td class="nm">NVIDIA Corporation</td><td class="st tA"><b>A</b><i>73.3</i></td><td class="st tB"><b>B</b><i>62.8</i></td><td class="st tB"><b>B</b><i>62.8</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">219.12</td><td class="num pivot">+7.9%</td><td class="num up">+8.1%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:jbl" target="_blank" rel="noopener">JBL<small>NYSE</small></a></td><td class="nm">Jabil Inc.</td><td class="st tB"><b>B</b><i>62.4</i></td><td class="st tC"><b>C</b><i>46.6</i></td><td class="st tB"><b>B</b><i>56.2</i></td><td class="tr"><span class="mv up">▲</span></td><td class="num">344.67</td><td class="num pivot">+24.4%</td><td class="num up">+14.3%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:anet" target="_blank" rel="noopener">ANET<small>NYSE</small></a></td><td class="nm">Arista Networks, Inc.</td><td class="st tB"><b>B</b><i>63.1</i></td><td class="st tB"><b>B</b><i>51</i></td><td class="st tB"><b>B</b><i>51.5</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">187.18</td><td class="num pivot">+14.8%</td><td class="num up">+11.5%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ter" target="_blank" rel="noopener">TER<small>NASDAQ</small></a></td><td class="nm">Teradyne, Inc.</td><td class="st tB"><b>B</b><i>63.1</i></td><td class="st tB"><b>B</b><i>50.4</i></td><td class="st tB"><b>B</b><i>50.4</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">404.29</td><td class="num pivot">+20.7%</td><td class="num up">+25.4%</td></tr></tbody></table></div>
+
+<div class="divider"><hr><span>以下為線下</span><hr></div>
+
+<h2>▼ 線下｜曾入選後跌出 <span class="n">8 檔</span><span class="rule"></span></h2>
+<p class="sec-note">這些股票在先前掃描中曾列於 A／E／B，目前已跌出觀察名單。持續留意基底是否重新收緊。</p>
+<div class="tblwrap"><table><thead><tr><th>代號</th><th>名稱</th><th class="st">R0<small>08/14</small></th><th class="st">R1<small>08/18</small></th><th class="st">R2<small>08/19</small></th><th class="tr">變化</th><th class="num">現價</th><th class="num">距樞紐</th><th class="num">1月</th></tr></thead><tbody><tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:cgnx" target="_blank" rel="noopener">CGNX<small>NASDAQ</small></a></td><td class="nm">Cognex Corporation</td><td class="st tA"><b>A</b><i>57.9</i></td><td class="st tA"><b>A</b><i>57.9</i></td><td class="st tC"><b>C</b><i>48.3</i></td><td class="tr"><span class="mv dn">▼</span></td><td class="num">64.00</td><td class="num pivot">+13.9%</td><td class="num up">+1.3%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ddog" target="_blank" rel="noopener">DDOG<small>NASDAQ</small></a></td><td class="nm">Datadog, Inc.</td><td class="st tB"><b>B</b><i>79</i></td><td class="st tC"><b>C</b><i>64.6</i></td><td class="st tC"><b>C</b><i>65.4</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">247.32</td><td class="num pivot">+18.4%</td><td class="num dn">-4.4%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:tsm" target="_blank" rel="noopener">TSM<small>NYSE</small></a></td><td class="nm">Taiwan Semiconductor (</td><td class="st tB"><b>B</b><i>77.3</i></td><td class="st tC"><b>C</b><i>67.5</i></td><td class="st tC"><b>C</b><i>63.2</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">412.27</td><td class="num pivot">+16.2%</td><td class="num up">+3.4%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amd" target="_blank" rel="noopener">AMD<small>NASDAQ</small></a></td><td class="nm">Advanced Micro Devices</td><td class="st tB"><b>B</b><i>80</i></td><td class="st tC"><b>C</b><i>67.4</i></td><td class="st tC"><b>C</b><i>61.9</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">466.42</td><td class="num pivot">+25.4%</td><td class="num dn">-6.0%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:gev" target="_blank" rel="noopener">GEV<small>NYSE</small></a></td><td class="nm">GE Vernova Inc.</td><td class="st tB"><b>B</b><i>76.2</i></td><td class="st tC"><b>C</b><i>59.9</i></td><td class="st tC"><b>C</b><i>54.5</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">987.46</td><td class="num pivot">+21.1%</td><td class="num dn">-6.5%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:lite" target="_blank" rel="noopener">LITE<small>NASDAQ</small></a></td><td class="nm">Lumentum Holdings Inc.</td><td class="st tB"><b>B</b><i>66.2</i></td><td class="st tB"><b>B</b><i>52.7</i></td><td class="st tC"><b>C</b><i>51.8</i></td><td class="tr"><span class="mv dn">▼</span></td><td class="num">862.01</td><td class="num pivot">+25.9%</td><td class="num up">+17.9%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:nbis" target="_blank" rel="noopener">NBIS<small>NASDAQ</small></a></td><td class="nm">Nebius Group N.V.</td><td class="st tB"><b>B</b><i>60.6</i></td><td class="st tB"><b>B</b><i>58.8</i></td><td class="st tC"><b>C</b><i>50</i></td><td class="tr"><span class="mv dn">▼</span></td><td class="num">223.51</td><td class="num pivot">+34.2%</td><td class="num up">+25.1%</td></tr>
+<tr><td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:crdo" target="_blank" rel="noopener">CRDO<small>NASDAQ</small></a></td><td class="nm">Credo Technology Group</td><td class="st tB"><b>B</b><i>65.9</i></td><td class="st tC"><b>C</b><i>52.8</i></td><td class="st tC"><b>C</b><i>41.1</i></td><td class="tr"><span class="mv fl">＝</span></td><td class="num">237.19</td><td class="num pivot">+30.1%</td><td class="num up">+17.8%</td></tr></tbody></table></div>
+
+<h2>▽ 線下｜未曾入選 <span class="n">51 檔</span><span class="rule"></span></h2>
+<p class="sec-note">掃描期間從未達到 A／E／B 級。括號內為歷期軌跡。</p>
+<div class="dwrap"><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:aaoi" target="_blank" rel="noopener">AAOI<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:ai" target="_blank" rel="noopener">AI<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:alab" target="_blank" rel="noopener">ALAB<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:amat" target="_blank" rel="noopener">AMAT<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:apld" target="_blank" rel="noopener">APLD<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:app" target="_blank" rel="noopener">APP<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:arm" target="_blank" rel="noopener">ARM<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:avgo" target="_blank" rel="noopener">AVGO<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:axon" target="_blank" rel="noopener">AXON<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:bbai" target="_blank" rel="noopener">BBAI<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:be" target="_blank" rel="noopener">BE<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:cbrs" target="_blank" rel="noopener">CBRS<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:cdns" target="_blank" rel="noopener">CDNS<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:ceg" target="_blank" rel="noopener">CEG<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cien" target="_blank" rel="noopener">CIEN<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cls" target="_blank" rel="noopener">CLS<small>C → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cohr" target="_blank" rel="noopener">COHR<small>C → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:crm" target="_blank" rel="noopener">CRM<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:crwv" target="_blank" rel="noopener">CRWV<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:duol" target="_blank" rel="noopener">DUOL<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:fn" target="_blank" rel="noopener">FN<small>C → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:googl" target="_blank" rel="noopener">GOOGL<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:intc" target="_blank" rel="noopener">INTC<small>C → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:iren" target="_blank" rel="noopener">IREN<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:klac" target="_blank" rel="noopener">KLAC<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:lrcx" target="_blank" rel="noopener">LRCX<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:meta" target="_blank" rel="noopener">META<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:mndy" target="_blank" rel="noopener">MNDY<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:mod" target="_blank" rel="noopener">MOD<small>D → D → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:mpwr" target="_blank" rel="noopener">MPWR<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:mrvl" target="_blank" rel="noopener">MRVL<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:msft" target="_blank" rel="noopener">MSFT<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:mu" target="_blank" rel="noopener">MU<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:now" target="_blank" rel="noopener">NOW<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:oklo" target="_blank" rel="noopener">OKLO<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:orcl" target="_blank" rel="noopener">ORCL<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:oust" target="_blank" rel="noopener">OUST<small>– → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:pltr" target="_blank" rel="noopener">PLTR<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:pwr" target="_blank" rel="noopener">PWR<small>C → C → C</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:qcom" target="_blank" rel="noopener">QCOM<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:rddt" target="_blank" rel="noopener">RDDT<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:smci" target="_blank" rel="noopener">SMCI<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:smr" target="_blank" rel="noopener">SMR<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:snps" target="_blank" rel="noopener">SNPS<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:soun" target="_blank" rel="noopener">SOUN<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tem" target="_blank" rel="noopener">TEM<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tln" target="_blank" rel="noopener">TLN<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tsla" target="_blank" rel="noopener">TSLA<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:vrt" target="_blank" rel="noopener">VRT<small>C → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:vst" target="_blank" rel="noopener">VST<small>D → D → D</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:zs" target="_blank" rel="noopener">ZS<small>D → D → D</small></a></div>
+
+<footer class="method">
+<h3>讀表方式</h3>
+<ol>
+<li><b>變化欄</b>比較最近兩次有數據的掃描：▲ 升級、▼ 降級、＝ 持平。</li>
+<li>連續維持 A 級且分數上升者，基底最扎實；A→B→A 來回擺盪多因單日急漲跌，需開圖確認。</li>
+<li>「曾入選後跌出」若在下一期回到 A／B，通常代表洗盤後再度收緊——VCP 的典型行為。</li>
+<li>點代號開 TradingView 圖確認低點墊高與上緣壓力線。</li>
+</ol>
+<p>資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 與網路搜尋報價；圖表連結：TradingView。</p>
+<p class="disclaimer">本表為技術面選股輔助工具，非投資建議。分級由量化規則產生，形態最終以圖表確認為準。</p>
+</footer>
+</div>
