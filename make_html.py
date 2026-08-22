@@ -208,7 +208,7 @@ a {{ color: var(--accent); }}
 <div class="wrap">
 <header class="masthead">
   <h1>VCP Watchlist <em>{args.rev}</em></h1>
-  <span class="meta"><b>AI 產業 · 美股 {len(rows)} 檔</b> ｜ 數據基準 {data_date} 收盤 ｜ 產生 {now_hkt.strftime('%Y.%m.%d %H:%M')} HKT ｜ {esc(args.model)}</span>
+  <span class="meta"><b>美股全市場 · {len(rows)} 檔</b> ｜ 數據基準 {data_date} 收盤 ｜ 產生 {now_hkt.strftime('%Y.%m.%d %H:%M')} HKT ｜ {esc(args.model)}</span>
 </header>
 <nav class="summary">
   <a href="#tier-a"><span class="stat"><span class="dot" style="background:var(--tier-a)"></span><b>{counts['A_VCP待突破']}</b><span>A・VCP 待突破</span></span></a>
