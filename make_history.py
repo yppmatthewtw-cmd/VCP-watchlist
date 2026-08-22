@@ -158,7 +158,7 @@ def render_md(snaps, track, rev, model, stamp_txt):
             out.append(
                 f"| [{t}]({tv_url(t)}) | {esc((r.get('name') or '')[:20])} | {' | '.join(cells)} "
                 f"| {arrow} {traj_str(i['letters'])} | {price:,.2f} | +{to_p:.1f}% "
-                f"| {r.get('chg_1m', 0):+.1f}% |")
+                f"| {(('%+.1f%%' % r['chg_1m']) if r.get('chg_1m') is not None else '–')} |")
         return out + [""]
 
     L += ["## ▲ 線上｜目前觀察名單", "",
@@ -208,7 +208,12 @@ def render_html(snaps, track, rev, model, stamp_txt):
             mv = move_of(i)
             arrow = f'<span class="mv up">▲</span>' if mv > 0 else (
                 f'<span class="mv dn">▼</span>' if mv < 0 else '<span class="mv fl">＝</span>')
-            c1 = r.get("chg_1m") or 0
+            c1 = r.get("chg_1m")
+            if c1 is None:
+                c1_td = '<td class="num">–</td></tr>'
+            else:
+                c1_cls = "up" if c1 > 0 else "dn" if c1 < 0 else ""
+                c1_td = f'<td class="num {c1_cls}">{c1:+.1f}%</td></tr>'
             ex = EXCHANGE.get(t, "").upper()
             cells = "".join(cell(l, i["scores"][j]) for j, l in enumerate(i["letters"]))
             out.append(
@@ -217,8 +222,7 @@ def render_html(snaps, track, rev, model, stamp_txt):
                 f'<td class="nm">{esc((r.get("name") or "")[:22])}</td>{cells}'
                 f'<td class="tr">{arrow}</td>'
                 f'<td class="num">{price:,.2f}</td>'
-                f'<td class="num pivot">+{to_p:.1f}%</td>'
-                f'<td class="num {"up" if c1 > 0 else "dn" if c1 < 0 else ""}">{c1:+.1f}%</td></tr>')
+                f'<td class="num pivot">+{to_p:.1f}%</td>' + c1_td)
         return "\n".join(out)
 
     heads = "".join(

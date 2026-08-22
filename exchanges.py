@@ -28,8 +28,14 @@ NYSE = [
     "VRT", "ETN", "PWR", "GEV", "VST", "SMR", "OKLO", "BE", "OUST",
 ]
 
+
+# All-market expansion (2026-08-22)
+NASDAQ += ['ANGO', 'ANIK', 'AXTI', 'BLFS', 'CLDX', 'CME', 'COIN', 'COST', 'CSX', 'DASH', 'EH', 'GILD', 'HOOD', 'HST', 'IOVA', 'ISRG', 'LOB', 'LQDA', 'LULU', 'MAR', 'MCHP', 'MRNA', 'NFLX', 'PCAR', 'REGN', 'ROST', 'RPRX', 'RVMD', 'SBUX', 'TXRH', 'UBSI', 'UFPT', 'URBN', 'VCYT', 'VRTX', 'VTRS', 'WDC']
+NYSE += ['ABBV', 'AEO', 'AXP', 'BA', 'BAC', 'BIRK', 'BOOT', 'BX', 'CAH', 'CAT', 'CCJ', 'CVX', 'ENVA', 'ETR', 'FCX', 'FLR', 'GL', 'GLW', 'GPS', 'GS', 'GWW', 'H', 'HII', 'HLT', 'HMY', 'HUBB', 'ICE', 'JNJ', 'JPM', 'KKR', 'KO', 'LH', 'LLY', 'LMT', 'LUMN', 'MA', 'MET', 'MRK', 'NEE', 'NEM', 'NKE', 'NSC', 'OLN', 'OXY', 'PARR', 'PBF', 'PNC', 'RDW', 'RTX', 'SPOT', 'TGT', 'TJX', 'TPR', 'UNH', 'UNM', 'UNP', 'V', 'XOM', 'XPO']
+
 EXCHANGE = {t: "nasdaq" for t in NASDAQ}
 EXCHANGE.update({t: "nyse" for t in NYSE})
+
 
 
 def tv_url(ticker: str) -> str:
