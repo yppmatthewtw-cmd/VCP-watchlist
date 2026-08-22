@@ -1,0 +1,587 @@
+<title>VCP Watchlist R5</title>
+<style>
+:root {
+  --bg: #F5F6F4; --panel: #FFFFFF; --ink: #1B2430; --muted: #5D6B7A; --line: #DDE2E0;
+  --accent: #B07B24; --accent-soft: #F3E8D3;
+  --up: #17835C; --dn: #C24A3F; --dry: #B07B24;
+  --head: #EDEFEA; --hover: #F0F3EE;
+  --tier-a: #17835C; --tier-e: #B07B24; --tier-b: #2C6E9E; --tier-c: #5D6B7A; --tier-d: #8B95A0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1216; --panel: #151B21; --ink: #E4E9EC; --muted: #8B98A5; --line: #26303A;
+    --accent: #E5B15C; --accent-soft: #2A2418;
+    --up: #3FB68B; --dn: #E0705F; --dry: #E5B15C;
+    --head: #1A222A; --hover: #1C242D;
+    --tier-a: #3FB68B; --tier-e: #E5B15C; --tier-b: #5CA3D6; --tier-c: #8B98A5; --tier-d: #5D6B7A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1216; --panel: #151B21; --ink: #E4E9EC; --muted: #8B98A5; --line: #26303A;
+  --accent: #E5B15C; --accent-soft: #2A2418;
+  --up: #3FB68B; --dn: #E0705F; --dry: #E5B15C;
+  --head: #1A222A; --hover: #1C242D;
+  --tier-a: #3FB68B; --tier-e: #E5B15C; --tier-b: #5CA3D6; --tier-c: #8B98A5; --tier-d: #5D6B7A;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.55 "Avenir Next", "Segoe UI", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+.masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; border-bottom: 3px solid var(--ink); padding-bottom: 14px; }
+.masthead h1 { font-size: 30px; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.masthead h1 em { font-style: normal; color: var(--accent); }
+.meta { color: var(--muted); font-size: 13px; }
+.meta b { color: var(--ink); font-weight: 600; }
+.summary { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 6px; }
+.summary a { text-decoration: none; color: inherit; }
+.stat { display: flex; align-items: center; gap: 9px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 14px; }
+.stat .dot { width: 10px; height: 10px; border-radius: 2px; }
+.stat b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12.5px; }
+.market { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 14px 18px; margin: 16px 0 4px; font-size: 14px; color: var(--muted); }
+.market strong { color: var(--ink); }
+.tier { margin-top: 34px; }
+.tier-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+.tier-head h2 { margin: 0; font-size: 19px; }
+.tier-head p { margin: 2px 0 0; color: var(--muted); font-size: 13.5px; max-width: 68ch; }
+.tier-head .count { margin-left: auto; color: var(--muted); font-size: 13px; white-space: nowrap; padding-top: 4px; }
+.badge { flex: none; width: 34px; height: 34px; border-radius: 6px; display: grid; place-items: center; font-weight: 700; font-size: 17px; color: var(--bg); }
+.tier-a .badge { background: var(--tier-a); } .tier-e .badge { background: var(--tier-e); }
+.tier-b .badge { background: var(--tier-b); } .tier-c .badge { background: var(--tier-c); }
+.tier-d .badge { background: var(--tier-d); }
+.tblwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13.5px; }
+th { background: var(--head); text-align: left; padding: 8px 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
+th small { display: block; font-size: 10px; letter-spacing: 0; text-transform: none; }
+td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+tbody tr:hover { background: var(--hover); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "SF Mono", "Cascadia Mono", Consolas, ui-monospace, monospace; font-size: 12.5px; white-space: nowrap; }
+td.tk { white-space: nowrap; }
+td.tk a { display: inline-block; font-weight: 700; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+td.tk a small { display: block; font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); border: 0; }
+td.tk a:hover, td.tk a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+td.nm { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+td.up { color: var(--up); } td.dn { color: var(--dn); } td.flat { color: var(--muted); }
+td.pivot { color: var(--accent); font-weight: 600; }
+td.dry { color: var(--dry); font-weight: 600; }
+td.note { min-width: 260px; max-width: 420px; color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+.chip-cal { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+.scorebar { display: inline-flex; align-items: center; gap: 7px; min-width: 92px; }
+.scorebar i { display: block; height: 5px; border-radius: 3px; background: var(--accent); min-width: 3px; max-width: 60px; flex: none; }
+.scorebar b { font-size: 12.5px; }
+.dwrap { display: flex; flex-wrap: wrap; gap: 7px; }
+.dchip { display: inline-flex; gap: 6px; align-items: baseline; background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; text-decoration: none; color: var(--muted); font-size: 12.5px; font-weight: 600; }
+.dchip small { color: var(--dn); font-weight: 400; font-variant-numeric: tabular-nums; }
+.dchip:hover, .dchip:focus-visible { border-color: var(--accent); color: var(--ink); outline: none; }
+.method { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 13.5px; max-width: 78ch; }
+.method h3 { color: var(--ink); font-size: 15px; margin: 0 0 8px; }
+.method ol { padding-left: 20px; margin: 8px 0; }
+.method li { margin: 4px 0; }
+.disclaimer { margin-top: 14px; font-size: 12.5px; color: var(--muted); border-left: 3px solid var(--dn); padding-left: 12px; }
+a { color: var(--accent); }
+@media (max-width: 640px) { .masthead h1 { font-size: 24px; } .tier-head .count { display: none; } }
+</style>
+<div class="wrap">
+<header class="masthead">
+  <h1>VCP Watchlist <em>R5</em></h1>
+  <span class="meta"><b>AI 產業 · 美股 74 檔</b> ｜ 數據基準 2026-08-21 收盤 ｜ 產生 2026.08.22 09:31 HKT ｜ Fable5;ultracode</span>
+</header>
+<nav class="summary">
+  <a href="#tier-a"><span class="stat"><span class="dot" style="background:var(--tier-a)"></span><b>3</b><span>A・VCP 待突破</span></span></a>
+  <a href="#tier-e"><span class="stat"><span class="dot" style="background:var(--tier-e)"></span><b>0</b><span>E・突破延伸中</span></span></a>
+  <a href="#tier-b"><span class="stat"><span class="dot" style="background:var(--tier-b)"></span><b>9</b><span>B・上升結構</span></span></a>
+  <a href="#tier-c"><span class="stat"><span class="dot" style="background:var(--tier-c)"></span><b>20</b><span>C・基底修復</span></span></a>
+  <a href="#tier-d"><span class="stat"><span class="dot" style="background:var(--tier-d)"></span><b>42</b><span>D・趨勢弱</span></span></a>
+</nav>
+<p class="market"><strong>市場背景</strong> — Friday Aug 21, 2026: stocks rebounded from a yield-driven sell-off — S&amp;P 500 +0.43% to 7,674.37, Nasdaq +0.43% to 26,180.45, Dow +0.98% to 53,277.01 — though all posted weekly losses. The 10-year Treasury held at 4.71%, elevated on heavy AI-related debt issuance, deficits, and Iran-sanctions oil concerns; Treasury is doubling long-maturity buybacks to $4B. AI/semis firm: Nvidia ~$215, +9% in August ahead of Q2 FY27 earnings Tue Aug 26 (prior quarter guided $91B revenue); Palantir +3.8%, AMD +0.65%; CrowdStrike also reports Aug 26 after a CTO-exit dip. Jackson Hole runs Aug 27-29 with new Fed Chair Kevin Warsh&#x27;s keynote Aug 28; September hike odds ~1-in-3 after soft inflation prints, ahead of the Sept 16 FOMC.</p>
+<section class="tier tier-a" id="tier-a">
+<header class="tier-head"><span class="badge">A</span>
+<div><h2>VCP 緊縮・等待突破</h2><p>趨勢模板通過、距 52 週高點 ≤10%、近 1 個月波動收斂 ±7% 內 — 最接近 Minervini VCP 買點。</p></div>
+<span class="count">3 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:panw" target="_blank" rel="noopener">PANW<small>NASDAQ</small></a></td>
+<td class="nm">Palo Alto Networks, Inc.</td>
+<td class="num">360.08</td>
+<td class="num">398.88</td>
+<td class="num pivot">+10.8%</td>
+<td class="num up">+0.6%</td>
+<td class="num up">+47.5%</td>
+<td class="num up">+141.9%</td>
+<td class="num up">+108.7%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:84%"></i><b>83.6</b></span></td>
+<td class="note">+3.0% 期間變化。Up ~3% after strong earnings/guidance reaction </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amzn" target="_blank" rel="noopener">AMZN<small>NASDAQ</small></a></td>
+<td class="nm">Amazon.com, Inc.</td>
+<td class="num">261.16</td>
+<td class="num">287.20</td>
+<td class="num pivot">+10.0%</td>
+<td class="num up">+5.6%</td>
+<td class="num dn">-1.4%</td>
+<td class="num up">+27.3%</td>
+<td class="num up">+12.7%</td>
+<td class="num dry">0.64</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>65.7</b></span></td>
+<td class="note">Q2 2026 beat (EPS $1.97 vs $1.82; rev $200.6B; AWS $42.2B); stock surged 10%+ past $3T cap; capex raised to ~$220B for AI. Strong Buy consensus, ~$326 target. </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:nvda" target="_blank" rel="noopener">NVDA<small>NASDAQ</small></a></td>
+<td class="nm">NVIDIA Corporation</td>
+<td class="num">214.72</td>
+<td class="num">236.54</td>
+<td class="num pivot">+10.2%</td>
+<td class="num up">+6.1%</td>
+<td class="num dn">-3.4%</td>
+<td class="num up">+14.6%</td>
+<td class="num up">+18.4%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:63%"></i><b>63.1</b></span></td>
+<td class="note">Q2 FY2027 earnings due Aug 26, 2026 after close; analysts expect ~$93-95B revenue on Blackwell/AI demand. Stock up ~17.7% YTD near $219; holds ~80% AI accelerator share. <span class="chip chip-cal">財報 08/26</span></td>
+</tr></tbody></table></div></section><section class="tier tier-b" id="tier-b">
+<header class="tier-head"><span class="badge">B</span>
+<div><h2>上升結構（一底高於一底 / 上升三角形候選）</h2><p>站上 50/200 日線、距高點 ≤20%、3 個月動能為正 — 開圖確認低點墊高與上緣壓力線。</p></div>
+<span class="count">9 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:crwd" target="_blank" rel="noopener">CRWD<small>NASDAQ</small></a></td>
+<td class="nm">CrowdStrike Holdings, Inc.</td>
+<td class="num">191.69</td>
+<td class="num">227.50</td>
+<td class="num pivot">+18.7%</td>
+<td class="num dn">-5.2%</td>
+<td class="num up">+27.6%</td>
+<td class="num up">+94.8%</td>
+<td class="num up">+89.8%</td>
+<td class="num dry">0.58</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.3</b></span></td>
+<td class="note">-10.3% 期間變化。CTO Elia Zaitsev 離職創立 AI/資安創投，未指定接班人；8/19 -7%、8/20 -4% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:net" target="_blank" rel="noopener">NET<small>NYSE</small></a></td>
+<td class="nm">Cloudflare, Inc.</td>
+<td class="num">293.14</td>
+<td class="num">332.22</td>
+<td class="num pivot">+13.3%</td>
+<td class="num up">+5.9%</td>
+<td class="num up">+46.8%</td>
+<td class="num up">+54.8%</td>
+<td class="num up">+46.3%</td>
+<td class="num dry">0.44</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>71.7</b></span></td>
+<td class="note">Q2 2026 beat (Aug 6): EPS $0.29 vs $0.21 est, revenue $696.1M +36%; raised FY26 guidance on AI traffic demand; Susquehanna raised target to $300 (Aug 10). </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:dell" target="_blank" rel="noopener">DELL<small>NYSE</small></a></td>
+<td class="nm">Dell Technologies Inc.</td>
+<td class="num">434.78</td>
+<td class="num">514.00</td>
+<td class="num pivot">+18.2%</td>
+<td class="num up">+10.9%</td>
+<td class="num up">+89.6%</td>
+<td class="num up">+294.0%</td>
+<td class="num up">+232.0%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:70%"></i><b>69.9</b></span></td>
+<td class="note">Stock up ~230% in 2026 on AI server boom; Q1 revenue $43.8B (+88%), AI server sales +757% to $16.1B, $51.3B backlog; FY27 guidance raised to $165-169B. Q2 earnings Sept 3. <span class="chip chip-cal">財報 09/03</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:snow" target="_blank" rel="noopener">SNOW<small>NYSE</small></a></td>
+<td class="nm">Snowflake Inc.</td>
+<td class="num">325.58</td>
+<td class="num">341.95</td>
+<td class="num pivot">+5.0%</td>
+<td class="num up">+21.1%</td>
+<td class="num up">+98.2%</td>
+<td class="num up">+84.9%</td>
+<td class="num up">+64.2%</td>
+<td class="num dry">0.52</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>68.5</b></span></td>
+<td class="note">Prior quarter beat (revenue +32% YoY) drove stock to 52-week highs; analysts Strong Buy consensus. Reports fiscal Q2 2027 earnings Sept 2, 2026 after market close. <span class="chip chip-cal">財報 09/02</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:iot" target="_blank" rel="noopener">IOT<small>NYSE</small></a></td>
+<td class="nm">Samsara Inc.</td>
+<td class="num">39.20</td>
+<td class="num">47.47</td>
+<td class="num pivot">+21.1%</td>
+<td class="num up">+2.3%</td>
+<td class="num up">+28.3%</td>
+<td class="num up">+46.0%</td>
+<td class="num up">+15.8%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>68</b></span></td>
+<td class="note">RBC raised target to $50 (Aug 16); Piper Sandler downgraded to Neutral (Aug 9-10). Q2 FY27 earnings due Sep 3, 2026; consensus ~$0.17 EPS, $482M revenue. <span class="chip chip-cal">財報 09/03</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:hpe" target="_blank" rel="noopener">HPE<small>NYSE</small></a></td>
+<td class="nm">Hewlett Packard Enterprise Com</td>
+<td class="num">53.09</td>
+<td class="num">64.25</td>
+<td class="num pivot">+21.0%</td>
+<td class="num up">+16.8%</td>
+<td class="num up">+64.1%</td>
+<td class="num up">+153.8%</td>
+<td class="num up">+152.8%</td>
+<td class="num dry">0.64</td>
+<td class="num"><span class="scorebar"><i style="width:65%"></i><b>64.6</b></span></td>
+<td class="note">Stock at 52-week high after Morgan Stanley upgrade to Overweight (PT $71); Q2 revenue rose 40% to $10.7B on AI server/networking strength, FY26 guidance raised. Q3 earnings Sept 2. <span class="chip chip-cal">財報 09/02</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:etn" target="_blank" rel="noopener">ETN<small>NYSE</small></a></td>
+<td class="nm">Eaton Corporation plc</td>
+<td class="num">419.20</td>
+<td class="num">478.00</td>
+<td class="num pivot">+14.0%</td>
+<td class="num up">+2.2%</td>
+<td class="num up">+5.9%</td>
+<td class="num up">+8.8%</td>
+<td class="num up">+21.5%</td>
+<td class="num dry">0.56</td>
+<td class="num"><span class="scorebar"><i style="width:64%"></i><b>64.3</b></span></td>
+<td class="note">-3.3% 期間變化。單日 -3.3% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mdb" target="_blank" rel="noopener">MDB<small>NASDAQ</small></a></td>
+<td class="nm">MongoDB, Inc.</td>
+<td class="num">427.09</td>
+<td class="num">473.10</td>
+<td class="num pivot">+10.8%</td>
+<td class="num up">+37.4%</td>
+<td class="num up">+30.0%</td>
+<td class="num up">+18.0%</td>
+<td class="num up">+89.7%</td>
+<td class="num dry">0.58</td>
+<td class="num"><span class="scorebar"><i style="width:62%"></i><b>61.7</b></span></td>
+<td class="note">Shares surged ~8% Aug 13, near 52-week high (~$472) on AI-driven growth momentum; analysts Strong Buy consensus but valuation debated. Q2 FY2027 earnings due Sept 1, 2026. <span class="chip chip-cal">財報 09/01</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:anet" target="_blank" rel="noopener">ANET<small>NYSE</small></a></td>
+<td class="nm">Arista Networks, Inc.</td>
+<td class="num">188.65</td>
+<td class="num">214.89</td>
+<td class="num pivot">+13.9%</td>
+<td class="num up">+12.3%</td>
+<td class="num up">+34.0%</td>
+<td class="num up">+36.1%</td>
+<td class="num up">+37.6%</td>
+<td class="num ">0.97</td>
+<td class="num"><span class="scorebar"><i style="width:51%"></i><b>51.4</b></span></td>
+<td class="note"> </td>
+</tr></tbody></table></div></section><section class="tier tier-c" id="tier-c">
+<header class="tier-head"><span class="badge">C</span>
+<div><h2>基底修復中（觀察）</h2><p>仍在 200 日線上方但距高點較深，基底右側尚未完成。</p></div>
+<span class="count">20 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:asml" target="_blank" rel="noopener">ASML<small>NASDAQ</small></a></td>
+<td class="nm">ASML Holding N.V.</td>
+<td class="num">1,750.31</td>
+<td class="num">1,999.96</td>
+<td class="num pivot">+14.3%</td>
+<td class="num up">+0.3%</td>
+<td class="num up">+19.6%</td>
+<td class="num up">+19.9%</td>
+<td class="num up">+138.3%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>66.2</b></span></td>
+<td class="note">Q2 2026 beat (net sales EUR 9.33B); raised FY2026 revenue guidance to EUR 43-45B on AI-driven EUV/High-NA demand; stock near record highs (~$1,884, Aug 17). <span class="chip chip-cal">財報 10/14</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amd" target="_blank" rel="noopener">AMD<small>NASDAQ</small></a></td>
+<td class="nm">Advanced Micro Devices, Inc.</td>
+<td class="num">473.25</td>
+<td class="num">584.73</td>
+<td class="num pivot">+23.6%</td>
+<td class="num dn">-4.5%</td>
+<td class="num up">+12.8%</td>
+<td class="num up">+139.8%</td>
+<td class="num up">+172.8%</td>
+<td class="num ">0.7</td>
+<td class="num"><span class="scorebar"><i style="width:64%"></i><b>64.1</b></span></td>
+<td class="note">8/19 -3.7%. Down 3.71%, semiconductor sector selloff </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:tsm" target="_blank" rel="noopener">TSM<small>NYSE</small></a></td>
+<td class="nm">Taiwan Semiconductor (ADR)</td>
+<td class="num">412.09</td>
+<td class="num">479.00</td>
+<td class="num pivot">+16.2%</td>
+<td class="num up">+3.4%</td>
+<td class="num up">+5.7%</td>
+<td class="num up">+24.8%</td>
+<td class="num up">+101.2%</td>
+<td class="num dry">0.51</td>
+<td class="num"><span class="scorebar"><i style="width:63%"></i><b>63.2</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mu" target="_blank" rel="noopener">MU<small>NASDAQ</small></a></td>
+<td class="nm">Micron Technology, Inc.</td>
+<td class="num">974.33</td>
+<td class="num">1,255.00</td>
+<td class="num pivot">+28.8%</td>
+<td class="num up">+14.4%</td>
+<td class="num up">+41.6%</td>
+<td class="num up">+127.1%</td>
+<td class="num up">+665.0%</td>
+<td class="num ">0.76</td>
+<td class="num"><span class="scorebar"><i style="width:62%"></i><b>62.2</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mrvl" target="_blank" rel="noopener">MRVL<small>NASDAQ</small></a></td>
+<td class="nm">Marvell Technology, Inc.</td>
+<td class="num">253.67</td>
+<td class="num">329.88</td>
+<td class="num pivot">+30.0%</td>
+<td class="num up">+31.2%</td>
+<td class="num up">+44.6%</td>
+<td class="num up">+189.8%</td>
+<td class="num up">+198.2%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:61%"></i><b>61.1</b></span></td>
+<td class="note">+6.9% 期間變化。Up ~7% vs ref after Google $12.2B stake/partnership news this week </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:lrcx" target="_blank" rel="noopener">LRCX<small>NASDAQ</small></a></td>
+<td class="nm">Lam Research Corporation</td>
+<td class="num">314.46</td>
+<td class="num">438.50</td>
+<td class="num pivot">+39.4%</td>
+<td class="num up">+0.6%</td>
+<td class="num up">+13.9%</td>
+<td class="num up">+32.5%</td>
+<td class="num up">+227.5%</td>
+<td class="num ">0.93</td>
+<td class="num"><span class="scorebar"><i style="width:61%"></i><b>60.9</b></span></td>
+<td class="note">-5.4% 期間變化。半導體設備續弱 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:pwr" target="_blank" rel="noopener">PWR<small>NYSE</small></a></td>
+<td class="nm">Quanta Services, Inc.</td>
+<td class="num">639.34</td>
+<td class="num">788.75</td>
+<td class="num pivot">+23.4%</td>
+<td class="num dn">-0.9%</td>
+<td class="num dn">-17.5%</td>
+<td class="num up">+24.3%</td>
+<td class="num up">+73.5%</td>
+<td class="num dry">0.58</td>
+<td class="num"><span class="scorebar"><i style="width:60%"></i><b>59.9</b></span></td>
+<td class="note">-6.3% 期間變化。Fell ~3.5% Friday; specific reason not confirmed in sources </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:googl" target="_blank" rel="noopener">GOOGL<small>NASDAQ</small></a></td>
+<td class="nm">Alphabet Inc.</td>
+<td class="num">344.82</td>
+<td class="num">408.61</td>
+<td class="num pivot">+18.5%</td>
+<td class="num dn">-0.5%</td>
+<td class="num dn">-13.1%</td>
+<td class="num up">+13.7%</td>
+<td class="num up">+69.3%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:60%"></i><b>59.8</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:axon" target="_blank" rel="noopener">AXON<small>NASDAQ</small></a></td>
+<td class="nm">Axon Enterprise, Inc.</td>
+<td class="num">616.31</td>
+<td class="num">794.29</td>
+<td class="num pivot">+28.9%</td>
+<td class="num up">+14.0%</td>
+<td class="num up">+57.1%</td>
+<td class="num up">+43.3%</td>
+<td class="num dn">-18.0%</td>
+<td class="num dry">0.38</td>
+<td class="num"><span class="scorebar"><i style="width:51%"></i><b>51.2</b></span></td>
+<td class="note">Axon&#x27;s Q2 2026 revenue rose 35% YoY to $904M; it raised full-year revenue growth guidance to 32-34%, lifting shares after the Aug 5 report. </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:gev" target="_blank" rel="noopener">GEV<small>NYSE</small></a></td>
+<td class="nm">GE Vernova Inc.</td>
+<td class="num">966.01</td>
+<td class="num">1,195.94</td>
+<td class="num pivot">+23.8%</td>
+<td class="num dn">-8.7%</td>
+<td class="num dn">-8.1%</td>
+<td class="num up">+23.1%</td>
+<td class="num up">+61.5%</td>
+<td class="num dry">0.54</td>
+<td class="num"><span class="scorebar"><i style="width:50%"></i><b>50.5</b></span></td>
+<td class="note">GEV fell 5.65% on Aug 18, 2026 after Q2 EPS of $2.47 missed estimates amid a $275M wind segment EBITDA loss. </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:lite" target="_blank" rel="noopener">LITE<small>NASDAQ</small></a></td>
+<td class="nm">Lumentum Holdings Inc.</td>
+<td class="num">827.60</td>
+<td class="num">1,085.68</td>
+<td class="num pivot">+31.2%</td>
+<td class="num up">+13.9%</td>
+<td class="num dn">-6.6%</td>
+<td class="num up">+41.7%</td>
+<td class="num up">+628.7%</td>
+<td class="num ">1.08</td>
+<td class="num"><span class="scorebar"><i style="width:50%"></i><b>50.2</b></span></td>
+<td class="note">Reported Q4 FY26 on Aug 11: first $1B quarter ($1.006B, +109% YoY), EPS $3.23 beat; AI/datacom demand drove stock up ~14% on Aug 12. Analysts rate Strong Buy. </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:nbis" target="_blank" rel="noopener">NBIS<small>NASDAQ</small></a></td>
+<td class="nm">Nebius Group N.V.</td>
+<td class="num">223.91</td>
+<td class="num">299.86</td>
+<td class="num pivot">+33.9%</td>
+<td class="num up">+25.4%</td>
+<td class="num up">+6.5%</td>
+<td class="num up">+163.5%</td>
+<td class="num up">+267.9%</td>
+<td class="num ">1.53</td>
+<td class="num"><span class="scorebar"><i style="width:50%"></i><b>50</b></span></td>
+<td class="note">+3.2% 期間變化。Up ~3.2% on $7B Microsoft upfront payment disclosure </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:jbl" target="_blank" rel="noopener">JBL<small>NYSE</small></a></td>
+<td class="nm">Jabil Inc.</td>
+<td class="num">316.65</td>
+<td class="num">428.93</td>
+<td class="num pivot">+35.5%</td>
+<td class="num up">+6.2%</td>
+<td class="num dn">-6.3%</td>
+<td class="num up">+23.7%</td>
+<td class="num up">+50.7%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:49%"></i><b>48.6</b></span></td>
+<td class="note">-8.1% 期間變化。Down ~8% vs ref; continued mid-August pullback despite raised guidance </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:msft" target="_blank" rel="noopener">MSFT<small>NASDAQ</small></a></td>
+<td class="nm">Microsoft Corporation</td>
+<td class="num">483.24</td>
+<td class="num">553.72</td>
+<td class="num pivot">+14.6%</td>
+<td class="num up">+22.7%</td>
+<td class="num up">+14.1%</td>
+<td class="num up">+20.9%</td>
+<td class="num dn">-6.5%</td>
+<td class="num dry">0.61</td>
+<td class="num"><span class="scorebar"><i style="width:46%"></i><b>46.5</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:pltr" target="_blank" rel="noopener">PLTR<small>NASDAQ</small></a></td>
+<td class="nm">Palantir Technologies Inc.</td>
+<td class="num">173.96</td>
+<td class="num">207.52</td>
+<td class="num pivot">+19.3%</td>
+<td class="num up">+31.1%</td>
+<td class="num up">+28.4%</td>
+<td class="num up">+28.2%</td>
+<td class="num up">+0.1%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:46%"></i><b>45.9</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mpwr" target="_blank" rel="noopener">MPWR<small>NASDAQ</small></a></td>
+<td class="nm">Monolithic Power Systems, Inc.</td>
+<td class="num">1,321.13</td>
+<td class="num">1,714.09</td>
+<td class="num pivot">+29.7%</td>
+<td class="num up">+0.7%</td>
+<td class="num dn">-11.2%</td>
+<td class="num up">+11.3%</td>
+<td class="num up">+55.9%</td>
+<td class="num ">1.28</td>
+<td class="num"><span class="scorebar"><i style="width:43%"></i><b>43.4</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:crdo" target="_blank" rel="noopener">CRDO<small>NASDAQ</small></a></td>
+<td class="nm">Credo Technology Group Holding</td>
+<td class="num">229.54</td>
+<td class="num">308.67</td>
+<td class="num pivot">+34.5%</td>
+<td class="num up">+14.5%</td>
+<td class="num up">+50.5%</td>
+<td class="num up">+85.4%</td>
+<td class="num up">+100.3%</td>
+<td class="num ">1</td>
+<td class="num"><span class="scorebar"><i style="width:40%"></i><b>40.5</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:cgnx" target="_blank" rel="noopener">CGNX<small>NASDAQ</small></a></td>
+<td class="nm">Cognex Corporation</td>
+<td class="num">60.06</td>
+<td class="num">72.88</td>
+<td class="num pivot">+21.3%</td>
+<td class="num dn">-4.9%</td>
+<td class="num dn">-6.6%</td>
+<td class="num up">+2.9%</td>
+<td class="num up">+45.0%</td>
+<td class="num ">0.98</td>
+<td class="num"><span class="scorebar"><i style="width:40%"></i><b>39.6</b></span></td>
+<td class="note">-6.2% 期間變化。+0.6% on day; sources show Aug 20 close 59.73, not 64 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ter" target="_blank" rel="noopener">TER<small>NASDAQ</small></a></td>
+<td class="nm">Teradyne, Inc.</td>
+<td class="num">383.15</td>
+<td class="num">487.91</td>
+<td class="num pivot">+27.3%</td>
+<td class="num up">+20.2%</td>
+<td class="num up">+20.7%</td>
+<td class="num up">+23.2%</td>
+<td class="num up">+261.0%</td>
+<td class="num ">1.04</td>
+<td class="num"><span class="scorebar"><i style="width:37%"></i><b>36.8</b></span></td>
+<td class="note"> </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:crm" target="_blank" rel="noopener">CRM<small>NYSE</small></a></td>
+<td class="nm">Salesforce, Inc.</td>
+<td class="num">209.17</td>
+<td class="num">269.11</td>
+<td class="num pivot">+28.7%</td>
+<td class="num up">+21.5%</td>
+<td class="num up">+15.9%</td>
+<td class="num up">+11.1%</td>
+<td class="num dn">-13.0%</td>
+<td class="num ">0.96</td>
+<td class="num"><span class="scorebar"><i style="width:29%"></i><b>28.9</b></span></td>
+<td class="note"> </td>
+</tr></tbody></table></div></section><section class="tier tier-d" id="tier-d">
+<header class="tier-head"><span class="badge">D</span>
+<div><h2>趨勢偏弱（暫不列入)</h2><p>跌破主要均線或距高點過深，暫不符合進場條件。</p></div>
+<span class="count">42 檔</span></header>
+<div class="dwrap"><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:ddog" target="_blank" rel="noopener">DDOG<small>−21%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:oust" target="_blank" rel="noopener">OUST<small>−22%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:cdns" target="_blank" rel="noopener">CDNS<small>−23%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:avgo" target="_blank" rel="noopener">AVGO<small>−26%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tsla" target="_blank" rel="noopener">TSLA<small>−27%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:vrt" target="_blank" rel="noopener">VRT<small>−30%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tem" target="_blank" rel="noopener">TEM<small>−31%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:meta" target="_blank" rel="noopener">META<small>−31%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:tln" target="_blank" rel="noopener">TLN<small>−32%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:amat" target="_blank" rel="noopener">AMAT<small>−33%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:now" target="_blank" rel="noopener">NOW<small>−34%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:ceg" target="_blank" rel="noopener">CEG<small>−35%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cohr" target="_blank" rel="noopener">COHR<small>−35%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:snps" target="_blank" rel="noopener">SNPS<small>−36%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:intc" target="_blank" rel="noopener">INTC<small>−37%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:vst" target="_blank" rel="noopener">VST<small>−37%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:smci" target="_blank" rel="noopener">SMCI<small>−37%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cien" target="_blank" rel="noopener">CIEN<small>−37%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:cls" target="_blank" rel="noopener">CLS<small>−37%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:qcom" target="_blank" rel="noopener">QCOM<small>−38%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:mod" target="_blank" rel="noopener">MOD<small>−40%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:klac" target="_blank" rel="noopener">KLAC<small>−40%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:fn" target="_blank" rel="noopener">FN<small>−40%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:iren" target="_blank" rel="noopener">IREN<small>−42%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:alab" target="_blank" rel="noopener">ALAB<small>−42%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:crwv" target="_blank" rel="noopener">CRWV<small>−42%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:apld" target="_blank" rel="noopener">APLD<small>−44%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:be" target="_blank" rel="noopener">BE<small>−44%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:arm" target="_blank" rel="noopener">ARM<small>−45%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:cbrs" target="_blank" rel="noopener">CBRS<small>−46%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:aaoi" target="_blank" rel="noopener">AAOI<small>−47%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:rddt" target="_blank" rel="noopener">RDDT<small>−47%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:zs" target="_blank" rel="noopener">ZS<small>−47%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:ai" target="_blank" rel="noopener">AI<small>−49%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:app" target="_blank" rel="noopener">APP<small>−59%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:orcl" target="_blank" rel="noopener">ORCL<small>−59%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:mndy" target="_blank" rel="noopener">MNDY<small>−60%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:duol" target="_blank" rel="noopener">DUOL<small>−60%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nasdaq:soun" target="_blank" rel="noopener">SOUN<small>−67%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:bbai" target="_blank" rel="noopener">BBAI<small>−68%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:oklo" target="_blank" rel="noopener">OKLO<small>−78%</small></a><a class="dchip" href="https://www.tradingview.com/chart/?symbol=nyse:smr" target="_blank" rel="noopener">SMR<small>−84%</small></a></div></section>
+<footer class="method">
+<h3>篩選方法</h3>
+<ol>
+<li><b>趨勢模板</b>：站上 50/200 日均線、50MA &gt; 200MA、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。</li>
+<li><b>緊縮度</b>：近 1 個月漲跌幅收斂 ±7% 內且貼近高點 → 基底右側收緊（VCP 特徵）。</li>
+<li><b>量能</b>：現量低於 50 日均量（量比 &lt; 1）→ 突破前典型量縮，表中金色標示 &lt; 0.7。</li>
+<li><b>動能</b>：6 個月 / 1 年漲幅確認主升趨勢仍在。</li>
+<li>「一底高於一底」「上升三角形」為結構推斷 — 點代號開 TradingView 圖確認低點墊高與上緣壓力線。</li>
+</ol>
+<p><b>分數</b>（0–100）：均線結構 30 ＋ 距樞紐 15 ＋ 月線緊縮 15 ＋ 中長期動能 20 ＋ 量縮 10 ＋ 貼緊樞紐加成 5。</p>
+<p>資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 報價與價格統計；新聞驗證：網路搜尋。TSM 已換算為 ADR 價格。圖表連結：TradingView（<code>?symbol=交易所:代號</code>，代號下方標示 NASDAQ / NYSE）。</p>
+<p>數據備註：8/21（週五）收盤價以網路搜尋取得並逐檔與前日核對；50/200 日均線與量比沿用 8/18 基準。以下 10 檔查無 8/21 報價，沿用最近可確認價格：APP、ASML、BBAI、DUOL、FN、IOT、ORCL、SNPS、TLN、TSM。另 CGNX 的 R4 報價 64.00 經查實為 59.73（8/20），R4→R5 跌幅含此數據修正；OUST +17.7% 為真實走勢（Utah DOT 光達合約擴大）。</p>
+<p class="disclaimer">本表為技術面選股輔助工具，非投資建議。財報日前後（NVDA/CRWD 8/26、PANW 8/17、MDB 9/1）波動風險高，形態最終以圖表確認為準。</p>
+</footer>
+</div>
