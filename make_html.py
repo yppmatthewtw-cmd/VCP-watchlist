@@ -84,10 +84,13 @@ def main():
     if unmapped:
         print(f"WARNING: no exchange mapping for {', '.join(unmapped)} "
               "— links fall back to bare symbol")
+    # Optional per-scan series overrides; defaults preserve the VCP series output.
+    series = scan.get("series", "VCP watchlist (Github)")
+    page_title = scan.get("html_title") or scan.get("title", "VCP Watchlist")
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
-    out = args.out or f"VCP watchlist (Github)_{args.rev} ({args.model})_({stamp}).html"
+    out = args.out or f"{series}_{args.rev} ({args.model})_({stamp}).html"
     data_date = rows[0].get("as_of", "")[:10] if rows else ""
 
     by = {c: [] for c in ORDER}
@@ -120,7 +123,27 @@ def main():
 <span class="count">{len(cat_rows)} 檔</span></header>
 {body}</section>""")
 
-    doc = f"""<title>VCP Watchlist {args.rev}</title>
+    method_notes = scan.get("method_notes") or [
+        "<b>趨勢模板</b>：站上 50/200 日均線、50MA &gt; 200MA、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。",
+        "<b>緊縮度</b>：近 1 個月漲跌幅收斂 ±7% 內且貼近高點 → 基底右側收緊（VCP 特徵）。",
+        "<b>量能</b>：現量低於 50 日均量（量比 &lt; 1）→ 突破前典型量縮，表中金色標示 &lt; 0.7。",
+        "<b>動能</b>：6 個月 / 1 年漲幅確認主升趨勢仍在。",
+        "「一底高於一底」「上升三角形」為結構推斷 — 點代號開 TradingView 圖確認低點墊高與上緣壓力線。",
+    ]
+    method_lis = "\n".join(f"<li>{n}</li>" for n in method_notes)
+    score_line = scan.get(
+        "score_line",
+        "<b>分數</b>（0–100）：均線結構 30 ＋ 距樞紐 15 ＋ 月線緊縮 15 ＋ 中長期動能 20 ＋ 量縮 10 ＋ 貼緊樞紐加成 5。")
+    source_footer = scan.get(
+        "source_footer",
+        '資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 報價與價格統計；'
+        '新聞驗證：網路搜尋。TSM 已換算為 ADR 價格。圖表連結：TradingView（<code>?symbol=交易所:代號</code>，'
+        '代號下方標示 NASDAQ / NYSE）。')
+    disclaimer = scan.get(
+        "disclaimer",
+        "本表為技術面選股輔助工具，非投資建議。財報日前後（NVDA/CRWD 8/26、PANW 8/17、MDB 9/1）波動風險高，形態最終以圖表確認為準。")
+
+    doc = f"""<title>{esc(page_title)} {args.rev}</title>
 <style>
 :root {{
   --bg: #F5F6F4; --panel: #FFFFFF; --ink: #1B2430; --muted: #5D6B7A; --line: #DDE2E0;
@@ -207,7 +230,7 @@ a {{ color: var(--accent); }}
 </style>
 <div class="wrap">
 <header class="masthead">
-  <h1>VCP Watchlist <em>{args.rev}</em></h1>
+  <h1>{esc(page_title)} <em>{args.rev}</em></h1>
   <span class="meta"><b>美股全市場 · {len(rows)} 檔</b> ｜ 數據基準 {data_date} 收盤 ｜ 產生 {now_hkt.strftime('%Y.%m.%d %H:%M')} HKT ｜ {esc(args.model)}</span>
 </header>
 <nav class="summary">
@@ -222,15 +245,11 @@ a {{ color: var(--accent); }}
 <footer class="method">
 <h3>篩選方法</h3>
 <ol>
-<li><b>趨勢模板</b>：站上 50/200 日均線、50MA &gt; 200MA、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。</li>
-<li><b>緊縮度</b>：近 1 個月漲跌幅收斂 ±7% 內且貼近高點 → 基底右側收緊（VCP 特徵）。</li>
-<li><b>量能</b>：現量低於 50 日均量（量比 &lt; 1）→ 突破前典型量縮，表中金色標示 &lt; 0.7。</li>
-<li><b>動能</b>：6 個月 / 1 年漲幅確認主升趨勢仍在。</li>
-<li>「一底高於一底」「上升三角形」為結構推斷 — 點代號開 TradingView 圖確認低點墊高與上緣壓力線。</li>
+{method_lis}
 </ol>
-<p><b>分數</b>（0–100）：均線結構 30 ＋ 距樞紐 15 ＋ 月線緊縮 15 ＋ 中長期動能 20 ＋ 量縮 10 ＋ 貼緊樞紐加成 5。</p>
-<p>資料來源：<a href="https://bigdata.com" target="_blank" rel="noopener">Bigdata.com</a> 報價與價格統計；新聞驗證：網路搜尋。TSM 已換算為 ADR 價格。圖表連結：TradingView（<code>?symbol=交易所:代號</code>，代號下方標示 NASDAQ / NYSE）。</p>
-<p class="disclaimer">本表為技術面選股輔助工具，非投資建議。財報日前後（NVDA/CRWD 8/26、PANW 8/17、MDB 9/1）波動風險高，形態最終以圖表確認為準。</p>
+<p>{score_line}</p>
+<p>{source_footer}</p>
+{f'<p>{scan["data_note"]}</p>' + chr(10) if scan.get("data_note") else ''}<p class="disclaimer">{esc(disclaimer)}</p>
 </footer>
 </div>"""
 

@@ -49,10 +49,15 @@ def main() -> None:
     with open(args.scan_json) as fh:
         scan = json.load(fh)
 
+    # A scan JSON may define its own series (e.g. the pre-breakout watchlist);
+    # defaults keep the original VCP series output byte-compatible.
+    series = scan.get("series", "VCP watchlist (Github)")
+    title = scan.get("title", "VCP Watchlist (GitHub)")
+
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
-    base = args.out_prefix or f"VCP watchlist (Github)_{args.rev} ({args.model})_({stamp})"
+    base = args.out_prefix or f"{series}_{args.rev} ({args.model})_({stamp})"
 
     rows = scan.get("rows", [])
     notes = {n["ticker"]: n for n in scan.get("notes", [])}
@@ -62,13 +67,16 @@ def main() -> None:
         print(f"WARNING: no exchange mapping for {', '.join(unmapped)} "
               "— links fall back to bare symbol")
 
+    data_basis = scan.get(
+        "data_basis",
+        "Bigdata.com 報價：現價、52 週高低、50/200 日均線、多期漲跌幅、量能")
     lines = [
-        f"# VCP Watchlist (GitHub) {args.rev}",
+        f"# {title} {args.rev}",
         "",
         f"**產生時間：** {now_hkt.strftime('%Y.%m.%d %H:%M')} HKT（{now_utc.strftime('%H:%M')} UTC）｜"
         f"**模型：** {args.model}｜**版本：** {args.rev}",
         "",
-        f"**資料基準：** 美股 {rows[0].get('as_of', '')[:10] if rows else ''} 收盤（Bigdata.com 報價：現價、52 週高低、50/200 日均線、多期漲跌幅、量能）。"
+        f"**資料基準：** 美股 {rows[0].get('as_of', '')[:10] if rows else ''} 收盤（{data_basis}）。"
         "每檔代號都連結到 TradingView 互動圖，點開即可確認契約形態細節。",
         "",
         "> 本表為選股輔助工具，非投資建議。形態最終仍以圖表確認為準。",
@@ -114,20 +122,24 @@ def main() -> None:
         lines += ["### 未能取得資料",
                   "、".join(f"{f['ticker']}（{f['error']}）" for f in scan["failed"]), ""]
 
-    lines += [
-        "## 篩選方法",
-        "",
-        "1. **趨勢模板**：股價站上 50 日與 200 日均線、50MA > 200MA、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。",
-        "2. **緊縮度**：近 1 個月漲跌幅收斂在 ±7% 以內且貼近高點 → 視為基底右側收緊（VCP / 平台整理特徵）。",
-        "3. **量能**：現量低於 50 日均量 → 量縮（VCP 突破前的典型現象）。",
-        "4. **動能**：6 個月 / 1 年漲幅確認主升趨勢仍在。",
-        "5. 「一底高於一底」與「上升三角形」需開圖確認——B 級為結構候選，請點代號開 TradingView 圖驗證低點墊高與上緣壓力線。",
-        "",
-        "**分數**（0–100）：均線結構 30 分＋距樞紐 15 分＋月線緊縮 15 分＋中長期動能 20 分＋量縮 10 分＋貼緊樞紐加成 5 分。",
-        "",
-        "_資料來源：[Bigdata.com](https://bigdata.com) 即時報價與價格統計；新聞驗證：網路搜尋。非投資建議。_",
-        "",
+    method_notes = scan.get("method_notes") or [
+        "**趨勢模板**：股價站上 50 日與 200 日均線、50MA > 200MA、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。",
+        "**緊縮度**：近 1 個月漲跌幅收斂在 ±7% 以內且貼近高點 → 視為基底右側收緊（VCP / 平台整理特徵）。",
+        "**量能**：現量低於 50 日均量 → 量縮（VCP 突破前的典型現象）。",
+        "**動能**：6 個月 / 1 年漲幅確認主升趨勢仍在。",
+        "「一底高於一底」與「上升三角形」需開圖確認——B 級為結構候選，請點代號開 TradingView 圖驗證低點墊高與上緣壓力線。",
     ]
+    score_line = scan.get(
+        "score_line",
+        "**分數**（0–100）：均線結構 30 分＋距樞紐 15 分＋月線緊縮 15 分＋中長期動能 20 分＋量縮 10 分＋貼緊樞紐加成 5 分。")
+    source_footer = scan.get(
+        "source_footer",
+        "_資料來源：[Bigdata.com](https://bigdata.com) 即時報價與價格統計；新聞驗證：網路搜尋。非投資建議。_")
+    lines += ["## 篩選方法", ""]
+    lines += [f"{i}. {n}" for i, n in enumerate(method_notes, 1)]
+    lines += ["", score_line, "", source_footer, ""]
+    if scan.get("data_note"):
+        lines += [f"_數據備註：{scan['data_note']}_", ""]
 
     md_path = f"{base}.md"
     with open(md_path, "w") as fh:
@@ -138,6 +150,8 @@ def main() -> None:
         cols = ["ticker", "name", "category", "score", "price", "year_high", "year_low",
                 "ma50", "ma200", "off_high_pct", "above_low_pct", "chg_5d", "chg_1m",
                 "chg_3m", "chg_6m", "chg_1y", "vol_ratio", "as_of"]
+        if any(r.get("sector") for r in rows):
+            cols += ["sector", "industry", "exchange"]
         with open(csv_path, "w", newline="") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
             w.writeheader()
