@@ -1,0 +1,1766 @@
+<title>Pre-Breakout Watchlist R0</title>
+<style>
+:root {
+  --bg: #F5F6F4; --panel: #FFFFFF; --ink: #1B2430; --muted: #5D6B7A; --line: #DDE2E0;
+  --accent: #B07B24; --accent-soft: #F3E8D3;
+  --up: #17835C; --dn: #C24A3F; --dry: #B07B24;
+  --head: #EDEFEA; --hover: #F0F3EE;
+  --tier-a: #17835C; --tier-e: #B07B24; --tier-b: #2C6E9E; --tier-c: #5D6B7A; --tier-d: #8B95A0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1216; --panel: #151B21; --ink: #E4E9EC; --muted: #8B98A5; --line: #26303A;
+    --accent: #E5B15C; --accent-soft: #2A2418;
+    --up: #3FB68B; --dn: #E0705F; --dry: #E5B15C;
+    --head: #1A222A; --hover: #1C242D;
+    --tier-a: #3FB68B; --tier-e: #E5B15C; --tier-b: #5CA3D6; --tier-c: #8B98A5; --tier-d: #5D6B7A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1216; --panel: #151B21; --ink: #E4E9EC; --muted: #8B98A5; --line: #26303A;
+  --accent: #E5B15C; --accent-soft: #2A2418;
+  --up: #3FB68B; --dn: #E0705F; --dry: #E5B15C;
+  --head: #1A222A; --hover: #1C242D;
+  --tier-a: #3FB68B; --tier-e: #E5B15C; --tier-b: #5CA3D6; --tier-c: #8B98A5; --tier-d: #5D6B7A;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.55 "Avenir Next", "Segoe UI", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+.masthead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; border-bottom: 3px solid var(--ink); padding-bottom: 14px; }
+.masthead h1 { font-size: 30px; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.masthead h1 em { font-style: normal; color: var(--accent); }
+.meta { color: var(--muted); font-size: 13px; }
+.meta b { color: var(--ink); font-weight: 600; }
+.summary { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 6px; }
+.summary a { text-decoration: none; color: inherit; }
+.stat { display: flex; align-items: center; gap: 9px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 14px; }
+.stat .dot { width: 10px; height: 10px; border-radius: 2px; }
+.stat b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12.5px; }
+.market { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 14px 18px; margin: 16px 0 4px; font-size: 14px; color: var(--muted); }
+.market strong { color: var(--ink); }
+.tier { margin-top: 34px; }
+.tier-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+.tier-head h2 { margin: 0; font-size: 19px; }
+.tier-head p { margin: 2px 0 0; color: var(--muted); font-size: 13.5px; max-width: 68ch; }
+.tier-head .count { margin-left: auto; color: var(--muted); font-size: 13px; white-space: nowrap; padding-top: 4px; }
+.badge { flex: none; width: 34px; height: 34px; border-radius: 6px; display: grid; place-items: center; font-weight: 700; font-size: 17px; color: var(--bg); }
+.tier-a .badge { background: var(--tier-a); } .tier-e .badge { background: var(--tier-e); }
+.tier-b .badge { background: var(--tier-b); } .tier-c .badge { background: var(--tier-c); }
+.tier-d .badge { background: var(--tier-d); }
+.tblwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13.5px; }
+th { background: var(--head); text-align: left; padding: 8px 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
+th small { display: block; font-size: 10px; letter-spacing: 0; text-transform: none; }
+td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+tbody tr:hover { background: var(--hover); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "SF Mono", "Cascadia Mono", Consolas, ui-monospace, monospace; font-size: 12.5px; white-space: nowrap; }
+td.tk { white-space: nowrap; }
+td.tk a { display: inline-block; font-weight: 700; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+td.tk a small { display: block; font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); border: 0; }
+td.tk a:hover, td.tk a:focus-visible { border-bottom-color: var(--accent); outline: none; }
+td.nm { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+td.up { color: var(--up); } td.dn { color: var(--dn); } td.flat { color: var(--muted); }
+td.pivot { color: var(--accent); font-weight: 600; }
+td.dry { color: var(--dry); font-weight: 600; }
+td.note { min-width: 260px; max-width: 420px; color: var(--muted); font-size: 12.5px; line-height: 1.45; }
+.chip-cal { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+.scorebar { display: inline-flex; align-items: center; gap: 7px; min-width: 92px; }
+.scorebar i { display: block; height: 5px; border-radius: 3px; background: var(--accent); min-width: 3px; max-width: 60px; flex: none; }
+.scorebar b { font-size: 12.5px; }
+.dwrap { display: flex; flex-wrap: wrap; gap: 7px; }
+.dchip { display: inline-flex; gap: 6px; align-items: baseline; background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; text-decoration: none; color: var(--muted); font-size: 12.5px; font-weight: 600; }
+.dchip small { color: var(--dn); font-weight: 400; font-variant-numeric: tabular-nums; }
+.dchip:hover, .dchip:focus-visible { border-color: var(--accent); color: var(--ink); outline: none; }
+.method { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 13.5px; max-width: 78ch; }
+.method h3 { color: var(--ink); font-size: 15px; margin: 0 0 8px; }
+.method ol { padding-left: 20px; margin: 8px 0; }
+.method li { margin: 4px 0; }
+.disclaimer { margin-top: 14px; font-size: 12.5px; color: var(--muted); border-left: 3px solid var(--dn); padding-left: 12px; }
+a { color: var(--accent); }
+@media (max-width: 640px) { .masthead h1 { font-size: 24px; } .tier-head .count { display: none; } }
+</style>
+<div class="wrap">
+<header class="masthead">
+  <h1>Pre-Breakout Watchlist <em>R0</em></h1>
+  <span class="meta"><b>美股全市場 · 116 檔</b> ｜ 數據基準 2026-08-21 收盤 ｜ 產生 2026.08.23 10:32 HKT ｜ Fable5;ultracode</span>
+</header>
+<nav class="summary">
+  <a href="#tier-a"><span class="stat"><span class="dot" style="background:var(--tier-a)"></span><b>75</b><span>A・VCP 待突破</span></span></a>
+  <a href="#tier-e"><span class="stat"><span class="dot" style="background:var(--tier-e)"></span><b>9</b><span>E・突破延伸中</span></span></a>
+  <a href="#tier-b"><span class="stat"><span class="dot" style="background:var(--tier-b)"></span><b>18</b><span>B・上升結構</span></span></a>
+  <a href="#tier-c"><span class="stat"><span class="dot" style="background:var(--tier-c)"></span><b>14</b><span>C・基底修復</span></span></a>
+  <a href="#tier-d"><span class="stat"><span class="dot" style="background:var(--tier-d)"></span><b>0</b><span>D・趨勢弱</span></span></a>
+</nav>
+<p class="market"><strong>市場背景</strong> — Stocks steadied on Friday Aug 21 after a tumultuous, yield-driven week: the S&amp;P 500 rose 0.43% to 7,674.37, the Nasdaq gained 0.43% to 26,180.45, and the Dow added 517.80 points (+0.98%) to 53,277.01 — but all three still posted weekly losses as bond-market volatility pressured risk assets. The 10-year Treasury yield ticked up to 4.74% Friday, keeping rates the market&#x27;s dominant macro variable. The coming week is catalyst-heavy: Nvidia reports Q2 FY27 earnings after the close Tuesday Aug 26 (Street expects ~$93-95B revenue, ~96% y/y growth on the Blackwell ramp; stock ~$219, +17.7% YTD), alongside CrowdStrike the same day. Then attention shifts to Jackson Hole (Aug 27-29, theme &quot;Financial Innovation: Implications for Payments and Policy&quot;), where new Fed Chair Kevin Warsh delivers his first keynote Friday Aug 28 at 10am ET — a debut landing 19 days before the Sept 16 FOMC decision, and closely watched given Warsh&#x27;s stated preference for narrower forward guidance. With yields elevated and AI leadership carrying the tape, the NVDA print and Warsh&#x27;s tone are likely to set direction into month-end.</p>
+<section class="tier tier-a" id="tier-a">
+<header class="tier-head"><span class="badge">A</span>
+<div><h2>VCP 緊縮・等待突破</h2><p>趨勢模板通過、距 52 週高點 ≤10%、近 1 個月波動收斂 ±7% 內 — 最接近 Minervini VCP 買點。</p></div>
+<span class="count">75 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:arwr" target="_blank" rel="noopener">ARWR<small>NASDAQ</small></a></td>
+<td class="nm">Arrowhead Pharmaceuticals Inc.</td>
+<td class="num">87.11</td>
+<td class="num">89.59</td>
+<td class="num pivot">+2.8%</td>
+<td class="num up">+0.4%</td>
+<td class="num up">+13.6%</td>
+<td class="num up">+36.8%</td>
+<td class="num up">+337.5%</td>
+<td class="num dry">0.46</td>
+<td class="num"><span class="scorebar"><i style="width:87%"></i><b>87.3</b></span></td>
+<td class="note">8/4 FQ3財報營收7,525萬美元遠超預期、EPS 1.36美元優於預期;REDEMPLO獲歐洲上市許可,並購入FDA優先審查券加速SHTG申請;Stifel目標價升至104美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:eqnr" target="_blank" rel="noopener">EQNR<small>NYSE</small></a></td>
+<td class="nm">Equinor ASA</td>
+<td class="num">42.86</td>
+<td class="num">42.86</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+4.6%</td>
+<td class="num up">+8.6%</td>
+<td class="num up">+56.9%</td>
+<td class="num up">+75.5%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:86%"></i><b>85.7</b></span></td>
+<td class="note">8/18宣布購入納米比亞PEL 90區塊17.4%權益及美國燃氣電廠(9.4億美元),並與Orlen簽三年原油供應協議;股價升至52週高;10/28公布Q3財報 <span class="chip chip-cal">財報 10/28</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:medp" target="_blank" rel="noopener">MEDP<small>NASDAQ</small></a></td>
+<td class="nm">Medpace Holdings Inc. Common S</td>
+<td class="num">620.75</td>
+<td class="num">620.75</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+2.5%</td>
+<td class="num up">+49.5%</td>
+<td class="num up">+45.0%</td>
+<td class="num up">+34.1%</td>
+<td class="num dry">0.63</td>
+<td class="num"><span class="scorebar"><i style="width:84%"></i><b>84.3</b></span></td>
+<td class="note">Q2財報顯示訂單與案源明顯回升,多家券商上調目標價,股價創新高;8/12 CEO Troendle出售2.3萬股(約1,400萬美元),12個月內幕人士淨賣出 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:stt" target="_blank" rel="noopener">STT<small>NYSE</small></a></td>
+<td class="nm">State Street Corporation Commo</td>
+<td class="num">187.13</td>
+<td class="num">193.04</td>
+<td class="num pivot">+3.2%</td>
+<td class="num up">+1.6%</td>
+<td class="num up">+22.4%</td>
+<td class="num up">+46.2%</td>
+<td class="num up">+68.3%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:84%"></i><b>84</b></span></td>
+<td class="note">Q2營收40.5億美元(+17.4%)、EPS 3.65美元(+68%)均超預期,AUM達6.28兆美元創新高;8/12完成4.96億美元優先股發行;10/14公布Q3財報 <span class="chip chip-cal">財報 10/14</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:jazz" target="_blank" rel="noopener">JAZZ<small>NASDAQ</small></a></td>
+<td class="nm">Jazz Pharmaceuticals plc Commo</td>
+<td class="num">254.28</td>
+<td class="num">261.62</td>
+<td class="num pivot">+2.9%</td>
+<td class="num dn">-0.2%</td>
+<td class="num up">+11.2%</td>
+<td class="num up">+51.4%</td>
+<td class="num up">+116.1%</td>
+<td class="num ">0.79</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>82.5</b></span></td>
+<td class="note">8/3 Q2 營收 12 億美元創新高(年增16%),上調全年營收指引;8/10 宣布收購 Actio Biosciences 擴充罕見癲癇產品線;11/11 盤後公布 Q3 財報 <span class="chip chip-cal">財報 11/11</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cldt" target="_blank" rel="noopener">CLDT<small>NYSE</small></a></td>
+<td class="nm">Chatham Lodging Trust (REIT) C</td>
+<td class="num">13.56</td>
+<td class="num">13.78</td>
+<td class="num pivot">+1.6%</td>
+<td class="num up">+2.1%</td>
+<td class="num up">+37.1%</td>
+<td class="num up">+78.2%</td>
+<td class="num up">+89.7%</td>
+<td class="num ">0.79</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>82.4</b></span></td>
+<td class="note">8/4 公布 Q2 財報,EPS 0.48 遠優於預期,商旅需求強勁並上調全年指引;分析師調升目標價至 15 美元;股價回升後暫停庫藏股 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:matx" target="_blank" rel="noopener">MATX<small>NYSE</small></a></td>
+<td class="nm">Matson Inc. Common Stock</td>
+<td class="num">222.80</td>
+<td class="num">223.55</td>
+<td class="num pivot">+0.3%</td>
+<td class="num up">+4.3%</td>
+<td class="num up">+23.9%</td>
+<td class="num up">+35.0%</td>
+<td class="num up">+111.8%</td>
+<td class="num ">0.71</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>82.3</b></span></td>
+<td class="note">8/3 Q2 淨利 1.29 億美元(EPS 4.27)年增約37%,上調 2026 全年營益指引;Stephens、JPMorgan 分別調升目標價至 260、270 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:bny" target="_blank" rel="noopener">BNY<small>NYSE</small></a></td>
+<td class="nm">The Bank of New York Mellon Co</td>
+<td class="num">158.49</td>
+<td class="num">164.27</td>
+<td class="num pivot">+3.6%</td>
+<td class="num dn">-1.0%</td>
+<td class="num up">+17.4%</td>
+<td class="num up">+33.4%</td>
+<td class="num up">+55.8%</td>
+<td class="num dry">0.6</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>82</b></span></td>
+<td class="note">Q2獲利與營收均超預期,今年來漲約38%為大型金融股領先者;8/20宣布9/20贖回全部F系列優先股;機構加碼,股價貼近高位 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:wst" target="_blank" rel="noopener">WST<small>NYSE</small></a></td>
+<td class="nm">West Pharmaceutical Services I</td>
+<td class="num">353.08</td>
+<td class="num">365.74</td>
+<td class="num pivot">+3.6%</td>
+<td class="num dn">-0.7%</td>
+<td class="num up">+16.6%</td>
+<td class="num up">+45.2%</td>
+<td class="num up">+45.2%</td>
+<td class="num dry">0.63</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>81.8</b></span></td>
+<td class="note">Q2 財報優於預期並上調 2026 營收展望,高價值產品需求強勁;7-8 月多家券商調升目標價(最高 459 美元);10/21 公布 Q3 財報 <span class="chip chip-cal">財報 10/21</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:fang" target="_blank" rel="noopener">FANG<small>NASDAQ</small></a></td>
+<td class="nm">Diamondback Energy Inc. Common</td>
+<td class="num">210.72</td>
+<td class="num">211.02</td>
+<td class="num pivot">+0.1%</td>
+<td class="num up">+2.5%</td>
+<td class="num up">+3.5%</td>
+<td class="num up">+25.0%</td>
+<td class="num up">+51.0%</td>
+<td class="num ">0.71</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>81.5</b></span></td>
+<td class="note">8/4 Q2 財報優於預期,上調全年產量指引並提高股利;8/17 Solitude 天然氣長途管線獲夥伴核准興建;多家券商維持買進評等 <span class="chip chip-cal">財報 11/09</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:gsat" target="_blank" rel="noopener">GSAT<small>NASDAQ</small></a></td>
+<td class="nm">Globalstar Inc. Common Stock</td>
+<td class="num">82.36</td>
+<td class="num">84.43</td>
+<td class="num pivot">+2.5%</td>
+<td class="num up">+4.0%</td>
+<td class="num up">+0.5%</td>
+<td class="num up">+39.5%</td>
+<td class="num up">+212.6%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:82%"></i><b>81.5</b></span></td>
+<td class="note">Q2 營收 6,477 萬美元不如預期、淨損 2,654 萬;新一批衛星成功發射部署;Craig-Hallum 降評至持有(目標價 90 美元),股價量縮整理 <span class="chip chip-cal">財報 11/05</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cnc" target="_blank" rel="noopener">CNC<small>NYSE</small></a></td>
+<td class="nm">Centene Corporation Common Sto</td>
+<td class="num">65.02</td>
+<td class="num">68.72</td>
+<td class="num pivot">+5.7%</td>
+<td class="num up">+2.0%</td>
+<td class="num up">+11.6%</td>
+<td class="num up">+57.7%</td>
+<td class="num up">+124.3%</td>
+<td class="num dry">0.64</td>
+<td class="num"><span class="scorebar"><i style="width:81%"></i><b>81</b></span></td>
+<td class="note">Argus 升評至買進、目標價 80 美元;8 月宣布 CFO 年底交接(Neczypor 接任),並計劃贖回部分債務、上調營收與獲利展望 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cbl" target="_blank" rel="noopener">CBL<small>NYSE</small></a></td>
+<td class="nm">CBL &amp; Associates Properties In</td>
+<td class="num">55.34</td>
+<td class="num">60.05</td>
+<td class="num pivot">+8.5%</td>
+<td class="num dn">-1.1%</td>
+<td class="num up">+18.8%</td>
+<td class="num up">+50.0%</td>
+<td class="num up">+82.7%</td>
+<td class="num dry">0.64</td>
+<td class="num"><span class="scorebar"><i style="width:81%"></i><b>80.8</b></span></td>
+<td class="note">8 月初公布 Q2 財報,營收與淨利成長並上調 2026 全年指引;宣布每股 0.62 美元股息(9/15 除息),年初至今漲逾 50% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cni" target="_blank" rel="noopener">CNI<small>NYSE</small></a></td>
+<td class="nm">Canadian National Railway Comp</td>
+<td class="num">129.84</td>
+<td class="num">130.58</td>
+<td class="num pivot">+0.6%</td>
+<td class="num dn">-0.6%</td>
+<td class="num up">+16.1%</td>
+<td class="num up">+19.7%</td>
+<td class="num up">+39.3%</td>
+<td class="num ">0.71</td>
+<td class="num"><span class="scorebar"><i style="width:80%"></i><b>80.1</b></span></td>
+<td class="note">8/11 宣布 2025-26 穀物年度運量創紀錄 3,380 萬噸;8/14 混合動力機車計畫進展;8/17 Wells Fargo 重申買進,股價貼近歷史高點 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:su" target="_blank" rel="noopener">SU<small>NYSE</small></a></td>
+<td class="nm">Suncor Energy  Inc. Common Sto</td>
+<td class="num">68.42</td>
+<td class="num">68.42</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+3.0%</td>
+<td class="num up">+0.2%</td>
+<td class="num up">+24.2%</td>
+<td class="num up">+77.3%</td>
+<td class="num ">0.83</td>
+<td class="num"><span class="scorebar"><i style="width:80%"></i><b>80</b></span></td>
+<td class="note">8/4 公布 Q2 淨利 37 億美元、調整後資金流追平季度紀錄,淨債大幅下降;8 月起月度回購提高至 5 億美元;8/19 Morgan Stanley 升評至加碼 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:rlay" target="_blank" rel="noopener">RLAY<small>NASDAQ</small></a></td>
+<td class="nm">Relay Therapeutics Inc. Common</td>
+<td class="num">19.44</td>
+<td class="num">20.75</td>
+<td class="num pivot">+6.7%</td>
+<td class="num up">+1.8%</td>
+<td class="num up">+59.3%</td>
+<td class="num up">+112.2%</td>
+<td class="num up">+460.2%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:80%"></i><b>79.9</b></span></td>
+<td class="note">8/6 公布 Q2:現金 9.11 億美元並擴大 ATM 增發;zovegalisib 乳癌一線與血管異常數據進展,8/18 創 52 週新高,Goldman 目標價 31 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:bfh" target="_blank" rel="noopener">BFH<small>NYSE</small></a></td>
+<td class="nm">Bread Financial Holdings Inc. </td>
+<td class="num">105.91</td>
+<td class="num">113.40</td>
+<td class="num pivot">+7.1%</td>
+<td class="num up">+2.2%</td>
+<td class="num up">+22.1%</td>
+<td class="num up">+44.8%</td>
+<td class="num up">+75.6%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:80%"></i><b>79.7</b></span></td>
+<td class="note">Q2 EPS 3.55 美元、營收年增 7%,淨損率降至 6.98% 信用品質改善;收緊 2026 全年損失展望;8/3 UBS 目標價升至 127 美元 <span class="chip chip-cal">財報 10/21</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mbx" target="_blank" rel="noopener">MBX<small>NASDAQ</small></a></td>
+<td class="nm">MBX Biosciences Inc. Common St</td>
+<td class="num">66.33</td>
+<td class="num">70.70</td>
+<td class="num pivot">+6.6%</td>
+<td class="num up">+4.3%</td>
+<td class="num up">+104.4%</td>
+<td class="num up">+68.4%</td>
+<td class="num up">+355.3%</td>
+<td class="num dry">0.52</td>
+<td class="num"><span class="scorebar"><i style="width:79%"></i><b>79.4</b></span></td>
+<td class="note">8/6 公布Q2:canvuparatide 一年數據正面,Phase 3 oPTimize 擬Q3啟動;減重藥 MBX 4291 八週減重7%;8/10 Truist 目標價升至88美元;CEO 換帥由 Hoerter 接任 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:aple" target="_blank" rel="noopener">APLE<small>NYSE</small></a></td>
+<td class="nm">Apple Hospitality REIT Inc. Co</td>
+<td class="num">16.67</td>
+<td class="num">17.07</td>
+<td class="num pivot">+2.4%</td>
+<td class="num up">+0.4%</td>
+<td class="num up">+21.1%</td>
+<td class="num up">+35.6%</td>
+<td class="num up">+36.3%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.4</b></span></td>
+<td class="note">8/6 公布Q2:RevPAR 年增逾5%、MFFO 0.52 優於去年,上調全年淨利指引;8/6 Compass Point 升評至買進,8/7 Ladenburg 目標價升至18美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:pvla" target="_blank" rel="noopener">PVLA<small>NASDAQ</small></a></td>
+<td class="nm">Palvella Therapeutics Inc. Com</td>
+<td class="num">142.04</td>
+<td class="num">157.77</td>
+<td class="num pivot">+11.1%</td>
+<td class="num dn">-0.8%</td>
+<td class="num up">+24.3%</td>
+<td class="num up">+77.4%</td>
+<td class="num up">+186.7%</td>
+<td class="num ">0.72</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.4</b></span></td>
+<td class="note">8/4 公布Q2:QTORIN rapamycin 微囊型淋巴管畸形滾動式 NDA 首模組已提交 FDA,擬2026下半年完成申報、2027上半年上市;具突破性療法認定 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:rprx" target="_blank" rel="noopener">RPRX<small>NASDAQ</small></a></td>
+<td class="nm">Royalty Pharma plc Class A Ord</td>
+<td class="num">61.31</td>
+<td class="num">61.73</td>
+<td class="num pivot">+0.7%</td>
+<td class="num up">+3.9%</td>
+<td class="num up">+16.0%</td>
+<td class="num up">+35.0%</td>
+<td class="num up">+70.7%</td>
+<td class="num ">0.9</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.4</b></span></td>
+<td class="note">8/5 公布Q2:營收6.74億美元優於預期,上調2026全年權利金收入展望;8/12 以1億美元取得 Zealand rusfertide 權利金經濟權益;9/10 配息0.235美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:unf" target="_blank" rel="noopener">UNF<small>NYSE</small></a></td>
+<td class="nm">Unifirst Corporation Common St</td>
+<td class="num">290.25</td>
+<td class="num">301.19</td>
+<td class="num pivot">+3.8%</td>
+<td class="num up">+0.2%</td>
+<td class="num up">+11.2%</td>
+<td class="num up">+21.8%</td>
+<td class="num up">+66.2%</td>
+<td class="num ">0.73</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.4</b></span></td>
+<td class="note">近期無重大消息,7/1 公布上季財報後貼近52週高、量縮整理;宣布季息0.365美元(9/4除息);下次財報(FY26 Q4)預計10/28 <span class="chip chip-cal">財報 10/28</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:rcus" target="_blank" rel="noopener">RCUS<small>NYSE</small></a></td>
+<td class="nm">Arcus Biosciences Inc. Common </td>
+<td class="num">30.34</td>
+<td class="num">31.08</td>
+<td class="num pivot">+2.4%</td>
+<td class="num up">+2.1%</td>
+<td class="num up">+27.6%</td>
+<td class="num up">+57.7%</td>
+<td class="num up">+189.8%</td>
+<td class="num ">0.91</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.3</b></span></td>
+<td class="note">8月中公布Q2:營收4,100萬美元並釋出全年營收指引;與 Summit 合作癌症組合療法、casdatifan 腎癌前景獲看好,一年股價漲約200% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:alrs" target="_blank" rel="noopener">ALRS<small>NASDAQ</small></a></td>
+<td class="nm">Alerus Financial Corporation C</td>
+<td class="num">32.77</td>
+<td class="num">34.12</td>
+<td class="num pivot">+4.1%</td>
+<td class="num up">+1.9%</td>
+<td class="num up">+23.4%</td>
+<td class="num up">+28.6%</td>
+<td class="num up">+52.0%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78.2</b></span></td>
+<td class="note">7/29 公布 Q2 財報,營收 8,065 萬美元年增 7% 優於預期;8/3 Raymond James 重申優於大盤、目標價 37 美元,8/17 Weiss 降評至持有;股價貼近歷史高點 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:expd" target="_blank" rel="noopener">EXPD<small>NYSE</small></a></td>
+<td class="nm">Expeditors International of Wa</td>
+<td class="num">187.81</td>
+<td class="num">188.27</td>
+<td class="num pivot">+0.2%</td>
+<td class="num up">+6.6%</td>
+<td class="num up">+20.8%</td>
+<td class="num up">+27.6%</td>
+<td class="num up">+56.5%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>77.9</b></span></td>
+<td class="note">8/4 公布 Q2 財報,EPS 2.03 美元年增 51%,大勝共識 1.69;營收 35 億美元年增 32%、空運噸數增 14%;8/14 創歷史新高 188.31,分析師普遍上調預估 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:syre" target="_blank" rel="noopener">SYRE<small>NASDAQ</small></a></td>
+<td class="nm">Spyre Therapeutics Inc. Common</td>
+<td class="num">106.49</td>
+<td class="num">108.92</td>
+<td class="num pivot">+2.3%</td>
+<td class="num up">+6.5%</td>
+<td class="num up">+42.1%</td>
+<td class="num up">+196.2%</td>
+<td class="num up">+528.6%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>77.2</b></span></td>
+<td class="note">8/4 公布 SKYLINE 二期 SPY001/SPY002 誘導期正面數據,Mizuho 上調目標價至 120 美元;9 月待公布 SPY003 及 SKYWAY 數據;現金 11.4 億美元,股價創 52 週新高 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:unp" target="_blank" rel="noopener">UNP<small>NYSE</small></a></td>
+<td class="nm">Union Pacific Corporation Comm</td>
+<td class="num">308.05</td>
+<td class="num">308.05</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+1.2%</td>
+<td class="num up">+13.9%</td>
+<td class="num up">+17.2%</td>
+<td class="num up">+40.0%</td>
+<td class="num ">0.85</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>77.2</b></span></td>
+<td class="note">與 Norfolk Southern 850 億美元合併案 8/20 獲 STB 恢復審查,最終裁決延至 2027 年第二季;Q2 財報優於預期,股價守穩歷史高點附近;10/22 公布 Q3 財報 <span class="chip chip-cal">財報 10/22</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:cyrx" target="_blank" rel="noopener">CYRX<small>NASDAQ</small></a></td>
+<td class="nm">CryoPort Inc. Common Stock</td>
+<td class="num">17.13</td>
+<td class="num">17.13</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+6.9%</td>
+<td class="num up">+30.4%</td>
+<td class="num up">+102.2%</td>
+<td class="num up">+94.9%</td>
+<td class="num ">0.89</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.9</b></span></td>
+<td class="note">8/6 公布 Q2 財報,營收 4,900 萬美元年增 8%、調整後 EBITDA 轉正;重申全年指引 1.92-1.96 億美元;Roth 目標價由 15 上調至 21 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:hshp" target="_blank" rel="noopener">HSHP<small>NYSE</small></a></td>
+<td class="nm">Himalaya Shipping Ltd. Common </td>
+<td class="num">16.59</td>
+<td class="num">16.59</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+3.9%</td>
+<td class="num up">+5.5%</td>
+<td class="num up">+30.9%</td>
+<td class="num up">+121.8%</td>
+<td class="num ">1.16</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.9</b></span></td>
+<td class="note">8/11 公布 Q2,淨利 2,460 萬美元、TCE 日租 50,600 美元年增 78%,受惠 16 年來最強 Capesize 市況;連續 31 個月配息,8/21 NYSE 除息 0.22 美元;獲升評創 52 週新高 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:drh" target="_blank" rel="noopener">DRH<small>NASDAQ</small></a></td>
+<td class="nm">Diamondrock Hospitality Compan</td>
+<td class="num">12.82</td>
+<td class="num">13.38</td>
+<td class="num pivot">+4.4%</td>
+<td class="num up">+1.2%</td>
+<td class="num up">+24.5%</td>
+<td class="num up">+28.3%</td>
+<td class="num up">+61.3%</td>
+<td class="num ">0.8</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.8</b></span></td>
+<td class="note">Q2 RevPAR 年增7%,上調2026指引與股息;8/3 美銀調升目標價至14美元,8月獲多家機構新增持股 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=amex:nhc" target="_blank" rel="noopener">NHC<small>AMEX</small></a></td>
+<td class="nm">National HealthCare Corporatio</td>
+<td class="num">233.40</td>
+<td class="num">236.75</td>
+<td class="num pivot">+1.4%</td>
+<td class="num up">+5.4%</td>
+<td class="num up">+20.5%</td>
+<td class="num up">+41.5%</td>
+<td class="num up">+116.6%</td>
+<td class="num ">0.85</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.7</b></span></td>
+<td class="note">Q2 營收年增8.8%至4.08億美元,受惠6/1收購5家護理機構;調整後EPS 1.74美元,季度股息上調4.7% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:trvi" target="_blank" rel="noopener">TRVI<small>NASDAQ</small></a></td>
+<td class="nm">Trevi Therapeutics Inc. Common</td>
+<td class="num">17.96</td>
+<td class="num">19.50</td>
+<td class="num pivot">+8.6%</td>
+<td class="num up">+4.5%</td>
+<td class="num up">+26.5%</td>
+<td class="num up">+76.9%</td>
+<td class="num up">+141.1%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.7</b></span></td>
+<td class="note">Haduvio 治IPF慢性咳嗽Phase 2b CORAL數據正面;8/6公布Q2財報,8/7 Cantor調升目標價至30美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:sobo" target="_blank" rel="noopener">SOBO<small>NYSE</small></a></td>
+<td class="nm">South Bow Corporation Common S</td>
+<td class="num">37.72</td>
+<td class="num">38.67</td>
+<td class="num pivot">+2.5%</td>
+<td class="num dn">-2.5%</td>
+<td class="num up">+1.2%</td>
+<td class="num up">+26.5%</td>
+<td class="num up">+35.1%</td>
+<td class="num dry">0.58</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.6</b></span></td>
+<td class="note">8/5 公布Q2:EPS 0.50美元、營收5.46億美元均優於預期;8/7 Barclays調升目標價至35美元 <span class="chip chip-cal">財報 11/12</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:rrbi" target="_blank" rel="noopener">RRBI<small>NASDAQ</small></a></td>
+<td class="nm">Red River Bancshares Inc. Comm</td>
+<td class="num">101.56</td>
+<td class="num">103.43</td>
+<td class="num pivot">+1.8%</td>
+<td class="num up">+4.5%</td>
+<td class="num up">+14.1%</td>
+<td class="num up">+11.9%</td>
+<td class="num up">+61.4%</td>
+<td class="num dry">0.53</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.5</b></span></td>
+<td class="note">7/30 公布Q2:淨利1,180萬美元,EPS 1.78年增15.4%;股息上調66.7%至0.25美元並批准1,000萬美元回購 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:fti" target="_blank" rel="noopener">FTI<small>NYSE</small></a></td>
+<td class="nm">TechnipFMC plc Ordinary Share</td>
+<td class="num">77.45</td>
+<td class="num">79.81</td>
+<td class="num pivot">+3.0%</td>
+<td class="num up">+1.9%</td>
+<td class="num up">+8.7%</td>
+<td class="num up">+26.4%</td>
+<td class="num up">+121.1%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.4</b></span></td>
+<td class="note">Q2 EPS 0.90美元優於去年,Subsea利潤率逾23%並上調全年指引;8/17獲Azule West Hub軟管合約,8/18董事買股50萬美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:geo" target="_blank" rel="noopener">GEO<small>NYSE</small></a></td>
+<td class="nm">Geo Group Inc (The) REIT</td>
+<td class="num">32.71</td>
+<td class="num">32.71</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+5.3%</td>
+<td class="num up">+42.7%</td>
+<td class="num up">+124.3%</td>
+<td class="num up">+56.4%</td>
+<td class="num ">1.16</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.4</b></span></td>
+<td class="note">8/6 Q2營收+15%至7.32億美元、純益+63%,上調FY26全年指引;新簽ICE Rivers設施5年合約(年營收約8,000萬美元),已回購7.5%股份,分析師調高目標價至40美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:uhal" target="_blank" rel="noopener">UHAL<small>NYSE</small></a></td>
+<td class="nm">U-Haul Holding Company Common </td>
+<td class="num">71.41</td>
+<td class="num">75.27</td>
+<td class="num pivot">+5.4%</td>
+<td class="num dn">-0.7%</td>
+<td class="num up">+46.7%</td>
+<td class="num up">+42.1%</td>
+<td class="num up">+23.3%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.2</b></span></td>
+<td class="note">8月初公布FY27 Q1:營收16.8億美元,純益1.229億低於去年同期1.423億;管理層稱倉儲出租加速、車輛轉售重回獲利;股價於70美元附近量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:trst" target="_blank" rel="noopener">TRST<small>NASDAQ</small></a></td>
+<td class="nm">TrustCo Bank Corp NY Common St</td>
+<td class="num">56.83</td>
+<td class="num">57.78</td>
+<td class="num pivot">+1.7%</td>
+<td class="num up">+0.7%</td>
+<td class="num up">+17.5%</td>
+<td class="num up">+23.7%</td>
+<td class="num up">+60.4%</td>
+<td class="num ">1.08</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.1</b></span></td>
+<td class="note">Q2純益+12.8%至1,700萬美元,NIM升至2.87%,平均貸款53億美元創新高;季息上調5.3%至0.40美元;依慣例約10/21公布Q3財報 <span class="chip chip-cal">財報 10/21</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:hsbc" target="_blank" rel="noopener">HSBC<small>NYSE</small></a></td>
+<td class="nm">HSBC Holdings plc. Common Stoc</td>
+<td class="num">104.15</td>
+<td class="num">107.86</td>
+<td class="num pivot">+3.6%</td>
+<td class="num up">+2.4%</td>
+<td class="num up">+17.8%</td>
+<td class="num up">+20.3%</td>
+<td class="num up">+62.9%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>75.8</b></span></td>
+<td class="note">8/4上半年稅前盈利195億美元(+23%)優於預期,重啟10億美元回購並上調成本節省目標至20億美元;股價近歷史高位量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:msgs" target="_blank" rel="noopener">MSGS<small>NYSE</small></a></td>
+<td class="nm">Madison Square Garden Sports C</td>
+<td class="num">406.16</td>
+<td class="num">414.12</td>
+<td class="num pivot">+2.0%</td>
+<td class="num up">+3.0%</td>
+<td class="num up">+15.5%</td>
+<td class="num up">+38.3%</td>
+<td class="num up">+106.3%</td>
+<td class="num ">1.13</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>75.7</b></span></td>
+<td class="note">8/13 FY26 Q4財報大幅優於預期(Knicks奪NBA冠軍帶動),全年營收+11%;擬10月底前分拆Rangers為兩家上市公司以釋放價值,股價創歷史新高 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:max" target="_blank" rel="noopener">MAX<small>NYSE</small></a></td>
+<td class="nm">MediaAlpha Inc. Class A Common</td>
+<td class="num">12.94</td>
+<td class="num">14.27</td>
+<td class="num pivot">+10.3%</td>
+<td class="num dn">-1.2%</td>
+<td class="num up">+60.5%</td>
+<td class="num up">+76.5%</td>
+<td class="num up">+27.6%</td>
+<td class="num dry">0.58</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>75.6</b></span></td>
+<td class="note">7/29 Q2轉虧為盈(純益4,180萬美元),調整後EBITDA+19%,Q3營收指引3.3-3.55億美元優於預期;過去四季已回購約13%流通股 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:dnth" target="_blank" rel="noopener">DNTH<small>NASDAQ</small></a></td>
+<td class="nm">Dianthus Therapeutics Inc. Com</td>
+<td class="num">111.10</td>
+<td class="num">115.96</td>
+<td class="num pivot">+4.4%</td>
+<td class="num up">+6.0%</td>
+<td class="num up">+28.9%</td>
+<td class="num up">+125.8%</td>
+<td class="num up">+430.1%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>75.5</b></span></td>
+<td class="note">8/4 Q2 虧損 EPS -0.90 略遜預期,惟發表新藥 DNTH312 拓展自體免疫布局,股價創一年新高;8/5 Wedbush 目標價由 105 升至 122 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:tgtx" target="_blank" rel="noopener">TGTX<small>NASDAQ</small></a></td>
+<td class="nm">TG Therapeutics Inc. Common St</td>
+<td class="num">54.27</td>
+<td class="num">59.06</td>
+<td class="num pivot">+8.8%</td>
+<td class="num dn">-2.2%</td>
+<td class="num up">+37.4%</td>
+<td class="num up">+86.8%</td>
+<td class="num up">+95.7%</td>
+<td class="num ">0.82</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.4</b></span></td>
+<td class="note">8/3 Q2 營收約 2.4 億美元年增 70% 惟 EPS 遜預期,上調全年 BRIUMVI 營收指引;8/21 傳大型藥廠有意收購,股價跳漲 7.2% <span class="chip chip-cal">財報 11/09</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ebc" target="_blank" rel="noopener">EBC<small>NASDAQ</small></a></td>
+<td class="nm">Eastern Bankshares Inc. Common</td>
+<td class="num">22.74</td>
+<td class="num">23.65</td>
+<td class="num pivot">+4.0%</td>
+<td class="num up">+0.5%</td>
+<td class="num up">+18.5%</td>
+<td class="num up">+5.3%</td>
+<td class="num up">+43.3%</td>
+<td class="num dry">0.51</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.3</b></span></td>
+<td class="note">7/23 Q2 財報優於預期,HarborOne 併購綜效顯現,效率比率由 52.8% 改善至 49.0%;全年指引貸款成長 3-5%,成本節省按計劃進行 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:wsfs" target="_blank" rel="noopener">WSFS<small>NASDAQ</small></a></td>
+<td class="nm">WSFS Financial Corporation Com</td>
+<td class="num">79.88</td>
+<td class="num">82.29</td>
+<td class="num pivot">+3.0%</td>
+<td class="num up">+1.2%</td>
+<td class="num up">+14.3%</td>
+<td class="num up">+19.2%</td>
+<td class="num up">+44.5%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.2</b></span></td>
+<td class="note">Q2 EPS 1.63 美元優於預期並上調全年指引,財富信託費收入年增 17%;8/3 Piper Sandler 目標價升至 90 美元,股價創歷史新高 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:bns" target="_blank" rel="noopener">BNS<small>NYSE</small></a></td>
+<td class="nm">Bank Nova Scotia Halifax Pfd 3</td>
+<td class="num">87.57</td>
+<td class="num">91.54</td>
+<td class="num pivot">+4.5%</td>
+<td class="num up">+1.1%</td>
+<td class="num up">+13.6%</td>
+<td class="num up">+14.9%</td>
+<td class="num up">+54.0%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.1</b></span></td>
+<td class="note">8/25 盤前公布 Q3 財報,市場預估 EPS 2.09;所持 KeyCorp 股權預計貢獻 Q3 調整後淨利約 9,000 萬加元 <span class="chip chip-cal">財報 08/25</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:chrd" target="_blank" rel="noopener">CHRD<small>NASDAQ</small></a></td>
+<td class="nm">Chord Energy Corporation Commo</td>
+<td class="num">147.85</td>
+<td class="num">148.81</td>
+<td class="num pivot">+0.6%</td>
+<td class="num up">+6.5%</td>
+<td class="num dn">-0.4%</td>
+<td class="num up">+48.7%</td>
+<td class="num up">+45.4%</td>
+<td class="num ">0.82</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75</b></span></td>
+<td class="note">8/5 Q2 EPS 6.44 美元遜預期,惟自由現金流 4.14 億美元強勁,Q3 起承諾回饋至少 75% FCF;8/17 UBS 目標價升至 171 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:ofg" target="_blank" rel="noopener">OFG<small>NYSE</small></a></td>
+<td class="nm">OFG Bancorp Common Stock</td>
+<td class="num">52.23</td>
+<td class="num">53.95</td>
+<td class="num pivot">+3.3%</td>
+<td class="num dn">-0.4%</td>
+<td class="num up">+18.8%</td>
+<td class="num up">+23.8%</td>
+<td class="num up">+21.4%</td>
+<td class="num dry">0.61</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>74.8</b></span></td>
+<td class="note">7/21 Q2 EPS 1.39美元優於預期，NIM上升、信貸趨勢正面，Truist目標價升至58美元；8月中董事與CFO申報減持；股價貼近52週高52.23量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:tigo" target="_blank" rel="noopener">TIGO<small>NASDAQ</small></a></td>
+<td class="nm">Millicom International Cellula</td>
+<td class="num">93.68</td>
+<td class="num">104.31</td>
+<td class="num pivot">+11.3%</td>
+<td class="num dn">-2.7%</td>
+<td class="num up">+18.2%</td>
+<td class="num up">+41.5%</td>
+<td class="num up">+108.5%</td>
+<td class="num ">0.75</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>74.8</b></span></td>
+<td class="note">8/6 Q2營收21.8億美元、EBITDA增58%，上調全年EFCF指引至約11億美元並宣布每股1.5美元中期股息；8/18曾跌7.5%，8/21反彈3.5%收93.68 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:kmx" target="_blank" rel="noopener">KMX<small>NYSE</small></a></td>
+<td class="nm">CarMax Inc</td>
+<td class="num">62.13</td>
+<td class="num">62.13</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+6.4%</td>
+<td class="num up">+68.2%</td>
+<td class="num up">+47.1%</td>
+<td class="num up">+6.3%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>74.7</b></span></td>
+<td class="note">6月底Q1 FY27財報：營收增6.2%、零售銷量增3.3%，降價搶回市佔，二手車需求帶動股價3個月大漲68%創52週高；9/25公布Q2財報 <span class="chip chip-cal">財報 09/25</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cdp" target="_blank" rel="noopener">CDP<small>NYSE</small></a></td>
+<td class="nm">COPT Defense Properties Common</td>
+<td class="num">37.27</td>
+<td class="num">38.35</td>
+<td class="num pivot">+2.9%</td>
+<td class="num dn">-0.6%</td>
+<td class="num up">+17.5%</td>
+<td class="num up">+17.4%</td>
+<td class="num up">+35.1%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.5</b></span></td>
+<td class="note">8月初上調全年EPS指引至1.39-1.43美元；8/13宣布Q3每股0.32美元股息；7/30創歷史收盤新高38.35，國防設施租賃需求穩健（REIT保留） </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:amn" target="_blank" rel="noopener">AMN<small>NYSE</small></a></td>
+<td class="nm">AMN Healthcare Services Inc</td>
+<td class="num">34.46</td>
+<td class="num">36.60</td>
+<td class="num pivot">+6.2%</td>
+<td class="num up">+4.2%</td>
+<td class="num up">+20.4%</td>
+<td class="num up">+110.3%</td>
+<td class="num up">+77.4%</td>
+<td class="num ">0.79</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.4</b></span></td>
+<td class="note">8/6 Q2調整後EPS 0.77美元遠勝預期0.18，旅護與醫療人力需求回升、搜尋業務增27%，盤後大漲12%；UBS、Baird上調目標價 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:bjri" target="_blank" rel="noopener">BJRI<small>NASDAQ</small></a></td>
+<td class="nm">BJ&#x27;s Restaurants Inc. Common S</td>
+<td class="num">66.76</td>
+<td class="num">74.26</td>
+<td class="num pivot">+11.2%</td>
+<td class="num up">+2.6%</td>
+<td class="num up">+58.7%</td>
+<td class="num up">+58.3%</td>
+<td class="num up">+91.7%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.4</b></span></td>
+<td class="note">Q2營收3.89億美元增6.4%、同店銷售+6.5%、客流+8.3%，惟費用增加致EPS降至0.86；上調全年同店銷售與EBITDA指引 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:eog" target="_blank" rel="noopener">EOG<small>NYSE</small></a></td>
+<td class="nm">EOG Resources Inc. Common Stoc</td>
+<td class="num">153.05</td>
+<td class="num">153.05</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+5.2%</td>
+<td class="num up">+9.1%</td>
+<td class="num up">+27.8%</td>
+<td class="num up">+30.0%</td>
+<td class="num ">0.74</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.4</b></span></td>
+<td class="note">8/4 Q2財報創紀錄,調整後EPS 5.07美元、自由現金流28億美元優於預期;股價創歷史新高,8/6 Truist上調目標價至153美元,並宣布季息1.02美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:abbv" target="_blank" rel="noopener">ABBV<small>NYSE</small></a></td>
+<td class="nm">AbbVie Inc. Common Stock</td>
+<td class="num">264.96</td>
+<td class="num">265.97</td>
+<td class="num pivot">+0.4%</td>
+<td class="num up">+3.1%</td>
+<td class="num up">+25.9%</td>
+<td class="num up">+13.8%</td>
+<td class="num up">+28.3%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>74.3</b></span></td>
+<td class="note">8月初Q2財報強勁,營收170億美元、調整後EPS年增22.9%,上調全年營收指引至約676億美元;Skyrizi/Rinvoq領軍,發債支應收購Apogee;10/23公布Q3財報 <span class="chip chip-cal">財報 10/23</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:trgp" target="_blank" rel="noopener">TRGP<small>NYSE</small></a></td>
+<td class="nm">Targa Resources Inc. Common St</td>
+<td class="num">299.10</td>
+<td class="num">302.25</td>
+<td class="num pivot">+1.1%</td>
+<td class="num up">+4.7%</td>
+<td class="num up">+10.0%</td>
+<td class="num up">+33.4%</td>
+<td class="num up">+85.7%</td>
+<td class="num ">1.03</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.9</b></span></td>
+<td class="note">Q2調整後EBITDA年增38%創紀錄並上調指引;8/18宣布與ExxonMobil簽長期中游協議,股價當日漲7%,Morgan Stanley/Jefferies上調目標價至343/345美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:voya" target="_blank" rel="noopener">VOYA<small>NYSE</small></a></td>
+<td class="nm">Voya Financial Inc. Common Sto</td>
+<td class="num">97.76</td>
+<td class="num">101.52</td>
+<td class="num pivot">+3.8%</td>
+<td class="num up">+1.0%</td>
+<td class="num up">+20.0%</td>
+<td class="num up">+31.4%</td>
+<td class="num up">+32.3%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.9</b></span></td>
+<td class="note">8/5 Q2財報不及預期(EPS 0.99、淨利年減44%),但退休業務帳戶數創紀錄;8/10 TOMS Capital發起股東行動主義施壓董事會;JPMorgan上調目標價至105美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ccbg" target="_blank" rel="noopener">CCBG<small>NASDAQ</small></a></td>
+<td class="nm">Capital City Bank Group Common</td>
+<td class="num">51.33</td>
+<td class="num">52.84</td>
+<td class="num pivot">+2.9%</td>
+<td class="num up">+0.7%</td>
+<td class="num up">+12.9%</td>
+<td class="num up">+19.6%</td>
+<td class="num up">+26.3%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.8</b></span></td>
+<td class="note">7/21 Q2財報淨利1,630萬美元(EPS 0.95)連三季成長,NIM升至4.35%,資本充足;其後無重大新聞,股價貼近52週高、量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:karo" target="_blank" rel="noopener">KARO<small>NASDAQ</small></a></td>
+<td class="nm">Karooooo Ltd. Ordinary Shares</td>
+<td class="num">63.96</td>
+<td class="num">65.91</td>
+<td class="num pivot">+3.0%</td>
+<td class="num up">+4.5%</td>
+<td class="num up">+38.9%</td>
+<td class="num up">+38.0%</td>
+<td class="num up">+33.9%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.7</b></span></td>
+<td class="note">7/15公布FY27 Q1營收年增22%,淨訂閱用戶新增14.2萬創紀錄,重申全年指引(EPS年增約21%);分析師平均評級為強力買進,目標價約63美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:fbp" target="_blank" rel="noopener">FBP<small>NYSE</small></a></td>
+<td class="nm">First BanCorp. New Common Stoc</td>
+<td class="num">28.52</td>
+<td class="num">29.70</td>
+<td class="num pivot">+4.1%</td>
+<td class="num dn">-1.1%</td>
+<td class="num up">+22.5%</td>
+<td class="num up">+26.4%</td>
+<td class="num up">+33.9%</td>
+<td class="num ">0.73</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.6</b></span></td>
+<td class="note">7/22 公布 Q2 財報；季度股息升至 $0.20（8/27 除息）並有 $2.5 億回購計畫；分析師共識買進、目標價約 $30.7，貼近 52 週高量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:parr" target="_blank" rel="noopener">PARR<small>NYSE</small></a></td>
+<td class="nm">Par Pacific Holdings Inc.  Com</td>
+<td class="num">79.03</td>
+<td class="num">86.03</td>
+<td class="num pivot">+8.9%</td>
+<td class="num up">+1.8%</td>
+<td class="num up">+35.6%</td>
+<td class="num up">+83.7%</td>
+<td class="num up">+163.6%</td>
+<td class="num ">0.94</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.6</b></span></td>
+<td class="note">8/4 盤後 Q2 財報大勝預期：調整後 EPS $10.10 遠超預估 $8.17，淨利 $4.62 億年增近 7 倍，夏威夷 SAF 投產帶動；財報後股價震盪整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:csx" target="_blank" rel="noopener">CSX<small>NASDAQ</small></a></td>
+<td class="nm">CSX Corporation Common Stock</td>
+<td class="num">51.59</td>
+<td class="num">53.23</td>
+<td class="num pivot">+3.2%</td>
+<td class="num dn">-2.3%</td>
+<td class="num up">+13.0%</td>
+<td class="num up">+25.7%</td>
+<td class="num up">+43.3%</td>
+<td class="num ">0.74</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.5</b></span></td>
+<td class="note">Q2 營收 $39.4 億年增 10.1%、EPS $0.54 優於預期，並上調 2026 全年營收指引至中高個位數成長；YTD 漲逾 40%；10/15 盤後公布 Q3 財報 <span class="chip chip-cal">財報 10/15</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:kfrc" target="_blank" rel="noopener">KFRC<small>NYSE</small></a></td>
+<td class="nm">Kforce Inc. Common Stock</td>
+<td class="num">58.39</td>
+<td class="num">60.45</td>
+<td class="num pivot">+3.5%</td>
+<td class="num up">+3.0%</td>
+<td class="num up">+47.9%</td>
+<td class="num up">+107.3%</td>
+<td class="num up">+82.5%</td>
+<td class="num ">1.04</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.5</b></span></td>
+<td class="note">7/27 公布 Q2 財報，科技與顧問業務動能強，職缺與新指派數年增 18%、營收連續季度成長；分析師上調目標價至約 $60.7；年內大漲約 90% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:nwbi" target="_blank" rel="noopener">NWBI<small>NASDAQ</small></a></td>
+<td class="nm">Northwest Bancshares Inc. Comm</td>
+<td class="num">15.42</td>
+<td class="num">16.01</td>
+<td class="num pivot">+3.8%</td>
+<td class="num up">+0.9%</td>
+<td class="num up">+15.1%</td>
+<td class="num up">+18.3%</td>
+<td class="num up">+28.9%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>73.4</b></span></td>
+<td class="note">Q2 淨利創紀錄 $5,400 萬（EPS $0.36 vs 去年同期 $0.26），重申全年營收指引；8/20 董事買入 1,635 股；連續 127 季配息，貼近 52 週高量縮 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ibkr" target="_blank" rel="noopener">IBKR<small>NASDAQ</small></a></td>
+<td class="nm">Interactive Brokers Group Inc.</td>
+<td class="num">93.87</td>
+<td class="num">97.41</td>
+<td class="num pivot">+3.8%</td>
+<td class="num up">+2.3%</td>
+<td class="num up">+7.9%</td>
+<td class="num up">+28.1%</td>
+<td class="num up">+47.5%</td>
+<td class="num ">0.81</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>73.1</b></span></td>
+<td class="note">8/5 開放巴西 B3 期貨交易、8/13 新增羅馬尼亞布加勒斯特交易所；8/4 Barclays 重申買進；YTD 漲約 33%；10/15 預計公布 Q3 財報 <span class="chip chip-cal">財報 10/15</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:hg" target="_blank" rel="noopener">HG<small>NYSE</small></a></td>
+<td class="nm">Hamilton Insurance Group Ltd. </td>
+<td class="num">34.96</td>
+<td class="num">37.28</td>
+<td class="num pivot">+6.6%</td>
+<td class="num up">+0.2%</td>
+<td class="num up">+9.8%</td>
+<td class="num up">+11.3%</td>
+<td class="num up">+51.9%</td>
+<td class="num ">0.72</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>73</b></span></td>
+<td class="note">8/6 公布 Q2 財報:營收年增13.3%至8.4億美元,EPS 1.56美元超預期29%;8月更新庫藏股,累計回購約1.63億美元,年初至今漲約31% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amal" target="_blank" rel="noopener">AMAL<small>NASDAQ</small></a></td>
+<td class="nm">Amalgamated Financial Corp. Co</td>
+<td class="num">48.76</td>
+<td class="num">51.08</td>
+<td class="num pivot">+4.8%</td>
+<td class="num up">+0.2%</td>
+<td class="num up">+22.9%</td>
+<td class="num up">+18.9%</td>
+<td class="num up">+68.8%</td>
+<td class="num ">0.94</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.9</b></span></td>
+<td class="note">7/23 公布 Q2 創紀錄淨利3,480萬美元,NIM 升至3.78%,存款規模續增;8/20 配發每股0.17美元股息,連續4年增息;貼近52週高量縮整理 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:meoh" target="_blank" rel="noopener">MEOH<small>NASDAQ</small></a></td>
+<td class="nm">Methanex Corporation Common St</td>
+<td class="num">60.10</td>
+<td class="num">64.25</td>
+<td class="num pivot">+6.9%</td>
+<td class="num up">+3.6%</td>
+<td class="num dn">-5.2%</td>
+<td class="num up">+25.7%</td>
+<td class="num up">+76.9%</td>
+<td class="num ">0.71</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.9</b></span></td>
+<td class="note">Q2 財報創北美產量新高,受惠甲醇價格上漲,調整後 EBITDA 達5.77億美元;8/20 股價漲3.8%,近一年累漲約77% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:gnk" target="_blank" rel="noopener">GNK<small>NYSE</small></a></td>
+<td class="nm">Genco Shipping &amp; Trading Limit</td>
+<td class="num">26.52</td>
+<td class="num">26.77</td>
+<td class="num pivot">+0.9%</td>
+<td class="num up">+3.0%</td>
+<td class="num up">+7.7%</td>
+<td class="num up">+17.7%</td>
+<td class="num up">+62.8%</td>
+<td class="num ">1.4</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.8</b></span></td>
+<td class="note">8/5 公布 Q2 轉虧為盈,淨利1,660萬美元,調整後EBITDA年增297%;Q2 股息大增433%至0.80美元,並預告 Q3 股息可望逾1美元創新高 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:hto" target="_blank" rel="noopener">HTO<small>NASDAQ</small></a></td>
+<td class="nm">H2O America Common Stock</td>
+<td class="num">63.48</td>
+<td class="num">65.43</td>
+<td class="num pivot">+3.1%</td>
+<td class="num dn">-0.7%</td>
+<td class="num up">+14.9%</td>
+<td class="num up">+16.4%</td>
+<td class="num up">+27.6%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.5</b></span></td>
+<td class="note">Q2 調整後EPS 0.72美元優於預期,維持全年指引3.08-3.18美元;Quadvest 收購案(公司為買方)預計 Q3 底完成;8/17 Seaport 上調目標價至67美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:rushb" target="_blank" rel="noopener">RUSHB<small>NASDAQ</small></a></td>
+<td class="nm">Rush Enterprises Inc. Class B</td>
+<td class="num">79.16</td>
+<td class="num">81.04</td>
+<td class="num pivot">+2.4%</td>
+<td class="num up">+4.5%</td>
+<td class="num up">+23.7%</td>
+<td class="num up">+25.4%</td>
+<td class="num up">+41.8%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.5</b></span></td>
+<td class="note">7/28 公布 Q2:EPS 0.91 美元優於預期,宣布 3 比 2 股票分割並上調分割後股息 10.5%;售後服務佔毛利 64%,惟卡車終端需求仍疲弱 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:amrx" target="_blank" rel="noopener">AMRX<small>NASDAQ</small></a></td>
+<td class="nm">Amneal Pharmaceuticals Inc. Cl</td>
+<td class="num">17.91</td>
+<td class="num">19.10</td>
+<td class="num pivot">+6.6%</td>
+<td class="num dn">-0.3%</td>
+<td class="num up">+50.1%</td>
+<td class="num up">+17.9%</td>
+<td class="num up">+93.4%</td>
+<td class="num ">0.9</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.3</b></span></td>
+<td class="note">Q2 調整後 EPS 0.30 美元勝預期 0.23,上調 2026 指引(EPS 0.96-1.06 美元);7/31 股東批准收購 Kashiv BioSciences;UBS 目標價升至 25 美元 <span class="chip chip-cal">財報 10/29</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cf" target="_blank" rel="noopener">CF<small>NYSE</small></a></td>
+<td class="nm">CF Industries Holdings Inc. Co</td>
+<td class="num">129.60</td>
+<td class="num">136.00</td>
+<td class="num pivot">+4.9%</td>
+<td class="num up">+2.3%</td>
+<td class="num up">+3.5%</td>
+<td class="num up">+38.2%</td>
+<td class="num up">+53.5%</td>
+<td class="num ">1.02</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.2</b></span></td>
+<td class="note">8/5 公布 Q2 財報遜於預期;完成 5 億美元回購,季度股息上調 20% 至 0.60 美元;Blue Point 低碳氨廠 8 月動工;11/4 盤後公布 Q3 財報 <span class="chip chip-cal">財報 11/04</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:jnj" target="_blank" rel="noopener">JNJ<small>NYSE</small></a></td>
+<td class="nm">Johnson &amp; Johnson Common Stock</td>
+<td class="num">270.24</td>
+<td class="num">273.41</td>
+<td class="num pivot">+1.2%</td>
+<td class="num up">+4.2%</td>
+<td class="num up">+19.2%</td>
+<td class="num up">+11.1%</td>
+<td class="num up">+53.3%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.1</b></span></td>
+<td class="note">Q2 營收 253 億美元增 6.6%、EPS 2.90 美元優於預期並上調全年指引;8/19 創 275.48 美元歷史新高;8/25 除息 1.34 美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:brkr" target="_blank" rel="noopener">BRKR<small>NASDAQ</small></a></td>
+<td class="nm">Bruker Corporation Common Stoc</td>
+<td class="num">59.56</td>
+<td class="num">64.34</td>
+<td class="num pivot">+8.0%</td>
+<td class="num dn">-4.2%</td>
+<td class="num up">+38.9%</td>
+<td class="num up">+56.2%</td>
+<td class="num up">+73.9%</td>
+<td class="num ">0.86</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72</b></span></td>
+<td class="note">8/4 公布 Q2:營收 8.39 億美元遜於預期並下修全年營收展望,股價單日重挫逾 12%;惟 EPS 0.49 美元勝預期,8/14 因擴大與 Atinary 的 AI 實驗室合作反彈 13% </td>
+</tr></tbody></table></div></section><section class="tier tier-e" id="tier-e">
+<header class="tier-head"><span class="badge">E</span>
+<div><h2>已突破・延伸中</h2><p>貼著 52 週新高且近 1 個月大漲 — 突破已發動，勿追高，等回測樞紐區或新的緊縮。</p></div>
+<span class="count">9 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:neo" target="_blank" rel="noopener">NEO<small>NASDAQ</small></a></td>
+<td class="nm">NeoGenomics Inc. Common Stock</td>
+<td class="num">16.98</td>
+<td class="num">16.98</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+19.2%</td>
+<td class="num up">+106.1%</td>
+<td class="num up">+48.4%</td>
+<td class="num up">+172.1%</td>
+<td class="num dry">0.52</td>
+<td class="num"><span class="scorebar"><i style="width:80%"></i><b>79.6</b></span></td>
+<td class="note">8月分析師上調目標價至約19.7美元；北卡法院裁定Natera專利無效，為RaDaR ST檢測掃清障礙 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:blfs" target="_blank" rel="noopener">BLFS<small>NASDAQ</small></a></td>
+<td class="nm">BioLife Solutions Inc. Common </td>
+<td class="num">37.10</td>
+<td class="num">37.10</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+20.6%</td>
+<td class="num up">+78.7%</td>
+<td class="num up">+65.9%</td>
+<td class="num up">+51.4%</td>
+<td class="num dry">0.44</td>
+<td class="num"><span class="scorebar"><i style="width:79%"></i><b>78.6</b></span></td>
+<td class="note">8/6公布Q2財報，EPS 0.04美元優於預期，營收2,847萬美元，轉虧為盈，股價動能強勁 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:wt" target="_blank" rel="noopener">WT<small>NYSE</small></a></td>
+<td class="nm">WisdomTree Inc. Common Stock</td>
+<td class="num">23.51</td>
+<td class="num">23.51</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+19.3%</td>
+<td class="num up">+21.1%</td>
+<td class="num up">+42.0%</td>
+<td class="num up">+72.1%</td>
+<td class="num dry">0.6</td>
+<td class="num"><span class="scorebar"><i style="width:78%"></i><b>78</b></span></td>
+<td class="note">Q2營收1.772億美元季增11%，AUM達1,629億；8/17 Northland上調目標價至26美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:adpt" target="_blank" rel="noopener">ADPT<small>NASDAQ</small></a></td>
+<td class="nm">Adaptive Biotechnologies Corpo</td>
+<td class="num">25.99</td>
+<td class="num">25.99</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+16.5%</td>
+<td class="num up">+102.6%</td>
+<td class="num up">+64.6%</td>
+<td class="num up">+109.4%</td>
+<td class="num dry">0.66</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.8</b></span></td>
+<td class="note">股價創52週新高26.16美元，一年翻倍；Piper Sandler上調目標價至27.5美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:axgn" target="_blank" rel="noopener">AXGN<small>NASDAQ</small></a></td>
+<td class="nm">Axogen Inc. Common Stock</td>
+<td class="num">50.40</td>
+<td class="num">50.40</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+26.9%</td>
+<td class="num up">+23.0%</td>
+<td class="num up">+45.5%</td>
+<td class="num up">+225.4%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.4</b></span></td>
+<td class="note">7月Q2營收6,973萬美元並上調全年營收展望；Jefferies 7/30上調目標價至55美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:cort" target="_blank" rel="noopener">CORT<small>NASDAQ</small></a></td>
+<td class="nm">Corcept Therapeutics Incorpora</td>
+<td class="num">122.25</td>
+<td class="num">122.25</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+26.5%</td>
+<td class="num up">+116.9%</td>
+<td class="num up">+208.5%</td>
+<td class="num up">+70.4%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76.2</b></span></td>
+<td class="note">Q2營收2.561億美元年增32%大超預期，財報後大漲28%；全年營收指引上調至11-12億美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:slde" target="_blank" rel="noopener">SLDE<small>NASDAQ</small></a></td>
+<td class="nm">Slide Insurance Holdings Inc. </td>
+<td class="num">22.74</td>
+<td class="num">22.74</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+15.4%</td>
+<td class="num up">+21.0%</td>
+<td class="num up">+32.4%</td>
+<td class="num up">+56.4%</td>
+<td class="num dry">0.62</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.1</b></span></td>
+<td class="note">Q2淨利1.349億美元年增92%；宣布首次季度股息0.07美元(8/28發放)；股價近52週高點 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cve" target="_blank" rel="noopener">CVE<small>NYSE</small></a></td>
+<td class="nm">Cenovus Energy Inc Common Stoc</td>
+<td class="num">32.93</td>
+<td class="num">32.93</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+10.8%</td>
+<td class="num up">+6.8%</td>
+<td class="num up">+52.6%</td>
+<td class="num up">+120.3%</td>
+<td class="num ">0.75</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75</b></span></td>
+<td class="note">Q2淨利28.7億美元並上調全年產量指引；8/18 Morgan Stanley上調目標價至50加元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:senea" target="_blank" rel="noopener">SENEA<small>NASDAQ</small></a></td>
+<td class="nm">Seneca Foods Corp. Class A Com</td>
+<td class="num">194.07</td>
+<td class="num">194.07</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+18.2%</td>
+<td class="num up">+39.8%</td>
+<td class="num up">+56.5%</td>
+<td class="num up">+84.3%</td>
+<td class="num ">0.75</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75</b></span></td>
+<td class="note">8/6公布財年Q1淨利1,950萬美元優於預期；股價8月中創歷史新高196.5美元 </td>
+</tr></tbody></table></div></section><section class="tier tier-b" id="tier-b">
+<header class="tier-head"><span class="badge">B</span>
+<div><h2>上升結構（一底高於一底 / 上升三角形候選）</h2><p>站上 50/200 日線、距高點 ≤20%、3 個月動能為正 — 開圖確認低點墊高與上緣壓力線。</p></div>
+<span class="count">18 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:awr" target="_blank" rel="noopener">AWR<small>NYSE</small></a></td>
+<td class="nm">American States Water Company </td>
+<td class="num">88.63</td>
+<td class="num">89.31</td>
+<td class="num pivot">+0.8%</td>
+<td class="num up">+1.7%</td>
+<td class="num up">+17.0%</td>
+<td class="num up">+18.4%</td>
+<td class="num up">+19.8%</td>
+<td class="num dry">0.59</td>
+<td class="num"><span class="scorebar"><i style="width:77%"></i><b>76.8</b></span></td>
+<td class="note">8/5公布Q2 EPS 1.09年增25.3%；季息調升8.2%，連續72年增息；S&amp;P維持A評級展望穩定 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:vsat" target="_blank" rel="noopener">VSAT<small>NASDAQ</small></a></td>
+<td class="nm">ViaSat Inc. Common Stock</td>
+<td class="num">74.72</td>
+<td class="num">89.81</td>
+<td class="num pivot">+20.2%</td>
+<td class="num up">+0.6%</td>
+<td class="num up">+7.5%</td>
+<td class="num up">+61.7%</td>
+<td class="num up">+172.8%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:76%"></i><b>76</b></span></td>
+<td class="note">Q2營收11.6億美元略遜但EPS大超預期；8/4對手Hughes破產激勵股價；8/6大摩目標價升至95美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:elvn" target="_blank" rel="noopener">ELVN<small>NASDAQ</small></a></td>
+<td class="nm">Enliven Therapeutics Inc. Comm</td>
+<td class="num">59.82</td>
+<td class="num">61.11</td>
+<td class="num pivot">+2.2%</td>
+<td class="num up">+13.3%</td>
+<td class="num up">+44.7%</td>
+<td class="num up">+128.9%</td>
+<td class="num up">+202.9%</td>
+<td class="num dry">0.49</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.2</b></span></td>
+<td class="note">8/19公布Q2財報；6月ELVN-001治療CML一期數據正面獲好評，現金8.95億美元可支撐至2030年 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:dell" target="_blank" rel="noopener">DELL<small>NYSE</small></a></td>
+<td class="nm">Dell Technologies Inc. Class C</td>
+<td class="num">442.08</td>
+<td class="num">514.00</td>
+<td class="num pivot">+16.3%</td>
+<td class="num up">+0.6%</td>
+<td class="num up">+82.7%</td>
+<td class="num up">+280.8%</td>
+<td class="num up">+220.0%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:75%"></i><b>75.1</b></span></td>
+<td class="note">8/4獲挪威Volta百億美元AI工廠案採用其技術創收盤新高；AI伺服器積壓訂單513億美元；9/1財報 <span class="chip chip-cal">財報 09/01</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:knsa" target="_blank" rel="noopener">KNSA<small>NASDAQ</small></a></td>
+<td class="nm">Kiniksa Pharmaceuticals Intern</td>
+<td class="num">79.03</td>
+<td class="num">80.92</td>
+<td class="num pivot">+2.4%</td>
+<td class="num up">+25.3%</td>
+<td class="num up">+39.9%</td>
+<td class="num up">+74.2%</td>
+<td class="num up">+134.4%</td>
+<td class="num dry">0.54</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.9</b></span></td>
+<td class="note">Q2 ARCALYST營收2.44億美元年增55%，上調2026全年產品營收指引至9.8-9.95億美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:wkc" target="_blank" rel="noopener">WKC<small>NYSE</small></a></td>
+<td class="nm">World Kinect Corporation Commo</td>
+<td class="num">35.95</td>
+<td class="num">40.25</td>
+<td class="num pivot">+12.0%</td>
+<td class="num dn">-0.9%</td>
+<td class="num up">+26.4%</td>
+<td class="num up">+35.0%</td>
+<td class="num up">+40.4%</td>
+<td class="num dry">0.69</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.9</b></span></td>
+<td class="note">Q2調整後EPS 1.29遠超預期0.75，上調全年EPS指引至3.20-3.40美元，股價一度大漲12.9% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cxw" target="_blank" rel="noopener">CXW<small>NYSE</small></a></td>
+<td class="nm">CoreCivic Inc. Common Stock</td>
+<td class="num">34.01</td>
+<td class="num">34.01</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+7.5%</td>
+<td class="num up">+64.0%</td>
+<td class="num up">+82.0%</td>
+<td class="num up">+64.5%</td>
+<td class="num ">1.26</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.8</b></span></td>
+<td class="note">8/5公布Q2營收年增27.3%超預期並上調全年指引；8/10宣布5億美元加速回購；獲ICE新設施合約 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cnq" target="_blank" rel="noopener">CNQ<small>NYSE</small></a></td>
+<td class="nm">Canadian Natural Resources Lim</td>
+<td class="num">51.40</td>
+<td class="num">51.40</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+9.3%</td>
+<td class="num up">+7.1%</td>
+<td class="num up">+26.6%</td>
+<td class="num up">+72.7%</td>
+<td class="num ">0.71</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.5</b></span></td>
+<td class="note">8/6公布Q2獲利大增並上調產量與資本支出指引；8/21創52週新高；8/17大摩上調目標價至C$72 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:dino" target="_blank" rel="noopener">DINO<small>NYSE</small></a></td>
+<td class="nm">HF Sinclair Corporation Common</td>
+<td class="num">97.32</td>
+<td class="num">97.32</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+9.2%</td>
+<td class="num up">+39.0%</td>
+<td class="num up">+68.2%</td>
+<td class="num up">+118.0%</td>
+<td class="num ">0.92</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.8</b></span></td>
+<td class="note">Q2調整後盈利超預期，煉油利潤率創紀錄；8/11與P66等宣布Western Gateway投資決定，計劃2027年分拆潤滑油業務 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:kfy" target="_blank" rel="noopener">KFY<small>NYSE</small></a></td>
+<td class="nm">Korn Ferry Common Stock</td>
+<td class="num">85.06</td>
+<td class="num">85.06</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+9.3%</td>
+<td class="num up">+33.3%</td>
+<td class="num up">+38.7%</td>
+<td class="num up">+16.2%</td>
+<td class="num dry">0.53</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.8</b></span></td>
+<td class="note">8/19簽訂6億美元定期貸款以資助待完成收購案（KFY為收購方）；股價創52週新高85.97美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:pk" target="_blank" rel="noopener">PK<small>NYSE</small></a></td>
+<td class="nm">Park Hotels &amp; Resorts Inc. Com</td>
+<td class="num">15.78</td>
+<td class="num">15.83</td>
+<td class="num pivot">+0.3%</td>
+<td class="num up">+8.2%</td>
+<td class="num up">+46.7%</td>
+<td class="num up">+37.6%</td>
+<td class="num up">+43.2%</td>
+<td class="num ">0.79</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.8</b></span></td>
+<td class="note">8月Q2轉虧為盈，RevPAR增5.8%，上調全年EBITDA指引至6.17-6.37億美元；Royal Palm酒店7月翻新重開 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:rapp" target="_blank" rel="noopener">RAPP<small>NASDAQ</small></a></td>
+<td class="nm">Rapport Therapeutics Inc. Comm</td>
+<td class="num">48.24</td>
+<td class="num">49.07</td>
+<td class="num pivot">+1.7%</td>
+<td class="num up">+16.6%</td>
+<td class="num up">+30.1%</td>
+<td class="num up">+66.0%</td>
+<td class="num up">+230.6%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.8</b></span></td>
+<td class="note">RAP-219癲癇三期進展獲看好，8/5獲券商首次覆蓋買入評級；Q2淨虧損擴大至5,660萬美元，關注融資風險 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:zd" target="_blank" rel="noopener">ZD<small>NASDAQ</small></a></td>
+<td class="nm">Ziff Davis Inc. Common Stock</td>
+<td class="num">56.08</td>
+<td class="num">56.08</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+8.2%</td>
+<td class="num up">+38.4%</td>
+<td class="num up">+85.8%</td>
+<td class="num up">+51.4%</td>
+<td class="num ">0.93</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.7</b></span></td>
+<td class="note">8/6 Q2 EPS符預期但營收遜；以12億美元出售連接業務並大額回購，8月UBS等多家券商上調目標價 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:ati" target="_blank" rel="noopener">ATI<small>NYSE</small></a></td>
+<td class="nm">ATI Inc. Common Stock</td>
+<td class="num">207.01</td>
+<td class="num">231.78</td>
+<td class="num pivot">+12.0%</td>
+<td class="num up">+3.6%</td>
+<td class="num up">+34.2%</td>
+<td class="num up">+41.1%</td>
+<td class="num up">+185.3%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:73%"></i><b>72.6</b></span></td>
+<td class="note">8/6 Q2營收12.6億美元增10.6%、EPS超預期18%，上調全年指引；航太國防需求強，多家券商上調目標價 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=amex:imo" target="_blank" rel="noopener">IMO<small>AMEX</small></a></td>
+<td class="nm">Imperial Oil Limited Common St</td>
+<td class="num">138.05</td>
+<td class="num">138.05</td>
+<td class="num pivot">+0.0%</td>
+<td class="num up">+7.2%</td>
+<td class="num up">+2.5%</td>
+<td class="num up">+17.6%</td>
+<td class="num up">+65.1%</td>
+<td class="num ">0.82</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.2</b></span></td>
+<td class="note">8/4公布Q2業績並維持季息0.87元；股價連漲9日累計上漲9.5%，大摩上調目標價至141加元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:gd" target="_blank" rel="noopener">GD<small>NYSE</small></a></td>
+<td class="nm">General Dynamics Corporation C</td>
+<td class="num">384.29</td>
+<td class="num">395.97</td>
+<td class="num pivot">+3.0%</td>
+<td class="num up">+0.7%</td>
+<td class="num up">+14.9%</td>
+<td class="num up">+12.2%</td>
+<td class="num up">+22.5%</td>
+<td class="num dry">0.6</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.1</b></span></td>
+<td class="note">7/29 Q2 EPS 4.24美元超預期，營收141億美元；積壓訂單1,365億美元、book-to-bill 1.4，股價近歷史高位 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:wttr" target="_blank" rel="noopener">WTTR<small>NYSE</small></a></td>
+<td class="nm">Select Water Solutions Inc. Cl</td>
+<td class="num">19.72</td>
+<td class="num">22.26</td>
+<td class="num pivot">+12.9%</td>
+<td class="num dn">-5.4%</td>
+<td class="num up">+4.0%</td>
+<td class="num up">+48.7%</td>
+<td class="num up">+140.2%</td>
+<td class="num dry">0.65</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72.1</b></span></td>
+<td class="note">8/4 Q2大幅超預期股價跳漲11%；簽訂12年北Delaware盆地水務基建擴大協議；8/21獲摩根大通增持評級 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:insw" target="_blank" rel="noopener">INSW<small>NYSE</small></a></td>
+<td class="nm">International Seaways Inc. Com</td>
+<td class="num">99.52</td>
+<td class="num">99.71</td>
+<td class="num pivot">+0.2%</td>
+<td class="num up">+8.9%</td>
+<td class="num up">+17.7%</td>
+<td class="num up">+54.5%</td>
+<td class="num up">+133.2%</td>
+<td class="num ">0.96</td>
+<td class="num"><span class="scorebar"><i style="width:72%"></i><b>72</b></span></td>
+<td class="note">8/10 Q2 EPS 5.91美元超預期，宣布每股5.05美元股息9/24派發；油輪運價強勁，年內漲逾110% </td>
+</tr></tbody></table></div></section><section class="tier tier-c" id="tier-c">
+<header class="tier-head"><span class="badge">C</span>
+<div><h2>基底修復中（觀察）</h2><p>仍在 200 日線上方但距高點較深，基底右側尚未完成。</p></div>
+<span class="count">14 檔</span></header>
+<div class="tblwrap"><table>
+<thead><tr><th>代號</th><th>名稱</th><th class="num">收盤</th><th class="num">樞紐<small>52W高</small></th>
+<th class="num">距樞紐</th><th class="num">1月</th><th class="num">3月</th><th class="num">6月</th>
+<th class="num">1年</th><th class="num">量比</th><th class="num">分數</th><th>備註</th></tr></thead>
+<tbody><tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:rex" target="_blank" rel="noopener">REX<small>NYSE</small></a></td>
+<td class="nm">REX American Resources Corpora</td>
+<td class="num">44.67</td>
+<td class="num">50.06</td>
+<td class="num pivot">+12.1%</td>
+<td class="num dn">-1.5%</td>
+<td class="num dn">-10.8%</td>
+<td class="num up">+35.0%</td>
+<td class="num up">+58.6%</td>
+<td class="num ">0.8</td>
+<td class="num"><span class="scorebar"><i style="width:74%"></i><b>73.8</b></span></td>
+<td class="note">已確認一拆二股票分割；乙醇生產商，8/26盤前公布財報，碳捕捉與擴產計畫推進中 <span class="chip chip-cal">財報 08/26</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:pgc" target="_blank" rel="noopener">PGC<small>NASDAQ</small></a></td>
+<td class="nm">Peapack-Gladstone Financial Co</td>
+<td class="num">45.58</td>
+<td class="num">48.33</td>
+<td class="num pivot">+6.0%</td>
+<td class="num dn">-0.2%</td>
+<td class="num up">+9.2%</td>
+<td class="num up">+32.1%</td>
+<td class="num up">+70.0%</td>
+<td class="num ">0.72</td>
+<td class="num"><span class="scorebar"><i style="width:70%"></i><b>69.9</b></span></td>
+<td class="note">8/13除息0.05美元；Keefe Bruyette 8/3上調目標價至56美元，Piper Sandler至58美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:mu" target="_blank" rel="noopener">MU<small>NASDAQ</small></a></td>
+<td class="nm">Micron Technology Inc. Common </td>
+<td class="num">966.78</td>
+<td class="num">1,255.00</td>
+<td class="num pivot">+29.8%</td>
+<td class="num dn">-2.4%</td>
+<td class="num up">+33.4%</td>
+<td class="num up">+141.8%</td>
+<td class="num up">+682.5%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:69%"></i><b>69.2</b></span></td>
+<td class="note">8/20宣布獲Nvidia、Apple支持的100億美元記憶體研究投資；8/12遭Netlist提ITC專利訴訟股價回落 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:peb" target="_blank" rel="noopener">PEB<small>NYSE</small></a></td>
+<td class="nm">Pebblebrook Hotel Trust Common</td>
+<td class="num">18.48</td>
+<td class="num">19.75</td>
+<td class="num pivot">+6.9%</td>
+<td class="num dn">-2.6%</td>
+<td class="num up">+31.4%</td>
+<td class="num up">+46.1%</td>
+<td class="num up">+85.5%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:69%"></i><b>68.8</b></span></td>
+<td class="note">Q2優於預期並上調2026全年指引，AFFO調升至1.69-1.76美元；受惠世界盃等大型活動題材 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:pke" target="_blank" rel="noopener">PKE<small>NYSE</small></a></td>
+<td class="nm">Park Aerospace Corp. Common St</td>
+<td class="num">33.88</td>
+<td class="num">38.23</td>
+<td class="num pivot">+12.8%</td>
+<td class="num dn">-1.2%</td>
+<td class="num up">+0.6%</td>
+<td class="num up">+42.1%</td>
+<td class="num up">+90.7%</td>
+<td class="num dry">0.66</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>68.2</b></span></td>
+<td class="note">8/17任命新CFO Petropoulos；8/14 COO出售148萬美元持股；飛彈與航太需求強勁擬擴產 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:cbio" target="_blank" rel="noopener">CBIO<small>NASDAQ</small></a></td>
+<td class="nm">Crescent Biopharma Inc. Common</td>
+<td class="num">17.15</td>
+<td class="num">24.80</td>
+<td class="num pivot">+44.6%</td>
+<td class="num up">+0.7%</td>
+<td class="num dn">-14.1%</td>
+<td class="num up">+83.8%</td>
+<td class="num up">+24.4%</td>
+<td class="num dry">0.5</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>68</b></span></td>
+<td class="note">8/3授出誘導性股權獎勵；Wedbush 7/31予買入評級，看好CR-001 PD-1/VEGF雙抗III期及現金儲備 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:ftnt" target="_blank" rel="noopener">FTNT<small>NASDAQ</small></a></td>
+<td class="nm">Fortinet Inc. Common Stock</td>
+<td class="num">153.51</td>
+<td class="num">168.29</td>
+<td class="num pivot">+9.6%</td>
+<td class="num up">+1.3%</td>
+<td class="num up">+25.0%</td>
+<td class="num up">+87.9%</td>
+<td class="num up">+90.1%</td>
+<td class="num ">0.74</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>68</b></span></td>
+<td class="note">7月底Q2超預期並上調2026營收指引至80.2-81.8億美元；8/17收購Virtue AI；8/4創新高後回檔 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:pbr" target="_blank" rel="noopener">PBR<small>NYSE</small></a></td>
+<td class="nm">Petroleo Brasileiro S.A. Petro</td>
+<td class="num">19.15</td>
+<td class="num">21.90</td>
+<td class="num pivot">+14.4%</td>
+<td class="num up">+0.8%</td>
+<td class="num dn">-3.9%</td>
+<td class="num up">+27.5%</td>
+<td class="num up">+58.0%</td>
+<td class="num ">1.07</td>
+<td class="num"><span class="scorebar"><i style="width:68%"></i><b>67.8</b></span></td>
+<td class="note">8/6公布Q2創紀錄產量334萬桶油當量/日，淨利524億雷亞爾；8/25除息0.53美元 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:cm" target="_blank" rel="noopener">CM<small>NYSE</small></a></td>
+<td class="nm">Canadian Imperial Bank of Comm</td>
+<td class="num">116.49</td>
+<td class="num">123.74</td>
+<td class="num pivot">+6.2%</td>
+<td class="num flat">-0.0%</td>
+<td class="num up">+4.7%</td>
+<td class="num up">+20.7%</td>
+<td class="num up">+57.8%</td>
+<td class="num ">0.78</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>65.7</b></span></td>
+<td class="note">8/27盤前公布Q3財報；8/17 TD Securities上調目標價至175加元；上季EPS超預期 <span class="chip chip-cal">財報 08/27</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:ms" target="_blank" rel="noopener">MS<small>NYSE</small></a></td>
+<td class="nm">Morgan Stanley Common Stock</td>
+<td class="num">214.20</td>
+<td class="num">228.55</td>
+<td class="num pivot">+6.7%</td>
+<td class="num dn">-0.5%</td>
+<td class="num up">+11.3%</td>
+<td class="num up">+24.9%</td>
+<td class="num up">+47.9%</td>
+<td class="num ">0.7</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>65.7</b></span></td>
+<td class="note">Q2創紀錄EPS 3.46美元，股息上調15%至1.15美元；8/22宣布進駐達拉斯新大樓股價漲逾3% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nasdaq:fcfs" target="_blank" rel="noopener">FCFS<small>NASDAQ</small></a></td>
+<td class="nm">FirstCash Holdings Inc. Common</td>
+<td class="num">225.28</td>
+<td class="num">232.05</td>
+<td class="num pivot">+3.0%</td>
+<td class="num up">+14.1%</td>
+<td class="num dn">-0.6%</td>
+<td class="num up">+22.5%</td>
+<td class="num up">+62.7%</td>
+<td class="num dry">0.67</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>65.6</b></span></td>
+<td class="note">8/21獲Loop Capital上調至買入（當舖貸款成長）股價漲9.4%；Q2創紀錄EPS年增58% </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:td" target="_blank" rel="noopener">TD<small>NYSE</small></a></td>
+<td class="nm">Toronto Dominion Bank (The) Co</td>
+<td class="num">117.15</td>
+<td class="num">124.80</td>
+<td class="num pivot">+6.5%</td>
+<td class="num dn">-1.7%</td>
+<td class="num up">+8.8%</td>
+<td class="num up">+22.5%</td>
+<td class="num up">+58.5%</td>
+<td class="num dry">0.68</td>
+<td class="num"><span class="scorebar"><i style="width:66%"></i><b>65.5</b></span></td>
+<td class="note">8/27盤前公布Q3財報；Barclays、CIBC、BofA相繼上調目標價；8/11宣布贖回次順位債券 <span class="chip chip-cal">財報 08/27</span></td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:snx" target="_blank" rel="noopener">SNX<small>NYSE</small></a></td>
+<td class="nm">TD SYNNEX Corporation Common S</td>
+<td class="num">250.14</td>
+<td class="num">290.14</td>
+<td class="num pivot">+16.0%</td>
+<td class="num up">+0.9%</td>
+<td class="num up">+8.6%</td>
+<td class="num up">+56.5%</td>
+<td class="num up">+69.6%</td>
+<td class="num ">0.76</td>
+<td class="num"><span class="scorebar"><i style="width:65%"></i><b>65.2</b></span></td>
+<td class="note">Morgan Stanley上調目標價至341美元（增持）；華爾街平均目標價暗示約28%上行空間 </td>
+</tr>
+<tr>
+<td class="tk"><a href="https://www.tradingview.com/chart/?symbol=nyse:dd" target="_blank" rel="noopener">DD<small>NYSE</small></a></td>
+<td class="nm">DuPont de Nemours Inc. Common </td>
+<td class="num">138.33</td>
+<td class="num">150.22</td>
+<td class="num pivot">+8.6%</td>
+<td class="num up">+0.7%</td>
+<td class="num dn">-5.0%</td>
+<td class="num dn">-7.9%</td>
+<td class="num up">+37.9%</td>
+<td class="num ">0.77</td>
+<td class="num"><span class="scorebar"><i style="width:55%"></i><b>55.1</b></span></td>
+<td class="note">8/4 Q2財報超預期,有機營收+4%、利潤率擴張,上調全年EPS指引至7.17-7.32美元並加碼2.5億美元回購;惟水務業務偏弱令營收指引收窄 6/24 完成 1:3 反向分割。 </td>
+</tr></tbody></table></div></section>
+<footer class="method">
+<h3>篩選方法</h3>
+<ol>
+<li>**全市場掃描**：8,350 檔美股（NASDAQ/NYSE/AMEX）→ 流動性過濾（收盤 ≥$10、市值 ≥$5 億、日均成交額 ≥$500 萬、上市滿一年）後 2,288 檔進入形態篩選。</li>
+<li>**趨勢模板**：站上 50 日與 200 日均線、50MA > 200MA、200MA 上升、高於 52 週低點 ≥30%、距 52 週高點 ≤25%。</li>
+<li>**Pre-breakout（A 級）**：距 52 週高點 ≤10%、近 1 個月（21 交易日）漲跌收斂 ±7% 內、月內收盤區間 ≥2.5%（排除併購釘價的「假緊縮」）——全市場 265 檔合格，取分數最高且通過新聞驗證的 75 檔。</li>
+<li>**量能**：近 10 日均量 / 50 日均量 < 1 → 量縮（VCP 突破前的典型現象）。</li>
+<li>**動能**：6 個月 / 1 年漲幅確認主升趨勢仍在；新聞驗證剔除收購釘價（ROKU、IRDM、SLAB、RAMP、PAG）與封閉式基金（BSTZ）。</li>
+</ol>
+<p>**分數**（0–100）：均線結構 30 分＋距樞紐 15 分＋月線緊縮 15 分＋中長期動能 20 分＋量縮 10 分＋貼緊樞紐加成 5 分。</p>
+<p>_資料來源：NASDAQ 官方收盤快照（每日存檔，價格序列重建）；VCP R6 重疊代號之 52 週區間與均線採 [Bigdata.com](https://bigdata.com) 精確值；新聞驗證：網路搜尋。非投資建議。_</p>
+<p>52 週高低與均線以「收盤價」計算（不含盤中高低，off-high 可能略低估）；近 3 個月為每日頻率、更早為每週抽樣，MA200 為近似值。已回溯修正股票分割與代號變更（MNST 2:1、DD 1:3 反向＋Qnity 分拆、MQ 1:4 反向、CRWD 4:1、BNY 由 BK 改名接續等 101 檔）。「1月」欄為 21 個交易日變化，與日曆月略有出入。</p>
+<p class="disclaimer">本表為技術面選股輔助工具，非投資建議。NVDA/CRWD 8/26 財報、Jackson Hole 8/27-29（新任 Fed 主席 Warsh 8/28 首演說）前後波動風險高；個股財報日見備註。形態最終以圖表確認為準。</p>
+</footer>
+</div>
