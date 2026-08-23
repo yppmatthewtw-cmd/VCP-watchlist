@@ -1,0 +1,117 @@
+ticker,name,category,score,price,year_high,year_low,ma50,ma200,off_high_pct,above_low_pct,chg_5d,chg_1m,chg_3m,chg_6m,chg_1y,vol_ratio,as_of,sector,industry,exchange
+ARWR,Arrowhead Pharmaceuticals Inc. Common St,A_VCP待突破,87.3,87.11,89.59,16.46,82.51,68.42,2.8,429.1,0.5,0.4,13.6,36.8,337.5,0.46,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+EQNR,Equinor ASA,A_VCP待突破,85.7,42.86,42.86,22.52,36.98,32.31,0.0,90.3,5.1,4.6,8.6,56.9,75.5,0.62,2026-08-21,Energy,Integrated oil Companies,nyse
+MEDP,Medpace Holdings Inc. Common Stock,A_VCP待突破,84.3,620.75,620.75,410.54,548.67,522.1,0.0,51.2,7.3,2.5,49.5,45.0,34.1,0.63,2026-08-21,Health Care,Biotechnology: Commercial Physical & Biological Resarch,nasdaq
+STT,State Street Corporation Common Stock,A_VCP待突破,84.0,187.13,193.04,109.78,179.96,144.94,3.1,70.5,-2.4,1.6,22.4,46.2,68.3,0.59,2026-08-21,Finance,Major Banks,nyse
+JAZZ,Jazz Pharmaceuticals plc Common Stock (I,A_VCP待突破,82.5,254.28,261.62,110.75,244.76,198.99,2.8,129.6,3.8,-0.2,11.2,51.4,116.1,0.79,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+CLDT,Chatham Lodging Trust (REIT) Common Shar,A_VCP待突破,82.4,13.56,13.78,6.3,13.13,9.24,1.6,115.2,4.4,2.1,37.1,78.2,89.7,0.79,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+MATX,Matson Inc. Common Stock,A_VCP待突破,82.3,222.8,223.55,90.11,206.56,164.88,0.3,147.3,2.5,4.3,23.9,35.0,111.8,0.71,2026-08-21,Consumer Discretionary,Marine Transportation,nyse
+BNY,The Bank of New York Mellon Corporation ,A_VCP待突破,82.0,158.49,164.27,101.41,153.76,130.02,3.5,56.3,-2.9,-1.0,17.4,33.4,55.8,0.6,2026-08-21,Finance,Major Banks,nyse
+WST,West Pharmaceutical Services Inc. Common,A_VCP待突破,81.8,353.08,365.74,231.09,347.81,290.61,3.5,52.8,1.0,-0.7,16.6,45.2,45.2,0.63,2026-08-21,Health Care,Medical/Dental Instruments,nyse
+FANG,Diamondback Energy Inc. Common Stock,A_VCP待突破,81.5,210.72,211.02,136.29,192.35,176.98,0.1,54.6,4.1,2.5,3.5,25.0,51.0,0.71,2026-08-21,Energy,Oil & Gas Production,nasdaq
+GSAT,Globalstar Inc. Common Stock,A_VCP待突破,81.5,82.36,84.43,24.25,81.02,70.25,2.5,239.6,-0.0,4.0,0.5,39.5,212.6,0.59,2026-08-21,Consumer Discretionary,Telecommunications Equipment,nasdaq
+CNC,Centene Corporation Common Stock,A_VCP待突破,81.0,65.02,68.72,25.25,64.96,48.55,5.4,157.5,-3.6,2.0,11.6,57.7,124.3,0.64,2026-08-21,Health Care,Medical Specialities,nyse
+CBL,CBL & Associates Properties Inc. Common ,A_VCP待突破,80.8,55.34,60.05,26.78,54.36,42.79,7.8,106.6,-4.8,-1.1,18.8,50.0,82.7,0.64,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+CNI,Canadian National Railway Company Common,A_VCP待突破,80.1,129.84,130.58,92.23,124.06,109.26,0.6,40.8,2.4,-0.6,16.1,19.7,39.3,0.71,2026-08-21,Industrials,Railroads,nyse
+SU,Suncor Energy  Inc. Common Stock,A_VCP待突破,80.0,68.42,68.42,38.32,61.27,56.53,0.0,78.5,4.0,3.0,0.2,24.2,77.3,0.83,2026-08-21,Energy,Integrated oil Companies,nyse
+RLAY,Relay Therapeutics Inc. Common Stock,A_VCP待突破,79.9,19.44,20.75,3.25,18.75,12.29,6.3,498.2,-2.1,1.8,59.3,112.2,460.2,0.68,2026-08-21,Health Care,Biotechnology: Biological Products (No Diagnostic Substances),nasdaq
+BFH,Bread Financial Holdings Inc. Common Sto,A_VCP待突破,79.7,105.91,113.4,54.77,104.8,83.78,6.6,93.4,-6.6,2.2,22.1,44.8,75.6,0.65,2026-08-21,Consumer Discretionary,Business Services,nyse
+NEO,NeoGenomics Inc. Common Stock,E_突破延伸中,79.6,16.98,16.98,5.67,14.42,11.37,0.0,199.5,6.5,19.2,106.1,48.4,172.1,0.52,2026-08-21,Health Care,Precision Instruments,nasdaq
+MBX,MBX Biosciences Inc. Common Stock,A_VCP待突破,79.4,66.33,70.7,9.74,58.75,38.71,6.2,580.7,-3.3,4.3,104.4,68.4,355.3,0.52,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+BLFS,BioLife Solutions Inc. Common Stock,E_突破延伸中,78.6,37.1,37.1,18.15,30.31,24.9,0.0,104.4,5.8,20.6,78.7,65.9,51.4,0.44,2026-08-21,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus,nasdaq
+APLE,Apple Hospitality REIT Inc. Common Share,A_VCP待突破,78.4,16.67,17.07,11.17,16.48,13.53,2.3,49.2,3.7,0.4,21.1,35.6,36.3,0.78,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+PVLA,Palvella Therapeutics Inc. Common Stock,A_VCP待突破,78.4,142.04,157.77,37.2,141.46,114.74,10.0,281.8,-9.0,-0.8,24.3,77.4,186.7,0.72,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+RPRX,Royalty Pharma plc Class A Ordinary Shar,A_VCP待突破,78.4,61.31,61.73,35.28,57.35,47.87,0.7,73.8,4.6,3.9,16.0,35.0,70.7,0.9,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+UNF,Unifirst Corporation Common Stock,A_VCP待突破,78.4,290.25,301.19,151.86,280.5,237.65,3.6,91.1,1.2,0.2,11.2,21.8,66.2,0.73,2026-08-21,Consumer Discretionary,Other Consumer Services,nyse
+RCUS,Arcus Biosciences Inc. Common Stock,A_VCP待突破,78.3,30.34,31.08,9.16,28.33,24.08,2.4,231.2,2.9,2.1,27.6,57.7,189.8,0.91,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nyse
+ALRS,Alerus Financial Corporation Common Stoc,A_VCP待突破,78.2,32.77,34.12,20.72,31.98,26.32,4.0,58.2,-2.7,1.9,23.4,28.6,52.0,0.62,2026-08-21,Finance,Major Banks,nasdaq
+WT,WisdomTree Inc. Common Stock,E_突破延伸中,78.0,23.51,23.51,11.0,19.83,16.22,0.0,113.7,3.1,19.3,21.1,42.0,72.1,0.6,2026-08-21,Finance,Investment Bankers/Brokers/Service,nyse
+EXPD,Expeditors International of Washington I,A_VCP待突破,77.9,187.81,188.27,113.97,173.11,156.11,0.2,64.8,0.9,6.6,20.8,27.6,56.5,0.65,2026-08-21,Industrials,Integrated Freight & Logistics,nyse
+SYRE,Spyre Therapeutics Inc. Common Stock,A_VCP待突破,77.2,106.49,108.92,14.82,96.96,57.79,2.2,618.6,2.8,6.5,42.1,196.2,528.6,0.65,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+UNP,Union Pacific Corporation Common Stock,A_VCP待突破,77.2,308.05,308.05,216.0,286.22,255.85,0.0,42.6,4.9,1.2,13.9,17.2,40.0,0.85,2026-08-21,Industrials,Railroads,nyse
+CYRX,CryoPort Inc. Common Stock,A_VCP待突破,76.9,17.13,17.13,7.16,15.48,11.45,0.0,139.2,12.3,6.9,30.4,102.2,94.9,0.89,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+HSHP,Himalaya Shipping Ltd. Common Shares,A_VCP待突破,76.9,16.59,16.59,6.89,15.09,12.55,0.0,140.8,3.0,3.9,5.5,30.9,121.8,1.16,2026-08-21,Consumer Discretionary,Marine Transportation,nyse
+DRH,Diamondrock Hospitality Company Common S,A_VCP待突破,76.8,12.82,13.38,7.61,12.42,10.39,4.2,68.5,3.7,1.2,24.5,28.3,61.3,0.8,2026-08-21,Real Estate,Real Estate Investment Trusts,nasdaq
+ADPT,Adaptive Biotechnologies Corporation Com,E_突破延伸中,76.8,25.99,25.99,10.91,22.01,17.16,0.0,138.2,5.1,16.5,102.6,64.6,109.4,0.66,2026-08-21,Health Care,Biotechnology: Biological Products (No Diagnostic Substances),nasdaq
+AWR,American States Water Company Common Sto,B_上升結構,76.8,88.63,89.31,70.1,84.57,77.27,0.8,26.4,-0.4,1.7,17.0,18.4,19.8,0.59,2026-08-21,Utilities,Water Supply,nyse
+NHC,National HealthCare Corporation Common S,A_VCP待突破,76.7,233.4,236.75,94.77,216.0,170.98,1.4,146.3,4.4,5.4,20.5,41.5,116.6,0.85,2026-08-21,Health Care,Hospital/Nursing Management,amex
+TRVI,Trevi Therapeutics Inc. Common Stock,A_VCP待突破,76.7,17.96,19.5,7.27,17.74,13.69,7.9,147.0,-2.7,4.5,26.5,76.9,141.1,0.59,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+SOBO,South Bow Corporation Common Shares,A_VCP待突破,76.6,37.72,38.67,25.26,36.74,32.27,2.5,49.3,2.5,-2.5,1.2,26.5,35.1,0.58,2026-08-21,Energy,Natural Gas Distribution,nyse
+RRBI,Red River Bancshares Inc. Common Stock,A_VCP待突破,76.5,101.56,103.43,60.02,97.02,86.55,1.8,69.2,-1.1,4.5,14.1,11.9,61.4,0.53,2026-08-21,Finance,Major Banks,nasdaq
+FTI,TechnipFMC plc Ordinary Share,A_VCP待突破,76.4,77.45,79.81,34.97,71.32,62.32,3.0,121.5,-1.5,1.9,8.7,26.4,121.1,0.78,2026-08-21,Consumer Discretionary,Oil and Gas Field Machinery,nyse
+GEO,Geo Group Inc (The) REIT,A_VCP待突破,76.4,32.71,32.71,14.1,30.29,20.73,0.0,132.0,4.8,5.3,42.7,124.3,56.4,1.16,2026-08-21,Consumer Discretionary,Homebuilding,nyse
+AXGN,Axogen Inc. Common Stock,E_突破延伸中,76.4,50.4,50.4,12.55,44.0,36.09,0.0,301.6,3.4,26.9,23.0,45.5,225.4,0.68,2026-08-21,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus,nasdaq
+UHAL,U-Haul Holding Company Common Stock,A_VCP待突破,76.2,71.41,75.27,42.83,69.23,56.17,5.1,66.7,-3.8,-0.7,46.7,42.1,23.3,0.68,2026-08-21,Consumer Discretionary,Rental/Leasing Companies,nyse
+CORT,Corcept Therapeutics Incorporated Common,E_突破延伸中,76.2,122.25,122.25,32.39,97.31,65.04,0.0,277.4,6.8,26.5,116.9,208.5,70.4,0.69,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+TRST,TrustCo Bank Corp NY Common Stock,A_VCP待突破,76.1,56.83,57.78,33.19,55.4,47.37,1.6,71.2,-0.9,0.7,17.5,23.7,60.4,1.08,2026-08-21,Finance,Major Banks,nasdaq
+VSAT,ViaSat Inc. Common Stock,B_上升結構,76.0,74.72,89.81,20.28,74.53,55.45,16.8,268.4,-9.8,0.6,7.5,61.7,172.8,0.65,2026-08-21,Consumer Discretionary,Telecommunications Equipment,nasdaq
+HSBC,HSBC Holdings plc. Common Stock,A_VCP待突破,75.8,104.15,107.86,61.79,99.92,87.52,3.4,68.6,0.3,2.4,17.8,20.3,62.9,0.68,2026-08-21,Finance,Savings Institutions,nyse
+MSGS,Madison Square Garden Sports Corp. Class,A_VCP待突破,75.7,406.16,414.12,195.78,391.84,318.15,1.9,107.5,-0.2,3.0,15.5,38.3,106.3,1.13,2026-08-21,Consumer Discretionary,Services-Misc. Amusement & Recreation,nyse
+MAX,MediaAlpha Inc. Class A Common Stock,A_VCP待突破,75.6,12.94,14.27,7.33,12.64,11.04,9.3,76.5,-1.7,-1.2,60.5,76.5,27.6,0.58,2026-08-21,Consumer Discretionary,Business Services,nyse
+DNTH,Dianthus Therapeutics Inc. Common Stock,A_VCP待突破,75.5,111.1,115.96,18.89,100.38,71.83,4.2,488.3,-4.2,6.0,28.9,125.8,430.1,0.65,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+TGTX,TG Therapeutics Inc. Common Stock,A_VCP待突破,75.4,54.27,59.06,26.39,52.85,37.73,8.1,105.6,11.3,-2.2,37.4,86.8,95.7,0.82,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+EBC,Eastern Bankshares Inc. Common Stock,A_VCP待突破,75.3,22.74,23.65,15.25,22.44,20.33,3.8,49.1,-3.7,0.5,18.5,5.3,43.3,0.51,2026-08-21,Finance,Savings Institutions,nasdaq
+WSFS,WSFS Financial Corporation Common Stock,A_VCP待突破,75.2,79.88,82.29,52.58,78.66,67.23,2.9,51.9,-2.2,1.2,14.3,19.2,44.5,0.68,2026-08-21,Finance,Major Banks,nasdaq
+ELVN,Enliven Therapeutics Inc. Common Stock,B_上升結構,75.2,59.82,61.11,15.54,52.82,35.69,2.1,284.9,1.7,13.3,44.7,128.9,202.9,0.49,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+BNS,Bank Nova Scotia Halifax Pfd 3 Ordinary ,A_VCP待突破,75.1,87.57,91.54,55.99,87.45,77.01,4.3,56.4,-4.3,1.1,13.6,14.9,54.0,0.67,2026-08-21,Finance,Major Banks,nyse
+SLDE,Slide Insurance Holdings Inc. Common Sto,E_突破延伸中,75.1,22.74,22.74,13.48,20.12,18.36,0.0,68.7,3.7,15.4,21.0,32.4,56.4,0.62,2026-08-21,Finance,Property-Casualty Insurers,nasdaq
+DELL,Dell Technologies Inc. Class C Common St,B_上升結構,75.1,442.08,514,110.22,423.29,231.39,14.0,301.1,-9.9,0.6,82.7,280.8,220.0,0.78,2026-08-21,Technology,Computer Manufacturing,nyse
+CHRD,Chord Energy Corporation Common Stock,A_VCP待突破,75.0,147.85,148.81,88.93,129.64,117.47,0.6,66.3,7.7,6.5,-0.4,48.7,45.4,0.82,2026-08-21,Energy,Oil & Gas Production,nasdaq
+CVE,Cenovus Energy Inc Common Stock,E_突破延伸中,75.0,32.93,32.93,14.5,27.96,23.7,0.0,127.1,6.2,10.8,6.8,52.6,120.3,0.75,2026-08-21,Energy,Oil & Gas Production,nyse
+SENEA,Seneca Foods Corp. Class A Common Stock,E_突破延伸中,75.0,194.07,194.07,102.75,173.28,140.91,0.0,88.9,1.2,18.2,39.8,56.5,84.3,0.75,2026-08-21,Consumer Staples,Packaged Foods,nasdaq
+OFG,OFG Bancorp Common Stock,A_VCP待突破,74.8,52.23,53.95,37.15,50.74,44.12,3.2,40.6,-3.2,-0.4,18.8,23.8,21.4,0.61,2026-08-21,Finance,Major Banks,nyse
+TIGO,Millicom International Cellular S.A. Com,A_VCP待突破,74.8,93.68,104.31,40.82,93.36,73.81,10.2,129.5,-0.2,-2.7,18.2,41.5,108.5,0.75,2026-08-21,Telecommunications,Telecommunications Equipment,nasdaq
+KMX,CarMax Inc,A_VCP待突破,74.7,62.13,62.13,33.44,55.64,45.06,0.0,85.8,3.7,6.4,68.2,47.1,6.3,0.59,2026-08-21,Consumer Discretionary,Retail-Auto Dealers and Gas Stations,nyse
+CDP,COPT Defense Properties Common Shares of,A_VCP待突破,74.5,37.27,38.35,27.37,36.58,32.29,2.8,36.2,0.9,-0.6,17.5,17.4,35.1,0.67,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+AMN,AMN Healthcare Services Inc,A_VCP待突破,74.4,34.46,36.6,15.12,33.24,23.31,5.8,127.9,-0.1,4.2,20.4,110.3,77.4,0.79,2026-08-21,Consumer Discretionary,Professional Services,nyse
+BJRI,BJ's Restaurants Inc. Common Stock,A_VCP待突破,74.4,66.76,74.26,30.18,62.91,45.53,10.1,121.2,-1.8,2.6,58.7,58.3,91.7,0.78,2026-08-21,Consumer Discretionary,Restaurants,nasdaq
+EOG,EOG Resources Inc. Common Stock,A_VCP待突破,74.4,153.05,153.05,103.87,138.99,126.15,0.0,47.3,7.3,5.2,9.1,27.8,30.0,0.74,2026-08-21,Energy,Oil & Gas Production,nyse
+ABBV,AbbVie Inc. Common Stock,A_VCP待突破,74.3,264.96,265.97,197.19,247.99,226.7,0.4,34.4,6.2,3.1,25.9,13.8,28.3,0.67,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nyse
+TRGP,Targa Resources Inc. Common Stock,A_VCP待突破,73.9,299.1,302.25,150.94,272.51,230.4,1.0,98.2,8.5,4.7,10.0,33.4,85.7,1.03,2026-08-21,Utilities,Natural Gas Distribution,nyse
+VOYA,Voya Financial Inc. Common Stock,A_VCP待突破,73.9,97.76,101.52,65.51,96.69,80.15,3.7,49.2,-3.7,1.0,20.0,31.4,32.3,0.78,2026-08-21,Finance,Life Insurance,nyse
+KNSA,Kiniksa Pharmaceuticals International pl,B_上升結構,73.9,79.03,80.92,32.74,67.03,50.73,2.3,141.4,3.0,25.3,39.9,74.2,134.4,0.54,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+WKC,World Kinect Corporation Common Stock,B_上升結構,73.9,35.95,40.25,22.61,35.44,27.96,10.7,59.0,-0.4,-0.9,26.4,35.0,40.4,0.69,2026-08-21,Energy,Oil Refining/Marketing,nyse
+CCBG,Capital City Bank Group Common Stock,A_VCP待突破,73.8,51.33,52.84,38.92,50.27,45.35,2.9,31.9,-2.2,0.7,12.9,19.6,26.3,0.65,2026-08-21,Finance,Major Banks,nasdaq
+CXW,CoreCivic Inc. Common Stock,B_上升結構,73.8,34.01,34.01,16.13,30.89,22.27,0.0,110.8,3.6,7.5,64.0,82.0,64.5,1.26,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+REX,REX American Resources Corporation,C_基底修復中,73.8,44.67,50.06,25.64,44.59,40.2,10.8,74.3,0.2,-1.5,-10.8,35.0,58.6,0.8,2026-08-21,Industrials,Major Chemicals,nyse
+KARO,Karooooo Ltd. Ordinary Shares,A_VCP待突破,73.7,63.96,65.91,42.42,58.08,50.17,3.0,50.8,2.7,4.5,38.9,38.0,33.9,0.65,2026-08-21,Technology,Computer Software: Prepackaged Software,nasdaq
+FBP,First BanCorp. New Common Stock,A_VCP待突破,73.6,28.52,29.7,19.65,27.54,23.31,4.0,45.1,-4.0,-1.1,22.5,26.4,33.9,0.73,2026-08-21,Finance,Major Banks,nyse
+PARR,Par Pacific Holdings Inc.  Common Stock,A_VCP待突破,73.6,79.03,86.03,27.23,69.11,54.07,8.1,190.2,-1.6,1.8,35.6,83.7,163.6,0.94,2026-08-21,Energy,Oil & Gas Production,nyse
+CSX,CSX Corporation Common Stock,A_VCP待突破,73.5,51.59,53.23,32.19,49.39,42.28,3.1,60.3,2.9,-2.3,13.0,25.7,43.3,0.74,2026-08-21,Industrials,Railroads,nasdaq
+KFRC,Kforce Inc. Common Stock,A_VCP待突破,73.5,58.39,60.45,25.72,54.34,38.39,3.4,127.0,0.5,3.0,47.9,107.3,82.5,1.04,2026-08-21,Consumer Discretionary,Professional Services,nyse
+CNQ,Canadian Natural Resources Limited Commo,B_上升結構,73.5,51.4,51.4,29.77,44.34,41.35,0.0,72.7,7.2,9.3,7.1,26.6,72.7,0.71,2026-08-21,Energy,Oil & Gas Production,nyse
+NWBI,Northwest Bancshares Inc. Common Stock,A_VCP待突破,73.4,15.42,16.01,11.47,15.29,13.44,3.7,34.4,-2.1,0.9,15.1,18.3,28.9,0.62,2026-08-21,Finance,Major Banks,nasdaq
+IBKR,Interactive Brokers Group Inc. Class A C,A_VCP待突破,73.1,93.87,97.41,62.21,91.8,77.59,3.6,50.9,2.0,2.3,7.9,28.1,47.5,0.81,2026-08-21,Finance,Investment Bankers/Brokers/Service,nasdaq
+HG,Hamilton Insurance Group Ltd. Class B Co,A_VCP待突破,73.0,34.96,37.28,21.38,34.39,30.31,6.2,63.5,-2.2,0.2,9.8,11.3,51.9,0.72,2026-08-21,Finance,Property-Casualty Insurers,nyse
+AMAL,Amalgamated Financial Corp. Common Stock,A_VCP待突破,72.9,48.76,51.08,26.55,47.59,39.65,4.5,83.7,-4.5,0.2,22.9,18.9,68.8,0.94,2026-08-21,Finance,Major Banks,nasdaq
+MEOH,Methanex Corporation Common Stock,A_VCP待突破,72.9,60.1,64.25,32.46,53.19,50.79,6.5,85.2,7.1,3.6,-5.2,25.7,76.9,0.71,2026-08-21,Industrials,Major Chemicals,nasdaq
+GNK,Genco Shipping & Trading Limited Ordinar,A_VCP待突破,72.8,26.52,26.77,15.92,25.06,22.27,0.9,66.6,0.7,3.0,7.7,17.7,62.8,1.4,2026-08-21,Consumer Discretionary,Marine Transportation,nyse
+DINO,HF Sinclair Corporation Common Stock,B_上升結構,72.8,97.32,97.32,43.24,81.58,63.37,0.0,125.1,3.9,9.2,39.0,68.2,118.0,0.92,2026-08-21,Energy,Natural Gas Distribution,nyse
+KFY,Korn Ferry Common Stock,B_上升結構,72.8,85.06,85.06,60.53,77.25,68.74,0.0,40.5,1.0,9.3,33.3,38.7,16.2,0.53,2026-08-21,Consumer Discretionary,Diversified Commercial Services,nyse
+PK,Park Hotels & Resorts Inc. Common Stock,B_上升結構,72.8,15.78,15.83,9.97,14.72,12.05,0.3,58.3,4.3,8.2,46.7,37.6,43.2,0.79,2026-08-21,Consumer Discretionary,Hotels/Resorts,nyse
+RAPP,Rapport Therapeutics Inc. Common Stock,B_上升結構,72.8,48.24,49.07,14.04,42.06,33.58,1.7,243.6,1.7,16.6,30.1,66.0,230.6,0.67,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+ZD,Ziff Davis Inc. Common Stock,B_上升結構,72.7,56.08,56.08,27.65,51.89,41.8,0.0,102.8,1.3,8.2,38.4,85.8,51.4,0.93,2026-08-21,Telecommunications,Telecommunications Equipment,nasdaq
+ATI,ATI Inc. Common Stock,B_上升結構,72.6,207.01,231.78,72.56,200.49,152.14,10.7,185.3,-9.4,3.6,34.2,41.1,185.3,0.78,2026-08-21,Industrials,Steel/Iron Ore,nyse
+HTO,H2O America Common Stock,A_VCP待突破,72.5,63.48,65.43,45.97,61.62,55.58,3.0,38.1,-0.6,-0.7,14.9,16.4,27.6,0.67,2026-08-21,Utilities,Water Supply,nasdaq
+RUSHB,Rush Enterprises Inc. Class B,A_VCP待突破,72.5,79.16,81.04,48.15,76.21,65.37,2.3,64.4,-1.4,4.5,23.7,25.4,41.8,0.69,2026-08-21,Consumer Discretionary,Retail-Auto Dealers and Gas Stations,nasdaq
+AMRX,Amneal Pharmaceuticals Inc. Class A Comm,A_VCP待突破,72.3,17.91,19.1,7.96,17.51,14.07,6.2,125.0,-1.3,-0.3,50.1,17.9,93.4,0.9,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+CF,CF Industries Holdings Inc. Common Stock,A_VCP待突破,72.2,129.6,136.0,76.09,116.02,105.1,4.7,70.3,9.6,2.3,3.5,38.2,53.5,1.02,2026-08-21,Industrials,Agricultural Chemicals,nyse
+IMO,Imperial Oil Limited Common Stock,B_上升結構,72.2,138.05,138.05,83.36,123.2,114.12,0.0,65.6,3.6,7.2,2.5,17.6,65.1,0.82,2026-08-21,Energy,Integrated oil Companies,amex
+JNJ,Johnson & Johnson Common Stock,A_VCP待突破,72.1,270.24,273.41,171.04,254.83,231.15,1.2,58.0,3.8,4.2,19.2,11.1,53.3,0.78,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nyse
+GD,General Dynamics Corporation Common Stoc,B_上升結構,72.1,384.29,395.97,312.78,374.06,352.96,2.9,22.9,-2.9,0.7,14.9,12.2,22.5,0.6,2026-08-21,Industrials,Marine Transportation,nyse
+WTTR,Select Water Solutions Inc. Class A comm,B_上升結構,72.1,19.72,22.26,8.21,19.53,15.14,11.4,140.2,-5.5,-5.4,4.0,48.7,140.2,0.65,2026-08-21,Energy,Oilfield Services/Equipment,nyse
+BRKR,Bruker Corporation Common Stock,A_VCP待突破,72.0,59.56,64.34,30.78,58.47,47.18,7.4,93.5,3.2,-4.2,38.9,56.2,73.9,0.86,2026-08-21,Industrials,Biotechnology: Laboratory Analytical Instruments,nasdaq
+INSW,International Seaways Inc. Common Stock,B_上升結構,72.0,99.52,99.71,41.64,88.98,71.35,0.2,139.0,2.5,8.9,17.7,54.5,133.2,0.96,2026-08-21,Consumer Discretionary,Marine Transportation,nyse
+PGC,Peapack-Gladstone Financial Corporation ,C_基底修復中,69.9,45.58,48.33,24.76,46.21,36.96,5.7,84.1,-2.4,-0.2,9.2,32.1,70.0,0.72,2026-08-21,Finance,Commercial Banks,nasdaq
+MU,Micron Technology Inc. Common Stock,C_基底修復中,69.2,966.78,1255,113.46,961.03,556.55,23.0,752.1,-0.5,-2.4,33.4,141.8,682.5,0.67,2026-08-21,Technology,Semiconductors,nasdaq
+PEB,Pebblebrook Hotel Trust Common Shares of,C_基底修復中,68.8,18.48,19.75,9.39,18.68,14.2,6.4,96.8,1.3,-2.6,31.4,46.1,85.5,0.67,2026-08-21,Real Estate,Real Estate Investment Trusts,nyse
+PKE,Park Aerospace Corp. Common Stock,C_基底修復中,68.2,33.88,38.23,17.77,35.1,28.46,11.4,90.7,-11.3,-1.2,0.6,42.1,90.7,0.66,2026-08-21,Industrials,Military/Government/Technical,nyse
+CBIO,Crescent Biopharma Inc. Common Stock,C_基底修復中,68.0,17.15,24.8,9.33,16.71,15.04,30.8,83.8,0.1,0.7,-14.1,83.8,24.4,0.5,2026-08-21,Health Care,Biotechnology: Pharmaceutical Preparations,nasdaq
+FTNT,Fortinet Inc. Common Stock,C_基底修復中,68.0,153.51,168.29,74.57,156.05,105.93,8.8,105.9,-4.1,1.3,25.0,87.9,90.1,0.74,2026-08-21,Technology,Computer peripheral equipment,nasdaq
+PBR,Petroleo Brasileiro S.A. Petrobras ADS,C_基底修復中,67.8,19.15,21.9,11.69,17.76,16.64,12.6,63.8,7.1,0.8,-3.9,27.5,58.0,1.07,2026-08-21,Energy,Oil & Gas Production,nyse
+CM,Canadian Imperial Bank of Commerce Commo,C_基底修復中,65.7,116.49,123.74,72.51,117.11,102.44,5.9,60.7,-5.9,-0.0,4.7,20.7,57.8,0.78,2026-08-21,Finance,Commercial Banks,nyse
+MS,Morgan Stanley Common Stock,C_基底修復中,65.7,214.2,228.55,141.36,216.83,188.38,6.3,51.5,-1.5,-0.5,11.3,24.9,47.9,0.7,2026-08-21,Finance,Investment Bankers/Brokers/Service,nyse
+FCFS,FirstCash Holdings Inc. Common Stock,C_基底修復中,65.6,225.28,232.05,134.75,213.95,192.93,2.9,67.2,4.9,14.1,-0.6,22.5,62.7,0.67,2026-08-21,Consumer Discretionary,Other Specialty Stores,nasdaq
+TD,Toronto Dominion Bank (The) Common Stock,C_基底修復中,65.5,117.15,124.8,73.08,120.38,102.37,6.1,60.3,-5.8,-1.7,8.8,22.5,58.5,0.68,2026-08-21,Finance,Commercial Banks,nyse
+SNX,TD SYNNEX Corporation Common Stock,C_基底修復中,65.2,250.14,290.14,142.17,258.48,198.94,13.8,75.9,-3.3,0.9,8.6,56.5,69.6,0.76,2026-08-21,Technology,Retail: Computer Software & Peripheral Equipment,nyse
+DD,DuPont de Nemours Inc. Common Stock,C_基底修復中,55.1,138.33,150.22,95.78,139.42,133.78,7.9,44.4,-5.4,0.7,-5.0,-7.9,37.9,0.77,2026-08-21,Industrials,Major Chemicals,nyse

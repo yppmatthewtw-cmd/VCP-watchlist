@@ -61,6 +61,31 @@ python make_report.py scan_R0_2026-08-15.json --rev R1 --model "Opus5"   # .md +
 python make_html.py   scan_R0_2026-08-15.json --rev R1 --model "Opus5"   # .html
 ```
 
+## Pre-breakout watchlist (all-US-market series)
+
+The dated `Pre-breakout watchlist (Github)_R*` files are a separate series that screens
+**every US-listed stock** (NASDAQ / NYSE / AMEX, ~8,300 tickers → liquidity-filtered to
+~2,300) for pre-breakout setups: stage-2 uptrend, within ~10% of the 52-week high, a
+tight 1-month range (≥2.5% to reject merger-arb pins) and volume dry-up.
+
+`pb_screener.py` rebuilds a year of daily closes for the whole market from the nightly
+snapshots archived in the public `rreichel3/US-Stock-Symbols` dataset repo (each git
+commit is an official NASDAQ-screener dump), back-adjusts detected splits, then scores
+and tiers candidates with the same A/E/B/C/D scheme:
+
+```bash
+python pb_screener.py --out pb_scan_rows.json          # quantitative screen (network required)
+# ...news-verify candidates, add notes/market, then:
+python make_report.py scan_PB-R0_2026-08-23.json --rev R0 --model "Fable5;ultracode"
+python make_html.py   scan_PB-R0_2026-08-23.json --rev R0 --model "Fable5;ultracode"
+```
+
+Pre-breakout scan JSONs are named `scan_PB-R*.json` so `make_history.py` (which globs
+`scan_R*.json`) keeps tracking only the VCP series. A scan JSON can override the report
+series/title and methodology text via optional keys (`series`, `title`, `html_title`,
+`data_basis`, `method_notes`, `score_line`, `source_footer`, `data_note`, `disclaimer`) —
+without them the generators produce the original VCP-series output unchanged.
+
 Every ticker links to its TradingView chart via `exchanges.py`, which maps each
 symbol to its exchange:
 
