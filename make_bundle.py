@@ -518,6 +518,15 @@ def main():
 
     rec = build_summary(vcp_snaps, stage_snaps, pre_snaps)
 
+    dates = collections.Counter(
+        (r.get("as_of") or "")[:10]
+        for s in (vcp_snaps, stage_snaps, pre_snaps) for r in s[-1][3]["rows"])
+    newest = max(d for d in dates if d)
+    n_new = dates[newest]
+    n_all = sum(dates.values())
+    basis = (f"{newest} 收盤" if n_new == n_all
+             else f"{newest} 收盤（{n_new}/{n_all} 檔；其餘沿用 {min(d for d in dates if d)}）")
+
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
@@ -541,7 +550,7 @@ def main():
 
     doc = HTML_SHELL.format(
         rev=args.rev, model=esc(args.model), stamp=stamp_txt,
-        n_tickers=len(rec), pages="\n".join(pages),
+        n_tickers=len(rec), pages="\n".join(pages), basis=basis,
         n_vcp=len(vcp_snaps[-1][3]["rows"]),
         n_stage=len(stage_snaps[-1][3]["rows"]),
         n_pre=len(pre_snaps[-1][3]["rows"]))
@@ -689,7 +698,7 @@ a {{ color:var(--accent); }}
 <header class="masthead">
   <h1>Combined Watchlist <em>{rev}</em></h1>
   <span class="meta"><b>VCP · Weinstein 2A · Pre-breakout</b>｜合計 {n_tickers} 檔代號｜
-  數據基準 2026-08-21 收盤｜產生 {stamp}｜{model}</span>
+  數據基準 {basis}｜產生 {stamp}｜{model}</span>
 </header>
 <nav class="tabs" role="tablist">
   <button role="tab" aria-selected="true" aria-controls="page-a" data-p="a">Page A · VCP<small>{n_vcp} 檔 · 含軌跡</small></button>
