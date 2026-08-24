@@ -86,15 +86,22 @@ def load_vcp_snapshots(limit=10):
     return snaps[-limit:]
 
 
-def load_single(path, key, rev="R0"):
-    """A one-snapshot list: returns the same shape as load_vcp_snapshots."""
-    scan = json.load(open(path))
-    rows = scan["rows"]
-    d = collections.Counter((r.get("as_of") or "")[:10] for r in rows).most_common(1)[0][0]
-    for r in rows:
-        if r.get(key) is not None:      # stage rows carry a stale VCP "category"
-            r["category"] = r[key]
-    return [(rev, d, {r["ticker"]: r for r in rows}, scan)]
+def load_series(pattern, key, limit=10):
+    """Multi-snapshot list from a glob pattern like scan_stage_R*.json."""
+    snaps = []
+    for path in glob.glob(pattern):
+        m = re.search(r"[-_](R\d+)_", path)
+        if not m:
+            continue
+        scan = json.load(open(path))
+        rows = scan["rows"]
+        d = collections.Counter((r.get("as_of") or "")[:10] for r in rows).most_common(1)[0][0]
+        for r in rows:
+            if r.get(key) is not None:  # stage rows carry a stale VCP "category"
+                r["category"] = r[key]
+        snaps.append((m.group(1), d, {r["ticker"]: r for r in rows}, scan))
+    snaps.sort(key=lambda s: (s[1], int(s[0][1:])))
+    return snaps[-limit:]
 
 
 def build_tracks(snaps, letter_of):
@@ -486,8 +493,8 @@ def main():
     args = ap.parse_args()
 
     vcp_snaps = load_vcp_snapshots()
-    stage_snaps = load_single("scan_stage_R0_2026-08-22.json", "stage")
-    pre_snaps = load_single("scan_PB-R0_2026-08-23.json", "category")
+    stage_snaps = load_series("scan_stage_R*.json", "stage")
+    pre_snaps = load_series("scan_PB-R*.json", "category")
 
     vcp_letter = {k: v[0] for k, v in VCP_TIERS.items()}
     stage_letter = {k: v[0] for k, v in STAGE_TIERS.items()}
