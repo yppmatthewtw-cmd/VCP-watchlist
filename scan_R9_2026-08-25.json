@@ -79,33 +79,34 @@
    "vol_ratio": 0.78,
    "score": 66.0,
    "category": "C_基底修復中",
-   "_delta": 0.8
+   "_delta": 0.8,
+   "stale": true
   },
   {
    "ticker": "NET",
    "name": "Cloudflare, Inc.",
-   "price": 293.14,
+   "price": 284.24,
    "year_high": 332.22,
    "year_low": 158.83,
    "ma50": 263.782,
    "ma200": 218.12605,
-   "chg_5d": 2.65,
-   "chg_1m": 5.9,
-   "chg_3m": 46.8,
-   "chg_6m": 54.8,
-   "chg_1y": 46.3,
+   "chg_5d": -3.04,
+   "chg_1m": 2.9,
+   "chg_3m": 43.8,
+   "chg_6m": 51.8,
+   "chg_1y": 43.3,
    "volume": 1875280,
    "avg_volume": 4227255,
-   "as_of": "2026-08-21",
-   "off_high_pct": 11.8,
-   "above_low_pct": 84.6,
+   "as_of": "2026-08-24",
+   "off_high_pct": 14.4,
+   "above_low_pct": 79.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.44,
-   "score": 71.7,
+   "score": 72.8,
    "category": "B_上升結構",
-   "stale": true
+   "_delta": -3.0
   },
   {
    "ticker": "DELL",
@@ -427,7 +428,8 @@
    "vol_ratio": 0.85,
    "score": 54.9,
    "category": "D_趨勢弱",
-   "_delta": -1.0
+   "_delta": -1.0,
+   "stale": true
   },
   {
    "ticker": "GOOGL",
@@ -480,7 +482,8 @@
    "vol_ratio": 0.66,
    "score": 53.2,
    "category": "D_趨勢弱",
-   "_delta": -3.0
+   "_delta": -3.0,
+   "stale": true
   },
   {
    "ticker": "LRCX",
@@ -674,28 +677,28 @@
   {
    "ticker": "TER",
    "name": "Teradyne, Inc.",
-   "price": 383.15,
+   "price": 364.93,
    "year_high": 487.91,
    "year_low": 106.3,
    "ma50": 384.1658,
    "ma200": 303.32455,
-   "chg_5d": 0.27,
-   "chg_1m": 20.2,
-   "chg_3m": 20.7,
-   "chg_6m": 23.2,
-   "chg_1y": 261.0,
+   "chg_5d": -4.76,
+   "chg_1m": 15.4,
+   "chg_3m": 15.9,
+   "chg_6m": 18.4,
+   "chg_1y": 256.2,
    "volume": 4265755,
    "avg_volume": 4104741,
-   "as_of": "2026-08-21",
-   "off_high_pct": 21.5,
-   "above_low_pct": 260.4,
+   "as_of": "2026-08-24",
+   "off_high_pct": 25.2,
+   "above_low_pct": 243.3,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.04,
-   "score": 36.8,
+   "score": 33.7,
    "category": "C_基底修復中",
-   "stale": true
+   "_delta": -4.8
   },
   {
    "ticker": "AMAT",
@@ -887,28 +890,28 @@
   {
    "ticker": "COHR",
    "name": "Coherent, Inc.",
-   "price": 287.47,
+   "price": 289.97,
    "year_high": 440,
    "year_low": 84.35,
    "ma50": 335.8976,
    "ma200": 266.63956,
-   "chg_5d": -0.86,
-   "chg_1m": 4.2,
-   "chg_3m": -21.7,
-   "chg_6m": 30.7,
-   "chg_1y": 232.4,
+   "chg_5d": 0.87,
+   "chg_1m": 5.1,
+   "chg_3m": -20.8,
+   "chg_6m": 31.6,
+   "chg_1y": 233.3,
    "volume": 8892316,
    "avg_volume": 6156409,
-   "as_of": "2026-08-21",
-   "off_high_pct": 34.7,
-   "above_low_pct": 240.8,
+   "as_of": "2026-08-24",
+   "off_high_pct": 34.1,
+   "above_low_pct": 243.8,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.44,
-   "score": 46.9,
+   "score": 46.2,
    "category": "D_趨勢弱",
-   "stale": true
+   "_delta": 0.9
   },
   {
    "ticker": "AAOI",
@@ -934,7 +937,8 @@
    "vol_ratio": 1.19,
    "score": 41.8,
    "category": "D_趨勢弱",
-   "_delta": -10.0
+   "_delta": -10.0,
+   "stale": true
   },
   {
    "ticker": "ZS",
@@ -1039,7 +1043,8 @@
    "vol_ratio": 1.22,
    "score": 25.5,
    "category": "D_趨勢弱",
-   "_delta": -3.4
+   "_delta": -3.4,
+   "stale": true
   },
   {
    "ticker": "CDNS",
@@ -1065,7 +1070,8 @@
    "vol_ratio": 0.67,
    "score": 29.0,
    "category": "D_趨勢弱",
-   "_delta": 0.1
+   "_delta": 0.1,
+   "stale": true
   },
   {
    "ticker": "NOW",
@@ -1275,7 +1281,8 @@
    "vol_ratio": 0.89,
    "score": 16.0,
    "category": "D_趨勢弱",
-   "_delta": -1.0
+   "_delta": -1.0,
+   "stale": true
   },
   {
    "ticker": "META",
@@ -1326,7 +1333,8 @@
    "ma50_gt_ma200": false,
    "score": 39.8,
    "category": "D_趨勢弱",
-   "_delta": -1.8
+   "_delta": -1.8,
+   "stale": true
   },
   {
    "ticker": "SOUN",
@@ -1376,7 +1384,8 @@
    "ma50_gt_ma200": false,
    "score": 24.2,
    "category": "D_趨勢弱",
-   "_delta": 6.2
+   "_delta": 6.2,
+   "stale": true
   },
   {
    "ticker": "TEM",
@@ -1452,7 +1461,8 @@
    "ma50_gt_ma200": true,
    "score": 51.5,
    "category": "C_基底修復中",
-   "_delta": 1.9
+   "_delta": 1.9,
+   "stale": true
   },
   {
    "ticker": "DUOL",
@@ -1477,7 +1487,8 @@
    "ma50_gt_ma200": false,
    "score": 44.2,
    "category": "D_趨勢弱",
-   "_delta": -0.6
+   "_delta": -0.6,
+   "stale": true
   },
   {
    "ticker": "VRT",
@@ -1528,7 +1539,8 @@
    "ma50_gt_ma200": true,
    "score": 54.2,
    "category": "C_基底修復中",
-   "_delta": -2.5
+   "_delta": -2.5,
+   "stale": true
   },
   {
    "ticker": "PWR",
@@ -1756,7 +1768,8 @@
    "ma50_gt_ma200": false,
    "score": 5.0,
    "category": "D_趨勢弱",
-   "_delta": -0.5
+   "_delta": -0.5,
+   "stale": true
   },
   {
    "ticker": "IREN",
@@ -1806,7 +1819,8 @@
    "ma50_gt_ma200": true,
    "score": 40.1,
    "category": "D_趨勢弱",
-   "_delta": -5.0
+   "_delta": -5.0,
+   "stale": true
   },
   {
    "ticker": "CBRS",
@@ -1831,7 +1845,8 @@
    "ma50_gt_ma200": false,
    "score": 6.7,
    "category": "D_趨勢弱",
-   "_delta": -6.5
+   "_delta": -6.5,
+   "stale": true
   },
   {
    "ticker": "CGNX",
@@ -1906,7 +1921,8 @@
    "ma50_gt_ma200": true,
    "score": 50.6,
    "category": "D_趨勢弱",
-   "_delta": 4.0
+   "_delta": 4.0,
+   "stale": true
   },
   {
    "ticker": "OUST",
@@ -1976,28 +1992,30 @@
    "score": 62.5,
    "category": "A_VCP待突破",
    "chg_5d": 1.2,
-   "_delta": 1.2
+   "_delta": 1.2,
+   "stale": true
   },
   {
    "ticker": "PNC",
    "name": "PNC Financial",
-   "price": 241.62,
+   "price": 243.68,
    "year_high": 258.96,
    "year_low": 176.88,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 6.7,
-   "above_low_pct": 36.6,
+   "off_high_pct": 5.9,
+   "above_low_pct": 37.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 56.0,
+   "score": 56.5,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 0.85,
+   "_delta": 0.9
   },
   {
    "ticker": "AXP",
@@ -2019,7 +2037,8 @@
    "score": 22.4,
    "category": "D_趨勢弱",
    "chg_5d": -1.11,
-   "_delta": -1.1
+   "_delta": -1.1,
+   "stale": true
   },
   {
    "ticker": "V",
@@ -2221,23 +2240,24 @@
   {
    "ticker": "URBN",
    "name": "Urban Outfitters",
-   "price": 68.35,
+   "price": 75.66,
    "year_high": 84.35,
    "year_low": 59.54,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 19.0,
-   "above_low_pct": 14.8,
+   "off_high_pct": 10.3,
+   "above_low_pct": 27.1,
    "above_ma50": false,
    "above_ma200": false,
    "ma50_gt_ma200": false,
-   "score": 18.6,
-   "category": "D_趨勢弱",
-   "stale": true
+   "score": 23.8,
+   "category": "C_基底修復中",
+   "chg_5d": 10.69,
+   "_delta": 10.7
   },
   {
    "ticker": "NFLX",
@@ -2280,7 +2300,8 @@
    "score": 48.1,
    "category": "B_上升結構",
    "chg_5d": 2.79,
-   "_delta": 2.8
+   "_delta": 2.8,
+   "stale": true
   },
   {
    "ticker": "SBUX",
@@ -2325,28 +2346,30 @@
    "score": 22.7,
    "category": "D_趨勢弱",
    "chg_5d": 1.59,
-   "_delta": 1.6
+   "_delta": 1.6,
+   "stale": true
   },
   {
    "ticker": "HST",
    "name": "Host Hotels",
-   "price": 23.38,
+   "price": 24.5,
    "year_high": 25.71,
    "year_low": 14.61,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 9.1,
-   "above_low_pct": 60.0,
+   "off_high_pct": 4.7,
+   "above_low_pct": 67.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 54.6,
+   "score": 62.2,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 4.79,
+   "_delta": 4.8
   },
   {
    "ticker": "LQDA",
@@ -2389,7 +2412,8 @@
    "score": 20.0,
    "category": "D_趨勢弱",
    "chg_5d": -3.25,
-   "_delta": -3.3
+   "_delta": -3.3,
+   "stale": true
   },
   {
    "ticker": "WDC",
@@ -2453,7 +2477,8 @@
    "score": 45.3,
    "category": "C_基底修復中",
    "chg_5d": 7.27,
-   "_delta": 7.3
+   "_delta": 7.3,
+   "stale": true
   },
   {
    "ticker": "ICE",
@@ -2497,7 +2522,8 @@
    "ma50_gt_ma200": false,
    "score": 21.1,
    "category": "D_趨勢弱",
-   "stale": true
+   "stale": true,
+   "_rejected": 328.3
   },
   {
    "ticker": "GL",
@@ -2519,7 +2545,8 @@
    "score": 53.5,
    "category": "A_VCP待突破",
    "chg_5d": 3.76,
-   "_delta": 3.8
+   "_delta": 3.8,
+   "stale": true
   },
   {
    "ticker": "LMT",
@@ -2587,7 +2614,8 @@
    "score": 4.6,
    "category": "D_趨勢弱",
    "chg_5d": -2.24,
-   "_delta": -2.2
+   "_delta": -2.2,
+   "stale": true
   },
   {
    "ticker": "HII",
@@ -2630,7 +2658,8 @@
    "score": 47.8,
    "category": "C_基底修復中",
    "chg_5d": 1.59,
-   "_delta": 1.6
+   "_delta": 1.6,
+   "stale": true
   },
   {
    "ticker": "UNP",
@@ -2656,23 +2685,24 @@
   {
    "ticker": "NSC",
    "name": "Norfolk Southern",
-   "price": 350.72,
+   "price": 346.62,
    "year_high": 358.6,
    "year_low": 268.23,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.2,
-   "above_low_pct": 30.8,
-   "above_ma50": true,
-   "above_ma200": true,
-   "ma50_gt_ma200": true,
-   "score": 63.7,
-   "category": "A_VCP待突破",
-   "stale": true
+   "off_high_pct": 3.3,
+   "above_low_pct": 29.2,
+   "above_ma50": false,
+   "above_ma200": false,
+   "ma50_gt_ma200": false,
+   "score": 33.0,
+   "category": "C_基底修復中",
+   "chg_5d": -1.17,
+   "_delta": -1.2
   },
   {
    "ticker": "FLR",
@@ -2700,23 +2730,24 @@
   {
    "ticker": "GWW",
    "name": "W.W. Grainger",
-   "price": 1321.38,
+   "price": 1306.47,
    "year_high": 1419.91,
    "year_low": 906.52,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-13",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 6.9,
-   "above_low_pct": 45.8,
+   "off_high_pct": 8.0,
+   "above_low_pct": 44.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 55.8,
+   "score": 55.2,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": -1.13,
+   "_delta": -1.1
   },
   {
    "ticker": "GLW",
@@ -2738,7 +2769,8 @@
    "score": 20.0,
    "category": "D_趨勢弱",
    "chg_5d": -1.12,
-   "_delta": -1.1
+   "_delta": -1.1,
+   "stale": true
   },
   {
    "ticker": "HUBB",
@@ -3051,7 +3083,8 @@
    "score": 45.5,
    "category": "C_基底修復中",
    "chg_5d": 2.12,
-   "_delta": 2.1
+   "_delta": 2.1,
+   "stale": true
   },
   {
    "ticker": "FCX",
@@ -3121,23 +3154,24 @@
   {
    "ticker": "TGT",
    "name": "Target",
-   "price": 155.86,
-   "year_high": 161.98,
+   "price": 165.44,
+   "year_high": 165.44,
    "year_low": 83.44,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 3.8,
-   "above_low_pct": 86.8,
+   "off_high_pct": 0.0,
+   "above_low_pct": 98.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 62.7,
+   "score": 65.0,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 6.15,
+   "_delta": 6.1
   },
   {
    "ticker": "H",
@@ -3268,7 +3302,8 @@
    "score": 5.8,
    "category": "D_趨勢弱",
    "chg_5d": -0.94,
-   "_delta": -0.9
+   "_delta": -0.9,
+   "stale": true
   },
   {
    "ticker": "AEO",
@@ -3332,7 +3367,8 @@
    "score": 15.0,
    "category": "D_趨勢弱",
    "chg_5d": -1.78,
-   "_delta": -1.8
+   "_delta": -1.8,
+   "stale": true
   },
   {
    "ticker": "SPOT",
@@ -3419,7 +3455,8 @@
    "score": 53.9,
    "category": "B_上升結構",
    "chg_5d": -2.13,
-   "_delta": -2.1
+   "_delta": -2.1,
+   "stale": true
   },
   {
    "ticker": "PBF",
@@ -3510,23 +3547,24 @@
   {
    "ticker": "JNJ",
    "name": "Johnson & Johnson",
-   "price": 267.37,
+   "price": 270.24,
    "year_high": 274.9,
    "year_low": 173.33,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-20",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.7,
-   "above_low_pct": 54.3,
+   "off_high_pct": 1.7,
+   "above_low_pct": 55.9,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 63.4,
+   "score": 64.0,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 1.07,
+   "_delta": 1.1
   },
   {
    "ticker": "COIN",
@@ -3548,7 +3586,8 @@
    "score": 20.0,
    "category": "D_趨勢弱",
    "chg_5d": -0.43,
-   "_delta": -0.4
+   "_delta": -0.4,
+   "stale": true
   },
   {
    "ticker": "HOOD",
@@ -3574,44 +3613,46 @@
   {
    "ticker": "UBSI",
    "name": "United Bankshares",
-   "price": 48.5,
+   "price": 49.14,
    "year_high": 49.62,
    "year_low": 34.11,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-11",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.3,
-   "above_low_pct": 42.2,
+   "off_high_pct": 1.0,
+   "above_low_pct": 44.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 63.6,
+   "score": 64.4,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 1.32,
+   "_delta": 1.3
   },
   {
    "ticker": "LOB",
    "name": "Live Oak Bancshares",
-   "price": 43.29,
+   "price": 40.98,
    "year_high": 44.53,
    "year_low": 29.36,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-17",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.8,
-   "above_low_pct": 47.4,
+   "off_high_pct": 8.0,
+   "above_low_pct": 39.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 63.3,
+   "score": 55.2,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": -5.34,
+   "_delta": -5.3
   },
   {
    "ticker": "CME",
@@ -3633,7 +3674,8 @@
    "score": 20.9,
    "category": "C_基底修復中",
    "chg_5d": 3.06,
-   "_delta": 3.1
+   "_delta": 3.1,
+   "stale": true
   },
   {
    "ticker": "PCAR",
@@ -3659,23 +3701,24 @@
   {
    "ticker": "CSX",
    "name": "CSX",
-   "price": 50.16,
+   "price": 51.59,
    "year_high": 53.6,
    "year_low": 31.8,
-   "chg_1m": 15.0,
+   "chg_1m": 17.9,
    "vol_ratio": null,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 6.4,
-   "above_low_pct": 57.7,
+   "off_high_pct": 3.7,
+   "above_low_pct": 62.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 41.1,
-   "category": "B_上升結構",
-   "stale": true
+   "score": 42.8,
+   "category": "E_突破延伸中",
+   "chg_5d": 2.85,
+   "_delta": 2.9
   },
   {
    "ticker": "VRTX",
@@ -3724,23 +3767,24 @@
   {
    "ticker": "REGN",
    "name": "Regeneron",
-   "price": 826.64,
-   "year_high": 826.64,
+   "price": 834.04,
+   "year_high": 834.04,
    "year_low": 541.0,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-20",
+   "as_of": "2026-08-24",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
    "off_high_pct": 0.0,
-   "above_low_pct": 52.8,
+   "above_low_pct": 54.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "score": 65.0,
    "category": "A_VCP待突破",
-   "stale": true
+   "chg_5d": 0.9,
+   "_delta": 0.9
   },
   {
    "ticker": "GILD",
@@ -3972,11 +4016,6 @@
    "earnings_date": "2026-10-14"
   },
   {
-   "ticker": "NET",
-   "note": "Q2 2026 beat (Aug 6): EPS $0.29 vs $0.21 est, revenue $696.1M +36%; raised FY26 guidance on AI traffic demand; Susquehanna raised target to $300 (Aug 10).",
-   "earnings_date": ""
-  },
-  {
    "ticker": "DELL",
    "note": "Stock up ~230% in 2026 on AI server boom; Q1 revenue $43.8B (+88%), AI server sales +757% to $16.1B, $51.3B backlog; FY27 guidance raised to $165-169B. Q2 earnings Sept 3.",
    "earnings_date": "2026-09-03"
@@ -4084,11 +4123,6 @@
   {
    "ticker": "AMAT",
    "note": "8/19 -4.2%. Chip equipment selloff on AI capex durability concerns",
-   "earnings_date": ""
-  },
-  {
-   "ticker": "COHR",
-   "note": "8/19 -6.8%. Profit-taking after AI rally; disappointing Q2 guidance",
    "earnings_date": ""
   },
   {
@@ -4227,11 +4261,6 @@
    "earnings_date": ""
   },
   {
-   "ticker": "TGT",
-   "note": "零售轉型見效",
-   "earnings_date": ""
-  },
-  {
    "ticker": "ENVA",
    "note": "YTD +68.9%，貼 52 週高",
    "earnings_date": ""
@@ -4239,11 +4268,6 @@
   {
    "ticker": "PCAR",
    "note": "價高於報導 52 週高，已對齊",
-   "earnings_date": ""
-  },
-  {
-   "ticker": "REGN",
-   "note": "創 52 週新高",
    "earnings_date": ""
   },
   {
@@ -4344,6 +4368,76 @@
   {
    "ticker": "APLD",
    "note": "8/24 -5.0%。AI/data-center names pulled back Monday",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NET",
+   "note": "8/24 -3.0%。Quote explicitly dated Aug 24, 2026 with session range $282.23-$292.02; -3.0% vs prior 293.14.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TER",
+   "note": "8/24 -4.8%。Explicit Aug 24 close; gap-down day (prior close cited 375.74).",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "COHR",
+   "note": "8/24 +0.9%。Live quotes clustered at $289.52-$289.97 (+0.9% vs prior $287.47); Aug 20 close was reported at $290.03. Consistent range, but no explicitly dated Aug 24 close.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "PNC",
+   "note": "8/24 +0.9%。Dated Aug 24 2026 quote: traded 242.19-247.03, price 243.68. +0.9% vs Aug 21 prior of 241.62 — consistent.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "URBN",
+   "note": "8/24 +10.7%。Dated Aug 24 2026 quote (prev close 74.24). A separate undated 68.65 figure was rejected as stale/mismatched.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "HST",
+   "note": "8/24 +4.8%。Quote reported $24.50 (+2.25%) on Aug 24; +4.8% vs Aug 21, plausible.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NSC",
+   "note": "8/24 -1.2%。No explicit dated Aug 24 close found. Live quote pages showed $346.62 and $340-342 in mid/late Aug; -1.2% vs prior 350.72. Treat as approximate latest quote.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "GWW",
+   "note": "8/24 -1.1%。Previous close $1306.47 reported on quote pages (day range 1293.87-1311.13; after-hours 1300.34); -1.1% vs Aug 21.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TGT",
+   "note": "8/24 +6.1%。Explicit Aug 24 close; +6.1% vs Aug 21, post-earnings move.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "JNJ",
+   "note": "8/24 +1.1%。Explicit Aug 24, 2026 close of $270.24 (day range 267.00-272.65); +1.1% vs Aug 21 prior 267.37.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "UBSI",
+   "note": "8/24 +1.3%。Quote page: $49.14, +0.10% on the session, day range 49.04-49.50, previous close 49.09. Consistent with the 48.50 Aug 21 prior (+1.3%).",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "LOB",
+   "note": "8/24 -5.3%。Quote page current price $40.98 (+0.61%), sourced as most recent August 2026 data; -5.3% vs prior 43.29, plausible but not an explicitly dated close.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "CSX",
+   "note": "8/24 +2.9%。Search results report a $51.59 close for Aug 24, 2026 (+2.9% vs 50.16 prior); plausible, sourced from aggregated quote pages rather than an explicit exchange record.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "REGN",
+   "note": "8/24 +0.9%。Quote page price $834.04, +0.9% vs prior 826.64.",
    "earnings_date": ""
   }
  ],

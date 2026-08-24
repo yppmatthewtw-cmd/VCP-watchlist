@@ -47,7 +47,8 @@
    "mktcap": 12304676620.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.4
+   "_delta": 0.4,
+   "stale": true
   },
   {
    "ticker": "EQNR",
@@ -113,7 +114,8 @@
    "mktcap": 107536121466.0,
    "exchange": "nyse",
    "split_adj": true,
-   "_delta": 2.3
+   "_delta": 2.3,
+   "stale": true
   },
   {
    "ticker": "MEDP",
@@ -151,27 +153,27 @@
   {
    "ticker": "STT",
    "name": "State Street Corporation Common Stock",
-   "price": 187.13,
+   "price": 187.67,
    "year_high": 193.04,
    "year_low": 109.78,
    "ma50": 179.96,
    "ma200": 144.94,
    "ma_proxy": true,
-   "chg_5d": -2.4,
-   "chg_1m": 1.6,
-   "chg_3m": 22.4,
-   "chg_6m": 46.2,
-   "chg_1y": 68.3,
+   "chg_5d": 0.29,
+   "chg_1m": 1.9,
+   "chg_3m": 22.7,
+   "chg_6m": 46.5,
+   "chg_1y": 68.6,
    "volume": 1592096,
    "avg_volume": 2258012,
-   "as_of": "2026-08-21",
-   "off_high_pct": 3.1,
-   "above_low_pct": 70.5,
+   "as_of": "2026-08-24",
+   "off_high_pct": 2.8,
+   "above_low_pct": 71.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.59,
-   "score": 84.0,
+   "score": 87.6,
    "category": "A_VCP待突破",
    "range_1m_pct": 9.1,
    "sector": "Finance",
@@ -179,7 +181,7 @@
    "mktcap": 51404941284.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 0.3
   },
   {
    "ticker": "DD",
@@ -212,7 +214,8 @@
    "mktcap": 18680494732.0,
    "exchange": "nyse",
    "split_adj": true,
-   "_delta": 0.6
+   "_delta": 0.6,
+   "stale": true
   },
   {
    "ticker": "JAZZ",
@@ -278,7 +281,8 @@
    "mktcap": 631429726.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.3
+   "_delta": -1.3,
+   "stale": true
   },
   {
    "ticker": "MATX",
@@ -444,7 +448,8 @@
    "mktcap": 32119554900.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 4.4
+   "_delta": 4.4,
+   "stale": true
   },
   {
    "ticker": "CBL",
@@ -477,32 +482,33 @@
    "mktcap": 1712372172.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.7
+   "_delta": 0.7,
+   "stale": true
   },
   {
    "ticker": "CNI",
    "name": "Canadian National Railway Company Common",
-   "price": 129.84,
+   "price": 126.32,
    "year_high": 130.58,
    "year_low": 92.23,
    "ma50": 124.06,
    "ma200": 109.26,
    "ma_proxy": true,
-   "chg_5d": 2.4,
-   "chg_1m": -0.6,
-   "chg_3m": 16.1,
-   "chg_6m": 19.7,
-   "chg_1y": 39.3,
+   "chg_5d": -2.71,
+   "chg_1m": -3.3,
+   "chg_3m": 13.4,
+   "chg_6m": 17.0,
+   "chg_1y": 36.6,
    "volume": 1059614,
    "avg_volume": 1524361,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.6,
-   "above_low_pct": 40.8,
+   "as_of": "2026-08-24",
+   "off_high_pct": 3.3,
+   "above_low_pct": 37.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.71,
-   "score": 80.1,
+   "score": 76.8,
    "category": "A_VCP待突破",
    "range_1m_pct": 3.7,
    "sector": "Industrials",
@@ -510,32 +516,32 @@
    "mktcap": 78436344000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -2.7
   },
   {
    "ticker": "SU",
    "name": "Suncor Energy  Inc. Common Stock",
-   "price": 68.42,
+   "price": 67.36,
    "year_high": 68.42,
    "year_low": 38.32,
    "ma50": 61.27,
    "ma200": 56.53,
    "ma_proxy": true,
-   "chg_5d": 4.0,
-   "chg_1m": 3.0,
-   "chg_3m": 0.2,
-   "chg_6m": 24.2,
-   "chg_1y": 77.3,
+   "chg_5d": -1.55,
+   "chg_1m": 1.5,
+   "chg_3m": -1.3,
+   "chg_6m": 22.7,
+   "chg_1y": 75.8,
    "volume": 2096365,
    "avg_volume": 4589250,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.0,
-   "above_low_pct": 78.5,
+   "as_of": "2026-08-24",
+   "off_high_pct": 1.5,
+   "above_low_pct": 75.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.83,
-   "score": 80.0,
+   "score": 84.7,
    "category": "A_VCP待突破",
    "range_1m_pct": 12.8,
    "sector": "Energy",
@@ -543,32 +549,32 @@
    "mktcap": 80026058053.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -1.5
   },
   {
    "ticker": "RLAY",
    "name": "Relay Therapeutics Inc. Common Stock",
-   "price": 19.44,
+   "price": 19.79,
    "year_high": 20.75,
    "year_low": 3.25,
    "ma50": 18.75,
    "ma200": 12.29,
    "ma_proxy": true,
-   "chg_5d": -2.1,
-   "chg_1m": 1.8,
-   "chg_3m": 59.3,
-   "chg_6m": 112.2,
-   "chg_1y": 460.2,
+   "chg_5d": 1.8,
+   "chg_1m": 3.6,
+   "chg_3m": 61.1,
+   "chg_6m": 114.0,
+   "chg_1y": 462.0,
    "volume": 2965856,
    "avg_volume": 3153902,
-   "as_of": "2026-08-21",
-   "off_high_pct": 6.3,
-   "above_low_pct": 498.2,
+   "as_of": "2026-08-24",
+   "off_high_pct": 4.6,
+   "above_low_pct": 508.9,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.68,
-   "score": 79.9,
+   "score": 88.6,
    "category": "A_VCP待突破",
    "range_1m_pct": 12.5,
    "sector": "Health Care",
@@ -576,7 +582,7 @@
    "mktcap": 4260113307.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 1.8
   },
   {
    "ticker": "BFH",
@@ -609,7 +615,8 @@
    "mktcap": 4068984674.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 5.4
+   "_delta": 5.4,
+   "stale": true
   },
   {
    "ticker": "MBX",
@@ -676,40 +683,41 @@
    "mktcap": 3935498576.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.5
+   "_delta": -1.5,
+   "stale": true
   },
   {
    "ticker": "PVLA",
    "name": "Palvella Therapeutics Inc. Common Stock",
-   "price": 142.04,
+   "price": 141.77,
    "year_high": 157.77,
    "year_low": 37.2,
    "ma50": 141.46,
    "ma200": 114.74,
    "ma_proxy": true,
-   "chg_5d": -9.0,
-   "chg_1m": -0.8,
-   "chg_3m": 24.3,
-   "chg_6m": 77.4,
-   "chg_1y": 186.7,
+   "chg_5d": -0.19,
+   "chg_1m": -1.0,
+   "chg_3m": 24.1,
+   "chg_6m": 77.2,
+   "chg_1y": 186.5,
    "volume": 161896,
    "avg_volume": 246870,
-   "as_of": "2026-08-21",
-   "off_high_pct": 10.0,
-   "above_low_pct": 281.8,
+   "as_of": "2026-08-24",
+   "off_high_pct": 10.1,
+   "above_low_pct": 281.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.72,
-   "score": 78.4,
-   "category": "A_VCP待突破",
+   "score": 82.9,
+   "category": "B_上升結構",
    "range_1m_pct": 13.3,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 2046570130.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -0.2
   },
   {
    "ticker": "RPRX",
@@ -748,93 +756,93 @@
   {
    "ticker": "UNF",
    "name": "Unifirst Corporation Common Stock",
-   "price": 290.25,
+   "price": 275.95,
    "year_high": 301.19,
    "year_low": 151.86,
    "ma50": 280.5,
    "ma200": 237.65,
    "ma_proxy": true,
-   "chg_5d": 1.2,
-   "chg_1m": 0.2,
-   "chg_3m": 11.2,
-   "chg_6m": 21.8,
-   "chg_1y": 66.2,
+   "chg_5d": -4.93,
+   "chg_1m": -4.7,
+   "chg_3m": 6.3,
+   "chg_6m": 16.9,
+   "chg_1y": 61.3,
    "volume": 148682,
    "avg_volume": 181424,
-   "as_of": "2026-08-21",
-   "off_high_pct": 3.6,
-   "above_low_pct": 91.1,
-   "above_ma50": true,
+   "as_of": "2026-08-25",
+   "off_high_pct": 8.4,
+   "above_low_pct": 81.7,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.73,
-   "score": 78.4,
-   "category": "A_VCP待突破",
+   "score": 59.8,
+   "category": "C_基底修復中",
    "range_1m_pct": 5.1,
    "sector": "Consumer Discretionary",
    "industry": "Other Consumer Services",
    "mktcap": 5248931213.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -4.9
   },
   {
    "ticker": "RCUS",
    "name": "Arcus Biosciences Inc. Common Stock",
-   "price": 30.34,
+   "price": 27.7,
    "year_high": 31.08,
    "year_low": 9.16,
    "ma50": 28.33,
    "ma200": 24.08,
    "ma_proxy": true,
-   "chg_5d": 2.9,
-   "chg_1m": 2.1,
-   "chg_3m": 27.6,
-   "chg_6m": 57.7,
-   "chg_1y": 189.8,
+   "chg_5d": -8.7,
+   "chg_1m": -6.6,
+   "chg_3m": 18.9,
+   "chg_6m": 49.0,
+   "chg_1y": 181.1,
    "volume": 1055200,
    "avg_volume": 1347592,
-   "as_of": "2026-08-21",
-   "off_high_pct": 2.4,
-   "above_low_pct": 231.2,
-   "above_ma50": true,
+   "as_of": "2026-08-24",
+   "off_high_pct": 10.9,
+   "above_low_pct": 202.4,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.91,
-   "score": 78.3,
-   "category": "A_VCP待突破",
+   "score": 66.7,
+   "category": "C_基底修復中",
    "range_1m_pct": 13.6,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 3863294628.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -8.7
   },
   {
    "ticker": "ALRS",
    "name": "Alerus Financial Corporation Common Stoc",
-   "price": 32.77,
+   "price": 33.21,
    "year_high": 34.12,
    "year_low": 20.72,
    "ma50": 31.98,
    "ma200": 26.32,
    "ma_proxy": true,
-   "chg_5d": -2.7,
-   "chg_1m": 1.9,
-   "chg_3m": 23.4,
-   "chg_6m": 28.6,
-   "chg_1y": 52.0,
+   "chg_5d": 1.34,
+   "chg_1m": 3.2,
+   "chg_3m": 24.7,
+   "chg_6m": 29.9,
+   "chg_1y": 53.3,
    "volume": 212227,
    "avg_volume": 241227,
-   "as_of": "2026-08-21",
-   "off_high_pct": 4.0,
-   "above_low_pct": 58.2,
+   "as_of": "2026-08-24",
+   "off_high_pct": 2.7,
+   "above_low_pct": 60.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 78.2,
+   "score": 81.5,
    "category": "A_VCP待突破",
    "range_1m_pct": 4.6,
    "sector": "Finance",
@@ -842,7 +850,7 @@
    "mktcap": 816079109.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 1.3
   },
   {
    "ticker": "EXPD",
@@ -880,27 +888,27 @@
   {
    "ticker": "SYRE",
    "name": "Spyre Therapeutics Inc. Common Stock",
-   "price": 106.49,
+   "price": 106.72,
    "year_high": 108.92,
    "year_low": 14.82,
    "ma50": 96.96,
    "ma200": 57.79,
    "ma_proxy": true,
-   "chg_5d": 2.8,
-   "chg_1m": 6.5,
-   "chg_3m": 42.1,
-   "chg_6m": 196.2,
-   "chg_1y": 528.6,
+   "chg_5d": 0.22,
+   "chg_1m": 6.7,
+   "chg_3m": 42.3,
+   "chg_6m": 196.4,
+   "chg_1y": 528.8,
    "volume": 1014963,
    "avg_volume": 1306424,
-   "as_of": "2026-08-21",
-   "off_high_pct": 2.2,
-   "above_low_pct": 618.6,
+   "as_of": "2026-08-24",
+   "off_high_pct": 2.0,
+   "above_low_pct": 620.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.65,
-   "score": 77.2,
+   "score": 87.1,
    "category": "A_VCP待突破",
    "range_1m_pct": 13.6,
    "sector": "Health Care",
@@ -908,7 +916,7 @@
    "mktcap": 9389623915.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 0.2
   },
   {
    "ticker": "UNP",
@@ -974,7 +982,8 @@
    "mktcap": 867619083.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -4.5
+   "_delta": -4.5,
+   "stale": true
   },
   {
    "ticker": "HSHP",
@@ -1045,27 +1054,27 @@
   {
    "ticker": "NHC",
    "name": "National HealthCare Corporation Common S",
-   "price": 233.4,
+   "price": 219.84,
    "year_high": 236.75,
    "year_low": 94.77,
    "ma50": 216.0,
    "ma200": 170.98,
    "ma_proxy": true,
-   "chg_5d": 4.4,
-   "chg_1m": 5.4,
-   "chg_3m": 20.5,
-   "chg_6m": 41.5,
-   "chg_1y": 116.6,
+   "chg_5d": -5.81,
+   "chg_1m": -0.4,
+   "chg_3m": 14.7,
+   "chg_6m": 35.7,
+   "chg_1y": 110.8,
    "volume": 90897,
    "avg_volume": 134262,
-   "as_of": "2026-08-21",
-   "off_high_pct": 1.4,
-   "above_low_pct": 146.3,
+   "as_of": "2026-08-24",
+   "off_high_pct": 7.1,
+   "above_low_pct": 132.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.85,
-   "score": 76.7,
+   "score": 82.5,
    "category": "A_VCP待突破",
    "range_1m_pct": 12.7,
    "sector": "Health Care",
@@ -1073,65 +1082,65 @@
    "mktcap": 3655369593.0,
    "exchange": "amex",
    "split_adj": false,
-   "stale": true
+   "_delta": -5.8
   },
   {
    "ticker": "TRVI",
    "name": "Trevi Therapeutics Inc. Common Stock",
-   "price": 17.96,
+   "price": 17.2,
    "year_high": 19.5,
    "year_low": 7.27,
    "ma50": 17.74,
    "ma200": 13.69,
    "ma_proxy": true,
-   "chg_5d": -2.7,
-   "chg_1m": 4.5,
-   "chg_3m": 26.5,
-   "chg_6m": 76.9,
-   "chg_1y": 141.1,
+   "chg_5d": -4.23,
+   "chg_1m": 0.3,
+   "chg_3m": 22.3,
+   "chg_6m": 72.7,
+   "chg_1y": 136.9,
    "volume": 1135881,
    "avg_volume": 2375907,
-   "as_of": "2026-08-21",
-   "off_high_pct": 7.9,
-   "above_low_pct": 147.0,
-   "above_ma50": true,
+   "as_of": "2026-08-24",
+   "off_high_pct": 11.8,
+   "above_low_pct": 136.6,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.59,
-   "score": 76.7,
-   "category": "A_VCP待突破",
+   "score": 72.6,
+   "category": "C_基底修復中",
    "range_1m_pct": 7.1,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 2558866104.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -4.2
   },
   {
    "ticker": "SOBO",
    "name": "South Bow Corporation Common Shares",
-   "price": 37.72,
+   "price": 38.52,
    "year_high": 38.67,
    "year_low": 25.26,
    "ma50": 36.74,
    "ma200": 32.27,
    "ma_proxy": true,
-   "chg_5d": 2.5,
-   "chg_1m": -2.5,
-   "chg_3m": 1.2,
-   "chg_6m": 26.5,
-   "chg_1y": 35.1,
+   "chg_5d": 2.12,
+   "chg_1m": -0.4,
+   "chg_3m": 3.3,
+   "chg_6m": 28.6,
+   "chg_1y": 37.2,
    "volume": 424879,
    "avg_volume": 752022,
-   "as_of": "2026-08-21",
-   "off_high_pct": 2.5,
-   "above_low_pct": 49.3,
+   "as_of": "2026-08-24",
+   "off_high_pct": 0.4,
+   "above_low_pct": 52.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.58,
-   "score": 76.6,
+   "score": 83.8,
    "category": "A_VCP待突破",
    "range_1m_pct": 8.6,
    "sector": "Energy",
@@ -1139,7 +1148,7 @@
    "mktcap": 7867812130.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 2.1
   },
   {
    "ticker": "RRBI",
@@ -1205,7 +1214,8 @@
    "mktcap": 30373131851.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.2
+   "_delta": 0.2,
+   "stale": true
   },
   {
    "ticker": "GEO",
@@ -1238,7 +1248,8 @@
    "mktcap": 4305276593.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.6
+   "_delta": -1.6,
+   "stale": true
   },
   {
    "ticker": "UHAL",
@@ -1342,27 +1353,27 @@
   {
    "ticker": "MSGS",
    "name": "Madison Square Garden Sports Corp. Class",
-   "price": 406.16,
+   "price": 402.9,
    "year_high": 414.12,
    "year_low": 195.78,
    "ma50": 391.84,
    "ma200": 318.15,
    "ma_proxy": true,
-   "chg_5d": -0.2,
-   "chg_1m": 3.0,
-   "chg_3m": 15.5,
-   "chg_6m": 38.3,
-   "chg_1y": 106.3,
+   "chg_5d": -0.8,
+   "chg_1m": 2.2,
+   "chg_3m": 14.7,
+   "chg_6m": 37.5,
+   "chg_1y": 105.5,
    "volume": 188884,
    "avg_volume": 249618,
-   "as_of": "2026-08-21",
-   "off_high_pct": 1.9,
-   "above_low_pct": 107.5,
+   "as_of": "2026-08-24",
+   "off_high_pct": 2.7,
+   "above_low_pct": 105.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.13,
-   "score": 75.7,
+   "score": 78.7,
    "category": "A_VCP待突破",
    "range_1m_pct": 7.3,
    "sector": "Consumer Discretionary",
@@ -1370,7 +1381,7 @@
    "mktcap": 9780308837.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -0.8
   },
   {
    "ticker": "MAX",
@@ -1436,32 +1447,33 @@
    "mktcap": 6214309396.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -5.9
+   "_delta": -5.9,
+   "stale": true
   },
   {
    "ticker": "TGTX",
    "name": "TG Therapeutics Inc. Common Stock",
-   "price": 54.27,
+   "price": 55.61,
    "year_high": 59.06,
    "year_low": 26.39,
    "ma50": 52.85,
    "ma200": 37.73,
    "ma_proxy": true,
-   "chg_5d": 11.3,
-   "chg_1m": -2.2,
-   "chg_3m": 37.4,
-   "chg_6m": 86.8,
-   "chg_1y": 95.7,
+   "chg_5d": 2.47,
+   "chg_1m": 0.3,
+   "chg_3m": 39.9,
+   "chg_6m": 89.3,
+   "chg_1y": 98.2,
    "volume": 5552658,
    "avg_volume": 2534874,
-   "as_of": "2026-08-21",
-   "off_high_pct": 8.1,
-   "above_low_pct": 105.6,
+   "as_of": "2026-08-24",
+   "off_high_pct": 5.8,
+   "above_low_pct": 110.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.82,
-   "score": 75.4,
+   "score": 86.0,
    "category": "A_VCP待突破",
    "range_1m_pct": 19.4,
    "sector": "Health Care",
@@ -1469,7 +1481,7 @@
    "mktcap": 8307057506.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 2.5
   },
   {
    "ticker": "EBC",
@@ -1502,7 +1514,8 @@
    "mktcap": 5196352692.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.8
+   "_delta": 0.8,
+   "stale": true
   },
   {
    "ticker": "WSFS",
@@ -1573,27 +1586,27 @@
   {
    "ticker": "CHRD",
    "name": "Chord Energy Corporation Common Stock",
-   "price": 147.85,
+   "price": 136.96,
    "year_high": 148.81,
    "year_low": 88.93,
    "ma50": 129.64,
    "ma200": 117.47,
    "ma_proxy": true,
-   "chg_5d": 7.7,
-   "chg_1m": 6.5,
-   "chg_3m": -0.4,
-   "chg_6m": 48.7,
-   "chg_1y": 45.4,
+   "chg_5d": -7.37,
+   "chg_1m": -0.9,
+   "chg_3m": -7.8,
+   "chg_6m": 41.3,
+   "chg_1y": 38.0,
    "volume": 577474,
    "avg_volume": 836890,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.6,
-   "above_low_pct": 66.3,
+   "as_of": "2026-08-24",
+   "off_high_pct": 8.0,
+   "above_low_pct": 54.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.82,
-   "score": 75.0,
+   "score": 76.4,
    "category": "A_VCP待突破",
    "range_1m_pct": 14.5,
    "sector": "Energy",
@@ -1601,7 +1614,7 @@
    "mktcap": 8087080375.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -7.4
   },
   {
    "ticker": "OFG",
@@ -1639,60 +1652,60 @@
   {
    "ticker": "TIGO",
    "name": "Millicom International Cellular S.A. Com",
-   "price": 93.68,
+   "price": 91.79,
    "year_high": 104.31,
    "year_low": 40.82,
    "ma50": 93.36,
    "ma200": 73.81,
    "ma_proxy": true,
-   "chg_5d": -0.2,
-   "chg_1m": -2.7,
-   "chg_3m": 18.2,
-   "chg_6m": 41.5,
-   "chg_1y": 108.5,
+   "chg_5d": -2.02,
+   "chg_1m": -4.7,
+   "chg_3m": 16.2,
+   "chg_6m": 39.5,
+   "chg_1y": 106.5,
    "volume": 753382,
    "avg_volume": 1533445,
-   "as_of": "2026-08-21",
-   "off_high_pct": 10.2,
-   "above_low_pct": 129.5,
-   "above_ma50": true,
+   "as_of": "2026-08-24",
+   "off_high_pct": 12.0,
+   "above_low_pct": 124.9,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.75,
-   "score": 74.8,
-   "category": "A_VCP待突破",
+   "score": 66.0,
+   "category": "C_基底修復中",
    "range_1m_pct": 18.2,
    "sector": "Telecommunications",
    "industry": "Telecommunications Equipment",
    "mktcap": 15695224861.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -2.0
   },
   {
    "ticker": "KMX",
    "name": "CarMax Inc",
-   "price": 62.13,
+   "price": 60.1,
    "year_high": 62.13,
    "year_low": 33.44,
    "ma50": 55.64,
    "ma200": 45.06,
    "ma_proxy": true,
-   "chg_5d": 3.7,
-   "chg_1m": 6.4,
-   "chg_3m": 68.2,
-   "chg_6m": 47.1,
-   "chg_1y": 6.3,
+   "chg_5d": -3.27,
+   "chg_1m": 3.1,
+   "chg_3m": 64.9,
+   "chg_6m": 43.8,
+   "chg_1y": 3.0,
    "volume": 1612931,
    "avg_volume": 3050333,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.0,
-   "above_low_pct": 85.8,
+   "as_of": "2026-08-24",
+   "off_high_pct": 3.3,
+   "above_low_pct": 79.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.59,
-   "score": 74.7,
+   "score": 79.0,
    "category": "A_VCP待突破",
    "range_1m_pct": 9.3,
    "sector": "Consumer Discretionary",
@@ -1700,7 +1713,7 @@
    "mktcap": 8816936394.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -3.3
   },
   {
    "ticker": "CDP",
@@ -1733,7 +1746,8 @@
    "mktcap": 4226807770.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "AMN",
@@ -1766,7 +1780,8 @@
    "mktcap": 1334635490.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.9
+   "_delta": -3.9,
+   "stale": true
   },
   {
    "ticker": "BJRI",
@@ -1871,27 +1886,27 @@
   {
    "ticker": "TRGP",
    "name": "Targa Resources Inc. Common Stock",
-   "price": 299.1,
+   "price": 293.11,
    "year_high": 302.25,
    "year_low": 150.94,
    "ma50": 272.51,
    "ma200": 230.4,
    "ma_proxy": true,
-   "chg_5d": 8.5,
-   "chg_1m": 4.7,
-   "chg_3m": 10.0,
-   "chg_6m": 33.4,
-   "chg_1y": 85.7,
+   "chg_5d": -2.0,
+   "chg_1m": 2.7,
+   "chg_3m": 8.0,
+   "chg_6m": 31.4,
+   "chg_1y": 83.7,
    "volume": 2010917,
    "avg_volume": 1304352,
-   "as_of": "2026-08-21",
-   "off_high_pct": 1.0,
-   "above_low_pct": 98.2,
+   "as_of": "2026-08-24",
+   "off_high_pct": 3.0,
+   "above_low_pct": 94.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.03,
-   "score": 73.9,
+   "score": 75.1,
    "category": "A_VCP待突破",
    "range_1m_pct": 16.6,
    "sector": "Utilities",
@@ -1899,7 +1914,7 @@
    "mktcap": 64136318381.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -2.0
   },
   {
    "ticker": "VOYA",
@@ -1965,7 +1980,8 @@
    "mktcap": 878425535.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.5
+   "_delta": 0.5,
+   "stale": true
   },
   {
    "ticker": "KARO",
@@ -2075,21 +2091,21 @@
    "ma50": 49.39,
    "ma200": 42.28,
    "ma_proxy": true,
-   "chg_5d": 2.9,
+   "chg_5d": 0.0,
    "chg_1m": -2.3,
    "chg_3m": 13.0,
    "chg_6m": 25.7,
    "chg_1y": 43.3,
    "volume": 12904759,
    "avg_volume": 12383157,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "off_high_pct": 3.1,
    "above_low_pct": 60.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.74,
-   "score": 73.5,
+   "score": 80.3,
    "category": "A_VCP待突破",
    "range_1m_pct": 6.7,
    "sector": "Industrials",
@@ -2097,7 +2113,7 @@
    "mktcap": 95569180968.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 0.0
   },
   {
    "ticker": "KFRC",
@@ -2135,27 +2151,27 @@
   {
    "ticker": "NWBI",
    "name": "Northwest Bancshares Inc. Common Stock",
-   "price": 15.42,
+   "price": 15.76,
    "year_high": 16.01,
    "year_low": 11.47,
    "ma50": 15.29,
    "ma200": 13.44,
    "ma_proxy": true,
-   "chg_5d": -2.1,
-   "chg_1m": 0.9,
-   "chg_3m": 15.1,
-   "chg_6m": 18.3,
-   "chg_1y": 28.9,
+   "chg_5d": 2.2,
+   "chg_1m": 3.1,
+   "chg_3m": 17.3,
+   "chg_6m": 20.5,
+   "chg_1y": 31.1,
    "volume": 864693,
    "avg_volume": 1150461,
-   "as_of": "2026-08-21",
-   "off_high_pct": 3.7,
-   "above_low_pct": 34.4,
+   "as_of": "2026-08-24",
+   "off_high_pct": 1.6,
+   "above_low_pct": 37.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 73.4,
+   "score": 78.2,
    "category": "A_VCP待突破",
    "range_1m_pct": 4.7,
    "sector": "Finance",
@@ -2163,7 +2179,7 @@
    "mktcap": 2258399661.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": 2.2
   },
   {
    "ticker": "IBKR",
@@ -2201,27 +2217,27 @@
   {
    "ticker": "HG",
    "name": "Hamilton Insurance Group Ltd. Class B Co",
-   "price": 34.96,
+   "price": 35.62,
    "year_high": 37.28,
    "year_low": 21.38,
    "ma50": 34.39,
    "ma200": 30.31,
    "ma_proxy": true,
-   "chg_5d": -2.2,
-   "chg_1m": 0.2,
-   "chg_3m": 9.8,
-   "chg_6m": 11.3,
-   "chg_1y": 51.9,
+   "chg_5d": 1.89,
+   "chg_1m": 2.1,
+   "chg_3m": 11.7,
+   "chg_6m": 13.2,
+   "chg_1y": 53.8,
    "volume": 204256,
    "avg_volume": 464371,
-   "as_of": "2026-08-21",
-   "off_high_pct": 6.2,
-   "above_low_pct": 63.5,
+   "as_of": "2026-08-24",
+   "off_high_pct": 4.5,
+   "above_low_pct": 66.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.72,
-   "score": 73.0,
+   "score": 78.2,
    "category": "A_VCP待突破",
    "range_1m_pct": 8.1,
    "sector": "Finance",
@@ -2229,7 +2245,7 @@
    "mktcap": 2909047366.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 1.9
   },
   {
    "ticker": "AMAL",
@@ -2262,7 +2278,8 @@
    "mktcap": 1457931168.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 4.3
+   "_delta": 4.3,
+   "stale": true
   },
   {
    "ticker": "MEOH",
@@ -2328,32 +2345,33 @@
    "mktcap": 1155916765.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.8
+   "_delta": -3.8,
+   "stale": true
   },
   {
    "ticker": "HTO",
    "name": "H2O America Common Stock",
-   "price": 63.48,
+   "price": 63.3,
    "year_high": 65.43,
    "year_low": 45.97,
    "ma50": 61.62,
    "ma200": 55.58,
    "ma_proxy": true,
-   "chg_5d": -0.6,
-   "chg_1m": -0.7,
-   "chg_3m": 14.9,
-   "chg_6m": 16.4,
-   "chg_1y": 27.6,
+   "chg_5d": -0.28,
+   "chg_1m": -1.0,
+   "chg_3m": 14.6,
+   "chg_6m": 16.1,
+   "chg_1y": 27.3,
    "volume": 238526,
    "avg_volume": 457964,
-   "as_of": "2026-08-21",
-   "off_high_pct": 3.0,
-   "above_low_pct": 38.1,
+   "as_of": "2026-08-24",
+   "off_high_pct": 3.3,
+   "above_low_pct": 37.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 72.5,
+   "score": 78.0,
    "category": "A_VCP待突破",
    "range_1m_pct": 5.0,
    "sector": "Utilities",
@@ -2361,7 +2379,7 @@
    "mktcap": 2657069918.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -0.3
   },
   {
    "ticker": "RUSHB",
@@ -2399,35 +2417,35 @@
   {
    "ticker": "AMRX",
    "name": "Amneal Pharmaceuticals Inc. Class A Comm",
-   "price": 17.91,
+   "price": 16.96,
    "year_high": 19.1,
    "year_low": 7.96,
    "ma50": 17.51,
    "ma200": 14.07,
    "ma_proxy": true,
-   "chg_5d": -1.3,
-   "chg_1m": -0.3,
-   "chg_3m": 50.1,
-   "chg_6m": 17.9,
-   "chg_1y": 93.4,
+   "chg_5d": -5.3,
+   "chg_1m": -5.6,
+   "chg_3m": 44.8,
+   "chg_6m": 12.6,
+   "chg_1y": 88.1,
    "volume": 1364791,
    "avg_volume": 2062258,
-   "as_of": "2026-08-21",
-   "off_high_pct": 6.2,
-   "above_low_pct": 125.0,
-   "above_ma50": true,
+   "as_of": "2026-08-24",
+   "off_high_pct": 11.2,
+   "above_low_pct": 113.1,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.9,
-   "score": 72.3,
-   "category": "A_VCP待突破",
+   "score": 59.0,
+   "category": "C_基底修復中",
    "range_1m_pct": 11.0,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 6237981664.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -5.3
   },
   {
    "ticker": "CF",
@@ -2472,21 +2490,21 @@
    "ma50": 254.83,
    "ma200": 231.15,
    "ma_proxy": true,
-   "chg_5d": 3.8,
+   "chg_5d": 0.0,
    "chg_1m": 4.2,
    "chg_3m": 19.2,
    "chg_6m": 11.1,
    "chg_1y": 53.3,
    "volume": 6176144,
    "avg_volume": 8063891,
-   "as_of": "2026-08-21",
+   "as_of": "2026-08-24",
    "off_high_pct": 1.2,
    "above_low_pct": 58.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.78,
-   "score": 72.1,
+   "score": 77.7,
    "category": "A_VCP待突破",
    "range_1m_pct": 7.2,
    "sector": "Health Care",
@@ -2494,7 +2512,7 @@
    "mktcap": 651250996853.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 0.0
   },
   {
    "ticker": "BRKR",
@@ -2532,35 +2550,35 @@
   {
    "ticker": "NEO",
    "name": "NeoGenomics Inc. Common Stock",
-   "price": 16.98,
+   "price": 15.95,
    "year_high": 16.98,
    "year_low": 5.67,
    "ma50": 14.42,
    "ma200": 11.37,
    "ma_proxy": true,
-   "chg_5d": 6.5,
-   "chg_1m": 19.2,
-   "chg_3m": 106.1,
-   "chg_6m": 48.4,
-   "chg_1y": 172.1,
+   "chg_5d": -6.07,
+   "chg_1m": 13.1,
+   "chg_3m": 100.0,
+   "chg_6m": 42.3,
+   "chg_1y": 166.0,
    "volume": 1139833,
    "avg_volume": 3112453,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.0,
-   "above_low_pct": 199.5,
+   "as_of": "2026-08-24",
+   "off_high_pct": 6.1,
+   "above_low_pct": 181.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.52,
-   "score": 79.6,
-   "category": "E_突破延伸中",
+   "score": 71.7,
+   "category": "B_上升結構",
    "range_1m_pct": 24.4,
    "sector": "Health Care",
    "industry": "Precision Instruments",
    "mktcap": 2181512971.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -6.1
   },
   {
    "ticker": "BLFS",
@@ -2659,7 +2677,8 @@
    "mktcap": 4147895934.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 1.2
+   "_delta": 1.2,
+   "stale": true
   },
   {
    "ticker": "AXGN",
@@ -2692,7 +2711,8 @@
    "mktcap": 2709580255.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "CORT",
@@ -2857,7 +2877,8 @@
    "mktcap": 3512905532.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 2.8
+   "_delta": 2.8,
+   "stale": true
   },
   {
    "ticker": "VSAT",
@@ -2923,7 +2944,8 @@
    "mktcap": 4383056923.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -3.0
+   "_delta": -3.0,
+   "stale": true
   },
   {
    "ticker": "DELL",
@@ -3088,7 +3110,8 @@
    "mktcap": 106338376000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.4
+   "_delta": -1.4,
+   "stale": true
   },
   {
    "ticker": "DINO",
@@ -3193,35 +3216,35 @@
   {
    "ticker": "RAPP",
    "name": "Rapport Therapeutics Inc. Common Stock",
-   "price": 48.24,
+   "price": 47.36,
    "year_high": 49.07,
    "year_low": 14.04,
    "ma50": 42.06,
    "ma200": 33.58,
    "ma_proxy": true,
-   "chg_5d": 1.7,
-   "chg_1m": 16.6,
-   "chg_3m": 30.1,
-   "chg_6m": 66.0,
-   "chg_1y": 230.6,
+   "chg_5d": -1.82,
+   "chg_1m": 14.8,
+   "chg_3m": 28.3,
+   "chg_6m": 64.2,
+   "chg_1y": 228.8,
    "volume": 140899,
    "avg_volume": 374834,
-   "as_of": "2026-08-21",
-   "off_high_pct": 1.7,
-   "above_low_pct": 243.6,
+   "as_of": "2026-08-24",
+   "off_high_pct": 3.5,
+   "above_low_pct": 237.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 72.8,
-   "category": "B_上升結構",
+   "score": 73.1,
+   "category": "E_突破延伸中",
    "range_1m_pct": 18.6,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 2314472517.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -1.8
   },
   {
    "ticker": "ZD",
@@ -3287,7 +3310,8 @@
    "mktcap": 28188630985.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 4.2
+   "_delta": 4.2,
+   "stale": true
   },
   {
    "ticker": "IMO",
@@ -3353,7 +3377,8 @@
    "mktcap": 103972424467.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.5
+   "_delta": 0.5,
+   "stale": true
   },
   {
    "ticker": "WTTR",
@@ -3391,35 +3416,35 @@
   {
    "ticker": "INSW",
    "name": "International Seaways Inc. Common Stock",
-   "price": 99.52,
-   "year_high": 99.71,
+   "price": 100.5,
+   "year_high": 100.5,
    "year_low": 41.64,
    "ma50": 88.98,
    "ma200": 71.35,
    "ma_proxy": true,
-   "chg_5d": 2.5,
-   "chg_1m": 8.9,
-   "chg_3m": 17.7,
-   "chg_6m": 54.5,
-   "chg_1y": 133.2,
+   "chg_5d": 0.98,
+   "chg_1m": 9.9,
+   "chg_3m": 18.7,
+   "chg_6m": 55.5,
+   "chg_1y": 134.2,
    "volume": 485350,
    "avg_volume": 564233,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.2,
-   "above_low_pct": 139.0,
+   "as_of": "2026-08-24",
+   "off_high_pct": 0.0,
+   "above_low_pct": 141.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.96,
-   "score": 72.0,
-   "category": "B_上升結構",
+   "score": 70.1,
+   "category": "E_突破延伸中",
    "range_1m_pct": 11.3,
    "sector": "Consumer Discretionary",
    "industry": "Marine Transportation",
    "mktcap": 4929356071.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 1.0
   },
   {
    "ticker": "REX",
@@ -3618,7 +3643,8 @@
    "mktcap": 637018571.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -5.4
+   "_delta": -5.4,
+   "stale": true
   },
   {
    "ticker": "FTNT",
@@ -3651,7 +3677,8 @@
    "mktcap": 112632382872.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "PBR",
@@ -3717,7 +3744,8 @@
    "mktcap": 106565923462.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 1.1
+   "_delta": 1.1,
+   "stale": true
   },
   {
    "ticker": "MS",
@@ -3871,11 +3899,6 @@
    "note": "Q2財報顯示訂單與案源明顯回升,多家券商上調目標價,股價創新高;8/12 CEO Troendle出售2.3萬股(約1,400萬美元),12個月內幕人士淨賣出"
   },
   {
-   "ticker": "STT",
-   "note": "Q2營收40.5億美元(+17.4%)、EPS 3.65美元(+68%)均超預期,AUM達6.28兆美元創新高;8/12完成4.96億美元優先股發行;10/14公布Q3財報",
-   "earnings_date": "2026-10-14"
-  },
-  {
    "ticker": "DD",
    "note": "8/4 Q2財報超預期,有機營收+4%、利潤率擴張,上調全年EPS指引至7.17-7.32美元並加碼2.5億美元回購;惟水務業務偏弱令營收指引收窄 6/24 完成 1:3 反向分割。"
   },
@@ -3911,18 +3934,6 @@
    "note": "8 月初公布 Q2 財報,營收與淨利成長並上調 2026 全年指引;宣布每股 0.62 美元股息(9/15 除息),年初至今漲逾 50%"
   },
   {
-   "ticker": "CNI",
-   "note": "8/11 宣布 2025-26 穀物年度運量創紀錄 3,380 萬噸;8/14 混合動力機車計畫進展;8/17 Wells Fargo 重申買進,股價貼近歷史高點"
-  },
-  {
-   "ticker": "SU",
-   "note": "8/4 公布 Q2 淨利 37 億美元、調整後資金流追平季度紀錄,淨債大幅下降;8 月起月度回購提高至 5 億美元;8/19 Morgan Stanley 升評至加碼"
-  },
-  {
-   "ticker": "RLAY",
-   "note": "8/6 公布 Q2:現金 9.11 億美元並擴大 ATM 增發;zovegalisib 乳癌一線與血管異常數據進展,8/18 創 52 週新高,Goldman 目標價 31 美元"
-  },
-  {
    "ticker": "BFH",
    "note": "Q2 EPS 3.55 美元、營收年增 7%,淨損率降至 6.98% 信用品質改善;收緊 2026 全年損失展望;8/3 UBS 目標價升至 127 美元",
    "earnings_date": "2026-10-21"
@@ -3932,33 +3943,12 @@
    "note": "8/6 公布Q2:RevPAR 年增逾5%、MFFO 0.52 優於去年,上調全年淨利指引;8/6 Compass Point 升評至買進,8/7 Ladenburg 目標價升至18美元"
   },
   {
-   "ticker": "PVLA",
-   "note": "8/4 公布Q2:QTORIN rapamycin 微囊型淋巴管畸形滾動式 NDA 首模組已提交 FDA,擬2026下半年完成申報、2027上半年上市;具突破性療法認定"
-  },
-  {
    "ticker": "RPRX",
    "note": "8/5 公布Q2:營收6.74億美元優於預期,上調2026全年權利金收入展望;8/12 以1億美元取得 Zealand rusfertide 權利金經濟權益;9/10 配息0.235美元"
   },
   {
-   "ticker": "UNF",
-   "note": "近期無重大消息,7/1 公布上季財報後貼近52週高、量縮整理;宣布季息0.365美元(9/4除息);下次財報(FY26 Q4)預計10/28",
-   "earnings_date": "2026-10-28"
-  },
-  {
-   "ticker": "RCUS",
-   "note": "8月中公布Q2:營收4,100萬美元並釋出全年營收指引;與 Summit 合作癌症組合療法、casdatifan 腎癌前景獲看好,一年股價漲約200%"
-  },
-  {
-   "ticker": "ALRS",
-   "note": "7/29 公布 Q2 財報,營收 8,065 萬美元年增 7% 優於預期;8/3 Raymond James 重申優於大盤、目標價 37 美元,8/17 Weiss 降評至持有;股價貼近歷史高點"
-  },
-  {
    "ticker": "EXPD",
    "note": "8/4 公布 Q2 財報,EPS 2.03 美元年增 51%,大勝共識 1.69;營收 35 億美元年增 32%、空運噸數增 14%;8/14 創歷史新高 188.31,分析師普遍上調預估"
-  },
-  {
-   "ticker": "SYRE",
-   "note": "8/4 公布 SKYLINE 二期 SPY001/SPY002 誘導期正面數據,Mizuho 上調目標價至 120 美元;9 月待公布 SPY003 及 SKYWAY 數據;現金 11.4 億美元,股價創 52 週新高"
   },
   {
    "ticker": "UNP",
@@ -3976,19 +3966,6 @@
   {
    "ticker": "DRH",
    "note": "Q2 RevPAR 年增7%,上調2026指引與股息;8/3 美銀調升目標價至14美元,8月獲多家機構新增持股"
-  },
-  {
-   "ticker": "NHC",
-   "note": "Q2 營收年增8.8%至4.08億美元,受惠6/1收購5家護理機構;調整後EPS 1.74美元,季度股息上調4.7%"
-  },
-  {
-   "ticker": "TRVI",
-   "note": "Haduvio 治IPF慢性咳嗽Phase 2b CORAL數據正面;8/6公布Q2財報,8/7 Cantor調升目標價至30美元"
-  },
-  {
-   "ticker": "SOBO",
-   "note": "8/5 公布Q2:EPS 0.50美元、營收5.46億美元均優於預期;8/7 Barclays調升目標價至35美元",
-   "earnings_date": "2026-11-12"
   },
   {
    "ticker": "RRBI",
@@ -4016,21 +3993,12 @@
    "note": "8/4上半年稅前盈利195億美元(+23%)優於預期,重啟10億美元回購並上調成本節省目標至20億美元;股價近歷史高位量縮整理"
   },
   {
-   "ticker": "MSGS",
-   "note": "8/13 FY26 Q4財報大幅優於預期(Knicks奪NBA冠軍帶動),全年營收+11%;擬10月底前分拆Rangers為兩家上市公司以釋放價值,股價創歷史新高"
-  },
-  {
    "ticker": "MAX",
    "note": "7/29 Q2轉虧為盈(純益4,180萬美元),調整後EBITDA+19%,Q3營收指引3.3-3.55億美元優於預期;過去四季已回購約13%流通股"
   },
   {
    "ticker": "DNTH",
    "note": "8/4 Q2 虧損 EPS -0.90 略遜預期,惟發表新藥 DNTH312 拓展自體免疫布局,股價創一年新高;8/5 Wedbush 目標價由 105 升至 122 美元"
-  },
-  {
-   "ticker": "TGTX",
-   "note": "8/3 Q2 營收約 2.4 億美元年增 70% 惟 EPS 遜預期,上調全年 BRIUMVI 營收指引;8/21 傳大型藥廠有意收購,股價跳漲 7.2%",
-   "earnings_date": "2026-11-09"
   },
   {
    "ticker": "EBC",
@@ -4046,21 +4014,8 @@
    "earnings_date": "2026-08-25"
   },
   {
-   "ticker": "CHRD",
-   "note": "8/5 Q2 EPS 6.44 美元遜預期,惟自由現金流 4.14 億美元強勁,Q3 起承諾回饋至少 75% FCF;8/17 UBS 目標價升至 171 美元"
-  },
-  {
    "ticker": "OFG",
    "note": "7/21 Q2 EPS 1.39美元優於預期，NIM上升、信貸趨勢正面，Truist目標價升至58美元；8月中董事與CFO申報減持；股價貼近52週高52.23量縮整理"
-  },
-  {
-   "ticker": "TIGO",
-   "note": "8/6 Q2營收21.8億美元、EBITDA增58%，上調全年EFCF指引至約11億美元並宣布每股1.5美元中期股息；8/18曾跌7.5%，8/21反彈3.5%收93.68"
-  },
-  {
-   "ticker": "KMX",
-   "note": "6月底Q1 FY27財報：營收增6.2%、零售銷量增3.3%，降價搶回市佔，二手車需求帶動股價3個月大漲68%創52週高；9/25公布Q2財報",
-   "earnings_date": "2026-09-25"
   },
   {
    "ticker": "CDP",
@@ -4078,10 +4033,6 @@
    "ticker": "ABBV",
    "note": "8月初Q2財報強勁,營收170億美元、調整後EPS年增22.9%,上調全年營收指引至約676億美元;Skyrizi/Rinvoq領軍,發債支應收購Apogee;10/23公布Q3財報",
    "earnings_date": "2026-10-23"
-  },
-  {
-   "ticker": "TRGP",
-   "note": "Q2調整後EBITDA年增38%創紀錄並上調指引;8/18宣布與ExxonMobil簽長期中游協議,股價當日漲7%,Morgan Stanley/Jefferies上調目標價至343/345美元"
   },
   {
    "ticker": "VOYA",
@@ -4104,26 +4055,13 @@
    "note": "8/4 盤後 Q2 財報大勝預期：調整後 EPS $10.10 遠超預估 $8.17，淨利 $4.62 億年增近 7 倍，夏威夷 SAF 投產帶動；財報後股價震盪整理"
   },
   {
-   "ticker": "CSX",
-   "note": "Q2 營收 $39.4 億年增 10.1%、EPS $0.54 優於預期，並上調 2026 全年營收指引至中高個位數成長；YTD 漲逾 40%；10/15 盤後公布 Q3 財報",
-   "earnings_date": "2026-10-15"
-  },
-  {
    "ticker": "KFRC",
    "note": "7/27 公布 Q2 財報，科技與顧問業務動能強，職缺與新指派數年增 18%、營收連續季度成長；分析師上調目標價至約 $60.7；年內大漲約 90%"
-  },
-  {
-   "ticker": "NWBI",
-   "note": "Q2 淨利創紀錄 $5,400 萬（EPS $0.36 vs 去年同期 $0.26），重申全年營收指引；8/20 董事買入 1,635 股；連續 127 季配息，貼近 52 週高量縮"
   },
   {
    "ticker": "IBKR",
    "note": "8/5 開放巴西 B3 期貨交易、8/13 新增羅馬尼亞布加勒斯特交易所；8/4 Barclays 重申買進；YTD 漲約 33%；10/15 預計公布 Q3 財報",
    "earnings_date": "2026-10-15"
-  },
-  {
-   "ticker": "HG",
-   "note": "8/6 公布 Q2 財報:營收年增13.3%至8.4億美元,EPS 1.56美元超預期29%;8月更新庫藏股,累計回購約1.63億美元,年初至今漲約31%"
   },
   {
    "ticker": "AMAL",
@@ -4138,29 +4076,12 @@
    "note": "8/5 公布 Q2 轉虧為盈,淨利1,660萬美元,調整後EBITDA年增297%;Q2 股息大增433%至0.80美元,並預告 Q3 股息可望逾1美元創新高"
   },
   {
-   "ticker": "HTO",
-   "note": "Q2 調整後EPS 0.72美元優於預期,維持全年指引3.08-3.18美元;Quadvest 收購案(公司為買方)預計 Q3 底完成;8/17 Seaport 上調目標價至67美元"
-  },
-  {
    "ticker": "RUSHB",
    "note": "7/28 公布 Q2:EPS 0.91 美元優於預期,宣布 3 比 2 股票分割並上調分割後股息 10.5%;售後服務佔毛利 64%,惟卡車終端需求仍疲弱"
   },
   {
-   "ticker": "AMRX",
-   "note": "Q2 調整後 EPS 0.30 美元勝預期 0.23,上調 2026 指引(EPS 0.96-1.06 美元);7/31 股東批准收購 Kashiv BioSciences;UBS 目標價升至 25 美元",
-   "earnings_date": "2026-10-29"
-  },
-  {
-   "ticker": "JNJ",
-   "note": "Q2 營收 253 億美元增 6.6%、EPS 2.90 美元優於預期並上調全年指引;8/19 創 275.48 美元歷史新高;8/25 除息 1.34 美元"
-  },
-  {
    "ticker": "BRKR",
    "note": "8/4 公布 Q2:營收 8.39 億美元遜於預期並下修全年營收展望,股價單日重挫逾 12%;惟 EPS 0.49 美元勝預期,8/14 因擴大與 Atinary 的 AI 實驗室合作反彈 13%"
-  },
-  {
-   "ticker": "NEO",
-   "note": "8月分析師上調目標價至約19.7美元；北卡法院裁定Natera專利無效，為RaDaR ST檢測掃清障礙"
   },
   {
    "ticker": "BLFS",
@@ -4240,10 +4161,6 @@
    "note": "8月Q2轉虧為盈，RevPAR增5.8%，上調全年EBITDA指引至6.17-6.37億美元；Royal Palm酒店7月翻新重開"
   },
   {
-   "ticker": "RAPP",
-   "note": "RAP-219癲癇三期進展獲看好，8/5獲券商首次覆蓋買入評級；Q2淨虧損擴大至5,660萬美元，關注融資風險"
-  },
-  {
    "ticker": "ZD",
    "note": "8/6 Q2 EPS符預期但營收遜；以12億美元出售連接業務並大額回購，8月UBS等多家券商上調目標價"
   },
@@ -4262,10 +4179,6 @@
   {
    "ticker": "WTTR",
    "note": "8/4 Q2大幅超預期股價跳漲11%；簽訂12年北Delaware盆地水務基建擴大協議；8/21獲摩根大通增持評級"
-  },
-  {
-   "ticker": "INSW",
-   "note": "8/10 Q2 EPS 5.91美元超預期，宣布每股5.05美元股息9/24派發；油輪運價強勁，年內漲逾110%"
   },
   {
    "ticker": "REX",
@@ -4341,6 +4254,141 @@
   {
    "ticker": "AMN",
    "note": "8/24 -3.9%。Reported down ~4% Monday",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "STT",
+   "note": "8/24 +0.3%。Undated live quote page showed 187.67; +0.3% vs prior, plausible. Dated historical data only ran to Aug 20 (183.07). Direct fetch of stockanalysis/macrotrends/CNN/marketbeat all blocked by the network egress proxy.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "CNI",
+   "note": "8/24 -2.7%。Undated 'today' quote of $126.32, -2.7% vs the Aug 21 close of $129.84 — plausible. No explicit dated close found.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "SU",
+   "note": "8/24 -1.5%。Quote page reported 67.36 (-1.57% on the day) with previous close 68.43, which matches the given Aug 21 value of 68.42 - so this is the Aug 24 session. Likely an intraday/last print rather than a confirmed official close (quoted day range 67.04-68.09 was internally inconsistent).",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "RLAY",
+   "note": "8/24 +1.8%。Aug 24 quote $19.79 (range 18.68-19.83, prev close 19.71); +1.8% vs Aug 21 value.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "PVLA",
+   "note": "8/24 -0.2%。Last close $141.77 per aggregated quote pages (Yahoo/CNN/CNBC); consistent with prior 142.04. Conflicting low figures ($108.81, $123.94) on Investing.com/Kraken appear to be wrong or mismatched securities and were rejected.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "UNF",
+   "note": "8/24 -4.9%。Live 'today' quote from Investing.com/aggregators; no explicit date stamp. -4.9% vs Aug 21 prior, within plausible range.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "RCUS",
+   "note": "8/24 -8.7%。Latest close $27.70 (after-hours $27.98) per quote aggregation; -8.7% vs prior 30.34, within plausible biotech range.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "ALRS",
+   "note": "8/24 +1.3%。Quote-page price labeled 'today' (Aug 24 post-close, ~$33-34 range across sources); +1.3% vs Aug 21. No explicitly dated close found.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "SYRE",
+   "note": "8/24 +0.2%。Aug 24 session quote, range 105.00-107.00; +0.2% vs prior.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NHC",
+   "note": "8/24 -5.8%。One source gave a dated Aug 24, 2026 close of $219.84 (-1.80, -0.81%); another attributed $219.84 to Aug 13 and showed $222.16 live. -5.8% vs prior 233.40 — plausible but date is not fully corroborated.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TRVI",
+   "note": "8/24 -4.2%。Kraken/Investing quote page: $17.20, -0.78% on the session, day range 17.11-17.62. Undated on the page but consistent with the most recent session and within 4% of the Aug 21 prior (17.96).",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "SOBO",
+   "note": "8/24 +2.1%。Quote page snippet reported 38.52 'as of today' (Aug 24, 2026) with 52-week high 38.94, volume 241.51K. +2.1% vs Aug 21 - plausible move. Undated on-page timestamp, hence medium.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "MSGS",
+   "note": "8/24 -0.8%。Search summary reported an Aug 24, 2026 close of $402.90 (-0.8% vs prior 406.16). A separate live-quote source showed ~$410 with prev close $412.50, so sources conflict; the dated Aug 24 figure was used.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TGTX",
+   "note": "8/24 +2.5%。Aug 24 dated quote page; prior close 54.27 confirmed matching input.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "CHRD",
+   "note": "8/24 -7.4%。Quote page showed $136.96, -5.22 (-3.67%) against a previous close of ~$148.81, consistent with the Aug 21 close of $147.85; implies a -7.4% move, large but plausible for an E&P name. Other aggregator prices ($139.33, $112.24, $92.76) were clearly wrong securities/stale.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TIGO",
+   "note": "8/24 -2.0%。TradingView quote -0.52%/24h; -2.0% vs Aug 21 93.68, plausible.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "KMX",
+   "note": "8/24 -3.3%。Quote page previous close $60.10 with Aug 25 pre-market $60.27; -3.3% vs prior 62.13, plausible.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "TRGP",
+   "note": "8/24 -2.0%。Quote page dated Aug 24 (-1.04%); a second source echoed 299.10 which equals the Aug 21 prior and looks stale.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "CSX",
+   "note": "8/24 +0.0%。Search results report a $51.59 close for Aug 24, 2026 (+2.9% vs 50.16 prior); plausible, sourced from aggregated quote pages rather than an explicit exchange record.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NWBI",
+   "note": "8/24 +2.2%。Latest quote page price $15.76 (undated 'today'); +2.2% vs prior 15.42. No explicit Aug 24 dated close located.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "HG",
+   "note": "8/24 +1.9%。Quote page close $35.62 (-0.95%), unchanged after hours; +1.9% vs Aug 21 — plausible.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "HTO",
+   "note": "8/24 -0.3%。H2O America; live quote pages show 63.30-63.31, no explicit date stamp. Consistent with prior 63.48 (-0.3%).",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "AMRX",
+   "note": "8/24 -5.3%。Quote-page price labeled 'today' (Aug 24 post-close); -5.3% vs Aug 21, plausible. Not an explicitly dated close.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "JNJ",
+   "note": "8/24 +0.0%。Explicit Aug 24, 2026 close of $270.24 (day range 267.00-272.65); +1.1% vs Aug 21 prior 267.37.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NEO",
+   "note": "8/24 -6.1%。Quote page shows last $16.21 (Aug 25 intraday) with previous close $15.95, i.e. the Aug 24 close. -6.1% vs Aug 21 prior 16.98, within tolerance.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "RAPP",
+   "note": "8/24 -1.8%。Dated quote page (Kraken/stockanalysis aggregation), -1.8% vs prior 48.24. Plausible move.",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "INSW",
+   "note": "8/24 +1.0%。International Seaways live quote 100.50; session referenced Aug 23-24. +1.0% vs prior 99.52, plausible.",
    "earnings_date": ""
   }
  ],

@@ -521,11 +521,16 @@ def main():
     dates = collections.Counter(
         (r.get("as_of") or "")[:10]
         for s in (vcp_snaps, stage_snaps, pre_snaps) for r in s[-1][3]["rows"])
-    newest = max(d for d in dates if d)
-    n_new = dates[newest]
+    dates.pop("", None)
     n_all = sum(dates.values())
-    basis = (f"{newest} 收盤" if n_new == n_all
-             else f"{newest} 收盤（{n_new}/{n_all} 檔；其餘沿用 {min(d for d in dates if d)}）")
+    newest = max(dates)
+    # "current" = the newest trading day plus any intraday quotes taken after it
+    recent = sorted(dates)[-2:] if len(dates) > 1 else [newest]
+    n_recent = sum(dates[d] for d in recent)
+    basis_day = recent[0]
+    older = n_all - n_recent
+    basis = (f"{basis_day} 收盤" if older == 0
+             else f"{basis_day} 收盤（{n_recent}/{n_all} 檔；其餘 {older} 檔仍為較早報價）")
 
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)
