@@ -4,31 +4,30 @@
   {
    "ticker": "PANW",
    "name": "Palo Alto Networks, Inc.",
-   "price": 350.9,
+   "price": 337.03,
    "year_high": 398.88,
    "year_low": 139.57,
    "ma50": 328.2544,
    "ma200": 223.16824,
-   "chg_5d": -2.55,
-   "chg_1m": -1.9,
-   "chg_3m": 45.0,
-   "chg_6m": 139.4,
-   "chg_1y": 106.2,
+   "chg_5d": -3.95,
+   "chg_1m": -5.9,
+   "chg_3m": 41.0,
+   "chg_6m": 135.4,
+   "chg_1y": 102.2,
    "volume": 4469195,
    "avg_volume": 7607257,
-   "as_of": "2026-08-24",
-   "off_high_pct": 12.0,
-   "above_low_pct": 151.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 15.5,
+   "above_low_pct": 141.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.59,
-   "score": 69.8,
+   "score": 67.4,
    "category": "A_VCP待突破",
    "stage": "2B_主升段",
    "ma200_dist_pct": 61.3,
-   "_delta": -2.5,
-   "stale": true
+   "_delta": -4.0
   },
   {
    "ticker": "CRWD",
@@ -56,7 +55,8 @@
    "category": "B_上升結構",
    "stage": "2B_主升段",
    "ma200_dist_pct": 39.4,
-   "_delta": -1.1
+   "_delta": -1.1,
+   "stale": true
   },
   {
    "ticker": "ASML",
@@ -142,36 +142,36 @@
    "category": "B_上升結構",
    "stage": "2B_主升段",
    "ma200_dist_pct": 87.9,
-   "_delta": 6.7
+   "_delta": 6.7,
+   "stale": true
   },
   {
    "ticker": "SNOW",
    "name": "Snowflake Inc.",
-   "price": 316.77,
+   "price": 315.37,
    "year_high": 341.95,
    "year_low": 118.3,
    "ma50": 271.7206,
    "ma200": 214.745,
-   "chg_5d": -2.71,
-   "chg_1m": 18.4,
-   "chg_3m": 95.5,
-   "chg_6m": 82.2,
-   "chg_1y": 61.5,
+   "chg_5d": -0.44,
+   "chg_1m": 18.0,
+   "chg_3m": 95.1,
+   "chg_6m": 81.8,
+   "chg_1y": 61.1,
    "volume": 3998967,
    "avg_volume": 7652841,
-   "as_of": "2026-08-24",
-   "off_high_pct": 7.4,
-   "above_low_pct": 167.8,
+   "as_of": "2026-08-26",
+   "off_high_pct": 7.8,
+   "above_low_pct": 166.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.52,
-   "score": 78.0,
+   "score": 77.7,
    "category": "B_上升結構",
    "stage": "2A_初升段",
    "ma200_dist_pct": 51.6,
-   "_delta": -2.7,
-   "stale": true
+   "_delta": -0.4
   },
   {
    "ticker": "IOT",
@@ -257,7 +257,8 @@
    "category": "C_基底修復中",
    "stage": "2B_主升段",
    "ma200_dist_pct": 45.4,
-   "_delta": 5.4
+   "_delta": 5.4,
+   "stale": true
   },
   {
    "ticker": "HPE",
@@ -285,36 +286,36 @@
    "category": "B_上升結構",
    "stage": "2B_主升段",
    "ma200_dist_pct": 70.3,
-   "_delta": 2.0
+   "_delta": 2.0,
+   "stale": true
   },
   {
    "ticker": "AMZN",
    "name": "Amazon.com, Inc.",
-   "price": 262.07,
+   "price": 261.06,
    "year_high": 287.2,
    "year_low": 196,
    "ma50": 248.317,
    "ma200": 237.86275,
-   "chg_5d": 0.35,
-   "chg_1m": 5.9,
-   "chg_3m": -1.1,
-   "chg_6m": 27.6,
-   "chg_1y": 13.0,
+   "chg_5d": -0.39,
+   "chg_1m": 5.5,
+   "chg_3m": -1.5,
+   "chg_6m": 27.2,
+   "chg_1y": 12.6,
    "volume": 31484780,
    "avg_volume": 49279055,
-   "as_of": "2026-08-24",
-   "off_high_pct": 8.8,
-   "above_low_pct": 33.7,
+   "as_of": "2026-08-26",
+   "off_high_pct": 9.1,
+   "above_low_pct": 33.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.64,
-   "score": 80.5,
+   "score": 80.1,
    "category": "A_VCP待突破",
    "stage": "2A_初升段",
    "ma200_dist_pct": 9.8,
-   "_delta": 0.3,
-   "stale": true
+   "_delta": -0.4
   },
   {
    "ticker": "DDOG",
@@ -342,7 +343,8 @@
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 34.6,
-   "_delta": 1.9
+   "_delta": 1.9,
+   "stale": true
   },
   {
    "ticker": "INTC",
@@ -405,31 +407,30 @@
   {
    "ticker": "NVDA",
    "name": "NVIDIA Corporation",
-   "price": 209.93,
+   "price": 209.66,
    "year_high": 236.54,
    "year_low": 164.07,
    "ma50": 206.6466,
    "ma200": 195.03966,
-   "chg_5d": -2.23,
-   "chg_1m": 3.9,
-   "chg_3m": -5.6,
-   "chg_6m": 12.4,
-   "chg_1y": 16.2,
+   "chg_5d": -0.13,
+   "chg_1m": 3.8,
+   "chg_3m": -5.7,
+   "chg_6m": 12.3,
+   "chg_1y": 16.1,
    "volume": 102376166,
    "avg_volume": 147430638,
-   "as_of": "2026-08-24",
-   "off_high_pct": 11.2,
-   "above_low_pct": 28.0,
+   "as_of": "2026-08-26",
+   "off_high_pct": 11.4,
+   "above_low_pct": 27.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.69,
-   "score": 70.6,
+   "score": 70.4,
    "category": "A_VCP待突破",
    "stage": "2A_初升段",
    "ma200_dist_pct": 10.1,
-   "_delta": -2.2,
-   "stale": true
+   "_delta": -0.1
   },
   {
    "ticker": "ALAB",
@@ -457,36 +458,36 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": 32.9,
-   "_delta": 0.1
+   "_delta": 0.1,
+   "stale": true
   },
   {
    "ticker": "GOOGL",
    "name": "Alphabet Inc.",
-   "price": 344.82,
+   "price": 341.95,
    "year_high": 408.61,
    "year_low": 196.6,
    "ma50": 353.3306,
    "ma200": 331.75806,
-   "chg_5d": 0.0,
-   "chg_1m": -0.5,
-   "chg_3m": -13.1,
-   "chg_6m": 13.7,
-   "chg_1y": 69.3,
+   "chg_5d": -0.83,
+   "chg_1m": -1.3,
+   "chg_3m": -13.9,
+   "chg_6m": 12.9,
+   "chg_1y": 68.5,
    "volume": 19171000,
    "avg_volume": 30814546,
-   "as_of": "2026-08-24",
-   "off_high_pct": 15.6,
-   "above_low_pct": 75.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 16.3,
+   "above_low_pct": 73.9,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 62.4,
+   "score": 61.5,
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 3.9,
-   "_delta": 0.0,
-   "stale": true
+   "_delta": -0.8
   },
   {
    "ticker": "ARM",
@@ -514,55 +515,55 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": 28.2,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "LRCX",
    "name": "Lam Research Corporation",
-   "price": 314,
+   "price": 312.38,
    "year_high": 438.5,
    "year_low": 94.11,
    "ma50": 337.621,
    "ma200": 250.4984,
-   "chg_5d": -0.15,
-   "chg_1m": 0.5,
-   "chg_3m": 13.8,
-   "chg_6m": 32.4,
-   "chg_1y": 227.4,
+   "chg_5d": -0.52,
+   "chg_1m": -0.0,
+   "chg_3m": 13.3,
+   "chg_6m": 31.9,
+   "chg_1y": 226.9,
    "volume": 10196112,
    "avg_volume": 10945285,
-   "as_of": "2026-08-24",
-   "off_high_pct": 28.4,
-   "above_low_pct": 233.7,
+   "as_of": "2026-08-26",
+   "off_high_pct": 28.8,
+   "above_low_pct": 231.9,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.93,
-   "score": 46.2,
+   "score": 46.0,
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 25.5,
-   "_delta": -0.1,
-   "stale": true
+   "_delta": -0.5
   },
   {
    "ticker": "MU",
    "name": "Micron Technology, Inc.",
-   "price": 910.43,
+   "price": 938.4,
    "year_high": 1255,
    "year_low": 113.46,
    "ma50": 961.0328,
    "ma200": 556.5491,
-   "chg_5d": -6.56,
-   "chg_1m": 7.8,
-   "chg_3m": 35.0,
-   "chg_6m": 120.5,
-   "chg_1y": 658.4,
+   "chg_5d": 3.07,
+   "chg_1m": 10.9,
+   "chg_3m": 38.1,
+   "chg_6m": 123.6,
+   "chg_1y": 661.5,
    "volume": 36640946,
    "avg_volume": 48454257,
-   "as_of": "2026-08-24",
-   "off_high_pct": 27.5,
-   "above_low_pct": 702.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 25.2,
+   "above_low_pct": 727.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
@@ -571,8 +572,7 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 75.1,
-   "_delta": -6.6,
-   "stale": true
+   "_delta": 3.1
   },
   {
    "ticker": "KLAC",
@@ -629,7 +629,8 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 33.7,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "LITE",
@@ -686,26 +687,27 @@
    "category": "B_上升結構",
    "stage": "2A_初升段",
    "ma200_dist_pct": 27.1,
-   "_delta": 1.4
+   "_delta": 1.4,
+   "stale": true
   },
   {
    "ticker": "MRVL",
    "name": "Marvell Technology, Inc.",
-   "price": 228.31,
+   "price": 240.38,
    "year_high": 329.88,
    "year_low": 61.44,
    "ma50": 236.4584,
    "ma200": 142.17834,
-   "chg_5d": -10.0,
-   "chg_1m": 21.2,
-   "chg_3m": 34.6,
-   "chg_6m": 179.8,
-   "chg_1y": 188.2,
+   "chg_5d": 5.29,
+   "chg_1m": 26.5,
+   "chg_3m": 39.9,
+   "chg_6m": 185.1,
+   "chg_1y": 193.5,
    "volume": 25447297,
    "avg_volume": 36712151,
-   "as_of": "2026-08-24",
-   "off_high_pct": 30.8,
-   "above_low_pct": 271.6,
+   "as_of": "2026-08-26",
+   "off_high_pct": 27.1,
+   "above_low_pct": 291.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
@@ -714,8 +716,7 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 78.4,
-   "_delta": -10.0,
-   "stale": true
+   "_delta": 5.3
   },
   {
    "ticker": "TER",
@@ -772,7 +773,8 @@
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 27.2,
-   "_delta": -0.1
+   "_delta": -0.1,
+   "stale": true
   },
   {
    "ticker": "AVGO",
@@ -805,117 +807,114 @@
   {
    "ticker": "JBL",
    "name": "Jabil Inc.",
-   "price": 304.89,
+   "price": 311.45,
    "year_high": 428.93,
    "year_low": 189.6,
    "ma50": 344.0902,
    "ma200": 286.02365,
-   "chg_5d": -3.71,
-   "chg_1m": 2.5,
-   "chg_3m": -10.0,
-   "chg_6m": 20.0,
-   "chg_1y": 47.0,
+   "chg_5d": 2.15,
+   "chg_1m": 4.7,
+   "chg_3m": -7.8,
+   "chg_6m": 22.2,
+   "chg_1y": 49.2,
    "volume": 860157,
    "avg_volume": 1258336,
-   "as_of": "2026-08-24",
-   "off_high_pct": 28.9,
-   "above_low_pct": 60.8,
+   "as_of": "2026-08-26",
+   "off_high_pct": 27.4,
+   "above_low_pct": 64.3,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.68,
-   "score": 60.3,
+   "score": 61.2,
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 10.7,
-   "_delta": -3.7,
-   "stale": true
+   "_delta": 2.2
   },
   {
    "ticker": "MSFT",
    "name": "Microsoft Corporation",
-   "price": 483.24,
+   "price": 494.53,
    "year_high": 553.72,
    "year_low": 349.2,
    "ma50": 413.8216,
    "ma200": 432.1719,
-   "chg_5d": -0.22,
-   "chg_1m": 22.7,
-   "chg_3m": 14.1,
-   "chg_6m": 20.9,
-   "chg_1y": -6.5,
+   "chg_5d": 2.34,
+   "chg_1m": 25.0,
+   "chg_3m": 16.4,
+   "chg_6m": 23.2,
+   "chg_1y": -4.2,
    "volume": 23714829,
    "avg_volume": 38806486,
-   "as_of": "2026-08-21",
-   "off_high_pct": 12.7,
-   "above_low_pct": 38.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 10.7,
+   "above_low_pct": 41.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": false,
    "vol_ratio": 0.61,
-   "score": 75.9,
+   "score": 78.5,
    "category": "C_基底修復中",
-   "stage": "2B_主升段",
+   "stage": "2A_初升段",
    "ma200_dist_pct": 11.8,
-   "stale": true
+   "_delta": 2.3
   },
   {
    "ticker": "PLTR",
    "name": "Palantir Technologies Inc.",
-   "price": 179.94,
+   "price": 178.13,
    "year_high": 207.52,
    "year_low": 106.37,
    "ma50": 135.6048,
    "ma200": 152.0078,
-   "chg_5d": 3.44,
-   "chg_1m": 34.5,
-   "chg_3m": 31.8,
-   "chg_6m": 31.6,
-   "chg_1y": 3.5,
+   "chg_5d": -1.01,
+   "chg_1m": 33.5,
+   "chg_3m": 30.8,
+   "chg_6m": 30.6,
+   "chg_1y": 2.5,
    "volume": 27979382,
    "avg_volume": 45155937,
-   "as_of": "2026-08-24",
-   "off_high_pct": 13.3,
-   "above_low_pct": 69.2,
+   "as_of": "2026-08-26",
+   "off_high_pct": 14.2,
+   "above_low_pct": 67.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": false,
    "vol_ratio": 0.62,
-   "score": 79.8,
+   "score": 78.7,
    "category": "C_基底修復中",
    "stage": "2B_主升段",
    "ma200_dist_pct": 14.4,
-   "_delta": 3.4,
-   "stale": true
+   "_delta": -1.0
   },
   {
    "ticker": "MPWR",
    "name": "Monolithic Power Systems, Inc.",
-   "price": 1278.9,
+   "price": 1304.15,
    "year_high": 1714.09,
    "year_low": 800.97,
    "ma50": 1395.3104,
    "ma200": 1229.6731,
-   "chg_5d": -3.2,
-   "chg_1m": -2.5,
-   "chg_3m": -14.4,
-   "chg_6m": 8.1,
-   "chg_1y": 52.7,
+   "chg_5d": 1.97,
+   "chg_1m": -0.5,
+   "chg_3m": -12.4,
+   "chg_6m": 10.1,
+   "chg_1y": 54.7,
    "volume": 1077698,
    "avg_volume": 839372,
-   "as_of": "2026-08-24",
-   "off_high_pct": 25.4,
-   "above_low_pct": 59.7,
+   "as_of": "2026-08-26",
+   "off_high_pct": 23.9,
+   "above_low_pct": 62.8,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.28,
-   "score": 53.8,
+   "score": 55.4,
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 7.4,
-   "_delta": -3.2,
-   "stale": true
+   "_delta": 2.0
   },
   {
    "ticker": "CIEN",
@@ -943,7 +942,8 @@
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 9.8,
-   "_delta": 7.4
+   "_delta": 7.4,
+   "stale": true
   },
   {
    "ticker": "COHR",
@@ -971,7 +971,8 @@
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 7.8,
-   "_delta": -0.0
+   "_delta": -0.0,
+   "stale": true
   },
   {
    "ticker": "AAOI",
@@ -999,7 +1000,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": 30.6,
-   "_delta": 1.0
+   "_delta": 1.0,
+   "stale": true
   },
   {
    "ticker": "ZS",
@@ -1060,31 +1062,30 @@
   {
    "ticker": "SMCI",
    "name": "Super Micro Computer, Inc.",
-   "price": 37.24,
+   "price": 37.7,
    "year_high": 58.78,
    "year_low": 19.48,
    "ma50": 30.6396,
    "ma200": 31.7437,
-   "chg_5d": 0.43,
-   "chg_1m": 54.2,
-   "chg_3m": 20.8,
-   "chg_6m": 25.4,
-   "chg_1y": -18.9,
+   "chg_5d": 1.24,
+   "chg_1m": 55.4,
+   "chg_3m": 22.0,
+   "chg_6m": 26.6,
+   "chg_1y": -17.7,
    "volume": 49300276,
    "avg_volume": 51783461,
-   "as_of": "2026-08-24",
-   "off_high_pct": 36.6,
-   "above_low_pct": 91.2,
+   "as_of": "2026-08-26",
+   "off_high_pct": 35.9,
+   "above_low_pct": 93.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": false,
    "vol_ratio": 0.95,
-   "score": 64.6,
+   "score": 65.1,
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 16.8,
-   "_delta": 0.4,
-   "stale": true
+   "_delta": 1.2
   },
   {
    "ticker": "CLS",
@@ -1141,36 +1142,36 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -2.5,
-   "_delta": -0.2
+   "_delta": -0.2,
+   "stale": true
   },
   {
    "ticker": "NOW",
    "name": "ServiceNow, Inc.",
-   "price": 128.48,
+   "price": 130.88,
    "year_high": 194.726,
    "year_low": 81.24,
    "ma50": 107.6158,
    "ma200": 121.46058,
-   "chg_5d": 0.41,
-   "chg_1m": 23.1,
-   "chg_3m": 22.9,
-   "chg_6m": 18.2,
-   "chg_1y": -25.6,
+   "chg_5d": 1.87,
+   "chg_1m": 25.0,
+   "chg_3m": 24.8,
+   "chg_6m": 20.1,
+   "chg_1y": -23.7,
    "volume": 14496259,
    "avg_volume": 27658016,
-   "as_of": "2026-08-24",
-   "off_high_pct": 34.0,
-   "above_low_pct": 58.1,
+   "as_of": "2026-08-26",
+   "off_high_pct": 32.8,
+   "above_low_pct": 61.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": false,
    "vol_ratio": 0.52,
-   "score": 66.7,
+   "score": 67.4,
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 5.3,
-   "_delta": 0.4,
-   "stale": true
+   "_delta": 1.9
   },
   {
    "ticker": "FN",
@@ -1282,7 +1283,8 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 3.6,
-   "_delta": -1.7
+   "_delta": -1.7,
+   "stale": true
   },
   {
    "ticker": "TSLA",
@@ -1366,7 +1368,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -39.1,
-   "_delta": 0.6
+   "_delta": 0.6,
+   "stale": true
   },
   {
    "ticker": "META",
@@ -1421,7 +1424,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -6.8,
-   "_delta": -3.7
+   "_delta": -3.7,
+   "stale": true
   },
   {
    "ticker": "SOUN",
@@ -1475,7 +1479,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -43.3,
-   "_delta": -4.6
+   "_delta": -4.6,
+   "stale": true
   },
   {
    "ticker": "TEM",
@@ -1557,7 +1562,8 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 20.9,
-   "_delta": -2.3
+   "_delta": -2.3,
+   "stale": true
   },
   {
    "ticker": "DUOL",
@@ -1584,7 +1590,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": 7.1,
-   "_delta": -4.1
+   "_delta": -4.1,
+   "stale": true
   },
   {
    "ticker": "VRT",
@@ -1639,63 +1646,62 @@
    "category": "B_上升結構",
    "stage": "2B_主升段",
    "ma200_dist_pct": 10.9,
-   "_delta": 1.6
+   "_delta": 1.6,
+   "stale": true
   },
   {
    "ticker": "PWR",
-   "price": 677.41,
+   "price": 614.15,
    "year_high": 788.75,
    "year_low": 363.01,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "name": "Quanta Services, Inc.",
    "ma50": 672.8238,
    "ma200": 573.4634,
    "vol_ratio": 0.58,
-   "chg_5d": 5.95,
-   "chg_1m": 5.1,
-   "chg_3m": -11.5,
-   "chg_6m": 30.3,
-   "chg_1y": 79.5,
+   "chg_5d": -9.34,
+   "chg_1m": -4.2,
+   "chg_3m": -20.8,
+   "chg_6m": 21.0,
+   "chg_1y": 70.2,
    "stale_ma": "8/14",
-   "off_high_pct": 14.1,
-   "above_low_pct": 86.6,
+   "off_high_pct": 22.1,
+   "above_low_pct": 69.2,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 70.9,
+   "score": 60.8,
    "category": "C_基底修復中",
-   "stage": "2B_主升段",
+   "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 11.5,
-   "_delta": 6.0,
-   "stale": true
+   "_delta": -9.3
   },
   {
    "ticker": "GEV",
-   "price": 941.27,
+   "price": 935.85,
    "year_high": 1195.94,
    "year_low": 530.16,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "name": "GE Vernova Inc.",
    "ma50": 1025.4562,
    "ma200": 855.1402,
    "vol_ratio": 0.54,
-   "chg_5d": -2.56,
-   "chg_1m": -11.3,
-   "chg_3m": -10.7,
-   "chg_6m": 20.5,
-   "chg_1y": 58.9,
+   "chg_5d": -0.58,
+   "chg_1m": -11.9,
+   "chg_3m": -11.3,
+   "chg_6m": 19.9,
+   "chg_1y": 58.3,
    "stale_ma": "8/14",
-   "off_high_pct": 21.3,
-   "above_low_pct": 77.5,
+   "off_high_pct": 21.7,
+   "above_low_pct": 76.5,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 62.3,
+   "score": 61.7,
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 13.0,
-   "_delta": -2.6,
-   "stale": true
+   "_delta": -0.6
   },
   {
    "ticker": "CEG",
@@ -1722,7 +1728,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -10.8,
-   "_delta": 3.1
+   "_delta": 3.1,
+   "stale": true
   },
   {
    "ticker": "VST",
@@ -1834,22 +1841,22 @@
   },
   {
    "ticker": "NBIS",
-   "price": 211.33,
+   "price": 221.97,
    "year_high": 299.86,
    "year_low": 62.01,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "name": "Nebius Group N.V.",
    "ma50": 222.237,
    "ma200": 146.45572,
    "vol_ratio": 1.53,
-   "chg_5d": -5.62,
-   "chg_1m": 19.8,
-   "chg_3m": 0.9,
-   "chg_6m": 157.9,
-   "chg_1y": 262.3,
+   "chg_5d": 5.03,
+   "chg_1m": 24.8,
+   "chg_3m": 5.9,
+   "chg_6m": 162.9,
+   "chg_1y": 267.3,
    "stale_ma": "8/14",
-   "off_high_pct": 29.5,
-   "above_low_pct": 240.8,
+   "off_high_pct": 26.0,
+   "above_low_pct": 258.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
@@ -1857,8 +1864,7 @@
    "category": "C_基底修復中",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 52.9,
-   "_delta": -5.6,
-   "stale": true
+   "_delta": 5.0
   },
   {
    "ticker": "CRWV",
@@ -1885,7 +1891,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -5.0,
-   "_delta": 0.2
+   "_delta": 0.2,
+   "stale": true
   },
   {
    "ticker": "IREN",
@@ -1967,7 +1974,8 @@
    "category": "D_趨勢弱",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": -4.8,
-   "_delta": -6.2
+   "_delta": -6.2,
+   "stale": true
   },
   {
    "ticker": "CGNX",
@@ -2048,7 +2056,8 @@
    "category": "D_趨勢弱",
    "stage": "1轉2_轉強觀察",
    "ma200_dist_pct": 7.4,
-   "_delta": 9.6
+   "_delta": 9.6,
+   "stale": true
   },
   {
    "ticker": "OUST",
@@ -2080,29 +2089,28 @@
   {
    "ticker": "JPM",
    "name": "JPMorgan Chase",
-   "price": 356.39,
+   "price": 356.69,
    "year_high": 366.5,
    "year_low": 279.1,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.8,
-   "above_low_pct": 27.7,
+   "off_high_pct": 2.7,
+   "above_low_pct": 27.8,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": false,
    "score": 60.2,
    "category": "C_基底修復中",
-   "chg_1y": 26.2,
+   "chg_1y": 26.3,
    "youth_inferred": true,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "chg_5d": 1.37,
-   "_delta": 1.4,
-   "stale": true
+   "chg_5d": 0.08,
+   "_delta": 0.1
   },
   {
    "ticker": "BAC",
@@ -2131,7 +2139,8 @@
    "youth_inferred": true,
    "stage": "2A_初升段",
    "chg_5d": -0.35,
-   "_delta": -0.4
+   "_delta": -0.4,
+   "stale": true
   },
   {
    "ticker": "PNC",
@@ -2183,7 +2192,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -0.9,
-   "_delta": -0.9
+   "_delta": -0.9,
+   "stale": true
   },
   {
    "ticker": "V",
@@ -2213,53 +2223,53 @@
   {
    "ticker": "MA",
    "name": "Mastercard",
-   "price": 580.63,
+   "price": 596.58,
    "year_high": 601.77,
    "year_low": 464.52,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 3.5,
-   "above_low_pct": 25.0,
+   "off_high_pct": 0.9,
+   "above_low_pct": 28.4,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": false,
-   "score": 56.7,
+   "score": 65.2,
    "category": "C_基底修復中",
-   "chg_6m": 15.0,
+   "chg_6m": 17.7,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "chg_5d": 1.18,
-   "_delta": 1.2,
-   "stale": true
+   "chg_5d": 2.75,
+   "_delta": 2.7
   },
   {
    "ticker": "MET",
    "name": "MetLife",
-   "price": 93.46,
+   "price": 96.52,
    "year_high": 100.93,
    "year_low": 67.33,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-20",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 7.4,
-   "above_low_pct": 38.8,
+   "off_high_pct": 4.4,
+   "above_low_pct": 43.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 57.0,
+   "score": 59.1,
    "category": "A_VCP待突破",
-   "chg_1y": 20.8,
+   "chg_1y": 24.1,
    "youth_inferred": true,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "stale": true
+   "chg_5d": 3.27,
+   "_delta": 3.3
   },
   {
    "ticker": "GS",
@@ -2288,7 +2298,8 @@
    "youth_inferred": true,
    "stage": "2A_初升段",
    "chg_5d": 1.67,
-   "_delta": 1.7
+   "_delta": 1.7,
+   "stale": true
   },
   {
    "ticker": "KKR",
@@ -2317,31 +2328,30 @@
   {
    "ticker": "MAR",
    "name": "Marriott",
-   "price": 356.39,
+   "price": 358.09,
    "year_high": 410.98,
    "year_low": 256.49,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 13.3,
-   "above_low_pct": 38.9,
+   "off_high_pct": 12.9,
+   "above_low_pct": 39.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 51.4,
+   "score": 51.7,
    "category": "B_上升結構",
-   "chg_1y": 29.6,
+   "chg_1y": 30.1,
    "data_flags": [
     "price-corrected"
    ],
    "stage": "2B_主升段",
    "ma200_dist_pct": null,
-   "chg_5d": 0.0,
-   "_delta": 0.0,
-   "stale": true
+   "chg_5d": 0.48,
+   "_delta": 0.5
   },
   {
    "ticker": "TXRH",
@@ -2401,32 +2411,31 @@
   {
    "ticker": "ROST",
    "name": "Ross Stores",
-   "price": 232.8,
+   "price": 240.1,
    "year_high": 257,
    "year_low": 143.39,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 9.4,
-   "above_low_pct": 62.4,
+   "off_high_pct": 6.6,
+   "above_low_pct": 67.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 59.5,
+   "score": 61.4,
    "category": "A_VCP待突破",
-   "chg_1y": 79.8,
+   "chg_1y": 82.9,
    "ma200_dist_pct": 8.1,
    "data_flags": [
     "price-corrected"
    ],
    "youth_inferred": true,
    "stage": "2A_初升段",
-   "chg_5d": -2.61,
-   "_delta": -2.6,
-   "stale": true
+   "chg_5d": 3.14,
+   "_delta": 3.1
   },
   {
    "ticker": "URBN",
@@ -2504,7 +2513,8 @@
    "ma200_dist_pct": 27.5,
    "stage": "2B_主升段",
    "chg_5d": -0.0,
-   "_delta": -0.0
+   "_delta": -0.0,
+   "stale": true
   },
   {
    "ticker": "SBUX",
@@ -2558,7 +2568,8 @@
    "ma200_dist_pct": -2.6,
    "stage": "41_弱勢打底",
    "chg_5d": -0.69,
-   "_delta": -0.7
+   "_delta": -0.7,
+   "stale": true
   },
   {
    "ticker": "HST",
@@ -2584,7 +2595,8 @@
    "stage": "2B_主升段",
    "ma200_dist_pct": null,
    "chg_5d": -4.57,
-   "_delta": -4.6
+   "_delta": -4.6,
+   "stale": true
   },
   {
    "ticker": "LQDA",
@@ -2636,7 +2648,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -7.55,
-   "_delta": -7.5
+   "_delta": -7.5,
+   "stale": true
   },
   {
    "ticker": "WDC",
@@ -2712,7 +2725,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -0.21,
-   "_delta": -0.2
+   "_delta": -0.2,
+   "stale": true
   },
   {
    "ticker": "ICE",
@@ -2871,7 +2885,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": 0.69,
-   "_delta": 0.7
+   "_delta": 0.7,
+   "stale": true
   },
   {
    "ticker": "HII",
@@ -2896,7 +2911,8 @@
    "ma200_dist_pct": -0.9,
    "stage": "41_弱勢打底",
    "chg_5d": 7.49,
-   "_delta": 7.5
+   "_delta": 7.5,
+   "stale": true
   },
   {
    "ticker": "CAT",
@@ -3026,7 +3042,8 @@
    "ma200_dist_pct": 13.1,
    "stage": "2B_主升段",
    "chg_5d": -0.46,
-   "_delta": -0.5
+   "_delta": -0.5,
+   "stale": true
   },
   {
    "ticker": "GLW",
@@ -3051,7 +3068,8 @@
    "stage": "3_做頭疑慮",
    "ma200_dist_pct": null,
    "chg_5d": 0.1,
-   "_delta": 0.1
+   "_delta": 0.1,
+   "stale": true
   },
   {
    "ticker": "HUBB",
@@ -3079,7 +3097,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": 8.86,
-   "_delta": 8.9
+   "_delta": 8.9,
+   "stale": true
   },
   {
    "ticker": "RDW",
@@ -3181,7 +3200,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": 0.99,
-   "_delta": 1.0
+   "_delta": 1.0,
+   "stale": true
   },
   {
    "ticker": "UNH",
@@ -3210,89 +3230,86 @@
   {
    "ticker": "MRK",
    "name": "Merck",
-   "price": 150.7,
+   "price": 153.58,
    "year_high": 154.49,
    "year_low": 77.58,
-   "chg_1m": 1.2,
+   "chg_1m": 3.1,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.5,
-   "above_low_pct": 94.3,
+   "off_high_pct": 0.6,
+   "above_low_pct": 98.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 77.5,
+   "score": 79.7,
    "category": "A_VCP待突破",
-   "chg_6m": 40.8,
-   "chg_1y": 59.8,
+   "chg_6m": 42.7,
+   "chg_1y": 61.7,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "chg_5d": -1.21,
-   "_delta": -1.2,
-   "stale": true
+   "chg_5d": 1.91,
+   "_delta": 1.9
   },
   {
    "ticker": "LH",
    "name": "Labcorp",
-   "price": 332.8,
-   "year_high": 332.8,
+   "price": 336.33,
+   "year_high": 336.33,
    "year_low": 246.64,
-   "chg_1m": 5.3,
+   "chg_1m": 6.4,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
    "off_high_pct": 0.0,
-   "above_low_pct": 34.9,
+   "above_low_pct": 36.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 68.2,
+   "score": 68.1,
    "category": "A_VCP待突破",
-   "chg_1y": 17.8,
+   "chg_1y": 18.9,
    "ma200_dist_pct": 17.8,
    "data_flags": [
     "price-corrected"
    ],
    "youth_inferred": true,
    "stage": "2A_初升段",
-   "chg_5d": 4.61,
-   "_delta": 4.6,
-   "stale": true
+   "chg_5d": 1.06,
+   "_delta": 1.1
   },
   {
    "ticker": "NEM",
    "name": "Newmont",
-   "price": 131.58,
+   "price": 131.69,
    "year_high": 134.88,
    "year_low": 67.69,
-   "chg_1m": 3.1,
+   "chg_1m": 3.2,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
    "off_high_pct": 2.4,
-   "above_low_pct": 94.4,
+   "above_low_pct": 94.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "score": 53.1,
    "category": "A_VCP待突破",
-   "chg_1y": 99.9,
+   "chg_1y": 100.0,
    "data_flags": [
     "price-corrected"
    ],
    "youth_inferred": true,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "chg_5d": -0.06,
-   "_delta": -0.1,
-   "stale": true
+   "chg_5d": 0.08,
+   "_delta": 0.1
   },
   {
    "ticker": "HMY",
@@ -3321,7 +3338,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": 0.25,
-   "_delta": 0.3
+   "_delta": 0.3,
+   "stale": true
   },
   {
    "ticker": "XOM",
@@ -3374,34 +3392,34 @@
    "ma200_dist_pct": 12.5,
    "stage": "2B_主升段",
    "chg_5d": -0.44,
-   "_delta": -0.4
+   "_delta": -0.4,
+   "stale": true
   },
   {
    "ticker": "OXY",
    "name": "Occidental",
-   "price": 60.6,
+   "price": 58.41,
    "year_high": 67.45,
    "year_low": 38.8,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 10.2,
-   "above_low_pct": 56.2,
+   "off_high_pct": 13.4,
+   "above_low_pct": 50.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 55.1,
+   "score": 51.9,
    "category": "A_VCP待突破",
-   "chg_6m": 1.8,
-   "chg_1y": 27.2,
-   "stage": "2B_主升段",
+   "chg_6m": -1.8,
+   "chg_1y": 23.6,
+   "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
-   "chg_5d": -1.69,
-   "_delta": -1.7,
-   "stale": true
+   "chg_5d": -3.61,
+   "_delta": -3.6
   },
   {
    "ticker": "CCJ",
@@ -3428,7 +3446,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -7.58,
-   "_delta": -7.6
+   "_delta": -7.6,
+   "stale": true
   },
   {
    "ticker": "FCX",
@@ -3454,7 +3473,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": 3.82,
-   "_delta": 3.8
+   "_delta": 3.8,
+   "stale": true
   },
   {
    "ticker": "NEE",
@@ -3483,29 +3503,28 @@
   {
    "ticker": "KO",
    "name": "Coca-Cola",
-   "price": 92.31,
+   "price": 91.66,
    "year_high": 92.31,
    "year_low": 65.34,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 0.0,
-   "above_low_pct": 41.3,
+   "off_high_pct": 0.7,
+   "above_low_pct": 40.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 71.7,
+   "score": 70.8,
    "category": "A_VCP待突破",
-   "chg_6m": 19.9,
-   "chg_1y": 32.9,
+   "chg_6m": 19.2,
+   "chg_1y": 32.2,
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
-   "chg_5d": 1.89,
-   "_delta": 1.9,
-   "stale": true
+   "chg_5d": -0.7,
+   "_delta": -0.7
   },
   {
    "ticker": "TGT",
@@ -3559,7 +3578,8 @@
    "ma200_dist_pct": 20,
    "stage": "2B_主升段",
    "chg_5d": 0.0,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "HLT",
@@ -3588,7 +3608,8 @@
    "youth_inferred": true,
    "stage": "2A_初升段",
    "chg_5d": 1.65,
-   "_delta": 1.7
+   "_delta": 1.7,
+   "stale": true
   },
   {
    "ticker": "NKE",
@@ -3689,7 +3710,8 @@
    ],
    "stage": "41_弱勢打底",
    "chg_5d": -0.95,
-   "_delta": -1.0
+   "_delta": -1.0,
+   "stale": true
   },
   {
    "ticker": "AEO",
@@ -3713,7 +3735,8 @@
    "ma200_dist_pct": -13.1,
    "stage": "41_弱勢打底",
    "chg_5d": 8.87,
-   "_delta": 8.9
+   "_delta": 8.9,
+   "stale": true
   },
   {
    "ticker": "BOOT",
@@ -3742,7 +3765,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -7.45,
-   "_delta": -7.5
+   "_delta": -7.5,
+   "stale": true
   },
   {
    "ticker": "GPS",
@@ -3767,7 +3791,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": 1.03,
-   "_delta": 1.0
+   "_delta": 1.0,
+   "stale": true
   },
   {
    "ticker": "SPOT",
@@ -3819,7 +3844,8 @@
    ],
    "stage": "2B_主升段",
    "chg_5d": -7.7,
-   "_delta": -7.7
+   "_delta": -7.7,
+   "stale": true
   },
   {
    "ticker": "LUMN",
@@ -3870,7 +3896,8 @@
    "stage": "2B_主升段",
    "ma200_dist_pct": null,
    "chg_5d": 3.19,
-   "_delta": 3.2
+   "_delta": 3.2,
+   "stale": true
   },
   {
    "ticker": "PBF",
@@ -3969,7 +3996,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": 2.12,
-   "_delta": 2.1
+   "_delta": 2.1,
+   "stale": true
   },
   {
    "ticker": "JNJ",
@@ -4021,7 +4049,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": -0.64,
-   "_delta": -0.6
+   "_delta": -0.6,
+   "stale": true
   },
   {
    "ticker": "HOOD",
@@ -4046,7 +4075,8 @@
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
    "chg_5d": 4.24,
-   "_delta": 4.2
+   "_delta": 4.2,
+   "stale": true
   },
   {
    "ticker": "UBSI",
@@ -4121,33 +4151,35 @@
    "ma200_dist_pct": -2.7,
    "stage": "41_弱勢打底",
    "chg_5d": -1.59,
-   "_delta": -1.6
+   "_delta": -1.6,
+   "stale": true
   },
   {
    "ticker": "PCAR",
    "name": "PACCAR",
-   "price": 129,
-   "year_high": 131.88,
+   "price": 132.69,
+   "year_high": 132.69,
    "year_low": 92.25,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-01",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.2,
-   "above_low_pct": 39.8,
+   "off_high_pct": 0.0,
+   "above_low_pct": 43.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 65.3,
+   "score": 67.0,
    "category": "A_VCP待突破",
    "ma200_dist_pct": 5.8,
    "data_flags": [
     "price-corrected"
    ],
    "stage": "2B_主升段",
-   "stale": true
+   "chg_5d": 2.86,
+   "_delta": 2.9
   },
   {
    "ticker": "CSX",
@@ -4176,7 +4208,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": -0.16,
-   "_delta": -0.2
+   "_delta": -0.2,
+   "stale": true
   },
   {
    "ticker": "VRTX",
@@ -4235,27 +4268,26 @@
   {
    "ticker": "REGN",
    "name": "Regeneron",
-   "price": 834.04,
+   "price": 826.6,
    "year_high": 834.04,
    "year_low": 541.0,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 0.0,
-   "above_low_pct": 54.2,
+   "off_high_pct": 0.9,
+   "above_low_pct": 52.8,
    "above_ma50": true,
    "above_ma200": false,
    "ma50_gt_ma200": true,
-   "score": 32.0,
+   "score": 31.3,
    "category": "A_VCP待突破",
    "stage": "41_弱勢打底",
    "ma200_dist_pct": null,
-   "chg_5d": 0.9,
-   "_delta": 0.9,
-   "stale": true
+   "chg_5d": -0.89,
+   "_delta": -0.9
   },
   {
    "ticker": "GILD",
@@ -4281,7 +4313,8 @@
    "stage": "2A_初升段",
    "ma200_dist_pct": null,
    "chg_5d": -0.84,
-   "_delta": -0.8
+   "_delta": -0.8,
+   "stale": true
   },
   {
    "ticker": "MRNA",
@@ -4358,7 +4391,8 @@
    "stage": "2B_主升段",
    "ma200_dist_pct": null,
    "chg_5d": -4.68,
-   "_delta": -4.7
+   "_delta": -4.7,
+   "stale": true
   },
   {
    "ticker": "UFPT",
@@ -4443,31 +4477,30 @@
   {
    "ticker": "RVMD",
    "name": "Revolution Medicines",
-   "price": 211.74,
+   "price": 213.32,
    "year_high": 216.72,
    "year_low": 35.42,
    "chg_1m": null,
    "vol_ratio": null,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "ma50": 0,
    "ma200": 0,
    "ma_proxy": true,
-   "off_high_pct": 2.3,
-   "above_low_pct": 497.8,
+   "off_high_pct": 1.6,
+   "above_low_pct": 502.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
-   "score": 48.2,
+   "score": 48.7,
    "category": "A_VCP待突破",
-   "chg_1y": 268.3,
+   "chg_1y": 269.0,
    "ma200_dist_pct": 77,
    "data_flags": [
     "price-corrected"
    ],
    "stage": "2B_主升段",
-   "chg_5d": -1.97,
-   "_delta": -2.0,
-   "stale": true
+   "chg_5d": 0.75,
+   "_delta": 0.7
   },
   {
    "ticker": "BLFS",
@@ -4496,7 +4529,8 @@
    "youth_inferred": true,
    "stage": "2A_初升段",
    "chg_5d": 16.36,
-   "_delta": 16.4
+   "_delta": 16.4,
+   "stale": true
   },
   {
    "ticker": "RPRX",
@@ -4758,11 +4792,6 @@
    "earnings_date": ""
   },
   {
-   "ticker": "ROST",
-   "note": "jumped ~4-6% on Q2 beat",
-   "earnings_date": ""
-  },
-  {
    "ticker": "NFLX",
    "note": "post-split prices; well below 200-day MA",
    "earnings_date": ""
@@ -4890,11 +4919,6 @@
   {
    "ticker": "CVX",
    "note": "200d MA 182.97; 1y approx",
-   "earnings_date": ""
-  },
-  {
-   "ticker": "OXY",
-   "note": "6m derived from Feb 24 close 59.58",
    "earnings_date": ""
   },
   {
@@ -5053,11 +5077,6 @@
    "earnings_date": ""
   },
   {
-   "ticker": "MRVL",
-   "note": "8/24 -10.0%。Chip selloff ahead of Aug 27 earnings",
-   "earnings_date": ""
-  },
-  {
    "ticker": "JBL",
    "note": "8/24 -3.7%。fell more than broader market; no company news",
    "earnings_date": ""
@@ -5080,16 +5099,6 @@
   {
    "ticker": "VRT",
    "note": "8/24 -3.3%。Down ~3.3%; no confirmed catalyst found",
-   "earnings_date": ""
-  },
-  {
-   "ticker": "PWR",
-   "note": "8/24 +6.0%。AI-driven power backlog and earnings momentum rally",
-   "earnings_date": ""
-  },
-  {
-   "ticker": "NBIS",
-   "note": "8/24 -5.6%。AI infrastructure/chip sector selloff",
    "earnings_date": ""
   },
   {
@@ -5225,6 +5234,41 @@
   {
    "ticker": "HOOD",
    "note": "8/26 +4.2%。crypto strength, day-trading rule repeal, Goldman buy",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "GOOGL",
+   "note": "8/26 -0.8%。AI spending concerns weighed on shares",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "MRVL",
+   "note": "8/26 +5.3%。Pre-earnings rally ahead of Aug 27 report",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NOW",
+   "note": "8/26 +1.9%。+4% intraday gain, reason not identified",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "PWR",
+   "note": "8/26 -9.3%。Sixth-day slide; ~16% cumulative losing streak",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "NBIS",
+   "note": "8/26 +5.0%。AI infrastructure demand momentum",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "ROST",
+   "note": "8/26 +3.1%。Post-earnings gain since Aug 24 close",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "OXY",
+   "note": "8/26 -3.6%。Oil lower on Hormuz talks, sanctions outlook",
    "earnings_date": ""
   }
  ]

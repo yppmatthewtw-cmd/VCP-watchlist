@@ -524,13 +524,10 @@ def main():
     dates.pop("", None)
     n_all = sum(dates.values())
     newest = max(dates)
-    # "current" = the newest trading day plus any intraday quotes taken after it
-    recent = sorted(dates)[-2:] if len(dates) > 1 else [newest]
-    n_recent = sum(dates[d] for d in recent)
-    basis_day = recent[0]
-    older = n_all - n_recent
-    basis = (f"{basis_day} 收盤" if older == 0
-             else f"{basis_day} 收盤（{n_recent}/{n_all} 檔；其餘 {older} 檔仍為較早報價）")
+    n_newest = dates[newest]
+    older = n_all - n_newest
+    basis = (f"{newest} 收盤" if older == 0
+             else f"{newest} 收盤（{n_newest}/{n_all} 檔為此日；其餘 {older} 檔為較早報價）")
 
     now_utc = datetime.now(timezone.utc)
     now_hkt = now_utc + timedelta(hours=8)

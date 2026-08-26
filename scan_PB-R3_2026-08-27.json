@@ -47,32 +47,33 @@
    "mktcap": 12304676620.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -1.4
+   "_delta": -1.4,
+   "stale": true
   },
   {
    "ticker": "EQNR",
    "name": "Equinor ASA",
-   "price": 42.86,
+   "price": 40.77,
    "year_high": 42.86,
    "year_low": 22.52,
    "ma50": 36.98,
    "ma200": 32.31,
    "ma_proxy": true,
-   "chg_5d": 5.1,
-   "chg_1m": 4.6,
-   "chg_3m": 8.6,
-   "chg_6m": 56.9,
-   "chg_1y": 75.5,
+   "chg_5d": -4.88,
+   "chg_1m": -0.3,
+   "chg_3m": 3.7,
+   "chg_6m": 52.0,
+   "chg_1y": 70.6,
    "volume": 1909761,
    "avg_volume": 3655247,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.0,
-   "above_low_pct": 90.3,
+   "as_of": "2026-08-26",
+   "off_high_pct": 4.9,
+   "above_low_pct": 81.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 85.7,
+   "score": 88.8,
    "category": "A_VCP待突破",
    "range_1m_pct": 11.7,
    "sector": "Energy",
@@ -80,7 +81,7 @@
    "mktcap": 107161616346.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -4.9
   },
   {
    "ticker": "BNY",
@@ -113,7 +114,8 @@
    "mktcap": 107536121466.0,
    "exchange": "nyse",
    "split_adj": true,
-   "_delta": 1.1
+   "_delta": 1.1,
+   "stale": true
   },
   {
    "ticker": "MEDP",
@@ -213,7 +215,8 @@
    "mktcap": 18680494732.0,
    "exchange": "nyse",
    "split_adj": true,
-   "_delta": -0.2
+   "_delta": -0.2,
+   "stale": true
   },
   {
    "ticker": "JAZZ",
@@ -412,7 +415,8 @@
    "mktcap": 10670840800.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 1.3
+   "_delta": 1.3,
+   "stale": true
   },
   {
    "ticker": "CNC",
@@ -445,32 +449,33 @@
    "mktcap": 32119554900.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.0
+   "_delta": -3.0,
+   "stale": true
   },
   {
    "ticker": "CBL",
    "name": "CBL & Associates Properties Inc. Common ",
-   "price": 55.71,
+   "price": 58.58,
    "year_high": 60.05,
    "year_low": 26.78,
    "ma50": 54.36,
    "ma200": 42.79,
    "ma_proxy": true,
-   "chg_5d": 0.67,
-   "chg_1m": -0.4,
-   "chg_3m": 19.5,
-   "chg_6m": 50.7,
-   "chg_1y": 83.4,
+   "chg_5d": 5.15,
+   "chg_1m": 4.8,
+   "chg_3m": 24.7,
+   "chg_6m": 55.9,
+   "chg_1y": 88.6,
    "volume": 168228,
    "avg_volume": 302468,
-   "as_of": "2026-08-24",
-   "off_high_pct": 7.2,
-   "above_low_pct": 108.0,
+   "as_of": "2026-08-26",
+   "off_high_pct": 2.4,
+   "above_low_pct": 118.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.64,
-   "score": 83.6,
+   "score": 87.6,
    "category": "A_VCP待突破",
    "range_1m_pct": 10.0,
    "sector": "Real Estate",
@@ -478,8 +483,7 @@
    "mktcap": 1712372172.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.7,
-   "stale": true
+   "_delta": 5.2
   },
   {
    "ticker": "CNI",
@@ -552,27 +556,27 @@
   {
    "ticker": "RLAY",
    "name": "Relay Therapeutics Inc. Common Stock",
-   "price": 19.79,
+   "price": 19.45,
    "year_high": 20.75,
    "year_low": 3.25,
    "ma50": 18.75,
    "ma200": 12.29,
    "ma_proxy": true,
-   "chg_5d": 1.8,
-   "chg_1m": 3.6,
-   "chg_3m": 61.1,
-   "chg_6m": 114.0,
-   "chg_1y": 462.0,
+   "chg_5d": -1.72,
+   "chg_1m": 1.9,
+   "chg_3m": 59.4,
+   "chg_6m": 112.3,
+   "chg_1y": 460.3,
    "volume": 2965856,
    "avg_volume": 3153902,
-   "as_of": "2026-08-24",
-   "off_high_pct": 4.6,
-   "above_low_pct": 508.9,
+   "as_of": "2026-08-26",
+   "off_high_pct": 6.3,
+   "above_low_pct": 498.5,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.68,
-   "score": 88.6,
+   "score": 84.3,
    "category": "A_VCP待突破",
    "range_1m_pct": 12.5,
    "sector": "Health Care",
@@ -580,8 +584,7 @@
    "mktcap": 4260113307.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 1.8,
-   "stale": true
+   "_delta": -1.7
   },
   {
    "ticker": "BFH",
@@ -614,7 +617,8 @@
    "mktcap": 4068984674.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.7
+   "_delta": -0.7,
+   "stale": true
   },
   {
    "ticker": "MBX",
@@ -681,7 +685,8 @@
    "mktcap": 3935498576.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "PVLA",
@@ -884,7 +889,8 @@
    "mktcap": 24413538718.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -6.5
+   "_delta": -6.5,
+   "stale": true
   },
   {
    "ticker": "SYRE",
@@ -984,7 +990,8 @@
    "mktcap": 867619083.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -8.7
+   "_delta": -8.7,
+   "stale": true
   },
   {
    "ticker": "HSHP",
@@ -1017,7 +1024,8 @@
    "mktcap": 775582500.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -2.9
+   "_delta": -2.9,
+   "stale": true
   },
   {
    "ticker": "DRH",
@@ -1218,7 +1226,8 @@
    "mktcap": 30373131851.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.1
+   "_delta": -3.1,
+   "stale": true
   },
   {
    "ticker": "GEO",
@@ -1251,7 +1260,8 @@
    "mktcap": 4305276593.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.4
+   "_delta": -3.4,
+   "stale": true
   },
   {
    "ticker": "UHAL",
@@ -1361,14 +1371,14 @@
    "ma50": 391.84,
    "ma200": 318.15,
    "ma_proxy": true,
-   "chg_5d": -0.8,
+   "chg_5d": 0.0,
    "chg_1m": 2.2,
    "chg_3m": 14.7,
    "chg_6m": 37.5,
    "chg_1y": 105.5,
    "volume": 188884,
    "avg_volume": 249618,
-   "as_of": "2026-08-24",
+   "as_of": "2026-08-26",
    "off_high_pct": 2.7,
    "above_low_pct": 105.8,
    "above_ma50": true,
@@ -1383,8 +1393,7 @@
    "mktcap": 9780308837.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.8,
-   "stale": true
+   "_delta": 0.0
   },
   {
    "ticker": "MAX",
@@ -1422,27 +1431,27 @@
   {
    "ticker": "DNTH",
    "name": "Dianthus Therapeutics Inc. Common Stock",
-   "price": 104.49,
+   "price": 106.02,
    "year_high": 115.96,
    "year_low": 18.89,
    "ma50": 100.38,
    "ma200": 71.83,
    "ma_proxy": true,
-   "chg_5d": -5.95,
-   "chg_1m": 0.1,
-   "chg_3m": 23.0,
-   "chg_6m": 119.9,
-   "chg_1y": 424.2,
+   "chg_5d": 1.46,
+   "chg_1m": 1.6,
+   "chg_3m": 24.5,
+   "chg_6m": 121.4,
+   "chg_1y": 425.7,
    "volume": 730917,
    "avg_volume": 1065539,
-   "as_of": "2026-08-24",
-   "off_high_pct": 9.9,
-   "above_low_pct": 453.1,
+   "as_of": "2026-08-26",
+   "off_high_pct": 8.6,
+   "above_low_pct": 461.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.65,
-   "score": 84.0,
+   "score": 83.3,
    "category": "A_VCP待突破",
    "range_1m_pct": 13.1,
    "sector": "Health Care",
@@ -1450,8 +1459,7 @@
    "mktcap": 6214309396.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -5.9,
-   "stale": true
+   "_delta": 1.5
   },
   {
    "ticker": "TGTX",
@@ -1518,7 +1526,8 @@
    "mktcap": 5196352692.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 1.9
+   "_delta": 1.9,
+   "stale": true
   },
   {
    "ticker": "WSFS",
@@ -1556,35 +1565,35 @@
   {
    "ticker": "BNS",
    "name": "Bank Nova Scotia Halifax Pfd 3 Ordinary ",
-   "price": 87.57,
-   "year_high": 91.54,
+   "price": 93.1,
+   "year_high": 93.1,
    "year_low": 55.99,
    "ma50": 87.45,
    "ma200": 77.01,
    "ma_proxy": true,
-   "chg_5d": -4.3,
-   "chg_1m": 1.1,
-   "chg_3m": 13.6,
-   "chg_6m": 14.9,
-   "chg_1y": 54.0,
+   "chg_5d": 6.31,
+   "chg_1m": 7.4,
+   "chg_3m": 19.9,
+   "chg_6m": 21.2,
+   "chg_1y": 60.3,
    "volume": 1264151,
    "avg_volume": 2594521,
-   "as_of": "2026-08-21",
-   "off_high_pct": 4.3,
-   "above_low_pct": 56.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 0.0,
+   "above_low_pct": 66.3,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 75.1,
-   "category": "A_VCP待突破",
+   "score": 72.9,
+   "category": "B_上升結構",
    "range_1m_pct": 6.2,
    "sector": "Finance",
    "industry": "Major Banks",
    "mktcap": 107429769115.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 6.3
   },
   {
    "ticker": "CHRD",
@@ -1617,7 +1626,8 @@
    "mktcap": 8087080375.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 1.7
+   "_delta": 1.7,
+   "stale": true
   },
   {
    "ticker": "OFG",
@@ -1689,36 +1699,35 @@
   {
    "ticker": "KMX",
    "name": "CarMax Inc",
-   "price": 60.1,
-   "year_high": 62.13,
+   "price": 63.84,
+   "year_high": 63.84,
    "year_low": 33.44,
    "ma50": 55.64,
    "ma200": 45.06,
    "ma_proxy": true,
-   "chg_5d": -3.27,
-   "chg_1m": 3.1,
-   "chg_3m": 64.9,
-   "chg_6m": 43.8,
-   "chg_1y": 3.0,
+   "chg_5d": 6.22,
+   "chg_1m": 9.3,
+   "chg_3m": 71.1,
+   "chg_6m": 50.0,
+   "chg_1y": 9.2,
    "volume": 1612931,
    "avg_volume": 3050333,
-   "as_of": "2026-08-24",
-   "off_high_pct": 3.3,
-   "above_low_pct": 79.7,
+   "as_of": "2026-08-26",
+   "off_high_pct": 0.0,
+   "above_low_pct": 90.9,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.59,
-   "score": 79.0,
-   "category": "A_VCP待突破",
+   "score": 71.6,
+   "category": "E_突破延伸中",
    "range_1m_pct": 9.3,
    "sector": "Consumer Discretionary",
    "industry": "Retail-Auto Dealers and Gas Stations",
    "mktcap": 8816936394.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.3,
-   "stale": true
+   "_delta": 6.2
   },
   {
    "ticker": "CDP",
@@ -1785,7 +1794,8 @@
    "mktcap": 1334635490.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -2.2
+   "_delta": -2.2,
+   "stale": true
   },
   {
    "ticker": "BJRI",
@@ -1818,7 +1828,8 @@
    "mktcap": 1420236551.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -3.0
+   "_delta": -3.0,
+   "stale": true
   },
   {
    "ticker": "EOG",
@@ -1851,7 +1862,8 @@
    "mktcap": 80279190387.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -4.1
+   "_delta": -4.1,
+   "stale": true
   },
   {
    "ticker": "ABBV",
@@ -1884,7 +1896,8 @@
    "mktcap": 468215395834.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 1.0
+   "_delta": 1.0,
+   "stale": true
   },
   {
    "ticker": "TRGP",
@@ -2051,7 +2064,8 @@
    "mktcap": 4354099003.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.4
+   "_delta": -0.4,
+   "stale": true
   },
   {
    "ticker": "PARR",
@@ -2117,40 +2131,41 @@
    "mktcap": 95569180968.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -0.2
+   "_delta": -0.2,
+   "stale": true
   },
   {
    "ticker": "KFRC",
    "name": "Kforce Inc. Common Stock",
-   "price": 58.39,
+   "price": 45.21,
    "year_high": 60.45,
    "year_low": 25.72,
    "ma50": 54.34,
    "ma200": 38.39,
    "ma_proxy": true,
-   "chg_5d": 0.5,
-   "chg_1m": 3.0,
-   "chg_3m": 47.9,
-   "chg_6m": 107.3,
-   "chg_1y": 82.5,
+   "chg_5d": -22.57,
+   "chg_1m": -19.6,
+   "chg_3m": 25.3,
+   "chg_6m": 84.7,
+   "chg_1y": 59.9,
    "volume": 227507,
    "avg_volume": 241438,
-   "as_of": "2026-08-21",
-   "off_high_pct": 3.4,
-   "above_low_pct": 127.0,
-   "above_ma50": true,
+   "as_of": "2026-08-26",
+   "off_high_pct": 25.2,
+   "above_low_pct": 75.8,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.04,
-   "score": 73.5,
-   "category": "A_VCP待突破",
+   "score": 36.0,
+   "category": "D_趨勢弱",
    "range_1m_pct": 9.2,
    "sector": "Consumer Discretionary",
    "industry": "Professional Services",
    "mktcap": 1045706510.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": -22.6
   },
   {
    "ticker": "NWBI",
@@ -2217,7 +2232,8 @@
    "mktcap": 42530447912.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -0.9
+   "_delta": -0.9,
+   "stale": true
   },
   {
    "ticker": "HG",
@@ -2250,7 +2266,8 @@
    "mktcap": 2909047366.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -2.4
+   "_delta": -2.4,
+   "stale": true
   },
   {
    "ticker": "AMAL",
@@ -2350,7 +2367,8 @@
    "mktcap": 1155916765.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 2.0
+   "_delta": 2.0,
+   "stale": true
   },
   {
    "ticker": "HTO",
@@ -2383,7 +2401,8 @@
    "mktcap": 2657069918.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "RUSHB",
@@ -2483,7 +2502,8 @@
    "mktcap": 19613421648.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.5
+   "_delta": -1.5,
+   "stale": true
   },
   {
    "ticker": "JNJ",
@@ -2550,41 +2570,41 @@
    "mktcap": 9074520861.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -1.5
+   "_delta": -1.5,
+   "stale": true
   },
   {
    "ticker": "NEO",
    "name": "NeoGenomics Inc. Common Stock",
-   "price": 15.95,
+   "price": 16.57,
    "year_high": 16.98,
    "year_low": 5.67,
    "ma50": 14.42,
    "ma200": 11.37,
    "ma_proxy": true,
-   "chg_5d": -6.07,
-   "chg_1m": 13.1,
-   "chg_3m": 100.0,
-   "chg_6m": 42.3,
-   "chg_1y": 166.0,
+   "chg_5d": 3.89,
+   "chg_1m": 17.0,
+   "chg_3m": 103.9,
+   "chg_6m": 46.2,
+   "chg_1y": 169.9,
    "volume": 1139833,
    "avg_volume": 3112453,
-   "as_of": "2026-08-24",
-   "off_high_pct": 6.1,
-   "above_low_pct": 181.3,
+   "as_of": "2026-08-26",
+   "off_high_pct": 2.4,
+   "above_low_pct": 192.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.52,
-   "score": 71.7,
-   "category": "B_上升結構",
+   "score": 72.8,
+   "category": "E_突破延伸中",
    "range_1m_pct": 24.4,
    "sector": "Health Care",
    "industry": "Precision Instruments",
    "mktcap": 2181512971.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -6.1,
-   "stale": true
+   "_delta": 3.9
   },
   {
    "ticker": "BLFS",
@@ -2617,7 +2637,8 @@
    "mktcap": 1814438718.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 0.8
+   "_delta": 0.8,
+   "stale": true
   },
   {
    "ticker": "WT",
@@ -2683,7 +2704,8 @@
    "mktcap": 4147895934.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -1.1
+   "_delta": -1.1,
+   "stale": true
   },
   {
    "ticker": "AXGN",
@@ -2755,35 +2777,35 @@
   {
    "ticker": "SLDE",
    "name": "Slide Insurance Holdings Inc. Common Sto",
-   "price": 22.74,
+   "price": 19.97,
    "year_high": 22.74,
    "year_low": 13.48,
    "ma50": 20.12,
    "ma200": 18.36,
    "ma_proxy": true,
-   "chg_5d": 3.7,
-   "chg_1m": 15.4,
-   "chg_3m": 21.0,
-   "chg_6m": 32.4,
-   "chg_1y": 56.4,
+   "chg_5d": -12.18,
+   "chg_1m": 3.2,
+   "chg_3m": 8.8,
+   "chg_6m": 20.2,
+   "chg_1y": 44.2,
    "volume": 865820,
    "avg_volume": 1171642,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.0,
-   "above_low_pct": 68.7,
-   "above_ma50": true,
+   "as_of": "2026-08-26",
+   "off_high_pct": 12.2,
+   "above_low_pct": 48.1,
+   "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 75.1,
-   "category": "E_突破延伸中",
+   "score": 58.0,
+   "category": "C_基底修復中",
    "range_1m_pct": 13.0,
    "sector": "Finance",
    "industry": "Property-Casualty Insurers",
    "mktcap": 2656298490.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "stale": true
+   "_delta": -12.2
   },
   {
    "ticker": "CVE",
@@ -2816,7 +2838,8 @@
    "mktcap": 61743750000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.5
+   "_delta": -0.5,
+   "stale": true
   },
   {
    "ticker": "SENEA",
@@ -2882,7 +2905,8 @@
    "mktcap": 3512905532.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -3.7
+   "_delta": -3.7,
+   "stale": true
   },
   {
    "ticker": "VSAT",
@@ -2948,7 +2972,8 @@
    "mktcap": 4383056923.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": 4.3
+   "_delta": 4.3,
+   "stale": true
   },
   {
    "ticker": "DELL",
@@ -2981,7 +3006,8 @@
    "mktcap": 286515580661.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 4.9
+   "_delta": 4.9,
+   "stale": true
   },
   {
    "ticker": "KNSA",
@@ -3080,7 +3106,8 @@
    "mktcap": 3363367561.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.0
+   "_delta": 0.0,
+   "stale": true
   },
   {
    "ticker": "CNQ",
@@ -3148,7 +3175,8 @@
    "mktcap": 17301924185.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.2
+   "_delta": 0.2,
+   "stale": true
   },
   {
    "ticker": "KFY",
@@ -3187,69 +3215,68 @@
   {
    "ticker": "PK",
    "name": "Park Hotels & Resorts Inc. Common Stock",
-   "price": 15.78,
-   "year_high": 15.83,
+   "price": 16.17,
+   "year_high": 16.17,
    "year_low": 9.97,
    "ma50": 14.72,
    "ma200": 12.05,
    "ma_proxy": true,
-   "chg_5d": 4.3,
-   "chg_1m": 8.2,
-   "chg_3m": 46.7,
-   "chg_6m": 37.6,
-   "chg_1y": 43.2,
+   "chg_5d": 2.47,
+   "chg_1m": 10.7,
+   "chg_3m": 49.2,
+   "chg_6m": 40.1,
+   "chg_1y": 45.7,
    "volume": 3433017,
    "avg_volume": 4738492,
-   "as_of": "2026-08-21",
-   "off_high_pct": 0.3,
-   "above_low_pct": 58.3,
+   "as_of": "2026-08-26",
+   "off_high_pct": 0.0,
+   "above_low_pct": 62.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.79,
-   "score": 72.8,
-   "category": "B_上升結構",
+   "score": 71.9,
+   "category": "E_突破延伸中",
    "range_1m_pct": 9.9,
    "sector": "Consumer Discretionary",
    "industry": "Hotels/Resorts",
    "mktcap": 3177118847.0,
    "exchange": "nyse",
    "split_adj": false,
-   "stale": true
+   "_delta": 2.5
   },
   {
    "ticker": "RAPP",
    "name": "Rapport Therapeutics Inc. Common Stock",
-   "price": 47.36,
+   "price": 46.98,
    "year_high": 49.07,
    "year_low": 14.04,
    "ma50": 42.06,
    "ma200": 33.58,
    "ma_proxy": true,
-   "chg_5d": -1.82,
-   "chg_1m": 14.8,
-   "chg_3m": 28.3,
-   "chg_6m": 64.2,
-   "chg_1y": 228.8,
+   "chg_5d": -0.8,
+   "chg_1m": 14.0,
+   "chg_3m": 27.5,
+   "chg_6m": 63.4,
+   "chg_1y": 228.0,
    "volume": 140899,
    "avg_volume": 374834,
-   "as_of": "2026-08-24",
-   "off_high_pct": 3.5,
-   "above_low_pct": 237.3,
+   "as_of": "2026-08-26",
+   "off_high_pct": 4.3,
+   "above_low_pct": 234.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 73.1,
-   "category": "E_突破延伸中",
+   "score": 73.4,
+   "category": "B_上升結構",
    "range_1m_pct": 18.6,
    "sector": "Health Care",
    "industry": "Biotechnology: Pharmaceutical Preparations",
    "mktcap": 2314472517.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -1.8,
-   "stale": true
+   "_delta": -0.8
   },
   {
    "ticker": "ZD",
@@ -3315,7 +3342,8 @@
    "mktcap": 28188630985.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.9
+   "_delta": 0.9,
+   "stale": true
   },
   {
    "ticker": "IMO",
@@ -3381,7 +3409,8 @@
    "mktcap": 103972424467.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -2.5
+   "_delta": -2.5,
+   "stale": true
   },
   {
    "ticker": "WTTR",
@@ -3419,36 +3448,35 @@
   {
    "ticker": "INSW",
    "name": "International Seaways Inc. Common Stock",
-   "price": 100.5,
+   "price": 93.67,
    "year_high": 100.5,
    "year_low": 41.64,
    "ma50": 88.98,
    "ma200": 71.35,
    "ma_proxy": true,
-   "chg_5d": 0.98,
-   "chg_1m": 9.9,
-   "chg_3m": 18.7,
-   "chg_6m": 55.5,
-   "chg_1y": 134.2,
+   "chg_5d": -6.8,
+   "chg_1m": 3.1,
+   "chg_3m": 11.9,
+   "chg_6m": 48.7,
+   "chg_1y": 127.4,
    "volume": 485350,
    "avg_volume": 564233,
-   "as_of": "2026-08-24",
-   "off_high_pct": 0.0,
-   "above_low_pct": 141.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 6.8,
+   "above_low_pct": 125.0,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.96,
-   "score": 70.1,
-   "category": "E_突破延伸中",
+   "score": 72.6,
+   "category": "A_VCP待突破",
    "range_1m_pct": 11.3,
    "sector": "Consumer Discretionary",
    "industry": "Marine Transportation",
    "mktcap": 4929356071.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 1.0,
-   "stale": true
+   "_delta": -6.8
   },
   {
    "ticker": "REX",
@@ -3519,27 +3547,27 @@
   {
    "ticker": "MU",
    "name": "Micron Technology Inc. Common Stock",
-   "price": 910.43,
+   "price": 938.4,
    "year_high": 1255,
    "year_low": 113.46,
    "ma50": 961.03,
    "ma200": 556.55,
    "ma_proxy": false,
-   "chg_5d": -5.83,
-   "chg_1m": -8.2,
-   "chg_3m": 27.6,
-   "chg_6m": 136.0,
-   "chg_1y": 676.7,
+   "chg_5d": 3.07,
+   "chg_1m": -5.1,
+   "chg_3m": 30.7,
+   "chg_6m": 139.1,
+   "chg_1y": 679.8,
    "volume": 21741998,
    "avg_volume": 45331580,
-   "as_of": "2026-08-24",
-   "off_high_pct": 27.5,
-   "above_low_pct": 702.4,
+   "as_of": "2026-08-26",
+   "off_high_pct": 25.2,
+   "above_low_pct": 727.1,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 56.8,
+   "score": 59.9,
    "category": "C_基底修復中",
    "range_1m_pct": 30.4,
    "sector": "Technology",
@@ -3547,8 +3575,7 @@
    "mktcap": 1091874710524.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -5.8,
-   "stale": true
+   "_delta": 3.1
   },
   {
    "ticker": "PEB",
@@ -3681,7 +3708,8 @@
    "mktcap": 112632382872.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -0.5
+   "_delta": -0.5,
+   "stale": true
   },
   {
    "ticker": "PBR",
@@ -4012,11 +4040,6 @@
    "note": "Q2 EPS 1.63 美元優於預期並上調全年指引,財富信託費收入年增 17%;8/3 Piper Sandler 目標價升至 90 美元,股價創歷史新高"
   },
   {
-   "ticker": "BNS",
-   "note": "8/25 盤前公布 Q3 財報,市場預估 EPS 2.09;所持 KeyCorp 股權預計貢獻 Q3 調整後淨利約 9,000 萬加元",
-   "earnings_date": "2026-08-25"
-  },
-  {
    "ticker": "OFG",
    "note": "7/21 Q2 EPS 1.39美元優於預期，NIM上升、信貸趨勢正面，Truist目標價升至58美元；8月中董事與CFO申報減持；股價貼近52週高52.23量縮整理"
   },
@@ -4056,10 +4079,6 @@
   {
    "ticker": "PARR",
    "note": "8/4 盤後 Q2 財報大勝預期：調整後 EPS $10.10 遠超預估 $8.17，淨利 $4.62 億年增近 7 倍，夏威夷 SAF 投產帶動；財報後股價震盪整理"
-  },
-  {
-   "ticker": "KFRC",
-   "note": "7/27 公布 Q2 財報，科技與顧問業務動能強，職缺與新指派數年增 18%、營收連續季度成長；分析師上調目標價至約 $60.7；年內大漲約 90%"
   },
   {
    "ticker": "IBKR",
@@ -4385,13 +4404,23 @@
    "earnings_date": ""
   },
   {
-   "ticker": "INSW",
-   "note": "8/24 +1.0%。International Seaways live quote 100.50; session referenced Aug 23-24. +1.0% vs prior 99.52, plausible.",
+   "ticker": "DELL",
+   "note": "8/26 +4.9%。multi-session rally into earnings",
    "earnings_date": ""
   },
   {
-   "ticker": "DELL",
-   "note": "8/26 +4.9%。multi-session rally into earnings",
+   "ticker": "BNS",
+   "note": "8/26 +6.3%。Record Q3 earnings, ROE beat, analyst upgrade",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "KFRC",
+   "note": "8/26 -22.6%。large multi-session decline, reason unconfirmed",
+   "earnings_date": ""
+  },
+  {
+   "ticker": "INSW",
+   "note": "8/26 -6.8%。Closed down 5.4% on the session",
    "earnings_date": ""
   }
  ],
