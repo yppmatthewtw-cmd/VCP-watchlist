@@ -318,7 +318,14 @@ def build_summary(vcp, stage, pre):
                 e["price"] = r["price"]
             if e["off_high_pct"] is None and r.get("off_high_pct") is not None:
                 e["off_high_pct"] = r["off_high_pct"]
+    try:
+        overlay = json.load(open("rank_overlay.json"))
+    except FileNotFoundError:
+        overlay = {}
     for e in rec.values():
+        ov = overlay.get(e["ticker"], {})
+        e["rise_score"] = ov.get("score", 0)
+        e["rise_why"] = ov.get("why", "")
         on = 0
         on += 1 if e["vcp"] in VCP_ONLINE else 0
         on += 1 if e["stage"] in STAGE_ONLINE else 0
@@ -336,7 +343,7 @@ def summary_html(rec):
         cls = "on" if v in online_set else "off"
         return f'<td class="gr {cls}"><b>{v}</b></td>'
 
-    rows = sorted(rec.values(), key=lambda e: (-e["online_count"], -e["lists"], -e["best_score"]))
+    rows = sorted(rec.values(), key=lambda e: (-e.get("rise_score", 0), -e["online_count"], -e["best_score"]))
     trs = ""
     for e in rows:
         t = e["ticker"]
@@ -346,7 +353,10 @@ def summary_html(rec):
                 f'<td class="nm">{esc((e["name"] or "")[:26])}</td>'
                 f'<td class="nm">{esc((e.get("sector") or "")[:20])}</td>'
                 + cell(e["vcp"], VCP_ONLINE) + cell(e["stage"], STAGE_ONLINE) + cell(e["pre"], VCP_ONLINE)
-                + f'<td class="num"><b>{e["online_count"]}</b></td>'
+                + f'<td class="num"><span class="scorebar"><i style="width:{min(e.get("rise_score", 0), 100):.0f}%"></i>'
+                f'<b>{e.get("rise_score", 0):g}</b></span></td>'
+                f'<td class="nm" style="white-space:normal;max-width:220px">{esc(e.get("rise_why", ""))}</td>'
+                f'<td class="num"><b>{e["online_count"]}</b></td>'
                 f'<td class="num">{num(e["price"])}</td>'
                 f'<td class="num pivot">{off_cell(e["off_high_pct"])}</td>'
                 f'<td class="num">{e["best_score"]:g}</td></tr>')
@@ -355,9 +365,10 @@ def summary_html(rec):
     n1 = sum(1 for e in rows if e["online_count"] == 1)
     return f"""<section class="page" id="page-d">
 <h2 class="ptitle">Page D｜總表：所有代號 × 三份清單</h2>
-<p class="lede">合併三份清單的全部 <b>{len(rows)}</b> 檔代號，列出每檔在各清單中的等級。
-<b>綠底</b>＝該清單的線上級別（VCP：A／E／B；Weinstein：2A／2B／1→2）；灰底＝線下；「–」＝未出現在該清單。
-依「線上清單數」排序 — 三榜皆線上者最值得優先開圖。本頁不含歷史軌跡（軌跡見 Page A／B／C）。</p>
+<p class="lede">合併三份清單的全部 <b>{len(rows)}</b> 檔代號，依<b>「上升就緒分數」</b>（0–100）由高至低排序 —
+綜合趨勢完整度（25）＋距 52 週高點（20）＋月線緊縮（15）＋升勢年輕度（15）＋量縮（10）＋三榜共識（15），
+再疊加本週已知催化劑的質化調整（±10，如 NVDA／CRWD 財報大勝、GSAT 被收購封頂、PWR 連跌）。
+各清單的等級照舊顯示：<b>綠底</b>＝該清單的線上級別；灰底＝線下；「–」＝未出現在該清單。本頁不含歷史軌跡（見 Page A／B／C）。</p>
 <nav class="summary">
 <span class="stat"><span class="dot d-a"></span><b>{n3}</b><span>三榜皆線上</span></span>
 <span class="stat"><span class="dot d-b"></span><b>{n2}</b><span>兩榜線上</span></span>
@@ -365,7 +376,7 @@ def summary_html(rec):
 <span class="stat tot"><b>{len(rows)}</b><span>代號總數</span></span></nav>
 <div class="tblwrap"><table><thead><tr><th>代號</th><th>名稱</th>
 <th>產業</th><th class="gr">VCP</th><th class="gr">Weinstein</th><th class="gr">Pre-breakout</th>
-<th class="num">線上數</th><th class="num">收盤</th><th class="num">距高</th><th class="num">最高分</th>
+<th class="num">上升分數</th><th>主因</th><th class="num">線上數</th><th class="num">收盤</th><th class="num">距高</th><th class="num">最高分</th>
 </tr></thead><tbody>{trs}</tbody></table></div>
 </section>"""
 
@@ -436,28 +447,29 @@ def write_excel(path, vcp, stage, pre, rec, rev, model, stamp_txt):
     list_sheet(wsC, pre[0], VCP_TIERS, VCP_ONLINE, pre[2], pre[1])
 
     wsD = wb.create_sheet("D. Summary")
-    wsD.append(["代號", "名稱", "產業", "交易所", "VCP", "Weinstein", "Pre-breakout",
+    wsD.append(["代號", "名稱", "產業", "交易所", "上升分數", "主因", "VCP", "Weinstein", "Pre-breakout",
                 "線上清單數", "出現清單數", "收盤", "距高%", "最高分", "TradingView"])
-    for e in sorted(rec.values(), key=lambda e: (-e["online_count"], -e["lists"], -e["best_score"])):
+    for e in sorted(rec.values(), key=lambda e: (-e.get("rise_score", 0), -e["online_count"], -e["best_score"])):
         t = e["ticker"]
         wsD.append([t, (e["name"] or "")[:40], (e.get("sector") or "")[:30],
                     EXCHANGE.get(t, "").upper(),
+                    e.get("rise_score", 0), e.get("rise_why", ""),
                     e["vcp"] or "", e["stage"] or "", e["pre"] or "",
                     e["online_count"], e["lists"], e["price"], e["off_high_pct"],
                     e["best_score"], tv_url(t)])
         row = wsD.max_row
-        for col, key, onset in ((5, "vcp", VCP_ONLINE), (6, "stage", STAGE_ONLINE), (7, "pre", VCP_ONLINE)):
+        for col, key, onset in ((7, "vcp", VCP_ONLINE), (8, "stage", STAGE_ONLINE), (9, "pre", VCP_ONLINE)):
             c = wsD.cell(row=row, column=col)
             c.alignment = Alignment(horizontal="center")
             if e[key]:
                 c.fill = on_fill if e[key] in onset else off_fill
                 c.font = Font(bold=True)
-        lc = wsD.cell(row=row, column=13)
+        lc = wsD.cell(row=row, column=15)
         lc.hyperlink = tv_url(t)
         lc.value = "chart"
         lc.font = link_font
         wsD.cell(row=row, column=1).font = Font(bold=True)
-    style_sheet(wsD, 13, [9, 28, 20, 9, 7, 10, 13, 10, 10, 10, 9, 8, 11])
+    style_sheet(wsD, 15, [9, 28, 20, 9, 9, 34, 7, 10, 13, 10, 10, 10, 9, 8, 11])
 
     ws0 = wb.create_sheet("說明", 0)
     for line in [
