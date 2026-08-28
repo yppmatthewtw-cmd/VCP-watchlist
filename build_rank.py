@@ -8,20 +8,23 @@ Composite, applied uniformly to every ticker:
 """
 import json
 
-FILES = [('scan_R10_2026-08-27.json', 'category'),
-         ('scan_stage_R3_2026-08-27.json', 'stage'),
-         ('scan_PB-R3_2026-08-27.json', 'category')]
+FILES = [('scan_R11_2026-08-28.json', 'category'),
+         ('scan_stage_R4_2026-08-28.json', 'stage'),
+         ('scan_PB-R4_2026-08-28.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
 
 # Qualitative catalyst adjustments (my read of this week's events), bounded ±10.
 CATALYST = {
-    'CRWD': (8, '財報大勝盤後+11%'), 'NVDA': (6, '財報+106%超預期'),
-    'DELL': (4, 'AI伺服器動能強'), 'BLFS': (4, '突破52週高'), 'SNOW': (3, '貼頂強勢'),
-    'BE': (3, '動能強'), 'BNS': (3, '創紀錄財報'), 'ROST': (2, '財報後走強'),
-    'MRVL': (1, '8/27財報双面刃'), 'MU': (-2, 'NVDA漲價傳聞壓記憶體'),
-    'GSAT': (-8, '被收購價格封頂'), 'PWR': (-5, '六連跌'), 'CCJ': (-4, '鈾族群賣壓'),
-    'OXY': (-3, '油價逆風'), 'LLY': (-3, 'GLP-1報銷疑慮'), 'ENVA': (-3, '高檔回落'),
-    'AXTI': (-4, '連續重挫'), 'CBRS': (-3, '持續回檔'),
+    # 8/27 post-earnings reality, replacing the pre-reaction guesses
+    'CRWD': (6, '財報後+17%創單日最佳'), 'NVDA': (5, '財報後+8.7%，市值單日+$441B'),
+    'CRM': (6, '財報beat＋Anthropic合作+11%'), 'CLS': (4, 'AI硬體隨NVDA走強+10.6%'),
+    'CCJ': (4, '鈾族群反彈+13.3%'), 'CRDO': (3, 'AI網通需求+5.7%'),
+    'DDOG': (3, '單日+4%'), 'ALAB': (3, '+5.5%'), 'CLDX': (3, '生技反彈+7.7%'),
+    'MRVL': (-5, '財報創紀錄但盤後跌逾7%（預期過高）'),
+    'AMAL': (-6, '單日-13.6%'), 'CAT': (-4, '-4.5%'), 'BE': (-3, '高檔回落'),
+    'FANG': (-3, '油氣走弱'), 'GSAT': (-8, '被收購價格封頂'),
+    'PWR': (-4, '連續走弱'), 'AXTI': (-3, '持續回檔'), 'CBRS': (-3, '持續回檔'),
+    'LLY': (-2, 'GLP-1報銷疑慮'),
 }
 
 best = {}
