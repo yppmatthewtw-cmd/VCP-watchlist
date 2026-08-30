@@ -1,0 +1,94 @@
+{
+ "CRM": {
+  "pts": 5,
+  "reason": "兩日+25%財報+Anthropic合作"
+ },
+ "ANET": {
+  "pts": 4,
+  "reason": "單日+7.9%"
+ },
+ "CDNS": {
+  "pts": 4,
+  "reason": "+8.8%"
+ },
+ "AMZN": {
+  "pts": 4,
+  "reason": "逆勢+4%"
+ },
+ "NKE": {
+  "pts": 3,
+  "reason": "+3%"
+ },
+ "CRWD": {
+  "pts": 3,
+  "reason": "財報大勝後獲利了結，基本面強"
+ },
+ "NVDA": {
+  "pts": 2,
+  "reason": "財報大勝但週五回吐-4.45%"
+ },
+ "CCJ": {
+  "pts": -2,
+  "reason": "鈾股連漲後週五重挫-5.9%"
+ },
+ "AVGO": {
+  "pts": 2,
+  "reason": "+2.1%"
+ },
+ "MRVL": {
+  "pts": -6,
+  "reason": "財報佳但指引不如預期，週五-6~8%"
+ },
+ "AMAT": {
+  "pts": -5,
+  "reason": "財報sell-the-news＋中國風險"
+ },
+ "COIN": {
+  "pts": -4,
+  "reason": "加密走弱-7.5%"
+ },
+ "CLS": {
+  "pts": -4,
+  "reason": "-5.1%"
+ },
+ "CDP": {
+  "pts": -4,
+  "reason": "-8.5%"
+ },
+ "AXGN": {
+  "pts": -4,
+  "reason": "回吐漲幅-7.5%"
+ },
+ "GSAT": {
+  "pts": -8,
+  "reason": "被收購價格封頂"
+ },
+ "CORT": {
+  "pts": -3,
+  "reason": "一週走弱"
+ },
+ "BOOT": {
+  "pts": -3,
+  "reason": "-3.8%"
+ },
+ "CAT": {
+  "pts": -3,
+  "reason": "連日回落"
+ },
+ "LLY": {
+  "pts": -2,
+  "reason": "GLP-1報銷疑慮"
+ },
+ "MRNA": {
+  "pts": 3,
+  "reason": "8/19癌症疫苗三期成功+177%，高位整理"
+ },
+ "IREN": {
+  "pts": -3,
+  "reason": "週五重挫-12.5%"
+ },
+ "AXTI": {
+  "pts": -3,
+  "reason": "週五重挫-12.4%"
+ }
+}

@@ -8,9 +8,9 @@ Composite, applied uniformly to every ticker:
 """
 import json
 
-FILES = [('scan_R12_2026-08-29.json', 'category'),
-         ('scan_stage_R5_2026-08-29.json', 'stage'),
-         ('scan_PB-R5_2026-08-29.json', 'category')]
+FILES = [('scan_R13_2026-08-30.json', 'category'),
+         ('scan_stage_R6_2026-08-30.json', 'stage'),
+         ('scan_PB-R6_2026-08-30.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
 
 # Qualitative catalyst adjustments (my read of this week's events), bounded ±10.
@@ -19,12 +19,14 @@ CATALYST = {
     'CRM': (5, '兩日+25%財報+Anthropic合作'), 'ANET': (4, '單日+7.9%'),
     'CDNS': (4, '+8.8%'), 'AMZN': (4, '逆勢+4%'), 'NKE': (3, '+3%'),
     'CRWD': (3, '財報大勝後獲利了結，基本面強'), 'NVDA': (2, '財報大勝但週五回吐-4.45%'),
-    'CCJ': (3, '鈾族群連漲'), 'AVGO': (2, '+2.1%'),
+    'CCJ': (-2, '鈾股連漲後週五重挫-5.9%'), 'AVGO': (2, '+2.1%'),
     'MRVL': (-6, '財報佳但指引不如預期，週五-6~8%'),
     'AMAT': (-5, '財報sell-the-news＋中國風險'), 'COIN': (-4, '加密走弱-7.5%'),
     'CLS': (-4, '-5.1%'), 'CDP': (-4, '-8.5%'), 'AXGN': (-4, '回吐漲幅-7.5%'),
     'GSAT': (-8, '被收購價格封頂'), 'CORT': (-3, '一週走弱'), 'BOOT': (-3, '-3.8%'),
     'CAT': (-3, '連日回落'), 'LLY': (-2, 'GLP-1報銷疑慮'),
+    'MRNA': (3, '8/19癌症疫苗三期成功+177%，高位整理'), 'IREN': (-3, '週五重挫-12.5%'),
+    'AXTI': (-3, '週五重挫-12.4%'),
 }
 
 best = {}
@@ -94,6 +96,8 @@ for t, e in best.items():
     out[t] = {'score': round(score, 1), 'why': '、'.join(why[:3])}
 
 json.dump(out, open('rank_overlay.json', 'w'), ensure_ascii=False, indent=1)
+json.dump({t: {'pts': p, 'reason': w} for t, (p, w) in CATALYST.items()},
+          open('catalysts.json', 'w'), ensure_ascii=False, indent=1)
 top = sorted(out.items(), key=lambda kv: -kv[1]['score'])[:25]
 for t, v in top:
     print(f"{t:<6}{v['score']:>6.1f}  {v['why']}")
