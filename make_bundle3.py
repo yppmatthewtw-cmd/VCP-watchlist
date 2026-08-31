@@ -46,12 +46,25 @@ CAP_TIERS = [("a", "大型股", "市值 ≥ $10B", lambda m: m >= 10e9),
 # quote-verification chatter that leaked into notes — not for the spotlight pages
 _NOISE = re.compile(r"(?i)quote|dated|session range|sourced|per the|multiple sources|"
                     r"confirm|unavailable|stale|re-?check|undated|plausible|vs prior|"
-                    r"vs (the )?Aug|prior close|reference|clustered|live quotes?")
+                    r"vs (the )?Aug|prior close|reference|clustered|live quotes?|"
+                    r"\brange\b|price \d|\bAug \d|\d{1,2}/\d{1,2} [-+]\d|matching|baseline")
 
 
 def clean_note(txt, limit=70):
     parts = [p for p in re.split(r"[。;；]", txt or "") if p.strip() and not _NOISE.search(p)]
     return "。".join(parts)[:limit]
+
+
+NEWEST = "2026-08-31"
+
+
+def asof_badge(d):
+    """Mark a row whose price is not from the newest session, so the mixed
+    basis is visible per row instead of only in the masthead."""
+    d = (d or "")[:10]
+    if not d or d == NEWEST:
+        return ""
+    return f'<small class="asof">{d[5:].replace("-", "/")}</small>'
 
 
 def mcap_txt(m):
@@ -79,7 +92,7 @@ def hotbar(tickers):
         f'<a class="hchip {"hot" if c["pts"] > 0 else "warn"}" href="{tv_url(t)}" target="_blank" '
         f'rel="noopener"><b>{t}</b> {esc(c["reason"])}</a>' for t, c in hits)
     return (f'<div class="hotbar"><span class="hlabel">🔥 本週熱點催化</span>'
-            f'<span class="hmacro">宏觀：Warsh 鷹派首秀，9 月加息機率約 55%，週五科技股回吐</span>'
+            f'<span class="hmacro">宏觀（8/31）：美伊互擊，WTI 原油衝破 $90；11 個板塊中 10 個下跌，能源是唯一上漲板塊，公用事業與通訊服務最弱；油價推升通脹，9 月加息預期再起</span>'
             f'{chips}</div>')
 
 
@@ -131,7 +144,8 @@ def cap_page(pid, list_no, list_name, snaps, tiers, online, extra_cols,
                 f'<td class="nm">{esc((r.get("sector") or "")[:14])}</td>'
                 f'<td class="st t{tid}" data-v="{"1" if on else "0"}"><b>{letter}</b></td>'
                 f'<td class="catcell">{cat_chip(t)}</td>'
-                f'<td class="num" data-v="{r.get("price") or ""}">{num(r.get("price"))}</td>'
+                f'<td class="num" data-v="{r.get("price") or ""}">{num(r.get("price"))}'
+                f'{asof_badge(r.get("as_of"))}</td>'
                 f'<td class="num pivot" data-v="{-oh if oh is not None else ""}">{off_cell(oh)}</td>'
                 f'{tds}'
                 f'<td class="num" data-v="{(r.get("mcap") or 0)/1e9:.2f}">{mcap_txt(r.get("mcap"))}</td>'
@@ -194,7 +208,8 @@ def summary4_html(rec):
                 f'<b>{e.get("rise_score", 0):g}</b></span></td>'
                 f'<td class="whycell">{cat_chip(t)}<span class="why">{why}</span></td>'
                 f'<td class="num" data-v="{e["online_count"]}"><b>{e["online_count"]}</b></td>'
-                f'<td class="num" data-v="{e["price"] or ""}">{num(e["price"])}</td>'
+                f'<td class="num" data-v="{e["price"] or ""}">{num(e["price"])}'
+                f'{asof_badge(e.get("as_of"))}</td>'
                 f'<td class="num pivot" data-v="{-oh if oh is not None else ""}">{off_cell(oh)}</td>'
                 f'<td class="num" data-v="{mc/1e9:.2f}">{mcap_txt(mc)}<small class="captier">{cap}</small></td>'
                 + cert_tds + "</tr>")
@@ -439,17 +454,26 @@ def main():
             e = rec.get(r["ticker"])
             if e is not None and not e.get("mcap") and r.get("mcap"):
                 e["mcap"] = r["mcap"]
+            if e is not None and (r.get("as_of") or "") > (e.get("as_of") or ""):
+                e["as_of"] = r.get("as_of")
+            if e is not None and (r.get("as_of") or "") > (e.get("as_of") or ""):
+                e["as_of"] = r.get("as_of")
 
-    dates = collections.Counter(
-        (r.get("as_of") or "")[:10]
-        for s in (vcp_snaps, stage_snaps, pre_snaps) for r in s[-1][3]["rows"])
-    dates.pop("", None)
-    n_all = sum(dates.values())
+    # count UNIQUE tickers, not row-instances across the three lists
+    per_ticker = {}
+    for s in (vcp_snaps, stage_snaps, pre_snaps):
+        for r in s[-1][3]["rows"]:
+            d = (r.get("as_of") or "")[:10]
+            if d and d > per_ticker.get(r["ticker"], ""):
+                per_ticker[r["ticker"]] = d
+    dates = collections.Counter(per_ticker.values())
+    n_all = len(per_ticker)
     newest = max(dates)
     n_newest = dates[newest]
     older = n_all - n_newest
-    basis = (f"{newest} 官方收盤" if older == 0
-             else f"{newest} 官方收盤（{n_newest}/{n_all} 檔；其餘 {older} 檔為較早報價）")
+    basis = (f"{newest} 收盤（全部 {n_all} 檔）" if older == 0
+             else f"混合基準 — {newest} 收盤僅 {n_newest}/{n_all} 檔，"
+                  f"其餘 {older} 檔仍為 8/28 官方收盤（各列價格下方紅字標示其基準日）")
 
     now_hkt = datetime.now(timezone.utc) + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
@@ -622,6 +646,8 @@ th.sort[data-dir="asc"]::after {{ content:"▲"; opacity:1; color:var(--accent);
 th.c7, td.c7 {{ border-left:1px dotted var(--line); }}
 th.certsum, td.certsum {{ border-left:2px solid var(--accent); }}
 td.certsum small {{ display:block; color:var(--muted); font-size:9.5px; }}
+small.asof {{ display:block; font-size:9px; color:var(--dn); letter-spacing:.02em;
+  font-weight:700; }}
 .sb2 i {{ background:var(--tB) !important; }}
 td {{ padding:7px 9px; border-top:1px solid var(--line); vertical-align:top; }}
 tbody tr:hover {{ background:var(--hover); }}
@@ -690,8 +716,14 @@ a {{ color:var(--accent); }}
 量縮／收縮／RS／均線，各 0–100 獨立成欄）。<b>點任何數值欄標題即依該欄重新排序</b>（第一下降序、再點升序）。</li>
 <li>確定性 7 項取自 10MA 上升趨勢清單的算法：以官方日線序列偵測「一底高於一底」結構後計算突破進度、跌幅收復、
 低點守住天數、量能對比、回檔收縮、相對強度、均線排列；加權合計＝確定性總分（權重 25/10/15/15/10/10/15）。</li>
-<li>數據源升級：本版全部收盤價、市值與 1 月／3 月動能改用官方每日快照序列（240/274 檔全序列；
-CRWD 4:1、KLAC 10:1、DD 1:3 拆股已調整），其餘 34 檔（多為外國 ADR）採官方 8/28 單日收盤。</li>
+<li><b>數據基準（請務必留意）</b>：本版<b>並非完整的 8/31 全巿場重掃</b>。上游官方每日快照倉庫的自動更新
+程式在 8/28 之後故障（8/31 當日僅提交排程修復，未更新數據），其線上 API 亦被本工作階段的網絡政策封鎖，
+因此 8/31 收盤價只能逐檔以網絡搜尋查證，<b>僅 67/274 檔取得可查證的 8/31 收盤</b>（其中 12 檔為明確標註
+日期的高信心報價）。其餘代號沿用 8/28 官方收盤，並在收盤價下方以紅色小字標示該列的實際基準日期
+（無標示者即為 8/31）。分數與排名因此為混合基準，跨檔比較時請以基準日期標示為準。</li>
+<li>8/28 官方基準本身仍來自每日快照序列（240/274 檔全序列，CRWD 4:1、KLAC 10:1、DD 1:3 拆股已調整），
+其餘 34 檔（多為外國 ADR）採官方 8/28 單日收盤。確定性 7 項量化仍以 8/28 官方日線序列計算（8/31 無官方
+序列與成交量數據，故不重算）。</li>
 <li>點任一代號可開 TradingView 圖表（Weinstein 建議切週線＋30 週均線）。</li>
 </ul>
 <p class="disclaimer">本表為技術面選股輔助工具，非投資建議。分級由量化規則產生，催化欄為人工整理的本週事件，

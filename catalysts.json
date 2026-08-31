@@ -1,94 +1,146 @@
 {
- "CRM": {
+ "EOG": {
+  "pts": 7,
+  "reason": "8/31油價破$90，+6.8%"
+ },
+ "TRGP": {
   "pts": 5,
-  "reason": "兩日+25%財報+Anthropic合作"
+  "reason": "8/31 +3.9%，中游受惠"
  },
- "ANET": {
+ "CVE": {
   "pts": 4,
-  "reason": "單日+7.9%"
+  "reason": "8/31 +2.6%"
  },
- "CDNS": {
+ "FTI": {
   "pts": 4,
-  "reason": "+8.8%"
+  "reason": "8/31 +2.4%，油服走強"
  },
- "AMZN": {
+ "EQNR": {
   "pts": 4,
-  "reason": "逆勢+4%"
+  "reason": "8/31 +2.3%"
  },
- "NKE": {
+ "SU": {
   "pts": 3,
-  "reason": "+3%"
+  "reason": "8/31 +2.1%"
+ },
+ "DINO": {
+  "pts": 3,
+  "reason": "8/31煉油+2.1%"
+ },
+ "CVX": {
+  "pts": 3,
+  "reason": "8/31 +1.6%，油價避險"
+ },
+ "CNQ": {
+  "pts": 3,
+  "reason": "8/31 +1.5%"
+ },
+ "CHRD": {
+  "pts": 3,
+  "reason": "8/31 +1.1%"
+ },
+ "TSLA": {
+  "pts": 5,
+  "reason": "8/31 +5.5%領漲"
  },
  "CRWD": {
+  "pts": 5,
+  "reason": "8/31 +3.8%，財報後續強"
+ },
+ "CRM": {
   "pts": 3,
-  "reason": "財報大勝後獲利了結，基本面強"
+  "reason": "財報+Anthropic合作"
  },
- "NVDA": {
+ "ANET": {
   "pts": 2,
-  "reason": "財報大勝但週五回吐-4.45%"
- },
- "CCJ": {
-  "pts": -2,
-  "reason": "鈾股連漲後週五重挫-5.9%"
- },
- "AVGO": {
-  "pts": 2,
-  "reason": "+2.1%"
- },
- "MRVL": {
-  "pts": -6,
-  "reason": "財報佳但指引不如預期，週五-6~8%"
- },
- "AMAT": {
-  "pts": -5,
-  "reason": "財報sell-the-news＋中國風險"
- },
- "COIN": {
-  "pts": -4,
-  "reason": "加密走弱-7.5%"
- },
- "CLS": {
-  "pts": -4,
-  "reason": "-5.1%"
- },
- "CDP": {
-  "pts": -4,
-  "reason": "-8.5%"
- },
- "AXGN": {
-  "pts": -4,
-  "reason": "回吐漲幅-7.5%"
- },
- "GSAT": {
-  "pts": -8,
-  "reason": "被收購價格封頂"
- },
- "CORT": {
-  "pts": -3,
-  "reason": "一週走弱"
- },
- "BOOT": {
-  "pts": -3,
-  "reason": "-3.8%"
- },
- "CAT": {
-  "pts": -3,
-  "reason": "連日回落"
- },
- "LLY": {
-  "pts": -2,
-  "reason": "GLP-1報銷疑慮"
+  "reason": "前週單日+7.9%"
  },
  "MRNA": {
   "pts": 3,
   "reason": "8/19癌症疫苗三期成功+177%，高位整理"
  },
+ "AXON": {
+  "pts": -5,
+  "reason": "8/31 -5.3%"
+ },
+ "TD": {
+  "pts": -4,
+  "reason": "8/31 -3.4%"
+ },
+ "GD": {
+  "pts": -3,
+  "reason": "8/31 -2.3%"
+ },
+ "MRVL": {
+  "pts": -4,
+  "reason": "指引不如預期，8/31再-2.2%"
+ },
+ "UNP": {
+  "pts": -3,
+  "reason": "8/31 -2.2%，運輸受油價壓"
+ },
+ "CSX": {
+  "pts": -3,
+  "reason": "8/31 -1.5%，運輸成本升"
+ },
+ "NSC": {
+  "pts": -2,
+  "reason": "運輸受油價壓"
+ },
+ "GOOGL": {
+  "pts": -3,
+  "reason": "8/31 -2.5%，通訊服務最弱"
+ },
+ "AMZN": {
+  "pts": -2,
+  "reason": "8/31 -1.7%"
+ },
+ "NEE": {
+  "pts": -3,
+  "reason": "公用事業最弱，利率敏感"
+ },
+ "ETR": {
+  "pts": -3,
+  "reason": "公用事業最弱"
+ },
+ "VST": {
+  "pts": -3,
+  "reason": "公用事業回落"
+ },
+ "CEG": {
+  "pts": -3,
+  "reason": "公用事業回落"
+ },
+ "AMAT": {
+  "pts": -4,
+  "reason": "sell-the-news＋中國風險"
+ },
+ "COIN": {
+  "pts": -4,
+  "reason": "加密走弱"
+ },
+ "GSAT": {
+  "pts": -8,
+  "reason": "被收購價格封頂"
+ },
+ "CCJ": {
+  "pts": -2,
+  "reason": "鈾股8/28重挫-5.9%"
+ },
+ "LLY": {
+  "pts": -2,
+  "reason": "GLP-1報銷疑慮"
+ },
+ "CAT": {
+  "pts": -3,
+  "reason": "連日回落"
+ },
  "IREN": {
   "pts": -3,
-  "reason": "週五重挫-12.5%"
+  "reason": "8/28重挫-12.5%"
  },
  "AXTI": {
   "pts": -3,
-  "reason": "週五重挫-12.4%"
+  "reason": "8/28重挫-12.4%"
  }
 }
