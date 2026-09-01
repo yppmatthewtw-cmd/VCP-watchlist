@@ -470,30 +470,22 @@ def main():
 HTML_SHELL = """<title>Combined Watchlist {rev}</title>
 <style>
 :root {{
-  --bg:#F5F6F4; --panel:#FFFFFF; --ink:#1B2430; --muted:#5D6B7A; --line:#DDE2E0;
-  --accent:#B07B24; --accent-soft:#F3E8D3; --up:#17835C; --dn:#C24A3F; --dry:#B07B24;
-  --head:#EDEFEA; --hover:#F0F3EE; --on:#17835C; --off:#8B95A0;
-  --hot:#FBEEDD; --hotink:#8A5A10; --warnbg:#F9E3E0; --warnink:#9E3A30;
-  --tA:#17835C; --tE:#B07B24; --tB:#2C6E9E; --tC:#7A8794; --tD:#A8B0B8;
-  --t2a:#17835C; --t2b:#2C6E9E; --t12:#B07B24; --t3:#A05A2C; --t41:#8B95A0; --tdrop:#C24A3F;
-}}
-@media (prefers-color-scheme: dark) {{
-  :root:not([data-theme="light"]) {{
-    --bg:#0E1216; --panel:#151B21; --ink:#E4E9EC; --muted:#8B98A5; --line:#26303A;
-    --accent:#E5B15C; --accent-soft:#2A2418; --up:#3FB68B; --dn:#E0705F; --dry:#E5B15C;
-    --head:#1A222A; --hover:#1C242D; --on:#3FB68B; --off:#5D6B7A;
-    --hot:#332812; --hotink:#F0C070; --warnbg:#381F1C; --warnink:#F0958A;
-    --tA:#3FB68B; --tE:#E5B15C; --tB:#5CA3D6; --tC:#6B7885; --tD:#4A555F;
-    --t2a:#3FB68B; --t2b:#5CA3D6; --t12:#E5B15C; --t3:#D08A5A; --t41:#5D6B7A; --tdrop:#E0705F;
-  }}
-}}
-:root[data-theme="dark"] {{
+  color-scheme: dark;
   --bg:#0E1216; --panel:#151B21; --ink:#E4E9EC; --muted:#8B98A5; --line:#26303A;
   --accent:#E5B15C; --accent-soft:#2A2418; --up:#3FB68B; --dn:#E0705F; --dry:#E5B15C;
   --head:#1A222A; --hover:#1C242D; --on:#3FB68B; --off:#5D6B7A;
   --hot:#332812; --hotink:#F0C070; --warnbg:#381F1C; --warnink:#F0958A;
   --tA:#3FB68B; --tE:#E5B15C; --tB:#5CA3D6; --tC:#6B7885; --tD:#4A555F;
   --t2a:#3FB68B; --t2b:#5CA3D6; --t12:#E5B15C; --t3:#D08A5A; --t41:#5D6B7A; --tdrop:#E0705F;
+}}
+:root[data-theme="light"] {{
+  color-scheme: light;
+  --bg:#F5F6F4; --panel:#FFFFFF; --ink:#1B2430; --muted:#5D6B7A; --line:#DDE2E0;
+  --accent:#B07B24; --accent-soft:#F3E8D3; --up:#17835C; --dn:#C24A3F; --dry:#B07B24;
+  --head:#EDEFEA; --hover:#F0F3EE; --on:#17835C; --off:#8B95A0;
+  --hot:#FBEEDD; --hotink:#8A5A10; --warnbg:#F9E3E0; --warnink:#9E3A30;
+  --tA:#17835C; --tE:#B07B24; --tB:#2C6E9E; --tC:#7A8794; --tD:#A8B0B8;
+  --t2a:#17835C; --t2b:#2C6E9E; --t12:#B07B24; --t3:#A05A2C; --t41:#8B95A0; --tdrop:#C24A3F;
 }}
 * {{ box-sizing:border-box; }}
 body {{ margin:0; background:var(--bg); color:var(--ink);
@@ -503,7 +495,14 @@ body {{ margin:0; background:var(--bg); color:var(--ink);
   border-bottom:3px solid var(--ink); padding-bottom:13px; }}
 .masthead h1 {{ font-size:27px; margin:0; letter-spacing:-0.01em; }}
 .masthead h1 em {{ font-style:normal; color:var(--accent); }}
-.meta {{ color:var(--muted); font-size:13px; }} .meta b {{ color:var(--ink); font-weight:600; }}
+.meta {{ color:var(--muted); font-size:13px; flex-basis:100%; order:3; }}
+.meta b {{ color:var(--ink); font-weight:600; }}
+.themebtn {{ margin-left:auto; order:2; font:inherit; font-size:12.5px; font-weight:600; color:var(--muted);
+  background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:6px 12px;
+  cursor:pointer; white-space:nowrap; align-self:center; }}
+.themebtn:hover {{ color:var(--ink); border-color:var(--accent); }}
+.masthead h1 {{ order:1; }}
+.themebtn:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
 .tabs {{ display:flex; flex-wrap:wrap; gap:4px; margin:18px 0 6px;
   border-bottom:1px solid var(--line); padding-bottom:0; }}
 .tabs button {{ font:inherit; font-size:13px; font-weight:600; color:var(--muted); background:none;
@@ -634,6 +633,7 @@ a {{ color:var(--accent); }}
   <h1>Combined Watchlist <em>{rev}</em></h1>
   <span class="meta"><b>VCP · Weinstein 2A · Pre-breakout · 市值分級 · 確定性 7 項</b>｜合計 {n_tickers} 檔｜
   數據基準 {basis}｜產生 {stamp}｜{model}</span>
+  <button class="themebtn" id="themebtn" type="button" aria-pressed="true">🌙 深色</button>
 </header>
 <nav class="tabs" role="tablist">{tabs}</nav>
 {pages}
@@ -661,6 +661,23 @@ a {{ color:var(--accent); }}
 </footer>
 </div>
 <script>
+(function () {{
+  var root = document.documentElement, tb = document.getElementById('themebtn');
+  function paint(mode) {{
+    if (mode === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
+    tb.textContent = mode === 'light' ? '☀️ 淺色' : '🌙 深色';
+    tb.setAttribute('aria-pressed', mode === 'light' ? 'false' : 'true');
+  }}
+  var saved = 'dark';
+  try {{ saved = localStorage.getItem('cw3-theme') || 'dark'; }} catch (e) {{}}
+  paint(saved);
+  tb.addEventListener('click', function () {{
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    paint(next);
+    try {{ localStorage.setItem('cw3-theme', next); }} catch (e) {{}}
+  }});
+}})();
 (function () {{
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs button'));
   var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
