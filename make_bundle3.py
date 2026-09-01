@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Combined Watchlist R3: 13-page tabbed HTML + 14-sheet Excel.
+"""Combined Watchlist: 10-page tabbed HTML + 11-sheet Excel.
 
-Pages A/B/C     — the three full watchlists with tier trajectories (as in R2.x).
 Pages 1a/1b/1c  — VCP TOP 50 by score, split by market cap (big/mid/small).
 Pages 2a/2b/2c  — Weinstein 2A TOP 50 by cap tier.
 Pages 3a/3b/3c  — Pre-breakout TOP 50 by cap tier.
@@ -10,7 +9,7 @@ Page 4          — grand summary of every ticker: three grades, upside-readines
                   10MA session as separate sortable columns (click = sort desc).
 
 Cap tiers: big >= $10B, mid $2-10B, small < $2B (official snapshot market caps).
-Usage: python make_bundle3.py [--rev R3] [--model "Fable5;ultracode"]
+Usage: python make_bundle3.py [--rev R5] [--model "Opus5;high"]
 """
 
 from __future__ import annotations
@@ -24,9 +23,8 @@ from datetime import datetime, timedelta, timezone
 
 from exchanges import EXCHANGE, missing, tv_url
 from make_bundle import (VCP_TIERS, STAGE_TIERS, VCP_ONLINE, STAGE_ONLINE,
-                         VCP_ORDER, STAGE_ORDER, esc, num, pct, off_cell,
-                         load_vcp_snapshots, load_series, build_tracks,
-                         rank_map, page_html, build_summary)
+                         esc, num, pct, off_cell,
+                         load_vcp_snapshots, load_series, build_summary)
 
 CERT = json.load(open("cert7_2026-08-28.json"))
 CATALYST = json.load(open("catalysts.json"))
@@ -244,7 +242,7 @@ session 的 7 項量化（0–100，加權合計＝確定性總分）：{n_cert}
 
 
 # --------------------------------------------------------------------- Excel
-def write_excel(path, vcp, stage, pre, cap_defs, rec, rev, model, stamp_txt):
+def write_excel(path, cap_defs, rec, rev, model, stamp_txt):
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Font, PatternFill
     from openpyxl.utils import get_column_letter
@@ -267,38 +265,6 @@ def write_excel(path, vcp, stage, pre, cap_defs, rec, rev, model, stamp_txt):
             cell.fill, cell.font = head_fill, head_font
             cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         ws.auto_filter.ref = f"A1:{get_column_letter(ncols)}{ws.max_row}"
-
-    def list_sheet(ws, snaps, tiers, online, extra_cols, tracks):
-        letter_of = {k: v[0] for k, v in tiers.items()}
-        snap_revs = [s[0] for s in snaps]
-        scan = snaps[-1][3]
-        notes = {n["ticker"]: n for n in scan.get("notes", [])}
-        cols = (["代號", "名稱", "交易所", "等級", "線上"] + [f"軌跡 {r}" for r in snap_revs]
-                + ["收盤"] + [c[0] for c in extra_cols] + ["分數", "TradingView", "備註"])
-        ws.append(cols)
-        rows = sorted(scan["rows"],
-                      key=lambda r: (list(tiers).index(r["category"]), -(r.get("score") or 0)))
-        for r in rows:
-            t = r["ticker"]
-            info = tracks.get(t, {"letters": [None] * len(snap_revs)})
-            letter = letter_of[r["category"]]
-            ws.append([t, (r.get("name") or "")[:40], EXCHANGE.get(t, "").upper(), letter,
-                       "線上" if letter in online else "線下"]
-                      + [l or "" for l in info["letters"]] + [r.get("price")]
-                      + [r.get(c[1]) for c in extra_cols]
-                      + [r.get("score"), tv_url(t), notes.get(t, {}).get("note", "")])
-            row = ws.max_row
-            c = ws.cell(row=row, column=4)
-            c.fill = on_fill if letter in online else off_fill
-            c.alignment = Alignment(horizontal="center")
-            c.font = Font(bold=True)
-            lc = ws.cell(row=row, column=len(cols) - 1)
-            lc.hyperlink = tv_url(t)
-            lc.value = "chart"
-            lc.font = link_font
-            ws.cell(row=row, column=1).font = Font(bold=True)
-        style_sheet(ws, len(cols), ([9, 26, 9, 7, 7] + [8] * len(snap_revs) + [10]
-                                    + [20 if c[2] == "txt" else 9 for c in extra_cols] + [8, 10, 60]))
 
     def cap_sheet(ws, snaps, tiers, online, extra_cols, pred):
         letter_of = {k: v[0] for k, v in tiers.items()}
@@ -337,16 +303,14 @@ def write_excel(path, vcp, stage, pre, cap_defs, rec, rev, model, stamp_txt):
         style_sheet(ws, len(cols), [6, 9, 26, 16, 7, 7, 30, 10, 9] + [9] * len(extra_cols)
                     + [10, 9, 8, 10, 50])
 
-    wsA = wb.active
-    wsA.title = "A. VCP"
-    list_sheet(wsA, vcp[0], VCP_TIERS, VCP_ONLINE, vcp[2], vcp[1])
-    wsB = wb.create_sheet("B. Weinstein 2A")
-    list_sheet(wsB, stage[0], STAGE_TIERS, STAGE_ONLINE, stage[2], stage[1])
-    wsC = wb.create_sheet("C. Pre-breakout")
-    list_sheet(wsC, pre[0], VCP_TIERS, VCP_ONLINE, pre[2], pre[1])
-
+    first = True
     for pid, sheet_name, snaps, tiers, online, extra_cols, pred in cap_defs:
-        ws = wb.create_sheet(sheet_name)
+        if first:
+            ws = wb.active
+            ws.title = sheet_name
+            first = False
+        else:
+            ws = wb.create_sheet(sheet_name)
         cap_sheet(ws, snaps, tiers, online, extra_cols, pred)
 
     ws4 = wb.create_sheet("4. 總表")
@@ -390,7 +354,6 @@ def write_excel(path, vcp, stage, pre, cap_defs, rec, rev, model, stamp_txt):
         [f"產生時間：{stamp_txt}｜模型：{model}｜數據基準：2026-08-28 官方收盤"],
         [],
         ["工作表", "內容"],
-        ["A / B / C", "三份完整清單（VCP、Weinstein 2A、Pre-breakout），含各期軌跡欄。"],
         ["1a/1b/1c", "VCP TOP 50 大型（≥$10B）／中型（$2–10B）／小型（<$2B），按 VCP 分數排序。"],
         ["2a/2b/2c", "Weinstein 2A TOP 50，同樣按市值分三個級距。"],
         ["3a/3b/3c", "Pre-breakout TOP 50，按市值分三個級距。"],
@@ -424,20 +387,6 @@ def main():
     stage_snaps = load_series("scan_stage_R*.json", "stage")
     pre_snaps = load_series("scan_PB-R*.json", "category")
 
-    vcp_letter = {k: v[0] for k, v in VCP_TIERS.items()}
-    stage_letter = {k: v[0] for k, v in STAGE_TIERS.items()}
-    vcp_tracks = build_tracks(vcp_snaps, vcp_letter)
-    stage_tracks = build_tracks(stage_snaps, stage_letter)
-    pre_tracks = build_tracks(pre_snaps, vcp_letter)
-    vcp_ranks = rank_map(VCP_ORDER, vcp_letter)
-    stage_ranks = rank_map(STAGE_ORDER, stage_letter)
-
-    VCP_COLS = [("距高", "off_high_pct", "offhigh"), ("1月", "chg_1m", "pct"),
-                ("3月", "chg_3m", "pct"), ("量比", "vol_ratio", "vol")]
-    STAGE_COLS = [("距高", "off_high_pct", "offhigh"), ("6月", "chg_6m", "pct"),
-                  ("1年", "chg_1y", "pct"), ("200日線上", "above_ma200", "bool")]
-    PRE_COLS = [("產業", "sector", "txt"), ("距高", "off_high_pct", "offhigh"),
-                ("1月", "chg_1m", "pct"), ("3月", "chg_3m", "pct"), ("量比", "vol_ratio", "vol")]
     # cap pages carry 距高 already; per-list momentum columns only
     CAP_VCP = [("1月", "chg_1m", "pct"), ("3月", "chg_3m", "pct"), ("量比", "vol_ratio", "vol")]
     CAP_STG = [("6月", "chg_6m", "pct"), ("1年", "chg_1y", "pct"), ("200日線上", "above_ma200", "bool")]
@@ -484,19 +433,7 @@ def main():
               ("2", "Weinstein 2A", stage_snaps, STAGE_TIERS, STAGE_ONLINE, CAP_STG),
               ("3", "Pre-breakout", pre_snaps, VCP_TIERS, VCP_ONLINE, CAP_PRE)]
 
-    pages = [
-        page_html("a", "Page A｜VCP Watchlist（含歷史軌跡）",
-                  f"Minervini 波動收縮形態。追蹤 {len(vcp_snaps)} 次更新，每列內含各期級別與分數。"
-                  "線上＝A（緊縮待突破）／E（已突破延伸）／B（上升結構）。",
-                  vcp_snaps, vcp_tracks, VCP_TIERS, VCP_ORDER, VCP_ONLINE, vcp_ranks, VCP_COLS),
-        page_html("b", "Page B｜Weinstein Stage 2A Watchlist（含歷史軌跡）",
-                  "Stan Weinstein 階段分析，重點在剛脫離第一階段基底的年輕升勢。"
-                  "線上＝2A（初升段）／2B（主升段）／1→2（轉強觀察）。",
-                  stage_snaps, stage_tracks, STAGE_TIERS, STAGE_ORDER, STAGE_ONLINE, stage_ranks, STAGE_COLS),
-        page_html("c", "Page C｜Pre-Breakout Watchlist（含歷史軌跡）",
-                  "突破前候選：貼近樞紐、量縮待變的標的。線上＝A／E／B。",
-                  pre_snaps, pre_tracks, VCP_TIERS, VCP_ORDER, VCP_ONLINE, vcp_ranks, PRE_COLS),
-    ]
+    pages = []
     cap_defs = []
     for no, lname, snaps, tiers, online, cols in lists3:
         for suffix, tname, tdesc, pred in CAP_TIERS:
@@ -505,9 +442,7 @@ def main():
             cap_defs.append((pid, f"{pid} {lname[:4]}{tname[:2]}", snaps, tiers, online, cols, pred))
     pages.append(summary4_html(rec))
 
-    tab_defs = [("a", "A · VCP", f"{len(vcp_snaps[-1][3]['rows'])} 檔 · 含軌跡"),
-                ("b", "B · Weinstein", f"{len(stage_snaps[-1][3]['rows'])} 檔 · 含軌跡"),
-                ("c", "C · 突破前", f"{len(pre_snaps[-1][3]['rows'])} 檔 · 含軌跡")]
+    tab_defs = []
     for no, lname, *_ in lists3:
         for suffix, tname, _, _ in CAP_TIERS:
             short = {"1": "VCP", "2": "2A", "3": "突破前"}[no]
@@ -524,11 +459,7 @@ def main():
         n_tickers=len(rec), pages="\n".join(pages), basis=basis, tabs=tabs, page_ids=page_ids)
     open(f"{base}.html", "w").write(doc)
 
-    write_excel(f"{base}.xlsx",
-                (vcp_snaps, vcp_tracks, VCP_COLS),
-                (stage_snaps, stage_tracks, STAGE_COLS),
-                (pre_snaps, pre_tracks, PRE_COLS),
-                cap_defs, rec, args.rev, args.model, stamp_txt)
+    write_excel(f"{base}.xlsx", cap_defs, rec, args.rev, args.model, stamp_txt)
 
     print(f"{base}.html")
     print(f"{base}.xlsx")
@@ -581,8 +512,8 @@ body {{ margin:0; background:var(--bg); color:var(--ink);
 .tabs button:hover {{ background:var(--hover); color:var(--ink); }}
 .tabs button[aria-selected="true"] {{ color:var(--accent); border-bottom-color:var(--accent); background:var(--panel); }}
 .tabs button:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
-.tabs button:nth-child(3), .tabs button:nth-child(6), .tabs button:nth-child(9),
-.tabs button:nth-child(12) {{ margin-right:12px; }}
+.tabs button:nth-child(3), .tabs button:nth-child(6),
+.tabs button:nth-child(9) {{ margin-right:12px; }}
 .page {{ display:none; }} .page.on {{ display:block; }}
 .ptitle {{ font-size:21px; margin:22px 0 4px; }}
 .lede {{ margin:6px 0 0; color:var(--muted); font-size:13.5px; max-width:96ch; }}
@@ -709,7 +640,6 @@ a {{ color:var(--accent); }}
 <footer class="method">
 <h3>使用說明</h3>
 <ul>
-<li><b>Page A／B／C</b>：三份完整清單的最新版本，含歷次掃描軌跡（有色方塊＝該期在線上）；▲ 升級、▼ 降級。</li>
 <li><b>Page 1a–3c</b>：每份清單依官方市值分三個級距（大 ≥$10B／中 $2–10B／小 <$2B），各取分數 TOP 50。頁頂紅框
 「本週熱點催化」集中列出該頁涉及的新聞驅動事件（🔥 正面／⚠ 風險），表內催化欄逐檔標示。</li>
 <li><b>Page 4 總表</b>：所有代號 × 三榜等級 × 上升就緒分數 × 市值 × <b>確定性證據 7 項量化</b>（突破／回升／守底／
@@ -750,7 +680,7 @@ a {{ color:var(--accent); }}
       if (n) {{ e.preventDefault(); n.focus(); show(n.dataset.p, true); }}
     }});
   }});
-  var start = 'a';
+  var start = '1a';
   var h = (location.hash || '').replace('#page-', '');
   if (ids.indexOf(h) >= 0) start = h;
   else {{ try {{ var s = localStorage.getItem('cw3-page'); if (s && ids.indexOf(s) >= 0) start = s; }} catch (e) {{}} }}
