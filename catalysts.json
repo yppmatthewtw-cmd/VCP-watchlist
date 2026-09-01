@@ -1,63 +1,91 @@
 {
- "EOG": {
-  "pts": 7,
-  "reason": "8/31油價破$90，+6.8%"
- },
- "TRGP": {
+ "CVX": {
   "pts": 5,
-  "reason": "8/31 +3.9%，中游受惠"
- },
- "CVE": {
-  "pts": 4,
-  "reason": "8/31 +2.6%"
- },
- "FTI": {
-  "pts": 4,
-  "reason": "8/31 +2.4%，油服走強"
- },
- "EQNR": {
-  "pts": 4,
-  "reason": "8/31 +2.3%"
+  "reason": "9/1 +1.5%，油價避險"
  },
  "SU": {
+  "pts": 5,
+  "reason": "9/1 +3.3%"
+ },
+ "RPRX": {
+  "pts": 4,
+  "reason": "9/1 +2.6%"
+ },
+ "MRK": {
+  "pts": 4,
+  "reason": "9/1 +1.8%，防禦性領漲"
+ },
+ "JNJ": {
   "pts": 3,
-  "reason": "8/31 +2.1%"
+  "reason": "9/1 +1.6%，防禦性領漲"
+ },
+ "FTI": {
+  "pts": 3,
+  "reason": "9/1 +1.0%，油服續強"
+ },
+ "EOG": {
+  "pts": 5,
+  "reason": "油價破$90後續強"
+ },
+ "TRGP": {
+  "pts": 4,
+  "reason": "中游受惠油價"
+ },
+ "CVE": {
+  "pts": 3,
+  "reason": "油氣走強"
+ },
+ "EQNR": {
+  "pts": 3,
+  "reason": "油氣走強"
  },
  "DINO": {
   "pts": 3,
-  "reason": "8/31煉油+2.1%"
- },
- "CVX": {
-  "pts": 3,
-  "reason": "8/31 +1.6%，油價避險"
+  "reason": "煉油受惠"
  },
  "CNQ": {
   "pts": 3,
-  "reason": "8/31 +1.5%"
+  "reason": "油氣走強"
  },
  "CHRD": {
   "pts": 3,
-  "reason": "8/31 +1.1%"
+  "reason": "油氣走強"
  },
- "TSLA": {
-  "pts": 5,
-  "reason": "8/31 +5.5%領漲"
+ "PANW": {
+  "pts": -6,
+  "reason": "9/1 -3.6%，科技領跌"
+ },
+ "AMZN": {
+  "pts": -6,
+  "reason": "9/1 -2.7%，FTC 訴訟"
+ },
+ "GOOGL": {
+  "pts": -5,
+  "reason": "9/1 -2.2%"
+ },
+ "NVDA": {
+  "pts": -5,
+  "reason": "9/1 -2.0%，科技領跌"
+ },
+ "CAT": {
+  "pts": -4,
+  "reason": "9/1 -1.7%"
+ },
+ "MSFT": {
+  "pts": -3,
+  "reason": "9/1 -1.2%"
  },
  "CRWD": {
-  "pts": 5,
-  "reason": "8/31 +3.8%，財報後續強"
- },
- "CRM": {
-  "pts": 3,
-  "reason": "財報+Anthropic合作"
- },
- "ANET": {
   "pts": 2,
-  "reason": "前週單日+7.9%"
+  "reason": "財報後仍強，惟科技板塊承壓"
  },
  "MRNA": {
   "pts": 3,
   "reason": "8/19癌症疫苗三期成功+177%，高位整理"
+ },
+ "CRM": {
+  "pts": 2,
+  "reason": "財報+Anthropic合作"
  },
  "AXON": {
   "pts": -5,
@@ -67,41 +95,29 @@
   "pts": -4,
   "reason": "8/31 -3.4%"
  },
- "GD": {
-  "pts": -3,
-  "reason": "8/31 -2.3%"
- },
  "MRVL": {
   "pts": -4,
-  "reason": "指引不如預期，8/31再-2.2%"
+  "reason": "指引不如預期"
  },
  "UNP": {
   "pts": -3,
-  "reason": "8/31 -2.2%，運輸受油價壓"
+  "reason": "運輸受油價壓"
  },
  "CSX": {
   "pts": -3,
-  "reason": "8/31 -1.5%，運輸成本升"
+  "reason": "運輸成本升"
  },
  "NSC": {
   "pts": -2,
   "reason": "運輸受油價壓"
  },
- "GOOGL": {
-  "pts": -3,
-  "reason": "8/31 -2.5%，通訊服務最弱"
- },
- "AMZN": {
-  "pts": -2,
-  "reason": "8/31 -1.7%"
- },
  "NEE": {
-  "pts": -3,
-  "reason": "公用事業最弱，利率敏感"
+  "pts": -4,
+  "reason": "公用事業連續走弱，利率敏感"
  },
  "ETR": {
   "pts": -3,
-  "reason": "公用事業最弱"
+  "reason": "公用事業走弱"
  },
  "VST": {
   "pts": -3,
@@ -130,10 +146,6 @@
  "LLY": {
   "pts": -2,
   "reason": "GLP-1報銷疑慮"
- },
- "CAT": {
-  "pts": -3,
-  "reason": "連日回落"
  },
  "IREN": {
   "pts": -3,

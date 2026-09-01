@@ -8,32 +8,36 @@ Composite, applied uniformly to every ticker:
 """
 import json
 
-FILES = [('scan_R14_2026-08-31.json', 'category'),
-         ('scan_stage_R7_2026-08-31.json', 'stage'),
-         ('scan_PB-R7_2026-08-31.json', 'category')]
+FILES = [('scan_R15_2026-09-01.json', 'category'),
+         ('scan_stage_R8_2026-09-01.json', 'stage'),
+         ('scan_PB-R8_2026-09-01.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
 
 # Qualitative catalyst adjustments (my read of this week's events), bounded ±10.
 CATALYST = {
-    # 8/31 session: US-Iran strikes sent WTI above $90. Energy was the only
-    # sector up; utilities and communication services led 10 of 11 sectors down;
-    # oil-driven inflation revived Sept rate-hike odds.
-    'EOG': (7, '8/31油價破$90，+6.8%'), 'TRGP': (5, '8/31 +3.9%，中游受惠'),
-    'CVE': (4, '8/31 +2.6%'), 'FTI': (4, '8/31 +2.4%，油服走強'),
-    'EQNR': (4, '8/31 +2.3%'), 'SU': (3, '8/31 +2.1%'), 'DINO': (3, '8/31煉油+2.1%'),
-    'CVX': (3, '8/31 +1.6%，油價避險'), 'CNQ': (3, '8/31 +1.5%'), 'CHRD': (3, '8/31 +1.1%'),
-    'TSLA': (5, '8/31 +5.5%領漲'), 'CRWD': (5, '8/31 +3.8%，財報後續強'),
-    'CRM': (3, '財報+Anthropic合作'), 'ANET': (2, '前週單日+7.9%'),
+    # 9/1 session: renewed US strikes on Iranian targets near Hormuz lifted oil
+    # and bond yields; TECH led the selling (Nasdaq -1.02%, XLK -1.6%) while
+    # energy and defensive pharma held up. 8/31 moves kept where still relevant.
+    'CVX': (5, '9/1 +1.5%，油價避險'), 'SU': (5, '9/1 +3.3%'),
+    'RPRX': (4, '9/1 +2.6%'), 'MRK': (4, '9/1 +1.8%，防禦性領漲'),
+    'JNJ': (3, '9/1 +1.6%，防禦性領漲'), 'FTI': (3, '9/1 +1.0%，油服續強'),
+    'EOG': (5, '油價破$90後續強'), 'TRGP': (4, '中游受惠油價'),
+    'CVE': (3, '油氣走強'), 'EQNR': (3, '油氣走強'), 'DINO': (3, '煉油受惠'),
+    'CNQ': (3, '油氣走強'), 'CHRD': (3, '油氣走強'),
+    'PANW': (-6, '9/1 -3.6%，科技領跌'), 'AMZN': (-6, '9/1 -2.7%，FTC 訴訟'),
+    'GOOGL': (-5, '9/1 -2.2%'), 'NVDA': (-5, '9/1 -2.0%，科技領跌'),
+    'CAT': (-4, '9/1 -1.7%'), 'MSFT': (-3, '9/1 -1.2%'),
+    'CRWD': (2, '財報後仍強，惟科技板塊承壓'),
     'MRNA': (3, '8/19癌症疫苗三期成功+177%，高位整理'),
+    'CRM': (2, '財報+Anthropic合作'),
     'AXON': (-5, '8/31 -5.3%'), 'TD': (-4, '8/31 -3.4%'),
-    'GD': (-3, '8/31 -2.3%'), 'MRVL': (-4, '指引不如預期，8/31再-2.2%'),
-    'UNP': (-3, '8/31 -2.2%，運輸受油價壓'), 'CSX': (-3, '8/31 -1.5%，運輸成本升'),
-    'NSC': (-2, '運輸受油價壓'), 'GOOGL': (-3, '8/31 -2.5%，通訊服務最弱'),
-    'AMZN': (-2, '8/31 -1.7%'), 'NEE': (-3, '公用事業最弱，利率敏感'),
-    'ETR': (-3, '公用事業最弱'), 'VST': (-3, '公用事業回落'), 'CEG': (-3, '公用事業回落'),
+    'MRVL': (-4, '指引不如預期'), 'UNP': (-3, '運輸受油價壓'),
+    'CSX': (-3, '運輸成本升'), 'NSC': (-2, '運輸受油價壓'),
+    'NEE': (-4, '公用事業連續走弱，利率敏感'), 'ETR': (-3, '公用事業走弱'),
+    'VST': (-3, '公用事業回落'), 'CEG': (-3, '公用事業回落'),
     'AMAT': (-4, 'sell-the-news＋中國風險'), 'COIN': (-4, '加密走弱'),
     'GSAT': (-8, '被收購價格封頂'), 'CCJ': (-2, '鈾股8/28重挫-5.9%'),
-    'LLY': (-2, 'GLP-1報銷疑慮'), 'CAT': (-3, '連日回落'),
+    'LLY': (-2, 'GLP-1報銷疑慮'),
     'IREN': (-3, '8/28重挫-12.5%'), 'AXTI': (-3, '8/28重挫-12.4%'),
 }
 
