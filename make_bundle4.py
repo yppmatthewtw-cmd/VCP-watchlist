@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Momentum Top50: 10-page tabbed HTML + 11-sheet Excel, with every change since the
-previous release highlighted in red (diff engine below).
+"""Combined Watchlist: 10-page tabbed HTML + 11-sheet Excel, with every change since
+the previous release highlighted in red (diff engine below).
 
 Pages 1a/1b/1c  — VCP TOP 50 by score, split by market cap (big/mid/small).
 Pages 2a/2b/2c  — Weinstein 2A TOP 50 by cap tier.
@@ -613,7 +613,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
 
     ws0 = wb.create_sheet("說明", 0)
     for line in [
-        [f"Momentum Top50 {rev}"],
+        [f"Combined Watchlist {rev}"],
         [f"產生時間：{stamp_txt}｜模型：{model}｜數據基準：{basis_txt}"],
         [],
         ["工作表", "內容"],
@@ -643,8 +643,8 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
 # ---------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rev", default="R3")
-    ap.add_argument("--model", default="Fable5.1;ultracode")
+    ap.add_argument("--rev", default="R8")
+    ap.add_argument("--model", default="Opus5;high")
     ap.add_argument("--prev", default="scan_R15_2026-09-01.json,scan_stage_R8_2026-09-01.json,scan_PB-R8_2026-09-01.json",
                     help="previous release's three snapshot files (vcp,stage,pre) for the red diff")
     ap.add_argument("--prev-rank", default="rank_overlay_R7.json")
@@ -719,7 +719,7 @@ def main():
     now_hkt = datetime.now(timezone.utc) + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
     stamp_txt = now_hkt.strftime("%Y.%m.%d %H:%M") + " HKT"
-    base = f"Momentum_Top50 {args.rev} ({args.model})_({stamp})"
+    base = f"Combined Watchlist_{args.rev} ({args.model})_({stamp})"
 
     lists3 = [("1", "VCP", vcp_snaps, VCP_TIERS, VCP_ONLINE, CAP_VCP),
               ("2", "Weinstein 2A", stage_snaps, STAGE_TIERS, STAGE_ONLINE, CAP_STG),
@@ -759,7 +759,7 @@ def main():
           f"| stage {len(stage_snaps[-1][3]['rows'])} | pre {len(pre_snaps[-1][3]['rows'])}")
 
 
-HTML_SHELL = """<title>Momentum Top50 {rev}</title>
+HTML_SHELL = """<title>Combined Watchlist {rev}</title>
 <style>
 :root {{
   color-scheme: dark;
@@ -951,7 +951,7 @@ a {{ color:var(--accent); }}
 </style>
 <div class="wrap">
 <header class="masthead">
-  <h1>Momentum Top50 <em>{rev}</em></h1>
+  <h1>Combined Watchlist <em>{rev}</em></h1>
   <span class="meta"><b>VCP · Weinstein 2A · Pre-breakout · 市值分級 · 確定性 7 項</b>｜合計 {n_tickers} 檔｜
   數據基準 {basis}｜產生 {stamp}｜{model}</span>
   <button class="themebtn" id="themebtn" type="button" aria-pressed="true">🌙 深色</button>
