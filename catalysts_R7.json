@@ -1,0 +1,158 @@
+{
+ "CVX": {
+  "pts": 5,
+  "reason": "9/1 +1.5%，油價避險"
+ },
+ "SU": {
+  "pts": 5,
+  "reason": "9/1 +3.3%"
+ },
+ "RPRX": {
+  "pts": 4,
+  "reason": "9/1 +2.6%"
+ },
+ "MRK": {
+  "pts": 4,
+  "reason": "9/1 +1.8%，防禦性領漲"
+ },
+ "JNJ": {
+  "pts": 3,
+  "reason": "9/1 +1.6%，防禦性領漲"
+ },
+ "FTI": {
+  "pts": 3,
+  "reason": "9/1 +1.0%，油服續強"
+ },
+ "EOG": {
+  "pts": 5,
+  "reason": "油價破$90後續強"
+ },
+ "TRGP": {
+  "pts": 4,
+  "reason": "中游受惠油價"
+ },
+ "CVE": {
+  "pts": 3,
+  "reason": "油氣走強"
+ },
+ "EQNR": {
+  "pts": 3,
+  "reason": "油氣走強"
+ },
+ "DINO": {
+  "pts": 3,
+  "reason": "煉油受惠"
+ },
+ "CNQ": {
+  "pts": 3,
+  "reason": "油氣走強"
+ },
+ "CHRD": {
+  "pts": 3,
+  "reason": "油氣走強"
+ },
+ "PANW": {
+  "pts": -6,
+  "reason": "9/1 -3.6%，科技領跌"
+ },
+ "AMZN": {
+  "pts": -6,
+  "reason": "9/1 -2.7%，FTC 訴訟"
+ },
+ "GOOGL": {
+  "pts": -5,
+  "reason": "9/1 -2.2%"
+ },
+ "NVDA": {
+  "pts": -5,
+  "reason": "9/1 -2.0%，科技領跌"
+ },
+ "CAT": {
+  "pts": -4,
+  "reason": "9/1 -1.7%"
+ },
+ "MSFT": {
+  "pts": -3,
+  "reason": "9/1 -1.2%"
+ },
+ "CRWD": {
+  "pts": 2,
+  "reason": "財報後仍強，惟科技板塊承壓"
+ },
+ "MRNA": {
+  "pts": 3,
+  "reason": "8/19癌症疫苗三期成功+177%，高位整理"
+ },
+ "CRM": {
+  "pts": 2,
+  "reason": "財報+Anthropic合作"
+ },
+ "AXON": {
+  "pts": -5,
+  "reason": "8/31 -5.3%"
+ },
+ "TD": {
+  "pts": -4,
+  "reason": "8/31 -3.4%"
+ },
+ "MRVL": {
+  "pts": -4,
+  "reason": "指引不如預期"
+ },
+ "UNP": {
+  "pts": -3,
+  "reason": "運輸受油價壓"
+ },
+ "CSX": {
+  "pts": -3,
+  "reason": "運輸成本升"
+ },
+ "NSC": {
+  "pts": -2,
+  "reason": "運輸受油價壓"
+ },
+ "NEE": {
+  "pts": -4,
+  "reason": "公用事業連續走弱，利率敏感"
+ },
+ "ETR": {
+  "pts": -3,
+  "reason": "公用事業走弱"
+ },
+ "VST": {
+  "pts": -3,
+  "reason": "公用事業回落"
+ },
+ "CEG": {
+  "pts": -3,
+  "reason": "公用事業回落"
+ },
+ "AMAT": {
+  "pts": -4,
+  "reason": "sell-the-news＋中國風險"
+ },
+ "COIN": {
+  "pts": -4,
+  "reason": "加密走弱"
+ },
+ "GSAT": {
+  "pts": -8,
+  "reason": "被收購價格封頂"
+ },
+ "CCJ": {
+  "pts": -2,
+  "reason": "鈾股8/28重挫-5.9%"
+ },
+ "LLY": {
+  "pts": -2,
+  "reason": "GLP-1報銷疑慮"
+ },
+ "IREN": {
+  "pts": -3,
+  "reason": "8/28重挫-12.5%"
+ },
+ "AXTI": {
+  "pts": -3,
+  "reason": "8/28重挫-12.4%"
+ }
+}

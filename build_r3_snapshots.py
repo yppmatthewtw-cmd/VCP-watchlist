@@ -194,6 +194,7 @@ def process(src, dst, mode):
     return rows
 
 
-process("scan_R12_2026-08-29.json", "scan_R13_2026-08-30.json", "vcp")
-process("scan_stage_R5_2026-08-29.json", "scan_stage_R6_2026-08-30.json", "stage")
-process("scan_PB-R5_2026-08-29.json", "scan_PB-R6_2026-08-30.json", "pb")
+if __name__ == "__main__":
+    process("scan_R12_2026-08-29.json", "scan_R13_2026-08-30.json", "vcp")
+    process("scan_stage_R5_2026-08-29.json", "scan_stage_R6_2026-08-30.json", "stage")
+    process("scan_PB-R5_2026-08-29.json", "scan_PB-R6_2026-08-30.json", "pb")
