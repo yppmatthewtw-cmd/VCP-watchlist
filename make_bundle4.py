@@ -817,12 +817,18 @@ body {{ margin:0; background:var(--bg); color:var(--ink);
 .masthead h1 em {{ font-style:normal; color:var(--accent); }}
 .meta {{ color:var(--muted); font-size:13px; flex-basis:100%; order:3; }}
 .meta b {{ color:var(--ink); font-weight:600; }}
-.themebtn {{ margin-left:auto; order:2; font:inherit; font-size:12.5px; font-weight:600; color:var(--muted);
-  background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:6px 12px;
-  cursor:pointer; white-space:nowrap; align-self:center; }}
-.themebtn:hover {{ color:var(--ink); border-color:var(--accent); }}
 .masthead h1 {{ order:1; }}
-.themebtn:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
+.themesw {{ margin-left:auto; order:2; align-self:center; display:inline-flex; align-items:center; gap:6px;
+  background:var(--panel); border:1.5px solid var(--accent); border-radius:999px; padding:4px 6px 4px 12px;
+  white-space:nowrap; }}
+.themesw .swlabel {{ font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--accent);
+  text-transform:uppercase; }}
+.themesw .swopt {{ font:inherit; font-size:12.5px; font-weight:600; color:var(--muted);
+  background:none; border:0; border-radius:999px; padding:5px 12px; cursor:pointer; }}
+.themesw .swopt:hover {{ color:var(--ink); background:var(--hover); }}
+.themesw .swopt[aria-pressed="true"] {{ background:var(--accent); color:var(--bg); }}
+.themesw .swopt:focus-visible {{ outline:2px solid var(--accent); outline-offset:2px; }}
+@media (max-width:640px) {{ .themesw {{ margin-left:0; order:4; }} }}
 .tabs {{ display:flex; flex-wrap:wrap; gap:4px; margin:18px 0 6px;
   border-bottom:1px solid var(--line); padding-bottom:0; }}
 .tabs button {{ font:inherit; font-size:13px; font-weight:600; color:var(--muted); background:none;
@@ -981,7 +987,11 @@ a {{ color:var(--accent); }}
   <h1>Combined Watchlist <em>{rev}</em></h1>
   <span class="meta"><b>VCP · Weinstein 2A · Pre-breakout · 市值分級 · 確定性 7 項</b>｜合計 {n_tickers} 檔｜
   數據基準 {basis}｜產生 {stamp}｜{model}</span>
-  <button class="themebtn" id="themebtn" type="button" aria-pressed="true">🌙 深色</button>
+  <div class="themesw" role="group" aria-label="佈景主題">
+    <span class="swlabel">主題</span>
+    <button type="button" class="swopt" data-mode="light" aria-pressed="false">☀️ 淺色</button>
+    <button type="button" class="swopt" data-mode="dark" aria-pressed="true">🌙 深色</button>
+  </div>
 </header>
 <nav class="tabs" role="tablist">{tabs}</nav>
 {pages}
@@ -1032,20 +1042,23 @@ a {{ color:var(--accent); }}
 </div>
 <script>
 (function () {{
-  var root = document.documentElement, tb = document.getElementById('themebtn');
+  var root = document.documentElement;
+  var opts = Array.prototype.slice.call(document.querySelectorAll('.themesw .swopt'));
   function paint(mode) {{
     if (mode === 'light') root.setAttribute('data-theme', 'light');
     else root.removeAttribute('data-theme');
-    tb.textContent = mode === 'light' ? '☀️ 淺色' : '🌙 深色';
-    tb.setAttribute('aria-pressed', mode === 'light' ? 'false' : 'true');
+    opts.forEach(function (b) {{
+      b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false');
+    }});
   }}
   var saved = 'dark';
-  try {{ saved = localStorage.getItem('cw3-theme') || 'dark'; }} catch (e) {{}}
+  try {{ saved = localStorage.getItem('cw3-theme') === 'light' ? 'light' : 'dark'; }} catch (e) {{}}
   paint(saved);
-  tb.addEventListener('click', function () {{
-    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    paint(next);
-    try {{ localStorage.setItem('cw3-theme', next); }} catch (e) {{}}
+  opts.forEach(function (b) {{
+    b.addEventListener('click', function () {{
+      paint(b.dataset.mode);
+      try {{ localStorage.setItem('cw3-theme', b.dataset.mode); }} catch (e) {{}}
+    }});
   }});
 }})();
 (function () {{
