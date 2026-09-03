@@ -12,9 +12,11 @@ reclassified with the revised rules:
          a 21-day gain > 15% is an extension (E), never a base (A/B/C);
          A also requires a 21-day close range <= 12%.
   Stage- Stage 3 is tested before 1->2; momentum = 3M > 0 and 1M > -8;
-         2A needs known 6M/1Y, 12<=6M<=60, 1Y<=100, 1M<=20; 2B needs known
-         data and (1Y>100 or 6M>=40 or 1M>20), or a pullback inside an intact
-         stage 2 (above MA200, <=20% off high, 6M>=12); 1->2 capped at 25% off.
+         2A needs 6M in [12,60], not extended and 1M<=20; 2B needs (1Y>100 or
+         6M>=40 or 1M>20) or a pullback inside an intact stage 2 (above the
+         long-term MA, <=20% off high, 6M>=12); 1->2 capped at 25% off high.
+         A missing 6M is filled from the official series' ~5-month span; a
+         missing 1Y falls back to "up >150% off the 52-week low" as extension.
 GPS is carried as GAP (Gap Inc.'s current ticker). RUSHB/RUSHA 3:2 split
 (paid 2026-08-31) is applied to the pre-split levels and to the change deltas.
 
@@ -109,6 +111,12 @@ def apply_official(r):
         r["chg_1d"] = m["pchg"]
     if c.get("range_1m_pct") is not None:
         r["range_1m_pct"] = c["range_1m_pct"]
+    # 6-month momentum is missing on many rows (the original scans never had it).
+    # The official series spans ~5 months, so use its full-span change instead of
+    # leaving a gap that silently disqualifies the row from 2A/2B.
+    if r.get("chg_6m") is None and c.get("chg_full_pct") is not None:
+        r["chg_6m"] = c["chg_full_pct"]
+        r["c6_src"] = f"official {c.get('full_days', 0)}d span"
     ma = ma50_of(t)
     if ma:
         r["ma50"] = ma
@@ -132,14 +140,18 @@ def vcp_classify(r):
     offHigh = (r["year_high"] - p) / r["year_high"] * 100
     aboveLow = (p - r["year_low"]) / r["year_low"] * 100 if r.get("year_low") else 0
     ma50, ma200 = r.get("ma50") or 0, r.get("ma200") or 0
-    proxy_ok = aboveLow >= 30 and offHigh <= 25
+    a50 = (p > ma50) if ma50 > 0 else None
     if ma200 > 0:
         a200 = p > ma200
         cross = (ma50 > ma200) if ma50 > 0 else a200
-    else:                                   # proxy only for the MA we do not have
-        a200 = cross = proxy_ok
-    a50 = (p > ma50) if ma50 > 0 else a200
-    trendOK = a50 and a200 and cross and proxy_ok
+    else:
+        # No 200-day available (the official series spans ~107 sessions). Proxy the
+        # long-term trend with "above the 50-day and within 25% of the high"; the
+        # >=30%-above-low template rule is scored separately, NOT used as the proxy.
+        a200 = cross = (a50 and offHigh <= 25) if a50 is not None else (aboveLow >= 25 and offHigh <= 20)
+    if a50 is None:
+        a50 = a200
+    trendOK = a50 and a200 and cross and aboveLow >= 30 and offHigh <= 25
     c1 = r.get("chg_1m") or 0
     c3 = r.get("chg_3m") if r.get("chg_3m") is not None else c1
     rng = r.get("range_1m_pct")
@@ -155,7 +167,7 @@ def vcp_classify(r):
     elif trendOK and offHigh <= 10 and tight: cat = "A_VCP待突破"
     elif offHigh <= 4 and c1 > 8: cat = "E_突破延伸中"
     elif trendOK and offHigh <= 20 and c3 > -5: cat = "B_上升結構"
-    elif a200 and offHigh <= 30 and c1 > -10: cat = "C_基底修復中"
+    elif (a200 or aboveLow >= 20) and offHigh <= 30 and c1 > -10: cat = "C_基底修復中"
     else: cat = "D_趨勢弱"
     r.update(off_high_pct=round(offHigh, 1), above_low_pct=round(aboveLow, 1),
              above_ma50=bool(a50), above_ma200=bool(a200), ma50_gt_ma200=bool(cross),
@@ -172,9 +184,11 @@ def stage_classify(r):
     if ma200 > 0: up = p > ma200
     elif r.get("above_ma200") is not None: up = bool(r["above_ma200"])
     else: up = aboveLow >= 25 and offHigh <= 20
-    known = c6 is not None and c1y is not None
-    young = known and 12 <= c6 <= 60 and c1y <= 100 and (c1 is None or c1 <= 20)
-    extended = c1y is not None and c1y > 100
+    known = c6 is not None
+    # 1-year data is missing on ~30 rows; treat a very large advance off the
+    # 52-week low as the extension signal in its place.
+    extended = (c1y > 100) if c1y is not None else (aboveLow > 150)
+    young = known and 12 <= c6 <= 60 and not extended and (c1 is None or c1 <= 20)
     fading = (c3 is not None and c3 < -12) or (c1 is not None and c1 < -8)
     mom = (c3 is not None and c3 > 0) and (c1 is None or c1 > -8)
     if extended and 15 < offHigh <= 45 and (fading or not mom): st = "3_做頭疑慮"

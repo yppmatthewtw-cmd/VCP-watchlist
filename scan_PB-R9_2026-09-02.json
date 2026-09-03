@@ -48,44 +48,48 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -2.56,
-   "mcap": 11687394600.0,
-   "chg_1d": 0.42
+   "mcap": 11736833663.0,
+   "chg_1d": 0.42,
+   "px_0902_intraday": 83.09,
+   "chg_0902_intraday": 0.42
   },
   {
    "ticker": "EQNR",
    "name": "Equinor ASA",
-   "price": 44.23,
-   "year_high": 44.23,
+   "price": 43.375,
+   "year_high": 43.375,
    "year_low": 22.52,
    "ma50": 36.98,
    "ma200": 32.31,
    "ma_proxy": false,
-   "chg_5d": 8.37,
-   "chg_1m": 8.0,
-   "chg_3m": 12.0,
-   "chg_6m": 60.3,
-   "chg_1y": 78.9,
+   "chg_5d": 6.35,
+   "chg_1m": 6.0,
+   "chg_3m": 10.0,
+   "chg_6m": 58.3,
+   "chg_1y": 76.9,
    "volume": 1909761,
    "avg_volume": 3655247,
    "as_of": "2026-09-01",
    "off_high_pct": 0.0,
-   "above_low_pct": 96.4,
+   "above_low_pct": 92.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.62,
-   "score": 79.9,
-   "category": "B_上升結構",
+   "score": 86.7,
+   "category": "A_VCP待突破",
    "range_1m_pct": 11.7,
    "sector": "Energy",
    "industry": "Integrated oil Companies",
    "mktcap": 107161616346.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 4.44,
-   "mcap": 110586987657.0,
+   "_delta": 2.42,
+   "mcap": 108449255926.0,
    "quote_conf": "medium",
-   "chg_1d": 3.341
+   "chg_1d": -1.933,
+   "px_0902_intraday": 43.38,
+   "chg_0902_intraday": -1.93
   },
   {
    "ticker": "BNY",
@@ -119,9 +123,11 @@
    "exchange": "nyse",
    "split_adj": true,
    "_delta": -0.88,
-   "mcap": 108906699832.0,
+   "mcap": 109374867690.0,
    "quote_conf": "high",
-   "chg_1d": -0.48
+   "chg_1d": -0.48,
+   "px_0902_intraday": 161.2,
+   "chg_0902_intraday": 0.43
   },
   {
    "ticker": "MEDP",
@@ -154,9 +160,11 @@
    "mktcap": 17326159841.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 16278356313.0,
+   "mcap": 16437313188.0,
    "_delta": -2.9,
-   "chg_1d": -1.81
+   "chg_1d": -1.81,
+   "px_0902_intraday": 588.9,
+   "chg_0902_intraday": 0.98
   },
   {
    "ticker": "STT",
@@ -190,9 +198,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.88,
-   "mcap": 51586244449.0,
+   "mcap": 52226299562.0,
    "quote_conf": "high",
-   "chg_1d": -1.88
+   "chg_1d": -1.88,
+   "px_0902_intraday": 190.12,
+   "chg_0902_intraday": 1.24
   },
   {
    "ticker": "DD",
@@ -218,7 +228,7 @@
    "ma50_gt_ma200": true,
    "vol_ratio": 0.77,
    "score": 38.5,
-   "category": "D_趨勢弱",
+   "category": "C_基底修復中",
    "range_1m_pct": 11.6,
    "sector": "Industrials",
    "industry": "Major Chemicals",
@@ -226,33 +236,35 @@
    "exchange": "nyse",
    "split_adj": true,
    "_delta": -3.56,
-   "mcap": 17840527427.0,
-   "chg_1d": -1.84
+   "mcap": 17990425130.0,
+   "chg_1d": -1.84,
+   "px_0902_intraday": 133.22,
+   "chg_0902_intraday": 0.84
   },
   {
    "ticker": "JAZZ",
    "name": "Jazz Pharmaceuticals plc Common Stock (I",
-   "price": 243.71,
+   "price": 243.665,
    "year_high": 261.62,
    "year_low": 110.75,
    "ma50": 244.76,
    "ma200": 198.99,
    "ma_proxy": false,
-   "chg_5d": -0.37,
-   "chg_1m": -4.3,
-   "chg_3m": 7.1,
-   "chg_6m": 47.3,
-   "chg_1y": 112.0,
+   "chg_5d": -0.39,
+   "chg_1m": -4.4,
+   "chg_3m": 7.0,
+   "chg_6m": 47.2,
+   "chg_1y": 111.9,
    "volume": 516756,
    "avg_volume": 788149,
    "as_of": "2026-09-01",
-   "off_high_pct": 6.8,
-   "above_low_pct": 120.1,
+   "off_high_pct": 6.9,
+   "above_low_pct": 120.0,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.79,
-   "score": 71.1,
+   "score": 70.9,
    "category": "C_基底修復中",
    "range_1m_pct": 6.6,
    "sector": "Health Care",
@@ -260,9 +272,11 @@
    "mktcap": 16506478640.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 15820331561.0,
-   "_delta": -0.34,
-   "chg_1d": -2.78
+   "mcap": 15817410405.0,
+   "_delta": -0.36,
+   "chg_1d": -0.018,
+   "px_0902_intraday": 243.66,
+   "chg_0902_intraday": -0.02
   },
   {
    "ticker": "CLDT",
@@ -296,8 +310,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -4.32,
-   "mcap": 609078231.0,
-   "chg_1d": 0.38
+   "mcap": 612337824.0,
+   "chg_1d": 0.38,
+   "px_0902_intraday": 13.15,
+   "chg_0902_intraday": 0.54
   },
   {
    "ticker": "MATX",
@@ -330,9 +346,11 @@
    "mktcap": 6662490442.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 6556632201.0,
+   "mcap": 6540932886.0,
    "_delta": -2.25,
-   "chg_1d": -2.47
+   "chg_1d": -2.47,
+   "px_0902_intraday": 218.74,
+   "chg_0902_intraday": -0.24
   },
   {
    "ticker": "WST",
@@ -365,9 +383,11 @@
    "mktcap": 24848274047.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 23832751801.0,
+   "mcap": 24279286011.0,
    "_delta": 0.35,
-   "chg_1d": -0.72
+   "chg_1d": -0.72,
+   "px_0902_intraday": 345.0,
+   "chg_0902_intraday": 1.87
   },
   {
    "ticker": "FANG",
@@ -401,8 +421,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 2.78,
-   "mcap": 56889747555.0,
-   "chg_1d": 1.34
+   "mcap": 56707731726.0,
+   "chg_1d": 1.34,
+   "px_0902_intraday": 202.51,
+   "chg_0902_intraday": -0.32
   },
   {
    "ticker": "GSAT",
@@ -436,8 +458,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -0.48,
-   "mcap": 10542573044.0,
-   "chg_1d": -0.22
+   "mcap": 10570429173.0,
+   "chg_1d": -0.22,
+   "px_0902_intraday": 81.58,
+   "chg_0902_intraday": 0.26
   },
   {
    "ticker": "CNC",
@@ -471,8 +495,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 0.74,
-   "mcap": 32223293850.0,
-   "chg_1d": 1.38
+   "mcap": 32539450650.0,
+   "chg_1d": 1.38,
+   "px_0902_intraday": 65.87,
+   "chg_0902_intraday": 0.98
   },
   {
    "ticker": "CBL",
@@ -506,33 +532,35 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -2.25,
-   "mcap": 1664720327.0,
-   "chg_1d": -1.63
+   "mcap": 1682821839.0,
+   "chg_1d": -1.63,
+   "px_0902_intraday": 54.38,
+   "chg_0902_intraday": 1.09
   },
   {
    "ticker": "CNI",
    "name": "Canadian National Railway Company Common",
-   "price": 120.42,
+   "price": 120.23,
    "year_high": 130.58,
    "year_low": 92.23,
    "ma50": 124.06,
    "ma200": 109.26,
    "ma_proxy": false,
-   "chg_5d": -7.4,
-   "chg_1m": -7.9,
-   "chg_3m": 8.8,
-   "chg_6m": 12.4,
-   "chg_1y": 32.0,
+   "chg_5d": -7.55,
+   "chg_1m": -8.1,
+   "chg_3m": 8.6,
+   "chg_6m": 12.2,
+   "chg_1y": 31.8,
    "volume": 1059614,
    "avg_volume": 1524361,
    "as_of": "2026-09-01",
-   "off_high_pct": 7.8,
-   "above_low_pct": 30.6,
+   "off_high_pct": 7.9,
+   "above_low_pct": 30.4,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.71,
-   "score": 53.1,
+   "score": 52.8,
    "category": "C_基底修復中",
    "range_1m_pct": 3.7,
    "sector": "Industrials",
@@ -540,34 +568,36 @@
    "mktcap": 78436344000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -4.44,
-   "mcap": 72745722000.0,
-   "chg_1d": -3.471
+   "_delta": -4.59,
+   "mcap": 72630943000.0,
+   "chg_1d": -0.158,
+   "px_0902_intraday": 120.23,
+   "chg_0902_intraday": -0.16
   },
   {
    "ticker": "SU",
    "name": "Suncor Energy  Inc. Common Stock",
-   "price": 68.99,
+   "price": 68.66,
    "year_high": 68.99,
    "year_low": 38.32,
    "ma50": 61.27,
    "ma200": 56.53,
    "ma_proxy": false,
-   "chg_5d": 0.95,
-   "chg_1m": 3.9,
-   "chg_3m": 1.1,
-   "chg_6m": 25.1,
-   "chg_1y": 78.2,
+   "chg_5d": 0.47,
+   "chg_1m": 3.4,
+   "chg_3m": 0.6,
+   "chg_6m": 24.6,
+   "chg_1y": 77.7,
    "volume": 2096365,
    "avg_volume": 4589250,
    "as_of": "2026-09-01",
-   "off_high_pct": 0.0,
-   "above_low_pct": 80.0,
+   "off_high_pct": 0.5,
+   "above_low_pct": 79.2,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.83,
-   "score": 78.9,
+   "score": 79.0,
    "category": "B_上升結構",
    "range_1m_pct": 12.8,
    "sector": "Energy",
@@ -575,10 +605,12 @@
    "mktcap": 80026058053.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 0.0,
-   "mcap": 80692746932.0,
+   "_delta": -0.48,
+   "mcap": 80306769160.0,
    "quote_conf": "medium",
-   "chg_1d": 3.248
+   "chg_1d": -0.478,
+   "px_0902_intraday": 68.66,
+   "chg_0902_intraday": -0.48
   },
   {
    "ticker": "RLAY",
@@ -612,8 +644,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.49,
-   "mcap": 4051928757.0,
-   "chg_1d": 0.6
+   "mcap": 4100139916.0,
+   "chg_1d": 0.6,
+   "px_0902_intraday": 18.71,
+   "chg_0902_intraday": 1.19
   },
   {
    "ticker": "BFH",
@@ -647,8 +681,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -3.49,
-   "mcap": 3920686299.0,
-   "chg_1d": -2.32
+   "mcap": 4068408385.0,
+   "chg_1d": -2.32,
+   "px_0902_intraday": 105.89,
+   "chg_0902_intraday": 3.77
   },
   {
    "ticker": "MBX",
@@ -682,8 +718,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.29,
-   "mcap": 2934394649.0,
-   "chg_1d": -1.09
+   "mcap": 2909351399.0,
+   "chg_1d": -1.09,
+   "px_0902_intraday": 60.41,
+   "chg_0902_intraday": -0.85
   },
   {
    "ticker": "APLE",
@@ -717,8 +755,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -5.92,
-   "mcap": 3675807608.0,
-   "chg_1d": -2.38
+   "mcap": 3718302494.0,
+   "chg_1d": -2.38,
+   "px_0902_intraday": 15.75,
+   "chg_0902_intraday": 1.16
   },
   {
    "ticker": "PVLA",
@@ -752,8 +792,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.39,
-   "mcap": 2169185674.0,
-   "chg_1d": -1.34
+   "mcap": 2193535882.0,
+   "chg_1d": -1.34,
+   "px_0902_intraday": 152.24,
+   "chg_0902_intraday": 1.12
   },
   {
    "ticker": "RPRX",
@@ -787,9 +829,11 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.0,
-   "mcap": 35834075033.0,
+   "mcap": 35911700196.0,
    "quote_conf": "medium",
-   "chg_1d": 1.48
+   "chg_1d": 1.48,
+   "px_0902_intraday": 62.45,
+   "chg_0902_intraday": 0.22
   },
   {
    "ticker": "UNF",
@@ -823,8 +867,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.56,
-   "mcap": 5017996324.0,
-   "chg_1d": 0.32
+   "mcap": 4987886176.0,
+   "chg_1d": 0.32,
+   "px_0902_intraday": 275.81,
+   "chg_0902_intraday": -0.6
   },
   {
    "ticker": "RCUS",
@@ -858,8 +904,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 1.71,
-   "mcap": 3783074601.0,
-   "chg_1d": 1.47
+   "mcap": 3822547948.0,
+   "chg_1d": 1.47,
+   "px_0902_intraday": 30.02,
+   "chg_0902_intraday": 1.04
   },
   {
    "ticker": "ALRS",
@@ -893,8 +941,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.54,
-   "mcap": 812094591.0,
-   "chg_1d": -0.88
+   "mcap": 823923629.0,
+   "chg_1d": -0.88,
+   "px_0902_intraday": 33.09,
+   "chg_0902_intraday": 1.46
   },
   {
    "ticker": "EXPD",
@@ -928,8 +978,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.71,
-   "mcap": 24399239749.0,
-   "chg_1d": -1.03
+   "mcap": 24427837686.0,
+   "chg_1d": -1.03,
+   "px_0902_intraday": 187.92,
+   "chg_0902_intraday": 0.12
   },
   {
    "ticker": "SYRE",
@@ -963,8 +1015,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -2.06,
-   "mcap": 7803377937.0,
-   "chg_1d": -0.93
+   "mcap": 7744301516.0,
+   "chg_1d": -0.93,
+   "px_0902_intraday": 87.83,
+   "chg_0902_intraday": -0.76
   },
   {
    "ticker": "UNP",
@@ -997,10 +1051,12 @@
    "mktcap": 183004957159.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 172650221229.0,
+   "mcap": 171542270425.0,
    "_delta": -3.34,
    "quote_conf": "medium",
-   "chg_1d": -3.34
+   "chg_1d": -3.34,
+   "px_0902_intraday": 288.75,
+   "chg_0902_intraday": -0.64
   },
   {
    "ticker": "CYRX",
@@ -1034,33 +1090,35 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.36,
-   "mcap": 787593505.0,
-   "chg_1d": -2.81
+   "mcap": 806840163.0,
+   "chg_1d": -2.81,
+   "px_0902_intraday": 15.93,
+   "chg_0902_intraday": 2.44
   },
   {
    "ticker": "HSHP",
    "name": "Himalaya Shipping Ltd. Common Shares",
-   "price": 17.01,
-   "year_high": 17.01,
+   "price": 17.16,
+   "year_high": 17.16,
    "year_low": 6.89,
    "ma50": 15.09,
    "ma200": 12.55,
    "ma_proxy": false,
-   "chg_5d": 2.63,
-   "chg_1m": 6.6,
-   "chg_3m": 8.2,
-   "chg_6m": 33.6,
-   "chg_1y": 124.5,
+   "chg_5d": 3.52,
+   "chg_1m": 7.5,
+   "chg_3m": 9.1,
+   "chg_6m": 34.5,
+   "chg_1y": 125.4,
    "volume": 399318,
    "avg_volume": 318744,
    "as_of": "2026-09-01",
    "off_high_pct": 0.0,
-   "above_low_pct": 146.9,
+   "above_low_pct": 149.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 1.16,
-   "score": 70.1,
+   "score": 69.4,
    "category": "B_上升結構",
    "range_1m_pct": 12.6,
    "sector": "Consumer Discretionary",
@@ -1068,9 +1126,11 @@
    "mktcap": 775582500.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 1.86,
-   "mcap": 795217500.0,
-   "chg_1d": 1.613
+   "_delta": 2.75,
+   "mcap": 802230000.0,
+   "chg_1d": 0.882,
+   "px_0902_intraday": 17.16,
+   "chg_0902_intraday": 0.88
   },
   {
    "ticker": "DRH",
@@ -1104,8 +1164,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -5.51,
-   "mcap": 2455268172.0,
-   "chg_1d": -2.52
+   "mcap": 2485959024.0,
+   "chg_1d": -2.52,
+   "px_0902_intraday": 12.15,
+   "chg_0902_intraday": 1.25
   },
   {
    "ticker": "NHC",
@@ -1139,8 +1201,10 @@
    "exchange": "amex",
    "split_adj": false,
    "_delta": -1.67,
-   "mcap": 3429375663.0,
-   "chg_1d": 1.13
+   "mcap": 3451771458.0,
+   "chg_1d": 1.13,
+   "px_0902_intraday": 220.4,
+   "chg_0902_intraday": 0.65
   },
   {
    "ticker": "TRVI",
@@ -1174,33 +1238,35 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.31,
-   "mcap": 2360824685.0,
-   "chg_1d": -0.18
+   "mcap": 2372222753.0,
+   "chg_1d": -0.18,
+   "px_0902_intraday": 16.65,
+   "chg_0902_intraday": 0.48
   },
   {
    "ticker": "SOBO",
    "name": "South Bow Corporation Common Shares",
-   "price": 37.81,
+   "price": 37.28,
    "year_high": 38.67,
    "year_low": 25.26,
    "ma50": 36.74,
    "ma200": 32.27,
    "ma_proxy": false,
-   "chg_5d": 0.31,
-   "chg_1m": -2.2,
-   "chg_3m": 1.5,
-   "chg_6m": 26.8,
-   "chg_1y": 35.4,
+   "chg_5d": -1.11,
+   "chg_1m": -3.6,
+   "chg_3m": 0.1,
+   "chg_6m": 25.4,
+   "chg_1y": 34.0,
    "volume": 424879,
    "avg_volume": 752022,
    "as_of": "2026-09-01",
-   "off_high_pct": 2.2,
-   "above_low_pct": 49.7,
+   "off_high_pct": 3.6,
+   "above_low_pct": 47.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.58,
-   "score": 80.4,
+   "score": 77.7,
    "category": "A_VCP待突破",
    "range_1m_pct": 8.6,
    "sector": "Energy",
@@ -1208,9 +1274,11 @@
    "mktcap": 7867812130.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 1.02,
-   "mcap": 7886584747.0,
-   "chg_1d": 0.106
+   "_delta": -0.4,
+   "mcap": 7776034895.0,
+   "chg_1d": -1.402,
+   "px_0902_intraday": 37.28,
+   "chg_0902_intraday": -1.4
   },
   {
    "ticker": "RRBI",
@@ -1243,34 +1311,36 @@
    "mktcap": 668681805.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 659398216.0,
+   "mcap": 666969938.0,
    "_delta": -0.62,
-   "chg_1d": 0.11
+   "chg_1d": 0.11,
+   "px_0902_intraday": 101.3,
+   "chg_0902_intraday": 1.15
   },
   {
    "ticker": "FTI",
    "name": "TechnipFMC plc Ordinary Share",
-   "price": 78.31,
+   "price": 77.78,
    "year_high": 79.81,
    "year_low": 34.97,
    "ma50": 71.32,
    "ma200": 62.32,
    "ma_proxy": false,
-   "chg_5d": 0.97,
-   "chg_1m": 3.1,
-   "chg_3m": 9.9,
-   "chg_6m": 27.6,
-   "chg_1y": 122.3,
+   "chg_5d": 0.3,
+   "chg_1m": 2.4,
+   "chg_3m": 9.2,
+   "chg_6m": 26.9,
+   "chg_1y": 121.6,
    "volume": 2255550,
    "avg_volume": 3951270,
    "as_of": "2026-09-01",
-   "off_high_pct": 1.9,
-   "above_low_pct": 123.9,
+   "off_high_pct": 2.5,
+   "above_low_pct": 122.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.78,
-   "score": 81.3,
+   "score": 81.5,
    "category": "B_上升結構",
    "range_1m_pct": 14.7,
    "sector": "Consumer Discretionary",
@@ -1278,10 +1348,12 @@
    "mktcap": 30373131851.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.08,
-   "mcap": 30710393224.0,
+   "_delta": -0.75,
+   "mcap": 30502546099.0,
    "quote_conf": "medium",
-   "chg_1d": 0.205
+   "chg_1d": -0.677,
+   "px_0902_intraday": 77.78,
+   "chg_0902_intraday": -0.68
   },
   {
    "ticker": "GEO",
@@ -1315,8 +1387,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -5.42,
-   "mcap": 4018345900.0,
-   "chg_1d": -4.02
+   "mcap": 4027559270.0,
+   "chg_1d": -4.02,
+   "px_0902_intraday": 30.6,
+   "chg_0902_intraday": 0.23
   },
   {
    "ticker": "UHAL",
@@ -1349,9 +1423,11 @@
    "mktcap": 13881639478.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 13121560913.0,
+   "mcap": 13164327481.0,
    "_delta": -1.59,
-   "chg_1d": 0.22
+   "chg_1d": 0.22,
+   "px_0902_intraday": 67.72,
+   "chg_0902_intraday": 0.33
   },
   {
    "ticker": "TRST",
@@ -1384,34 +1460,36 @@
    "mktcap": 967686464.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 956107601.0,
+   "mcap": 968622990.0,
    "_delta": -1.72,
-   "chg_1d": -1.0
+   "chg_1d": -1.0,
+   "px_0902_intraday": 56.88,
+   "chg_0902_intraday": 1.31
   },
   {
    "ticker": "HSBC",
    "name": "HSBC Holdings plc. Common Stock",
-   "price": 103.4,
+   "price": 104.33,
    "year_high": 107.86,
    "year_low": 61.79,
    "ma50": 99.92,
    "ma200": 87.52,
    "ma_proxy": false,
-   "chg_5d": -0.43,
-   "chg_1m": 1.7,
-   "chg_3m": 17.1,
-   "chg_6m": 19.6,
-   "chg_1y": 62.2,
+   "chg_5d": 0.47,
+   "chg_1m": 2.6,
+   "chg_3m": 18.0,
+   "chg_6m": 20.5,
+   "chg_1y": 63.1,
    "volume": 743625,
    "avg_volume": 1292697,
    "as_of": "2026-09-01",
-   "off_high_pct": 4.1,
-   "above_low_pct": 67.3,
+   "off_high_pct": 3.3,
+   "above_low_pct": 68.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.68,
-   "score": 81.0,
+   "score": 80.8,
    "category": "A_VCP待突破",
    "range_1m_pct": 5.3,
    "sector": "Finance",
@@ -1419,9 +1497,11 @@
    "mktcap": 357933634787.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 355356100211.0,
-   "_delta": -0.13,
-   "chg_1d": 0.252
+   "mcap": 358552243085.0,
+   "_delta": 0.77,
+   "chg_1d": 0.899,
+   "px_0902_intraday": 104.33,
+   "chg_0902_intraday": 0.9
   },
   {
    "ticker": "MSGS",
@@ -1455,8 +1535,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.96,
-   "mcap": 9191072680.0,
-   "chg_1d": -0.79
+   "mcap": 9350722689.0,
+   "chg_1d": -0.79,
+   "px_0902_intraday": 388.32,
+   "chg_0902_intraday": 1.74
   },
   {
    "ticker": "MAX",
@@ -1489,9 +1571,11 @@
    "mktcap": 792755875.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 753546929.0,
+   "mcap": 755078529.0,
    "_delta": -4.28,
-   "chg_1d": -2.54
+   "chg_1d": -2.54,
+   "px_0902_intraday": 12.32,
+   "chg_0902_intraday": 0.2
   },
   {
    "ticker": "DNTH",
@@ -1525,8 +1609,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.74,
-   "mcap": 5963723382.0,
-   "chg_1d": 0.96
+   "mcap": 5970435508.0,
+   "chg_1d": 0.96,
+   "px_0902_intraday": 106.74,
+   "chg_0902_intraday": 0.11
   },
   {
    "ticker": "TGTX",
@@ -1560,9 +1646,11 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 4.26,
-   "mcap": 8585643183.0,
+   "mcap": 8579520421.0,
    "quote_conf": "medium",
-   "chg_1d": 3.3
+   "chg_1d": 3.3,
+   "px_0902_intraday": 56.05,
+   "chg_0902_intraday": -0.07
   },
   {
    "ticker": "EBC",
@@ -1596,8 +1684,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.54,
-   "mcap": 4912998368.0,
-   "chg_1d": -2.09
+   "mcap": 4998690200.0,
+   "chg_1d": -2.09,
+   "px_0902_intraday": 21.88,
+   "chg_0902_intraday": 1.74
   },
   {
    "ticker": "WSFS",
@@ -1630,34 +1720,36 @@
    "mktcap": 4081117527.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 3918138497.0,
+   "mcap": 3964120042.0,
    "_delta": -2.06,
-   "chg_1d": -0.98
+   "chg_1d": -0.98,
+   "px_0902_intraday": 77.59,
+   "chg_0902_intraday": 1.17
   },
   {
    "ticker": "BNS",
    "name": "Bank Nova Scotia Halifax Pfd 3 Ordinary ",
-   "price": 91.19,
+   "price": 92.285,
    "year_high": 93.1,
    "year_low": 55.99,
    "ma50": 87.45,
    "ma200": 77.01,
    "ma_proxy": false,
-   "chg_5d": -2.06,
-   "chg_1m": 5.3,
-   "chg_3m": 17.8,
-   "chg_6m": 19.1,
-   "chg_1y": 58.2,
+   "chg_5d": -0.87,
+   "chg_1m": 6.5,
+   "chg_3m": 19.0,
+   "chg_6m": 20.3,
+   "chg_1y": 59.4,
    "volume": 1264151,
    "avg_volume": 2594521,
    "as_of": "2026-09-01",
-   "off_high_pct": 2.1,
-   "above_low_pct": 62.9,
+   "off_high_pct": 0.9,
+   "above_low_pct": 64.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.67,
-   "score": 78.1,
+   "score": 78.0,
    "category": "A_VCP待突破",
    "range_1m_pct": 6.2,
    "sector": "Finance",
@@ -1665,9 +1757,11 @@
    "mktcap": 107429769115.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.3,
-   "mcap": 111870739358.0,
-   "chg_1d": -0.513
+   "_delta": -0.11,
+   "mcap": 113214071518.0,
+   "chg_1d": 1.201,
+   "px_0902_intraday": 92.28,
+   "chg_0902_intraday": 1.2
   },
   {
    "ticker": "CHRD",
@@ -1701,34 +1795,36 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 1.92,
-   "mcap": 8227106928.0,
+   "mcap": 8165845311.0,
    "quote_conf": "medium",
-   "chg_1d": 2.24
+   "chg_1d": 2.24,
+   "px_0902_intraday": 149.29,
+   "chg_0902_intraday": -0.74
   },
   {
    "ticker": "OFG",
    "name": "OFG Bancorp Common Stock",
-   "price": 52.12,
+   "price": 52.435,
    "year_high": 53.95,
    "year_low": 37.15,
    "ma50": 50.74,
    "ma200": 44.12,
    "ma_proxy": false,
-   "chg_5d": -3.41,
-   "chg_1m": -0.6,
-   "chg_3m": 18.6,
-   "chg_6m": 23.6,
-   "chg_1y": 21.2,
+   "chg_5d": -2.81,
+   "chg_1m": 0.0,
+   "chg_3m": 19.2,
+   "chg_6m": 24.2,
+   "chg_1y": 21.8,
    "volume": 249503,
    "avg_volume": 359567,
    "as_of": "2026-09-01",
-   "off_high_pct": 3.4,
-   "above_low_pct": 40.3,
+   "off_high_pct": 2.8,
+   "above_low_pct": 41.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.61,
-   "score": 79.2,
+   "score": 80.3,
    "category": "A_VCP待突破",
    "range_1m_pct": 4.4,
    "sector": "Finance",
@@ -1736,44 +1832,48 @@
    "mktcap": 2207526752.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 2202877547.0,
-   "_delta": -0.59,
-   "chg_1d": 0.134
+   "mcap": 2216191178.0,
+   "_delta": 0.01,
+   "chg_1d": 0.604,
+   "px_0902_intraday": 52.44,
+   "chg_0902_intraday": 0.6
   },
   {
    "ticker": "TIGO",
    "name": "Millicom International Cellular S.A. Com",
-   "price": 92.6,
+   "price": 94.75,
    "year_high": 104.31,
    "year_low": 40.82,
    "ma50": 93.36,
    "ma200": 73.81,
    "ma_proxy": false,
-   "chg_5d": -1.13,
-   "chg_1m": -3.8,
-   "chg_3m": 17.1,
-   "chg_6m": 40.4,
-   "chg_1y": 107.4,
+   "chg_5d": 1.18,
+   "chg_1m": -1.5,
+   "chg_3m": 19.4,
+   "chg_6m": 42.7,
+   "chg_1y": 109.7,
    "volume": 753382,
    "avg_volume": 1533445,
    "as_of": "2026-09-01",
-   "off_high_pct": 11.2,
-   "above_low_pct": 126.8,
-   "above_ma50": false,
+   "off_high_pct": 9.2,
+   "above_low_pct": 132.1,
+   "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.75,
-   "score": 67.5,
-   "category": "C_基底修復中",
+   "score": 81.5,
+   "category": "B_上升結構",
    "range_1m_pct": 18.2,
    "sector": "Telecommunications",
    "industry": "Telecommunications Equipment",
    "mktcap": 15695224861.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "_delta": -0.84,
-   "mcap": 15514280765.0,
-   "chg_1d": -1.237
+   "_delta": 1.47,
+   "mcap": 15874493548.0,
+   "chg_1d": 2.322,
+   "px_0902_intraday": 94.75,
+   "chg_0902_intraday": 2.32
   },
   {
    "ticker": "KMX",
@@ -1807,8 +1907,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.79,
-   "mcap": 8656576856.0,
-   "chg_1d": -0.54
+   "mcap": 8711212628.0,
+   "chg_1d": -0.54,
+   "px_0902_intraday": 61.38,
+   "chg_0902_intraday": 0.63
   },
   {
    "ticker": "CDP",
@@ -1842,8 +1944,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -2.92,
-   "mcap": 4028339468.0,
-   "chg_1d": -1.33
+   "mcap": 4019266632.0,
+   "chg_1d": -1.33,
+   "px_0902_intraday": 35.44,
+   "chg_0902_intraday": -0.23
   },
   {
    "ticker": "AMN",
@@ -1877,8 +1981,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -3.12,
-   "mcap": 1299003898.0,
-   "chg_1d": -2.16
+   "mcap": 1316819694.0,
+   "chg_1d": -2.16,
+   "px_0902_intraday": 34.0,
+   "chg_0902_intraday": 1.37
   },
   {
    "ticker": "BJRI",
@@ -1912,8 +2018,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -5.18,
-   "mcap": 1313654989.0,
-   "chg_1d": -2.89
+   "mcap": 1313229513.0,
+   "chg_1d": -2.89,
+   "px_0902_intraday": 61.73,
+   "chg_0902_intraday": -0.03
   },
   {
    "ticker": "EOG",
@@ -1947,9 +2055,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -3.07,
-   "mcap": 77813903260.0,
+   "mcap": 77651299215.0,
    "quote_conf": "medium",
-   "chg_1d": 2.34
+   "chg_1d": 2.34,
+   "px_0902_intraday": 148.04,
+   "chg_0902_intraday": -0.21
   },
   {
    "ticker": "ABBV",
@@ -1983,8 +2093,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 1.77,
-   "mcap": 459432822927.0,
-   "chg_1d": 1.39
+   "mcap": 460038060597.0,
+   "chg_1d": 1.39,
+   "px_0902_intraday": 260.33,
+   "chg_0902_intraday": 0.13
   },
   {
    "ticker": "TRGP",
@@ -2018,9 +2130,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -1.02,
-   "mcap": 63484448077.0,
+   "mcap": 62701774851.0,
    "quote_conf": "medium",
-   "chg_1d": 0.82
+   "chg_1d": 0.82,
+   "px_0902_intraday": 292.41,
+   "chg_0902_intraday": -1.23
   },
   {
    "ticker": "VOYA",
@@ -2053,9 +2167,11 @@
    "mktcap": 8856699078.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 9154761066.0,
+   "mcap": 9325988166.0,
    "_delta": -1.46,
-   "chg_1d": -0.27
+   "chg_1d": -0.27,
+   "px_0902_intraday": 102.94,
+   "chg_0902_intraday": 1.87
   },
   {
    "ticker": "CCBG",
@@ -2089,28 +2205,30 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -2.34,
-   "mcap": 858060712.0,
-   "chg_1d": -0.67
+   "mcap": 870211152.0,
+   "chg_1d": -0.67,
+   "px_0902_intraday": 50.85,
+   "chg_0902_intraday": 1.42
   },
   {
    "ticker": "KARO",
    "name": "Karooooo Ltd. Ordinary Shares",
-   "price": 65.0,
+   "price": 64.35,
    "year_high": 67.2,
    "year_low": 42.42,
    "ma50": 58.08,
    "ma200": 50.17,
    "ma_proxy": false,
-   "chg_5d": 4.5,
-   "chg_1m": 6.3,
-   "chg_3m": 40.7,
-   "chg_6m": 39.8,
-   "chg_1y": 35.7,
+   "chg_5d": 3.53,
+   "chg_1m": 5.4,
+   "chg_3m": 39.8,
+   "chg_6m": 38.9,
+   "chg_1y": 34.8,
    "volume": 59728,
    "avg_volume": 120607,
    "as_of": "2026-09-01",
-   "off_high_pct": 3.3,
-   "above_low_pct": 53.2,
+   "off_high_pct": 4.2,
+   "above_low_pct": 51.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
@@ -2123,34 +2241,36 @@
    "mktcap": 1975935468.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 2008064500.0,
-   "_delta": -3.27,
-   "chg_1d": -2.27
+   "mcap": 1987983855.0,
+   "_delta": -4.24,
+   "chg_1d": -1.0,
+   "px_0902_intraday": 64.35,
+   "chg_0902_intraday": -1.0
   },
   {
    "ticker": "FBP",
    "name": "First BanCorp. New Common Stock",
-   "price": 27.85,
+   "price": 28.24,
    "year_high": 29.7,
    "year_low": 19.65,
    "ma50": 27.54,
    "ma200": 23.31,
    "ma_proxy": false,
-   "chg_5d": -1.94,
-   "chg_1m": -3.5,
-   "chg_3m": 20.1,
-   "chg_6m": 24.0,
-   "chg_1y": 31.5,
+   "chg_5d": -0.55,
+   "chg_1m": -2.1,
+   "chg_3m": 21.5,
+   "chg_6m": 25.4,
+   "chg_1y": 32.9,
    "volume": 1133933,
    "avg_volume": 1522660,
    "as_of": "2026-09-01",
-   "off_high_pct": 6.2,
-   "above_low_pct": 41.7,
+   "off_high_pct": 4.9,
+   "above_low_pct": 43.7,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.73,
-   "score": 70.7,
+   "score": 78.3,
    "category": "A_VCP待突破",
    "range_1m_pct": 5.1,
    "sector": "Finance",
@@ -2158,9 +2278,11 @@
    "mktcap": 4354099003.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.57,
-   "mcap": 4251811264.0,
-   "chg_1d": -0.108
+   "_delta": 0.82,
+   "mcap": 4311351888.0,
+   "chg_1d": 1.4,
+   "px_0902_intraday": 28.24,
+   "chg_0902_intraday": 1.4
   },
   {
    "ticker": "PARR",
@@ -2193,10 +2315,12 @@
    "mktcap": 3959373522.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 4009473149.0,
+   "mcap": 4039282427.0,
    "_delta": 3.38,
    "quote_conf": "medium",
-   "chg_1d": 0.14
+   "chg_1d": 0.14,
+   "px_0902_intraday": 80.62,
+   "chg_0902_intraday": 0.74
   },
   {
    "ticker": "CSX",
@@ -2230,9 +2354,11 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.58,
-   "mcap": 90215528458.0,
+   "mcap": 89409701869.0,
    "quote_conf": "medium",
-   "chg_1d": -3.58
+   "chg_1d": -3.58,
+   "px_0902_intraday": 48.27,
+   "chg_0902_intraday": -0.89
   },
   {
    "ticker": "KFRC",
@@ -2266,8 +2392,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -5.52,
-   "mcap": 983025010.0,
-   "chg_1d": -4.67
+   "mcap": 986606810.0,
+   "chg_1d": -4.67,
+   "px_0902_intraday": 55.09,
+   "chg_0902_intraday": 0.36
   },
   {
    "ticker": "NWBI",
@@ -2301,8 +2429,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.3,
-   "mcap": 2217391107.0,
-   "chg_1d": -0.98
+   "mcap": 2240092271.0,
+   "chg_1d": -0.98,
+   "px_0902_intraday": 15.29,
+   "chg_0902_intraday": 1.02
   },
   {
    "ticker": "IBKR",
@@ -2336,34 +2466,36 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -5.51,
-   "mcap": 40953735877.0,
+   "mcap": 40872181806.0,
    "quote_conf": "medium",
-   "chg_1d": -7.01
+   "chg_1d": -7.01,
+   "px_0902_intraday": 90.21,
+   "chg_0902_intraday": -0.2
   },
   {
    "ticker": "HG",
    "name": "Hamilton Insurance Group Ltd. Class B Co",
-   "price": 35.05,
+   "price": 35.685,
    "year_high": 37.28,
    "year_low": 21.38,
    "ma50": 34.39,
    "ma200": 30.31,
    "ma_proxy": false,
-   "chg_5d": -1.56,
-   "chg_1m": 0.6,
-   "chg_3m": 10.2,
-   "chg_6m": 11.7,
-   "chg_1y": 52.3,
+   "chg_5d": 0.24,
+   "chg_1m": 2.3,
+   "chg_3m": 11.9,
+   "chg_6m": 13.4,
+   "chg_1y": 54.0,
    "volume": 204256,
    "avg_volume": 464371,
    "as_of": "2026-09-01",
-   "off_high_pct": 6.0,
-   "above_low_pct": 63.9,
+   "off_high_pct": 4.3,
+   "above_low_pct": 66.9,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.72,
-   "score": 73.4,
+   "score": 78.2,
    "category": "A_VCP待突破",
    "range_1m_pct": 8.1,
    "sector": "Finance",
@@ -2371,9 +2503,11 @@
    "mktcap": 2909047366.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -0.85,
-   "mcap": 2916536332.0,
-   "chg_1d": -0.313
+   "_delta": 0.95,
+   "mcap": 2969375150.0,
+   "chg_1d": 1.812,
+   "px_0902_intraday": 35.69,
+   "chg_0902_intraday": 1.81
   },
   {
    "ticker": "AMAL",
@@ -2407,33 +2541,35 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -2.77,
-   "mcap": 1415472959.0,
-   "chg_1d": -1.52
+   "mcap": 1431021035.0,
+   "chg_1d": -1.52,
+   "px_0902_intraday": 47.86,
+   "chg_0902_intraday": 1.1
   },
   {
    "ticker": "MEOH",
    "name": "Methanex Corporation Common Stock",
-   "price": 60.12,
+   "price": 59.35,
    "year_high": 64.25,
    "year_low": 32.46,
    "ma50": 53.19,
    "ma200": 50.79,
    "ma_proxy": false,
-   "chg_5d": 7.31,
-   "chg_1m": 3.8,
-   "chg_3m": -5.0,
-   "chg_6m": 25.9,
-   "chg_1y": 77.1,
+   "chg_5d": 5.97,
+   "chg_1m": 2.5,
+   "chg_3m": -6.3,
+   "chg_6m": 24.6,
+   "chg_1y": 75.8,
    "volume": 693667,
    "avg_volume": 951833,
    "as_of": "2026-09-01",
-   "off_high_pct": 6.4,
-   "above_low_pct": 85.2,
+   "off_high_pct": 7.6,
+   "above_low_pct": 82.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.71,
-   "score": 75.2,
+   "score": 75.4,
    "category": "C_基底修復中",
    "range_1m_pct": 14.8,
    "sector": "Industrials",
@@ -2441,9 +2577,11 @@
    "mktcap": 4649592206.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 4651139492.0,
-   "_delta": 4.25,
-   "chg_1d": 1.985
+   "mcap": 4591569009.0,
+   "_delta": 2.91,
+   "chg_1d": -1.281,
+   "px_0902_intraday": 59.35,
+   "chg_0902_intraday": -1.28
   },
   {
    "ticker": "GNK",
@@ -2477,8 +2615,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 0.58,
-   "mcap": 1134559328.0,
-   "chg_1d": -0.76
+   "mcap": 1150250506.0,
+   "chg_1d": -0.76,
+   "px_0902_intraday": 26.39,
+   "chg_0902_intraday": 1.38
   },
   {
    "ticker": "HTO",
@@ -2512,8 +2652,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.39,
-   "mcap": 2670464095.0,
-   "chg_1d": 0.68
+   "mcap": 2620968424.0,
+   "chg_1d": 0.68,
+   "px_0902_intraday": 62.62,
+   "chg_0902_intraday": -1.85
   },
   {
    "ticker": "RUSHB",
@@ -2546,10 +2688,12 @@
    "mktcap": 6160253127.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 3848990900.0,
+   "mcap": 5802666046.0,
    "_delta": -3.52,
    "_split": "3:2 2026-08-31",
-   "chg_1d": -4.57
+   "chg_1d": -4.57,
+   "px_0902_intraday": 49.71,
+   "chg_0902_intraday": 0.51
   },
   {
    "ticker": "AMRX",
@@ -2583,8 +2727,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.8,
-   "mcap": 6157873581.0,
-   "chg_1d": 1.2
+   "mcap": 6258879425.0,
+   "chg_1d": 1.2,
+   "px_0902_intraday": 17.97,
+   "chg_0902_intraday": 1.64
   },
   {
    "ticker": "CF",
@@ -2618,8 +2764,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 7.8,
-   "mcap": 20521450428.0,
-   "chg_1d": 4.28
+   "mcap": 20268715751.0,
+   "chg_1d": 4.28,
+   "px_0902_intraday": 133.93,
+   "chg_0902_intraday": -1.23
   },
   {
    "ticker": "JNJ",
@@ -2653,8 +2801,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 1.18,
-   "mcap": 653540400520.0,
-   "chg_1d": 2.01
+   "mcap": 665300705674.0,
+   "chg_1d": 2.01,
+   "px_0902_intraday": 276.07,
+   "chg_0902_intraday": 1.8
   },
   {
    "ticker": "BRKR",
@@ -2688,8 +2838,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.84,
-   "mcap": 8536692475.0,
-   "chg_1d": -3.41
+   "mcap": 8948062629.0,
+   "chg_1d": -3.41,
+   "px_0902_intraday": 58.73,
+   "chg_0902_intraday": 4.82
   },
   {
    "ticker": "NEO",
@@ -2723,8 +2875,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.32,
-   "mcap": 2241896428.0,
-   "chg_1d": -2.57
+   "mcap": 2297783244.0,
+   "chg_1d": -2.57,
+   "px_0902_intraday": 17.89,
+   "chg_0902_intraday": 2.49
   },
   {
    "ticker": "BLFS",
@@ -2758,8 +2912,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -2.5,
-   "mcap": 1734720791.0,
-   "chg_1d": -4.32
+   "mcap": 1770422685.0,
+   "chg_1d": -4.32,
+   "px_0902_intraday": 36.2,
+   "chg_0902_intraday": 2.06
   },
   {
    "ticker": "WT",
@@ -2792,9 +2948,11 @@
    "mktcap": 3562049730.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 3705986235.0,
+   "mcap": 3671138450.0,
    "_delta": 0.12,
-   "chg_1d": 1.66
+   "chg_1d": 1.66,
+   "px_0902_intraday": 24.23,
+   "chg_0902_intraday": -0.94
   },
   {
    "ticker": "ADPT",
@@ -2828,8 +2986,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.37,
-   "mcap": 3884562794.0,
-   "chg_1d": -2.33
+   "mcap": 3969148591.0,
+   "chg_1d": -2.33,
+   "px_0902_intraday": 24.87,
+   "chg_0902_intraday": 2.18
   },
   {
    "ticker": "AXGN",
@@ -2863,8 +3023,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.09,
-   "mcap": 2681624268.0,
-   "chg_1d": -1.73
+   "mcap": 2749901390.0,
+   "chg_1d": -1.73,
+   "px_0902_intraday": 51.15,
+   "chg_0902_intraday": 2.55
   },
   {
    "ticker": "CORT",
@@ -2898,8 +3060,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -0.44,
-   "mcap": 12256196252.0,
-   "chg_1d": 0.03
+   "mcap": 12281058883.0,
+   "chg_1d": 0.03,
+   "px_0902_intraday": 113.61,
+   "chg_0902_intraday": 0.2
   },
   {
    "ticker": "SLDE",
@@ -2933,33 +3097,35 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -0.81,
-   "mcap": 2720544936.0,
-   "chg_1d": 0.17
+   "mcap": 2791800084.0,
+   "chg_1d": 0.17,
+   "px_0902_intraday": 23.9,
+   "chg_0902_intraday": 2.62
   },
   {
    "ticker": "CVE",
    "name": "Cenovus Energy Inc Common Stock",
-   "price": 33.13,
-   "year_high": 33.13,
+   "price": 32.68,
+   "year_high": 32.93,
    "year_low": 14.5,
    "ma50": 27.96,
    "ma200": 23.7,
    "ma_proxy": false,
-   "chg_5d": 0.73,
-   "chg_1m": 11.5,
-   "chg_3m": 7.5,
-   "chg_6m": 53.3,
-   "chg_1y": 121.0,
+   "chg_5d": -0.66,
+   "chg_1m": 10.1,
+   "chg_3m": 6.1,
+   "chg_6m": 51.9,
+   "chg_1y": 119.6,
    "volume": 4021063,
    "avg_volume": 7736788,
    "as_of": "2026-09-01",
-   "off_high_pct": 0.0,
-   "above_low_pct": 128.5,
+   "off_high_pct": 0.8,
+   "above_low_pct": 125.4,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.75,
-   "score": 78.5,
+   "score": 79.4,
    "category": "E_突破延伸中",
    "range_1m_pct": 17.5,
    "sector": "Energy",
@@ -2967,10 +3133,12 @@
    "mktcap": 61743750000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 2.22,
-   "mcap": 62118750000.0,
+   "_delta": 0.83,
+   "mcap": 61275000000.0,
    "quote_conf": "medium",
-   "chg_1d": 3.048
+   "chg_1d": -1.358,
+   "px_0902_intraday": 32.68,
+   "chg_0902_intraday": -1.36
   },
   {
    "ticker": "SENEA",
@@ -3003,9 +3171,11 @@
    "mktcap": 1313942590.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 1381444046.0,
+   "mcap": 1384626161.0,
    "_delta": 2.1,
-   "chg_1d": 2.9
+   "chg_1d": 2.9,
+   "px_0902_intraday": 204.51,
+   "chg_0902_intraday": 0.23
   },
   {
    "ticker": "AWR",
@@ -3039,8 +3209,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -0.77,
-   "mcap": 3535101483.0,
-   "chg_1d": -0.11
+   "mcap": 3492493185.0,
+   "chg_1d": -0.11,
+   "px_0902_intraday": 88.11,
+   "chg_0902_intraday": -1.21
   },
   {
    "ticker": "VSAT",
@@ -3073,9 +3245,11 @@
    "mktcap": 10293114123.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 9130455087.0,
+   "mcap": 9229639270.0,
    "_delta": -1.62,
-   "chg_1d": -1.47
+   "chg_1d": -1.47,
+   "px_0902_intraday": 67.0,
+   "chg_0902_intraday": 1.09
   },
   {
    "ticker": "ELVN",
@@ -3109,8 +3283,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 0.0,
-   "mcap": 4239446231.0,
-   "chg_1d": -0.05
+   "mcap": 4327371145.0,
+   "chg_1d": -0.05,
+   "px_0902_intraday": 59.06,
+   "chg_0902_intraday": 2.07
   },
   {
    "ticker": "DELL",
@@ -3144,9 +3320,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -7.6,
-   "mcap": 275445896175.0,
+   "mcap": 288566842453.0,
    "quote_conf": "medium",
-   "chg_1d": -6.8
+   "chg_1d": -6.8,
+   "px_0902_intraday": 445.25,
+   "chg_0902_intraday": 4.76
   },
   {
    "ticker": "KNSA",
@@ -3179,9 +3357,11 @@
    "mktcap": 6166237747.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 6185743751.0,
+   "mcap": 6132297302.0,
    "_delta": 1.54,
-   "chg_1d": 0.83
+   "chg_1d": 0.83,
+   "px_0902_intraday": 78.59,
+   "chg_0902_intraday": -0.86
   },
   {
    "ticker": "WKC",
@@ -3214,9 +3394,11 @@
    "mktcap": 1838900739.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 1804629154.0,
+   "mcap": 1810255832.0,
    "_delta": -0.48,
-   "chg_1d": -1.31
+   "chg_1d": -1.31,
+   "px_0902_intraday": 35.39,
+   "chg_0902_intraday": 0.31
   },
   {
    "ticker": "CXW",
@@ -3250,33 +3432,35 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -3.22,
-   "mcap": 3235794960.0,
-   "chg_1d": -1.51
+   "mcap": 3258540463.0,
+   "chg_1d": -1.51,
+   "px_0902_intraday": 32.95,
+   "chg_0902_intraday": 0.7
   },
   {
    "ticker": "CNQ",
    "name": "Canadian Natural Resources Limited Commo",
-   "price": 51.81,
-   "year_high": 51.81,
+   "price": 51.39,
+   "year_high": 51.4,
    "year_low": 29.77,
    "ma50": 44.34,
    "ma200": 41.35,
    "ma_proxy": false,
-   "chg_5d": 2.29,
-   "chg_1m": 10.2,
-   "chg_3m": 8.0,
-   "chg_6m": 27.5,
-   "chg_1y": 73.6,
+   "chg_5d": 1.45,
+   "chg_1m": 9.4,
+   "chg_3m": 7.2,
+   "chg_6m": 26.7,
+   "chg_1y": 72.8,
    "volume": 3919910,
    "avg_volume": 8228813,
    "as_of": "2026-09-01",
    "off_high_pct": 0.0,
-   "above_low_pct": 74.0,
+   "above_low_pct": 72.6,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.71,
-   "score": 72.7,
+   "score": 73.2,
    "category": "E_突破延伸中",
    "range_1m_pct": 15.2,
    "sector": "Energy",
@@ -3284,11 +3468,13 @@
    "mktcap": 106338376000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": 4.22,
+   "_delta": 3.38,
    "_rejected": -22.9,
-   "mcap": 107186600400.0,
+   "mcap": 106317687600.0,
    "quote_conf": "medium",
-   "chg_1d": 3.475
+   "chg_1d": -0.811,
+   "px_0902_intraday": 51.39,
+   "chg_0902_intraday": -0.81
   },
   {
    "ticker": "DINO",
@@ -3322,9 +3508,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 2.13,
-   "mcap": 18484186781.0,
+   "mcap": 18644974494.0,
    "quote_conf": "afterhours",
-   "chg_1d": 2.32
+   "chg_1d": 2.32,
+   "px_0902_intraday": 104.87,
+   "chg_0902_intraday": 0.87
   },
   {
    "ticker": "KFY",
@@ -3358,9 +3546,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 0.0,
-   "mcap": 4347296658.0,
+   "mcap": 4333944064.0,
    "quote_conf": "medium",
-   "chg_1d": -1.05
+   "chg_1d": -1.05,
+   "px_0902_intraday": 84.39,
+   "chg_0902_intraday": -0.31
   },
   {
    "ticker": "PK",
@@ -3394,8 +3584,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -3.85,
-   "mcap": 3064369383.0,
-   "chg_1d": -0.52
+   "mcap": 3097590207.0,
+   "chg_1d": -0.52,
+   "px_0902_intraday": 15.38,
+   "chg_0902_intraday": 1.08
   },
   {
    "ticker": "RAPP",
@@ -3429,8 +3621,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -0.43,
-   "mcap": 2329825568.0,
-   "chg_1d": -0.23
+   "mcap": 2368208197.0,
+   "chg_1d": -0.23,
+   "px_0902_intraday": 49.36,
+   "chg_0902_intraday": 1.65
   },
   {
    "ticker": "ZD",
@@ -3463,9 +3657,11 @@
    "mktcap": 1922826625.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 1894025370.0,
+   "mcap": 1913226206.0,
    "_delta": -1.04,
-   "chg_1d": 0.16
+   "chg_1d": 0.16,
+   "px_0902_intraday": 55.8,
+   "chg_0902_intraday": 1.01
   },
   {
    "ticker": "ATI",
@@ -3499,33 +3695,35 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -4.65,
-   "mcap": 27363438464.0,
-   "chg_1d": -1.59
+   "mcap": 27415864061.0,
+   "chg_1d": -1.59,
+   "px_0902_intraday": 201.34,
+   "chg_0902_intraday": 0.19
   },
   {
    "ticker": "IMO",
    "name": "Imperial Oil Limited Common Stock",
-   "price": 134.94,
+   "price": 133.17,
    "year_high": 138.05,
    "year_low": 83.36,
    "ma50": 123.2,
    "ma200": 114.12,
    "ma_proxy": false,
-   "chg_5d": 1.53,
-   "chg_1m": 5.1,
-   "chg_3m": 0.4,
-   "chg_6m": 15.5,
-   "chg_1y": 63.0,
+   "chg_5d": 0.18,
+   "chg_1m": 3.7,
+   "chg_3m": -1.0,
+   "chg_6m": 14.1,
+   "chg_1y": 61.6,
    "volume": 262769,
    "avg_volume": 524908,
    "as_of": "2026-09-01",
-   "off_high_pct": 2.3,
-   "above_low_pct": 61.9,
+   "off_high_pct": 3.5,
+   "above_low_pct": 59.8,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.82,
-   "score": 77.9,
+   "score": 78.2,
    "category": "A_VCP待突破",
    "range_1m_pct": 10.1,
    "sector": "Energy",
@@ -3533,9 +3731,11 @@
    "mktcap": 66760013650.0,
    "exchange": "amex",
    "split_adj": false,
-   "mcap": 65256039420.0,
-   "_delta": 3.39,
-   "chg_1d": 2.741
+   "mcap": 64400079810.0,
+   "_delta": 2.04,
+   "chg_1d": -1.312,
+   "px_0902_intraday": 133.17,
+   "chg_0902_intraday": -1.31
   },
   {
    "ticker": "GD",
@@ -3569,9 +3769,11 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": -0.36,
-   "mcap": 99946533405.0,
+   "mcap": 98478760622.0,
    "quote_conf": "medium",
-   "chg_1d": -0.52
+   "chg_1d": -0.52,
+   "px_0902_intraday": 363.99,
+   "chg_0902_intraday": -1.47
   },
   {
    "ticker": "WTTR",
@@ -3604,9 +3806,11 @@
    "mktcap": 2730842027.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 2779310318.0,
+   "mcap": 2703145860.0,
    "_delta": 4.1,
-   "chg_1d": 2.92
+   "chg_1d": 2.92,
+   "px_0902_intraday": 19.52,
+   "chg_0902_intraday": -2.74
   },
   {
    "ticker": "INSW",
@@ -3640,8 +3844,10 @@
    "exchange": "nyse",
    "split_adj": false,
    "_delta": 0.96,
-   "mcap": 4941243585.0,
-   "chg_1d": 1.14
+   "mcap": 4918954495.0,
+   "chg_1d": 1.14,
+   "px_0902_intraday": 99.31,
+   "chg_0902_intraday": -0.45
   },
   {
    "ticker": "REX",
@@ -3674,9 +3880,11 @@
    "mktcap": 1471327863.0,
    "exchange": "nyse",
    "split_adj": true,
-   "mcap": 1383054779.0,
+   "mcap": 1373173463.0,
    "_delta": 1.55,
-   "chg_1d": 2.22
+   "chg_1d": 2.22,
+   "px_0902_intraday": 41.69,
+   "chg_0902_intraday": -0.71
   },
   {
    "ticker": "PGC",
@@ -3709,9 +3917,11 @@
    "mktcap": 808040052.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 790489380.0,
+   "mcap": 799441995.0,
    "_delta": -1.15,
-   "chg_1d": -0.11
+   "chg_1d": -0.11,
+   "px_0902_intraday": 45.09,
+   "chg_0902_intraday": 1.13
   },
   {
    "ticker": "MU",
@@ -3745,9 +3955,11 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -1.3,
-   "mcap": 1054220742869.0,
+   "mcap": 1064851381782.0,
    "quote_conf": "medium",
-   "chg_1d": -2.64
+   "chg_1d": -2.64,
+   "px_0902_intraday": 942.85,
+   "chg_0902_intraday": 1.01
   },
   {
    "ticker": "PEB",
@@ -3780,9 +3992,11 @@
    "mktcap": 2085333392.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 2001829782.0,
+   "mcap": 2033425742.0,
    "_delta": -4.06,
-   "chg_1d": -2.1
+   "chg_1d": -2.1,
+   "px_0902_intraday": 18.02,
+   "chg_0902_intraday": 1.58
   },
   {
    "ticker": "PKE",
@@ -3815,9 +4029,11 @@
    "mktcap": 736931029.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 689295877.0,
+   "mcap": 681465441.0,
    "_delta": -2.25,
-   "chg_1d": -2.61
+   "chg_1d": -2.61,
+   "px_0902_intraday": 31.33,
+   "chg_0902_intraday": -1.14
   },
   {
    "ticker": "CBIO",
@@ -3851,8 +4067,10 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": 1.01,
-   "mcap": 665990844.0,
-   "chg_1d": 8.01
+   "mcap": 691248723.0,
+   "chg_1d": 8.01,
+   "px_0902_intraday": 18.61,
+   "chg_0902_intraday": 3.79
   },
   {
    "ticker": "FTNT",
@@ -3886,29 +4104,31 @@
    "exchange": "nasdaq",
    "split_adj": false,
    "_delta": -3.87,
-   "mcap": 118751554738.0,
+   "mcap": 113828336126.0,
    "quote_conf": "medium",
-   "chg_1d": -5.31
+   "chg_1d": -5.31,
+   "px_0902_intraday": 155.14,
+   "chg_0902_intraday": -4.15
   },
   {
    "ticker": "PBR",
    "name": "Petroleo Brasileiro S.A. Petrobras ADS",
-   "price": 20.33,
+   "price": 20.355,
    "year_high": 21.9,
    "year_low": 11.69,
    "ma50": 17.76,
    "ma200": 16.64,
    "ma_proxy": false,
-   "chg_5d": 13.57,
-   "chg_1m": 7.3,
-   "chg_3m": 2.6,
-   "chg_6m": 34.0,
-   "chg_1y": 64.5,
+   "chg_5d": 13.71,
+   "chg_1m": 7.4,
+   "chg_3m": 2.7,
+   "chg_6m": 34.1,
+   "chg_1y": 64.6,
    "volume": 17485833,
    "avg_volume": 15448075,
    "as_of": "2026-09-01",
-   "off_high_pct": 7.2,
-   "above_low_pct": 73.9,
+   "off_high_pct": 7.1,
+   "above_low_pct": 74.1,
    "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
@@ -3921,34 +4141,36 @@
    "mktcap": 123409616196.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 131013968526.0,
-   "_delta": 9.71,
-   "chg_1d": 5.065
+   "mcap": 131175077685.0,
+   "_delta": 9.85,
+   "chg_1d": 0.123,
+   "px_0902_intraday": 20.36,
+   "chg_0902_intraday": 0.12
   },
   {
    "ticker": "CM",
    "name": "Canadian Imperial Bank of Commerce Commo",
-   "price": 112.42,
+   "price": 113.39,
    "year_high": 123.74,
    "year_low": 72.51,
    "ma50": 117.11,
    "ma200": 102.44,
    "ma_proxy": false,
-   "chg_5d": -2.01,
-   "chg_1m": -3.4,
-   "chg_3m": 1.3,
-   "chg_6m": 17.3,
-   "chg_1y": 54.4,
+   "chg_5d": -1.16,
+   "chg_1m": -2.5,
+   "chg_3m": 2.2,
+   "chg_6m": 18.2,
+   "chg_1y": 55.3,
    "volume": 1246967,
    "avg_volume": 1370574,
    "as_of": "2026-09-01",
-   "off_high_pct": 9.1,
-   "above_low_pct": 55.0,
+   "off_high_pct": 8.4,
+   "above_low_pct": 56.4,
    "above_ma50": false,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.78,
-   "score": 60.0,
+   "score": 61.7,
    "category": "C_基底修復中",
    "range_1m_pct": 6.8,
    "sector": "Finance",
@@ -3956,9 +4178,11 @@
    "mktcap": 106565923462.0,
    "exchange": "nyse",
    "split_adj": false,
-   "_delta": -1.67,
-   "mcap": 102072429034.0,
-   "chg_1d": -0.969
+   "_delta": -0.82,
+   "mcap": 102953146488.0,
+   "chg_1d": 0.863,
+   "px_0902_intraday": 113.39,
+   "chg_0902_intraday": 0.86
   },
   {
    "ticker": "MS",
@@ -3991,9 +4215,11 @@
    "mktcap": 336415299746.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 331452310264.0,
+   "mcap": 334491356039.0,
    "_delta": -1.74,
-   "chg_1d": -1.07
+   "chg_1d": -1.07,
+   "px_0902_intraday": 212.97,
+   "chg_0902_intraday": 0.92
   },
   {
    "ticker": "FCFS",
@@ -4026,45 +4252,49 @@
    "mktcap": 9770799104.0,
    "exchange": "nasdaq",
    "split_adj": false,
-   "mcap": 9349225208.0,
+   "mcap": 9332743924.0,
    "_delta": -1.67,
-   "chg_1d": 0.51
+   "chg_1d": 0.51,
+   "px_0902_intraday": 215.18,
+   "chg_0902_intraday": -0.18
   },
   {
    "ticker": "TD",
    "name": "Toronto Dominion Bank (The) Common Stock",
-   "price": 119.5,
+   "price": 120.4974,
    "year_high": 124.8,
    "year_low": 73.08,
    "ma50": 120.38,
    "ma200": 102.37,
    "ma_proxy": false,
-   "chg_5d": -3.67,
-   "chg_1m": 0.4,
-   "chg_3m": 10.9,
-   "chg_6m": 24.6,
-   "chg_1y": 60.6,
+   "chg_5d": -2.82,
+   "chg_1m": 1.3,
+   "chg_3m": 11.8,
+   "chg_6m": 25.5,
+   "chg_1y": 61.5,
    "volume": 1339622,
    "avg_volume": 2572334,
    "as_of": "2026-09-01",
-   "off_high_pct": 4.2,
-   "above_low_pct": 63.5,
-   "above_ma50": false,
+   "off_high_pct": 3.4,
+   "above_low_pct": 64.9,
+   "above_ma50": true,
    "above_ma200": true,
    "ma50_gt_ma200": true,
    "vol_ratio": 0.68,
-   "score": 73.0,
-   "category": "C_基底修復中",
+   "score": 82.9,
+   "category": "A_VCP待突破",
    "range_1m_pct": 6.2,
    "sector": "Finance",
    "industry": "Commercial Banks",
    "mktcap": 193581003000.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 195788441500.0,
-   "_delta": 2.01,
+   "mcap": 197422578668.0,
+   "_delta": 2.86,
    "quote_conf": "medium",
-   "chg_1d": -1.166
+   "chg_1d": 0.835,
+   "px_0902_intraday": 120.5,
+   "chg_0902_intraday": 0.83
   },
   {
    "ticker": "SNX",
@@ -4097,9 +4327,11 @@
    "mktcap": 20000882225.0,
    "exchange": "nyse",
    "split_adj": false,
-   "mcap": 20100830665.0,
+   "mcap": 20282337032.0,
    "_delta": -1.02,
-   "chg_1d": -0.58
+   "chg_1d": -0.58,
+   "px_0902_intraday": 253.66,
+   "chg_0902_intraday": 0.9
   }
  ],
  "notes": [

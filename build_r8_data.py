@@ -182,6 +182,8 @@ for s in have:
                "ma_flags": u["ma_flags"], "dv_ratio": round(u["dv_ratio"], 2),
                "prev_close": round(cseries[-2], 4),
                "range_1m_pct": round((max(cseries[-21:]) / min(cseries[-21:]) - 1) * 100, 1),
+               "chg_full_pct": round((cseries[-1] / cseries[0] - 1) * 100, 1),
+               "full_days": len(cseries),
                "series_high": round(max(cseries), 4), "series_low": round(min(cseries), 4),
                "short_history": s in short_hist,
                "chg_1d": round((cseries[-1] / cseries[-2] - 1) * 100, 2),
