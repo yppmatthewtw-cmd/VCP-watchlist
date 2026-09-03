@@ -351,8 +351,8 @@ def update_panel(entered, left, up_g, down_g, items, prev_rank, brk_g=()):
     movers = sorted((r for r in items if r.get("chg_1d") is not None), key=lambda r: r["chg_1d"])
     dn = "、".join(f"{r['ticker']} {r['chg_1d']:+.1f}%" for r in movers[:5])
     up = "、".join(f"{r['ticker']} {r['chg_1d']:+.1f}%" for r in movers[-5:][::-1])
-    return f"""<div class="updbox"><div class="uhead"><span class="ulabel">本版更新（紅色＝相對前一版有變動）</span>
-<span class="ulegend"><span class="upd">紅字</span>＝數值已變（滑鼠停留顯示前版值）· <span class="chip-new">NEW</span>＝新進榜 ·
+    return f"""<div class="updbox"><div class="uhead"><span class="ulabel">本版更新（紫色＝相對前一版有變動）</span>
+<span class="ulegend"><span class="upd">紫字</span>＝數值已變（滑鼠停留顯示前版值）· <span class="chip-new">NEW</span>＝新進榜 ·
 <s class="old">A</s><b class="upd">B</b>＝等級變動 · <small class="rk up">▲3</small>／<small class="rk dn">▼3</small>＝名次升降 · <small class="day dn">-1.2%</small>＝9/1 當日漲跌</span></div>
 <div class="urow"><b>新進榜 {len(entered)}</b>{chips(entered)}</div>
 <div class="urow"><b>跌出榜 {len(left)}</b>{chips(left)}</div>
@@ -383,8 +383,8 @@ def page4_update_panel(rows):
         prs = PREV_RANK.get(t, {}).get("score")
         if prs is not None and abs(e.get("rise_score", 0) - prs) >= 8:
             (rise_up if e["rise_score"] > prs else rise_dn).append(f"{t} {prs:g}→{e['rise_score']:g}")
-    return f"""<div class="updbox"><div class="uhead"><span class="ulabel">本版更新（紅色＝相對前一版有變動）</span>
-<span class="ulegend"><span class="upd">紅字</span>＝數值已變（滑鼠停留顯示前版值）· <s class="old">A</s><b class="upd">B</b>＝等級變動 · 確定性分項 |Δ|≥3 才標紅</span></div>
+    return f"""<div class="updbox"><div class="uhead"><span class="ulabel">本版更新（紫色＝相對前一版有變動）</span>
+<span class="ulegend"><span class="upd">紫字</span>＝數值已變（滑鼠停留顯示前版值）· <s class="old">A</s><b class="upd">B</b>＝等級變動 · 確定性分項 |Δ|≥3 才標示</span></div>
 <div class="urow"><b>等級上調 {len(ups)}</b>{chips(ups)}</div>
 <div class="urow"><b>突破延伸→E {len(brk)}</b>{chips(brk)}</div>
 <div class="urow"><b>等級下調 {len(downs)}</b>{chips(downs)}</div>
@@ -497,8 +497,8 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
     off_fill = PatternFill("solid", fgColor="EDEFEA")
     hot_font = Font(color="B07B24", bold=True, size=9)
     warn_font = Font(color="C24A3F", bold=True, size=9)
-    upd_font = Font(color="C8102E", bold=True)          # red = changed since the previous release
-    upd_fill = PatternFill("solid", fgColor="FDE7EA")
+    upd_font = Font(color="6D4AC8", bold=True)          # violet = changed since the previous release
+    upd_fill = PatternFill("solid", fgColor="EEE8FB")
     link_font = Font(color="0B6E4F", underline="single", bold=True)
 
     def style_sheet(ws, ncols, widths):
@@ -639,7 +639,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
         ["確定性 7 項", "突破25%＋回升10%＋守底15%＋量縮15%＋收縮10%＋RS10%＋均線15%（每項 0–100，加權＝總分）"],
         ["HL 結構", "「是」＝近 45 日存在一底高於一底結構；「否」＝突破／回升／守底／收縮 4 項記 0"],
         ["催化欄", "🔥＝本週正面新聞催化；⚠＝負面／風險事件。人工整理，隨新聞更新。"],
-        ["紅色字／底色", "紅字＝相對前一版（Combined Watchlist R7）已變動的數值或等級；整列淡紅底＝本版新進榜；「前版…」欄為對照值。"],
+        ["紫色字／底色", "紫字＝相對前一版已變動的數值或等級；整列淡紫底＝本版新進榜；「前版…」欄為對照值。（不使用紅色，以免與漲跌顏色混淆。）"],
         ["等級底色", "綠＝該清單的線上級別；灰＝線下；空白＝未出現在該清單"],
         [],
         ["注意", "本表為技術面選股輔助，非投資建議；分級由量化規則產生，形態請開圖確認。"],
@@ -716,9 +716,9 @@ def main():
     older = n_all - n_newest
     stale_names = sorted(t for t, d in per_ticker.items() if d != newest)
     basis = (f"{newest} 官方收盤（全部 {n_all} 檔）" if older == 0
-             else f"{newest} 官方收盤（{n_newest}/{n_all} 檔；{'、'.join(stale_names)} 無資料源，沿用舊報價並以紅字標示基準日）"
+             else f"{newest} 官方收盤（{n_newest}/{n_all} 檔；{'、'.join(stale_names)} 無資料源，沿用舊報價並以紫字標示基準日）"
              if older <= 3
-             else f"混合基準 — {newest} 收盤僅 {n_newest}/{n_all} 檔，其餘 {older} 檔為較早收盤（各列價格下方紅字標示其基準日）")
+             else f"混合基準 — {newest} 收盤僅 {n_newest}/{n_all} 檔，其餘 {older} 檔為較早收盤（各列價格下方紫字標示其基準日）")
 
     # macro line from the rows themselves (sector medians of the official 9/1 move)
     import statistics
@@ -793,12 +793,12 @@ HTML_SHELL = """<title>Combined Watchlist {rev}</title>
   --accent:#E5B15C; --accent-soft:#2A2418; --up:#3FB68B; --dn:#E0705F; --dry:#E5B15C;
   --head:#1A222A; --hover:#1C242D; --on:#3FB68B; --off:#5D6B7A;
   --hot:#332812; --hotink:#F0C070; --warnbg:#381F1C; --warnink:#F0958A;
-  --updink:#FF6B6B; --updbg:rgba(255,107,107,.10);
+  --updink:#B49BFF; --updbg:rgba(180,155,255,.13);
   --tA:#3FB68B; --tE:#E5B15C; --tB:#5CA3D6; --tC:#6B7885; --tD:#4A555F;
   --t2a:#3FB68B; --t2b:#5CA3D6; --t12:#E5B15C; --t3:#D08A5A; --t41:#5D6B7A; --tdrop:#E0705F;
 }}
 :root[data-theme="light"] {{
-  --updink:#C8102E; --updbg:rgba(200,16,46,.07);
+  --updink:#6D4AC8; --updbg:rgba(109,74,200,.08);
   color-scheme: light;
   --bg:#F5F6F4; --panel:#FFFFFF; --ink:#1B2430; --muted:#5D6B7A; --line:#DDE2E0;
   --accent:#B07B24; --accent-soft:#F3E8D3; --up:#17835C; --dn:#C24A3F; --dry:#B07B24;
@@ -904,7 +904,7 @@ th.c7, td.c7 {{ border-left:1px dotted var(--line); }}
 th.intra, td.intra {{ border-left:2px dotted var(--accent); }}
 th.certsum, td.certsum {{ border-left:2px solid var(--accent); }}
 td.certsum small {{ display:block; color:var(--muted); font-size:9.5px; }}
-small.asof {{ display:block; font-size:9px; color:var(--dn); letter-spacing:.02em;
+small.asof {{ display:block; font-size:9px; color:var(--updink); letter-spacing:.02em;
   font-weight:700; }}
 .upd {{ color:var(--updink); font-weight:700; border-bottom:1px dotted var(--updink); cursor:help; }}
 .upd b {{ color:var(--updink); }}
@@ -1011,15 +1011,15 @@ a {{ color:var(--accent); }}
 9/2 大盤收盤指數（標普 +0.46%、納指 +0.45%、道指 +0.56%）取自新聞，個股層面未採用新聞數字 —
 查證時發現新聞報導的個股收盤價與官方資料相互矛盾（例如 JNJ 被報為 $227.63，官方 9/1 為 $271.19），故一律不採信。</li>
 <li><b>數據基準</b>：本版為<b>完整的官方 2026-09-01 收盤重掃</b> —— 上游每日快照倉庫已恢復更新（9/1 22:44 UTC 收盤後快照），
-全部 274 檔中 273 檔取得官方 9/1 收盤（僅 GPS 不在該資料源，沿用舊報價並以紅字標示基準日）。倉庫在 8/31 漏掉一天，
+全部 274 檔中 273 檔取得官方 9/1 收盤（僅 GPS 不在該資料源，沿用舊報價並以紫字標示基準日）。倉庫在 8/31 漏掉一天，
 本版以 9/1 快照的 <code>price_change</code> 反推出每檔的官方 8/31 收盤補齊序列（該日成交量以前後兩日平均代替，
 僅影響量縮分項）。1 月／3 月／5 日動能、MA50、市值皆重新自官方序列計算。</li>
 <li><b>拆股調整</b>：CRWD 4:1（7/02）、KLAC 10:1（6/12）、DD 1:3 反向（6/24）及 <b>RUSHB／RUSHA 3:2（8/31 配發，已核對 8-K）</b>
 均已調整；RUSHB 原掃描的 52 週高低點與均線已按 2/3 換算。確定性 7 項量化以延伸至 9/1 的官方序列重算（240/274 檔有完整序列，
 49 檔具一底高於一底結構）。</li>
-<li><b>紅色標示＝相對前一版（Combined Watchlist R7）的變動</b>：每頁頂部的「本版更新」框列出新進榜／跌出榜／等級升降／
-當日最強最弱；表內紅字為數值已變（滑鼠停留顯示前版值）、<b>NEW</b> 為新進榜、劃線舊等級→紅色新等級為等級變動、
-▲▼ 為名次升降、價格下方的小字為 9/1 當日漲跌。確定性分項 |Δ|≥3 才標紅，以免全表泛紅。</li>
+<li><b>紫色標示＝相對前一版的變動</b>（刻意不用紅色，以免與漲跌顏色混淆）：每頁頂部的「本版更新」框列出新進榜／跌出榜／等級升降／
+當日最強最弱；表內紫字為數值已變（滑鼠停留顯示前版值）、<b>NEW</b> 為新進榜、劃線舊等級→紫色新等級為等級變動、
+▲▼ 為名次升降、價格下方的小字為 9/1 當日漲跌。確定性分項 |Δ|≥3 才標示，以免全表泛紅。</li>
 <li><b>本版（R9）自我檢視後再修訂</b>：(a) 上一版把「距 52 週低點 ≥30%」這條趨勢模板規則誤用為「站上 200 日線」的代理，
 導致 JPM／V／MA 等距高僅 3% 的健康標的被打入「趨勢弱」— 已改為以「站上 50 日線且距高 ≤25%」作長期趨勢代理，
 並恢復 C 級較寬鬆的判定；D 級由 91 檔回到 75 檔。(b) 73 檔缺 6 個月動能而無法判定 2A／2B，
