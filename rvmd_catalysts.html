@@ -1,0 +1,516 @@
+<title>RVMD 強勢的理由</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F4F7F6; --panel:#FFFFFF; --panel2:#EDF3F2; --ink:#0E1D20; --ink2:#24393D;
+  --muted:#5C7278; --line:#D6E1DF; --rule:#B9CBC8;
+  --accent:#0E8E78; --accent-soft:rgba(14,142,120,.12);
+  --chemo:#A85A42; --deal:#B07B24; --deal-soft:rgba(176,123,36,.12);
+  --down:#B8462F; --up:#0E8E78;
+  --shadow:0 1px 2px rgba(14,29,32,.06),0 8px 24px rgba(14,29,32,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1416; --panel:#111E21; --panel2:#16262A; --ink:#E8F0F1; --ink2:#C6D6D8;
+    --muted:#8CA3A8; --line:#1F3236; --rule:#2C444A;
+    --accent:#2DC4A7; --accent-soft:rgba(45,196,167,.14);
+    --chemo:#C4795F; --deal:#E3A73E; --deal-soft:rgba(227,167,62,.14);
+    --down:#DE7060; --up:#2DC4A7;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1416; --panel:#111E21; --panel2:#16262A; --ink:#E8F0F1; --ink2:#C6D6D8;
+  --muted:#8CA3A8; --line:#1F3236; --rule:#2C444A;
+  --accent:#2DC4A7; --accent-soft:rgba(45,196,167,.14);
+  --chemo:#C4795F; --deal:#E3A73E; --deal-soft:rgba(227,167,62,.14);
+  --down:#DE7060; --up:#2DC4A7;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.75 "Noto Sans TC","IBM Plex Sans",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 72px;
+  display:flex;flex-direction:column;gap:34px}
+.col{max-width:74ch}
+h1,h2,h3{font-family:"Spectral","Noto Serif TC",Georgia,serif;font-weight:600;
+  text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(30px,4.2vw,44px);line-height:1.18}
+h2{font-size:23px;line-height:1.3}
+h3{font-size:17px}
+p{margin:0}
+.eyebrow{font:600 11.5px/1 "IBM Plex Mono",monospace;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--ink2);font-size:17.5px}
+.muted{color:var(--muted)}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+header{display:flex;flex-direction:column;gap:14px;
+  border-bottom:2px solid var(--ink);padding-bottom:22px}
+.tick{display:flex;flex-wrap:wrap;gap:10px 30px;align-items:baseline}
+.tick .sym{font:600 27px/1 "IBM Plex Mono",monospace;letter-spacing:-.02em}
+.tick .co{color:var(--muted);font-size:14px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.stat{background:var(--panel);padding:13px 15px;display:flex;flex-direction:column;gap:3px}
+.stat b{font:600 21px/1.1 "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.stat .sub{font-size:11px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+
+.answer{background:var(--panel);border:1px solid var(--line);
+  border-left:3px solid var(--accent);border-radius:3px;padding:20px 24px;
+  display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.answer p{font-size:16.5px;color:var(--ink2)}
+.answer b{color:var(--ink)}
+
+figure{margin:0;display:flex;flex-direction:column;gap:12px}
+.chartbox{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:18px 14px 10px;overflow-x:auto;box-shadow:var(--shadow)}
+svg{display:block;width:100%;height:auto;min-width:660px}
+figcaption{font-size:12.5px;color:var(--muted);line-height:1.6}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;
+  vertical-align:-1px;margin-right:6px}
+
+.tl{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--rule);
+  margin-left:11px;padding-left:0}
+.ev{position:relative;padding:0 0 30px 30px}
+.ev:last-child{padding-bottom:0}
+.ev::before{content:attr(data-n);position:absolute;left:-13px;top:1px;
+  width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);
+  font:600 12px/24px "IBM Plex Mono",monospace;text-align:center}
+.ev.deal::before{background:var(--deal)}
+.ev.pre::before{background:var(--rule);color:var(--ink)}
+.ev h3{margin-bottom:4px}
+.evhead{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:7px}
+.date{font:600 12.5px/1 "IBM Plex Mono",monospace;color:var(--accent);
+  letter-spacing:.03em;white-space:nowrap}
+.ev.deal .date{color:var(--deal)}
+.ev.pre .date{color:var(--muted)}
+.move{font:600 12.5px/1 "IBM Plex Mono",monospace;padding:3px 7px;border-radius:3px;
+  white-space:nowrap}
+.move.up{background:var(--accent-soft);color:var(--accent)}
+.move.dn{background:rgba(184,70,47,.12);color:var(--down)}
+.ev p{font-size:15px;color:var(--ink2);max-width:70ch}
+.ev ul{margin:8px 0 0;padding-left:19px;font-size:14.5px;color:var(--ink2)}
+.ev li{margin:3px 0}
+.ev li::marker{color:var(--muted)}
+
+.km{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.bar{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:center}
+.bar .lab{font-size:13.5px;color:var(--ink2)}
+.track{position:relative;height:30px;background:var(--panel2);border-radius:2px}
+.fill{position:absolute;inset:0 auto 0 0;border-radius:2px;display:flex;
+  align-items:center;justify-content:flex-end;padding-right:9px;
+  font:600 12.5px "IBM Plex Mono",monospace;color:#fff}
+.thresh{position:absolute;top:-7px;bottom:-7px;border-left:2px dashed var(--muted)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:17px 19px;display:flex;flex-direction:column;gap:7px}
+.card h3{color:var(--ink)}
+.card p{font-size:14.5px;color:var(--ink2)}
+.pill{align-self:flex-start;font:600 10.5px/1 "IBM Plex Mono",monospace;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:2px;
+  background:var(--accent-soft);color:var(--accent)}
+.pill.risk{background:rgba(184,70,47,.12);color:var(--down)}
+
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font:600 11px/1 "IBM Plex Mono",monospace;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted)}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  text-align:right;white-space:nowrap}
+.tblwrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);
+  border-radius:3px}
+
+.note{border-top:1px solid var(--line);padding-top:20px;
+  font-size:13px;color:var(--muted);line-height:1.75}
+.note b{color:var(--ink2)}
+.disc{border-left:3px solid var(--chemo);padding-left:14px;margin-top:14px;font-size:12.5px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section{display:flex;flex-direction:column;gap:14px}
+@media (max-width:640px){
+  .bar{grid-template-columns:84px 1fr}
+  .wrap{padding:24px 16px 56px}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">RAS(ON) 抑制劑・臨床期腫瘤藥廠</div>
+  <div class="tick">
+    <span class="sym">RVMD</span>
+    <span class="co">Revolution Medicines, Inc.　NASDAQ</span>
+  </div>
+  <h1>一個「不可成藥」靶點被攻下，市場重估了整間公司</h1>
+  <p class="lede col">RVMD 在 2026 年的幾波急升，不是題材輪動，而是<b>四個依序落地的臨床與監管事件</b>——
+  加上一次未成交的收購傳聞。以下把每一波對應到確切日期、當日實際漲跌與其背後的數據。</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>209.23</b><span>2026-09-02 官方收盤</span><span class="sub">距期內高點 −5.4%</span></div>
+  <div class="stat"><b>+119%</b><span>3/31 → 9/2（本頁數據區間）</span><span class="sub">97.25 → 209.23</span></div>
+  <div class="stat"><b>+41.3%</b><span>單日最大漲幅 4/13</span><span class="sub">成交 1,470 萬股</span></div>
+  <div class="stat"><b>13.2</b><span>三期中位總存活期（月）</span><span class="sub">化療 6.7｜HR 0.40</span></div>
+  <div class="stat"><b>$45.2B</b><span>市值（9/2）</span><span class="sub">尚無獲批產品</span></div>
+</div>
+
+<section class="col">
+  <div class="answer">
+    <h2>一句話：它把胰臟癌的中位存活期首次推過一年，然後把藥送進了 FDA</h2>
+    <p>RAS 基因在約三成人類癌症中突變，長年被視為「不可成藥」。RVMD 的
+    <b>daraxonrasib</b> 直接抑制 RAS 的<b>活化狀態</b>（RAS(ON)），不侷限於 G12C 單一突變。
+    2026 年 4 月 13 日公布的三期 RASolute 302 顯示：在二線轉移性胰臟癌，
+    <b>中位總存活期 13.2 個月 vs 化療 6.7 個月，風險比 0.40（p&lt;0.0001）</b>——
+    這是該適應症首個把中位存活推過 12 個月的三期試驗。此後 7 月 FDA 受理新藥申請、
+    8 月再拿下非小細胞肺癌的突破性療法認定，估值從「臨床賭注」轉為「即將上市的平台」。</p>
+  </div>
+</section>
+
+<figure>
+  <div class="chartbox">
+    <svg id="chart" viewBox="0 0 1000 470" role="img"
+         aria-label="RVMD 2026 年 3 月 31 日至 9 月 2 日官方收盤走勢與消息標記"></svg>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--accent)"></i>官方日收盤（108 個交易日）</span>
+    <span><i style="background:var(--rule)"></i>成交量（百萬股）</span>
+    <span><i style="background:var(--deal)"></i>編號＝下方時間軸事件</span>
+  </div>
+  <figcaption class="col">價格為官方每日快照序列的收盤價，區間 2026-03-31 至 2026-09-02。
+  更早的 2025 年下半年與 2026 年 1 月走勢不在此數據源涵蓋範圍內，因此不繪於圖上，
+  僅在時間軸中以文字說明（價位為你提供的 TradingView 圖表約值）。</figcaption>
+</figure>
+
+<section class="col">
+  <h2>四波急升，逐一對應</h2>
+  <p class="muted">編號與上圖標記一致。漲跌幅為該日官方收盤對前一交易日。</p>
+</section>
+
+<div class="tl col">
+
+  <div class="ev pre" data-n="0">
+    <div class="evhead">
+      <span class="date">2025 年下半年</span>
+      <span class="move up">約 $35 → $80</span>
+    </div>
+    <h3>鋪墊期：監管身分一個接一個到位</h3>
+    <p>這一段不在本頁數據區間內，但它解釋了為何 4 月的數據一出，市場反應如此劇烈——
+    在讀數之前，監管路徑已被大幅拆彈。</p>
+    <ul>
+      <li><b>突破性療法認定（BTD）</b>：daraxonrasib 用於帶 KRAS G12 突變、經治轉移性胰臟癌。</li>
+      <li><b>2025-10-27 孤兒藥資格</b>：daraxonrasib 取得 FDA Orphan Drug Designation。</li>
+      <li><b>署長國家優先審查券</b>（Commissioner's National Priority Voucher）：支持加速審查。</li>
+      <li><b>2025 年 11 月</b>：RASolute 302 全球收案接近完成，公司確認 2026 年讀數。</li>
+    </ul>
+  </div>
+
+  <div class="ev deal" data-n="1">
+    <div class="evhead">
+      <span class="date">2026-01-08 / 01-09</span>
+      <span class="move up">約 $107 → 開市 $120</span>
+    </div>
+    <h3>收購傳聞：Merck 與 AbbVie，估值 280–320 億美元</h3>
+    <p>同一天出現兩則消息：FDA 給予 <b>zoldonrasib</b>（G12D 選擇性抑制劑，用於經治 KRAS G12D 非小細胞肺癌）
+    突破性療法認定；路透報導 <b>Merck 正洽談收購 RVMD，作價 280–320 億美元</b>，
+    華爾街日報則指 AbbVie 接近成交（AbbVie 翌日否認）。股價跳空急升至約 $125。</p>
+    <ul>
+      <li><b>同月稍後：Merck 退出</b>，據報雙方在價格上談不攏，股價單日重挫 <b>−16.9%</b>，
+      併購溢價被抹去，回落至約 $95–105 並橫盤至 4 月。</li>
+    </ul>
+    <p class="muted" style="font-size:13.5px;margin-top:8px">這一段是本頁唯一由「傳聞」而非數據驅動的漲幅，
+    也是唯一完全回吐的一波——值得記住它與後面幾波的性質不同。</p>
+  </div>
+
+  <div class="ev" data-n="2">
+    <div class="evhead">
+      <span class="date">2026-04-13</span>
+      <span class="move up">+41.3%　96.43 → 136.30</span>
+    </div>
+    <h3>RASolute 302 三期 topline：這才是真正的重估點</h3>
+    <p>公布二線轉移性胰臟導管腺癌（PDAC）三期頂線結果，主要與關鍵次要終點全部達標：</p>
+    <ul>
+      <li><b>中位總存活期 13.2 個月 vs 化療 6.7 個月，HR 0.40，p&lt;0.0001</b>（意向治療全體族群）。</li>
+      <li>無惡化存活期同樣具統計與臨床顯著意義；口服每日一次 vs 靜脈化療。</li>
+      <li>安全性可控；相較化療，患者在<b>癌症疼痛、整體健康狀態與生活品質</b>的惡化時間顯著延後。</li>
+    </ul>
+    <p style="margin-top:8px">成交量 1,470 萬股，是平時的 7–10 倍。翌兩日再 <b>+7.9%</b>、<b>+3.8%</b>，
+    三日累計自 96.43 升至 152.54（<b>+58%</b>）。</p>
+  </div>
+
+  <div class="ev" data-n="3">
+    <div class="evhead">
+      <span class="date">2026-04-17 ~ 04-22</span>
+      <span class="move dn">4/22、4/23 各 −5.0%</span>
+    </div>
+    <h3>AACR 年會：平台不只一隻藥</h3>
+    <p>AACR 於聖地牙哥舉行，公司有九項口頭與海報報告。4 月 19 日的全體大會報告更新
+    <b>zoldonrasib</b> 在經治 KRAS G12D 非小細胞肺癌的一期數據：
+    <b>確認客觀緩解率 52%、疾病控制率 93%、中位無惡化存活期 11.1 個月</b>，
+    三級以上治療相關不良事件 13%。同期亦更新 daraxonrasib 在一線胰臟癌單藥與合併療法的一/二期數據。</p>
+    <p style="margin-top:8px">數據本身正面，但股價在會後兩日各跌 5.0%——典型的
+    「消息兌現」獲利回吐。4 月 28 日單日 <b>+10.0%</b>，我未查得對應的單一公司公告，
+    不排除是分析師上調目標價或部位調整所致。</p>
+  </div>
+
+  <div class="ev" data-n="4">
+    <div class="evhead">
+      <span class="date">2026-05-29 ~ 06-02</span>
+      <span class="move dn">6/1 +3.9%，6/2 −7.6%</span>
+    </div>
+    <h3>ASCO 全體大會：完整數據公開，但股價「見光死」</h3>
+    <p>RASolute 302 完整結果於芝加哥 ASCO 年會<b>全體大會（Plenary Session）</b>發表——
+    這是腫瘤學界規格最高的發表場合，全年僅少數研究獲選。公司同時說明將據此推進 FDA 申請。</p>
+    <p style="margin-top:8px">股價在會前一個交易日 +3.9% 至 163.68，會期最後一日卻回落 7.6%。
+    完整數據並未推翻 4 月的頂線結論，這一跌屬於預期已充分反映後的獲利了結。</p>
+  </div>
+
+  <div class="ev" data-n="5">
+    <div class="evhead">
+      <span class="date">2026-07-07 / 07-22</span>
+      <span class="move up">7/23 +3.1%　183.03 → 188.75</span>
+    </div>
+    <h3>從「數據」變成「產品」：FDA 受理新藥申請</h3>
+    <ul>
+      <li><b>7 月 7 日</b>：在署長國家優先審查券計劃下的<b>滾動式 NDA 遞交接近完成</b>。</li>
+      <li><b>7 月 22 日</b>：<b>FDA 正式受理 daraxonrasib 的新藥申請</b>，
+      適應症為經治轉移性胰臟癌，依據即為 RASolute 302。</li>
+      <li>歐洲藥品管理局（EMA）亦以<b>分階段審查程序</b>加速評估。</li>
+    </ul>
+    <p style="margin-top:8px">股價在 6 月至 7 月初已自 151 一路推升至 190 附近，
+    這段升幅反映的是「監管風險逐步移除」而非單一跳空。</p>
+  </div>
+
+  <div class="ev" data-n="6">
+    <div class="evhead">
+      <span class="date">2026-08-04 / 08-05</span>
+      <span class="move up">8/4 +6.0%、8/5 +2.0%</span>
+    </div>
+    <h3>適應症外擴：肺癌拿到第三個突破性療法認定</h3>
+    <p><b>8 月 5 日</b>公布第二季財報與業務進度，同日 <b>FDA 授予 daraxonrasib
+    突破性療法認定，用於經治轉移性 RAS 突變非小細胞肺癌</b>。
+    這是關鍵的一步：同一隻藥從單一適應症（胰臟癌）擴向肺癌這個大得多的市場，
+    估值邏輯由「一個適應症」轉為「一個平台」。</p>
+    <p style="margin-top:8px">此後股價於 8 月 27 日創期內新高 <b>221.15</b>（+4.6%），
+    翌日回落 6.0%，9 月 2 日收 209.23。</p>
+  </div>
+
+</div>
+
+<section class="col">
+  <h2>那個把股價推高的數字，長甚麼樣</h2>
+  <div class="km">
+    <div class="bar">
+      <span class="lab">daraxonrasib</span>
+      <div class="track">
+        <div class="fill" style="width:88%;background:var(--accent)">13.2 個月</div>
+        <div class="thresh" style="left:80%"></div>
+      </div>
+    </div>
+    <div class="bar">
+      <span class="lab">標準化療</span>
+      <div class="track">
+        <div class="fill" style="width:44.7%;background:var(--chemo)">6.7 個月</div>
+        <div class="thresh" style="left:80%"></div>
+      </div>
+    </div>
+    <p class="muted" style="font-size:13px">
+      橫軸為中位總存活期（月），虛線為 <b>12 個月</b> 門檻。風險比 HR 0.40 代表
+      任一時點的死亡風險降低約 60%；p&lt;0.0001。二線轉移性胰臟癌是預後最差的實體癌之一，
+      既有療法的中位存活長年停在 6–7 個月，這是首個把中位數推過一年的三期結果。
+    </p>
+  </div>
+</section>
+
+<section class="col">
+  <h2>為甚麼市場願意給到 450 億美元</h2>
+  <div class="grid2">
+    <div class="card">
+      <span class="pill">靶點</span>
+      <h3>攻下長年「不可成藥」的 RAS</h3>
+      <p>RAS 在約 30% 人類癌症中突變。既有的 G12C 抑制劑只覆蓋一小部分患者；
+      RVMD 的 RAS(ON) 策略針對活化狀態，daraxonrasib 為多重選擇性，
+      可及的患者群大上數倍。</p>
+    </div>
+    <div class="card">
+      <span class="pill">管線</span>
+      <h3>不是單一資產</h3>
+      <p>daraxonrasib（多重選擇性）、zoldonrasib（G12D）、elironrasib（G12C）
+      三隻在研藥物，加上一線胰臟癌 RASolute 303、肺癌 RASolve 301 等註冊試驗與合併療法。</p>
+    </div>
+    <div class="card">
+      <span class="pill">監管</span>
+      <h3>三個 BTD＋孤兒藥＋優先審查券</h3>
+      <p>胰臟癌 BTD、zoldonrasib 肺癌 BTD、daraxonrasib 肺癌 BTD，
+      加上孤兒藥資格、署長國家優先審查券、EMA 分階段審查——
+      上市時間表被大幅前移。</p>
+    </div>
+    <div class="card">
+      <span class="pill">併購</span>
+      <h3>大藥廠已經出過價</h3>
+      <p>1 月 Merck 洽談作價 280–320 億美元、AbbVie 亦被點名。交易雖未成，
+      但確立了產業買方的估值錨；9 月市值約 452 億美元，已高於當時的傳聞價。</p>
+    </div>
+  </div>
+</section>
+
+<section class="col">
+  <h2>風險：這張圖同樣清楚地顯示了它們</h2>
+  <div class="grid2">
+    <div class="card">
+      <span class="pill risk">見光死</span>
+      <h3>好消息當日常常是短線高點</h3>
+      <p>AACR 後兩日各 −5.0%、ASCO 最後一日 −7.6%、8/28 −6.0%。
+      重大會議前買入、發表當日賣出的節奏在這檔股票上反覆出現。</p>
+    </div>
+    <div class="card">
+      <span class="pill risk">併購溢價</span>
+      <h3>傳聞破滅過一次，單日 −16.9%</h3>
+      <p>Merck 因價格談不攏退出，1 月的漲幅完全回吐。目前市值已高於當時傳聞作價，
+      若再無買方出現，這部分溢價缺乏支撐。</p>
+    </div>
+    <div class="card">
+      <span class="pill risk">尚未獲批</span>
+      <h3>沒有產品收入</h3>
+      <p>NDA 已受理但仍在審查中，藥證、最終標籤與定價都未定。
+      估值全部建立在未來現金流的預期上。</p>
+    </div>
+    <div class="card">
+      <span class="pill risk">集中度</span>
+      <h3>賭注高度集中在 daraxonrasib</h3>
+      <p>一線胰臟癌（RASolute 303）與肺癌（RASolve 301）的讀數是下一組二元事件；
+      任何一個失敗，平台敘事都會被重新檢視。</p>
+    </div>
+  </div>
+</section>
+
+<section class="col">
+  <h2>本頁區間內的關鍵交易日</h2>
+  <div class="tblwrap">
+    <table>
+      <thead><tr><th>日期</th><th>事件</th><th class="n">收盤</th><th class="n">漲跌</th><th class="n">成交（百萬股）</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2026-04-13</td><td>RASolute 302 三期 topline</td><td class="n">136.30</td><td class="n" style="color:var(--up)">+41.3%</td><td class="n">14.7</td></tr>
+        <tr><td class="num">2026-04-14</td><td>續漲</td><td class="n">147.01</td><td class="n" style="color:var(--up)">+7.9%</td><td class="n">8.2</td></tr>
+        <tr><td class="num">2026-04-19</td><td>AACR：zoldonrasib 肺癌一期數據</td><td class="n">146.23<span class="muted">*</span></td><td class="n muted">—</td><td class="n">3.5</td></tr>
+        <tr><td class="num">2026-04-22</td><td>會後獲利回吐</td><td class="n">141.50</td><td class="n" style="color:var(--down)">−5.0%</td><td class="n">3.7</td></tr>
+        <tr><td class="num">2026-04-28</td><td>未查得單一公告</td><td class="n">144.83</td><td class="n" style="color:var(--up)">+10.0%</td><td class="n">5.6</td></tr>
+        <tr><td class="num">2026-06-01</td><td>ASCO 全體大會前後</td><td class="n">163.68</td><td class="n" style="color:var(--up)">+3.9%</td><td class="n">6.7</td></tr>
+        <tr><td class="num">2026-06-02</td><td>ASCO 最後一日，見光死</td><td class="n">151.31</td><td class="n" style="color:var(--down)">−7.6%</td><td class="n">3.8</td></tr>
+        <tr><td class="num">2026-07-22</td><td>FDA 受理 NDA</td><td class="n">183.03</td><td class="n muted">−0.1%</td><td class="n">0.9</td></tr>
+        <tr><td class="num">2026-07-30</td><td>—</td><td class="n">192.17</td><td class="n" style="color:var(--up)">+6.2%</td><td class="n">1.8</td></tr>
+        <tr><td class="num">2026-08-04</td><td>肺癌 BTD／Q2 財報前一日</td><td class="n">193.46</td><td class="n" style="color:var(--up)">+6.0%</td><td class="n">1.6</td></tr>
+        <tr><td class="num">2026-08-27</td><td>期內新高</td><td class="n">221.15</td><td class="n" style="color:var(--up)">+4.6%</td><td class="n">2.8</td></tr>
+        <tr><td class="num">2026-09-02</td><td>最新官方收盤</td><td class="n">209.23</td><td class="n muted">−0.3%</td><td class="n">1.8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted" style="font-size:12.5px">* 4 月 19 日為星期日，AACR 全體大會報告當日無交易；表列為前一交易日收盤。</p>
+</section>
+
+<div class="note col">
+  <p><b>數據來源與限制。</b>價格與成交量為官方每日快照序列，區間 2026-03-31 至 2026-09-02，
+  共 108 個交易日；本頁所有漲跌幅均由該序列直接計算。
+  2025 年下半年與 2026 年 1 月的價位為你提供的 TradingView 圖表讀取的約值，
+  <b>不在官方序列涵蓋範圍</b>，因此僅作文字描述、未繪於圖上。
+  臨床與監管事件、日期及數值取自公司新聞稿與財經媒體報導；
+  4 月 28 日的 +10.0% 我未能查得對應的單一公司公告，已如實標示。</p>
+  <p class="disc">本頁為公開資訊整理，非投資建議。臨床期生技股的價格高度依賴少數二元事件，
+  單一試驗結果或審查決定即可造成劇烈波動。任何決策請自行查證原始公司公告與試驗數據。</p>
+</div>
+
+</div>
+
+<script>window.__RVMD__=[{"d":"2026-03-31","c":97.25,"v":3.25},{"d":"2026-04-01","c":98.64,"v":2.19},{"d":"2026-04-02","c":99.12,"v":1.33},{"d":"2026-04-06","c":95.36,"v":1.74},{"d":"2026-04-07","c":96.29,"v":1.03},{"d":"2026-04-08","c":96.75,"v":1.2},{"d":"2026-04-09","c":96.22,"v":1.28},{"d":"2026-04-10","c":96.43,"v":1.98},{"d":"2026-04-13","c":136.3,"v":14.69},{"d":"2026-04-14","c":147.01,"v":8.2},{"d":"2026-04-15","c":152.54,"v":11.94},{"d":"2026-04-16","c":149.27,"v":5.7},{"d":"2026-04-17","c":148.63,"v":4.76},{"d":"2026-04-20","c":146.23,"v":3.49},{"d":"2026-04-21","c":148.9,"v":2.83},{"d":"2026-04-22","c":141.5,"v":3.73},{"d":"2026-04-23","c":134.48,"v":4.27},{"d":"2026-04-24","c":135.3,"v":3.5},{"d":"2026-04-27","c":131.67,"v":4.8},{"d":"2026-04-28","c":144.83,"v":5.58},{"d":"2026-04-29","c":140.55,"v":2.79},{"d":"2026-04-30","c":144.12,"v":2.31},{"d":"2026-05-01","c":139.48,"v":2.58},{"d":"2026-05-04","c":147.9,"v":2.47},{"d":"2026-05-05","c":147.21,"v":3.32},{"d":"2026-05-06","c":151.07,"v":2.95},{"d":"2026-05-07","c":142.51,"v":3.17},{"d":"2026-05-08","c":141.81,"v":2.51},{"d":"2026-05-11","c":144.15,"v":1.64},{"d":"2026-05-12","c":145.72,"v":1.42},{"d":"2026-05-13","c":149.94,"v":1.84},{"d":"2026-05-14","c":149.47,"v":1.81},{"d":"2026-05-15","c":145.66,"v":2.48},{"d":"2026-05-18","c":144.37,"v":2.35},{"d":"2026-05-19","c":147.3,"v":2.0},{"d":"2026-05-20","c":150.33,"v":2.4},{"d":"2026-05-21","c":153.73,"v":1.85},{"d":"2026-05-22","c":151.56,"v":1.93},{"d":"2026-05-26","c":154.89,"v":2.39},{"d":"2026-05-27","c":153.0,"v":2.88},{"d":"2026-05-28","c":154.63,"v":2.65},{"d":"2026-05-29","c":157.48,"v":6.66},{"d":"2026-06-01","c":163.68,"v":6.73},{"d":"2026-06-02","c":151.31,"v":3.75},{"d":"2026-06-03","c":155.99,"v":2.01},{"d":"2026-06-04","c":155.69,"v":2.61},{"d":"2026-06-05","c":149.23,"v":2.14},{"d":"2026-06-08","c":148.49,"v":2.74},{"d":"2026-06-09","c":149.55,"v":2.77},{"d":"2026-06-10","c":144.19,"v":3.28},{"d":"2026-06-11","c":149.23,"v":2.2},{"d":"2026-06-12","c":153.87,"v":1.58},{"d":"2026-06-15","c":160.06,"v":2.13},{"d":"2026-06-16","c":156.58,"v":2.52},{"d":"2026-06-17","c":157.77,"v":2.23},{"d":"2026-06-18","c":162.99,"v":4.7},{"d":"2026-06-22","c":165.81,"v":3.13},{"d":"2026-06-23","c":169.51,"v":3.12},{"d":"2026-06-24","c":169.77,"v":3.63},{"d":"2026-06-25","c":178.17,"v":5.51},{"d":"2026-06-26","c":182.08,"v":9.54},{"d":"2026-06-29","c":192.62,"v":5.31},{"d":"2026-06-30","c":187.28,"v":4.0},{"d":"2026-07-01","c":187.51,"v":2.08},{"d":"2026-07-02","c":189.24,"v":3.19},{"d":"2026-07-06","c":189.99,"v":2.4},{"d":"2026-07-07","c":190.46,"v":1.89},{"d":"2026-07-08","c":189.77,"v":1.98},{"d":"2026-07-09","c":191.13,"v":1.61},{"d":"2026-07-10","c":186.88,"v":1.36},{"d":"2026-07-13","c":183.95,"v":1.71},{"d":"2026-07-14","c":184.97,"v":3.12},{"d":"2026-07-15","c":184.44,"v":1.54},{"d":"2026-07-16","c":179.18,"v":1.72},{"d":"2026-07-17","c":186.16,"v":1.83},{"d":"2026-07-20","c":180.39,"v":2.54},{"d":"2026-07-21","c":183.29,"v":2.3},{"d":"2026-07-22","c":183.03,"v":0.89},{"d":"2026-07-23","c":188.75,"v":2.28},{"d":"2026-07-24","c":189.23,"v":1.29},{"d":"2026-07-27","c":188.07,"v":1.43},{"d":"2026-07-28","c":183.86,"v":2.4},{"d":"2026-07-29","c":180.92,"v":2.3},{"d":"2026-07-30","c":192.17,"v":1.81},{"d":"2026-07-31","c":187.53,"v":1.49},{"d":"2026-08-03","c":182.45,"v":1.83},{"d":"2026-08-04","c":193.46,"v":1.61},{"d":"2026-08-05","c":197.3,"v":1.95},{"d":"2026-08-06","c":197.81,"v":1.75},{"d":"2026-08-07","c":205.15,"v":1.67},{"d":"2026-08-10","c":206.97,"v":2.1},{"d":"2026-08-11","c":206.97,"v":2.1},{"d":"2026-08-12","c":206.97,"v":2.1},{"d":"2026-08-13","c":202.0,"v":0.99},{"d":"2026-08-14","c":203.71,"v":0.78},{"d":"2026-08-17","c":212.0,"v":2.44},{"d":"2026-08-18","c":216.0,"v":1.65},{"d":"2026-08-19","c":214.66,"v":1.31},{"d":"2026-08-20","c":211.74,"v":1.56},{"d":"2026-08-21","c":209.46,"v":2.12},{"d":"2026-08-24","c":211.58,"v":1.6},{"d":"2026-08-25","c":211.38,"v":1.38},{"d":"2026-08-26","c":211.38,"v":1.38},{"d":"2026-08-27","c":221.15,"v":2.8},{"d":"2026-08-28","c":207.88,"v":2.01},{"d":"2026-08-31","c":205.57,"v":1.92},{"d":"2026-09-01","c":209.87,"v":1.83},{"d":"2026-09-02","c":209.23,"v":1.83}];</script>
+<script>
+(function(){
+  var S = window.__RVMD__;
+  var PINS = [
+    {d:"2026-04-13", n:2}, {d:"2026-04-21", n:3}, {d:"2026-06-01", n:4},
+    {d:"2026-07-22", n:5}, {d:"2026-08-05", n:6}
+  ];
+  var svg = document.getElementById('chart');
+  var W=1000, H=470, L=48, R=16, T=22, PB=96, VB=64;   // price bottom / volume band
+  var PH = H - PB - T;                                  // price plot height
+  var lo=90, hi=230;                                    // price scale
+  var vmax = Math.max.apply(null, S.map(function(p){return p.v;}));
+  var n = S.length;
+  var x = function(i){ return L + (W-L-R) * (i/(n-1)); };
+  var y = function(v){ return T + PH * (1 - (v-lo)/(hi-lo)); };
+  var NS = "http://www.w3.org/2000/svg";
+  function el(t,a){ var e=document.createElementNS(NS,t);
+    for(var k in a){ e.setAttribute(k,a[k]); } return e; }
+  function add(e){ svg.appendChild(e); return e; }
+
+  // gradient
+  var defs = add(el('defs',{}));
+  var g = el('linearGradient',{id:'ag',x1:'0',y1:'0',x2:'0',y2:'1'});
+  g.appendChild(el('stop',{offset:'0','stop-color':'var(--accent)','stop-opacity':'.30'}));
+  g.appendChild(el('stop',{offset:'1','stop-color':'var(--accent)','stop-opacity':'0'}));
+  defs.appendChild(g);
+
+  // horizontal grid + price labels
+  for(var p=100;p<=220;p+=20){
+    add(el('line',{x1:L,y1:y(p),x2:W-R,y2:y(p),stroke:'var(--line)','stroke-width':1}));
+    var tl = add(el('text',{x:L-9,y:y(p)+4,'text-anchor':'end',fill:'var(--muted)',
+      'font-size':11,'font-family':'IBM Plex Mono, monospace'}));
+    tl.textContent = p;
+  }
+
+  // month ticks
+  var seen={};
+  S.forEach(function(pt,i){
+    var m = pt.d.slice(0,7);
+    if(seen[m]) return; seen[m]=1;
+    add(el('line',{x1:x(i),y1:T,x2:x(i),y2:T+PH,stroke:'var(--line)','stroke-width':1,
+      'stroke-dasharray':'2 4'}));
+    var first = (i === 0);
+    var t = add(el('text',{x:first?L:x(i),y:H-VB+52,
+      'text-anchor':first?'start':'middle',fill:'var(--muted)',
+      'font-size':11,'font-family':'IBM Plex Mono, monospace'}));
+    t.textContent = pt.d.slice(5,7)+'月';
+  });
+
+  // volume bars
+  var vy0 = H - VB + 30, vh = 30;
+  S.forEach(function(pt,i){
+    var h = Math.max(1, vh * (pt.v/vmax));
+    add(el('rect',{x:x(i)-2.6, y:vy0+vh-h, width:5.2, height:h,
+      fill:'var(--rule)', opacity:.75}));
+  });
+
+  // area + line
+  var dLine = S.map(function(pt,i){ return (i?'L':'M')+x(i).toFixed(1)+' '+y(pt.c).toFixed(1); }).join(' ');
+  add(el('path',{d:dLine+' L'+x(n-1).toFixed(1)+' '+(T+PH)+' L'+x(0).toFixed(1)+' '+(T+PH)+' Z',
+    fill:'url(#ag)', stroke:'none'}));
+  add(el('path',{d:dLine, fill:'none', stroke:'var(--accent)','stroke-width':2,
+    'stroke-linejoin':'round','stroke-linecap':'round'}));
+
+  // endpoint
+  add(el('circle',{cx:x(n-1),cy:y(S[n-1].c),r:4,fill:'var(--accent)'}));
+  var ep = add(el('text',{x:x(n-1)-6,y:y(S[n-1].c)-15,'text-anchor':'end',
+    fill:'var(--accent)','font-size':12,'font-weight':600,
+    'font-family':'IBM Plex Mono, monospace'}));
+  ep.textContent = '209.23';
+
+  // catalyst pins
+  var idx={}; S.forEach(function(pt,i){ idx[pt.d]=i; });
+  PINS.forEach(function(P){
+    var i = idx[P.d]; if(i===undefined) return;
+    var px = x(i), py = y(S[i].c);
+    add(el('line',{x1:px,y1:T+4,x2:px,y2:py-9,stroke:'var(--deal)','stroke-width':1,
+      'stroke-dasharray':'3 3',opacity:.8}));
+    add(el('circle',{cx:px,cy:py,r:4.5,fill:'var(--bg)',stroke:'var(--deal)','stroke-width':2}));
+    add(el('circle',{cx:px,cy:T-4,r:9,fill:'var(--deal)'}));
+    var t = add(el('text',{x:px,y:T,'text-anchor':'middle',fill:'var(--bg)',
+      'font-size':11,'font-weight':600,'font-family':'IBM Plex Mono, monospace'}));
+    t.textContent = P.n;
+  });
+})();
+</script>
