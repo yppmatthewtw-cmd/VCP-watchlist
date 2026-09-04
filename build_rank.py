@@ -10,18 +10,26 @@ the move again would double count it (critical-review finding, 2026-09-02).
 """
 import json
 
-FILES = [('scan_R16_2026-09-02.json', 'category'),
-         ('scan_stage_R9_2026-09-02.json', 'stage'),
-         ('scan_PB-R9_2026-09-02.json', 'category')]
+FILES = [('scan_R17_2026-09-03.json', 'category'),
+         ('scan_stage_R10_2026-09-03.json', 'stage'),
+         ('scan_PB-R10_2026-09-03.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
-BASIS = '2026-09-01'
+BASIS = '2026-09-02'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    'AMZN': (-3, '2026-09-01', 'FTC 訴訟'),
-    'MRNA': (3, '2026-08-19', '癌症疫苗三期成功（8/19 +177%）；9/1 再 +9.9%'),
+    # 9/2 session (the classification basis). Software/AI-infra sold off on
+    # valuation and growth-pace worries even where results beat; the bid rotated
+    # into financials, healthcare and materials.
+    'DELL': (6, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
+    'CRDO': (-7, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
+    'MDB':  (-6, '2026-09-02', '財報超預期並上調指引，惟 Atlas 增速連三季持平'),
+    'PANW': (-5, '2026-09-02', '財報後獲利了結'),
+        'NVDA': (3, '2026-09-02', 'AI 基建需求續強'),
+    'DDOG': (-3, '2026-09-02', '軟體股同步走弱'),
+                    'AMZN': (-3, '2026-09-01', 'FTC 訴訟'),
+    'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
     'CRM':  (2, '2026-08-27', '財報＋Anthropic 合作'),
-    'CRWD': (-2, '2026-09-01', '財報後漲幅回吐，科技板塊承壓'),
     'MRVL': (-4, '2026-08-28', '財報指引不如預期'),
     'AMAT': (-4, '2026-08-28', 'sell-the-news＋中國風險'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
@@ -29,8 +37,7 @@ NEWS = {
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
     'CVX':  (2, '2026-09-01', '美伊衝突推升油價，能源避險'),
     'EOG':  (2, '2026-09-01', '油價破 $90'),
-    'NVDA': (2, '2026-09-02', '9/2 領漲道指，AI 基建需求續強'),
-    'JNJ':  (2, '2026-09-02', '9/2 與 NVDA 同為道指主要推手'),
+    'JNJ':  (2, '2026-09-02', '防禦性資金流入'),
 }
 MOVE_MIN = 3.0   # a |9/1 move| >= 3% is shown as a highlight (pts 0)
 
@@ -51,7 +58,7 @@ for t, (pts, d, txt) in NEWS.items():
     r = rows_by.get(t)
     mv = pick(r['rows'], 'chg_1d') if r else None
     if mv is not None and ((pts > 0 and mv < -2) or (pts < 0 and mv > 2)):
-        print(f"WARNING catalyst sign vs official move: {t} pts {pts:+d} but 9/1 {mv:+.1f}%")
+        print(f"WARNING catalyst sign vs official move: {t} pts {pts:+d} but {mv:+.1f}% on {BASIS}")
 
 out, cats = {}, {}
 for t, e in rows_by.items():
@@ -108,7 +115,8 @@ for t, e in rows_by.items():
     why = ('；'.join(([tag] if tag else []) + labels[:3]))[:60]
     out[t] = {'score': round(score, 1), 'why': why}
 
-    move_txt = f'9/1 {mv:+.1f}%' if (mv is not None and abs(mv) >= MOVE_MIN) else ''
+    mlabel = f"{int(BASIS[5:7])}/{int(BASIS[8:10])}"
+    move_txt = f'{mlabel} {mv:+.1f}%' if (mv is not None and abs(mv) >= MOVE_MIN) else ''
     if t in NEWS or move_txt:
         pts_, d_, txt_ = NEWS.get(t, (0, BASIS, ''))
         reason = '，'.join(x for x in (move_txt, txt_) if x)

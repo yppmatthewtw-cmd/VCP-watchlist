@@ -34,7 +34,7 @@ def off_cell(v):
         return "–"
     return "0.0%" if abs(v) < 0.05 else f"-{v:.1f}%"
 
-CERT = json.load(open("cert7_2026-09-01.json"))
+CERT = json.load(open("cert7_2026-09-02.json"))
 CATALYST = json.load(open("catalysts.json"))
 
 C7_COLS = [("break", "突破", "25%", "兩底間中繼高點突破（未破按進度×0.6）"),
@@ -68,7 +68,7 @@ def clean_note(txt, limit=80):
     return (cut[:m] if m > limit // 2 else cut).rstrip("，。 ") + "…"
 
 
-NEWEST = "2026-09-01"
+NEWEST = "2026-09-02"
 
 
 PREV = {}          # ticker -> {"vcp": row, "stage": row, "pre": row} from the previous release
@@ -121,8 +121,8 @@ def grade_html(letter, old_letter):
 
 
 def intra_cell(r):
-    """Official 9/2 mid-session (10:33 ET) quote — explicitly NOT a close."""
-    px, ch = r.get("px_0902_intraday"), r.get("chg_0902_intraday")
+    """Official 9/3 mid-session (10:37 ET) quote — explicitly NOT a close."""
+    px, ch = r.get("px_0903_intraday"), r.get("chg_0903_intraday")
     if px is None:
         return '<td class="num intra" data-v="">–</td>'
     cls = "up" if (ch or 0) > 0 else "dn" if (ch or 0) < 0 else ""
@@ -322,13 +322,13 @@ def cap_page(pid, list_no, list_name, snaps, tiers, online, extra_cols,
     miss_note = f'；另有 {no_mcap} 檔無市值數據未入級距' if no_mcap else ""
     return f"""<section class="page" id="page-{pid}">
 <h2 class="ptitle">Page {pid}｜{list_name} TOP 50・{tier_name}（{tier_desc}）</h2>
-<p class="lede">{list_name}清單內{tier_name}（依官方 9/1 市值），先按級別（{"A → B → E" if list_no != "2" else "2A → 2B → 1→2"}）、再按該清單分數由高至低{cap_note}{miss_note}。
+<p class="lede">{list_name}清單內{tier_name}（依官方 9/2 市值），先按級別（{"A → B → E" if list_no != "2" else "2A → 2B → 1→2"}）、再按該清單分數由高至低{cap_note}{miss_note}。
 線上級別 {n_on} 檔；欄位標題可點擊重新排序（先降序）。</p>
 {hotbar([r["ticker"] for r in items])}
 {update_panel(entered, left, up_g, down_g, items, prev_rank, brk_g)}
 <div class="tblwrap"><table class="sortable"><thead><tr>
 <th class="num sort">#</th><th>代號</th><th>名稱</th><th>產業</th><th class="st sort">等級</th>
-<th>催化</th><th class="num sort">收盤<small>9/1 官方</small></th><th class="num sort intra">9/2 盤中<small>10:33 ET</small></th><th class="num sort">距高</th>{head_extra}
+<th>催化</th><th class="num sort">收盤<small>9/2 官方</small></th><th class="num sort intra">9/3 盤中<small>10:37 ET</small></th><th class="num sort">距高</th>{head_extra}
 <th class="num sort">市值</th><th class="num sort">確定性</th><th class="num sort">分數</th><th>備註</th>
 </tr></thead><tbody>{trs}</tbody></table></div>
 </section>"""
@@ -353,13 +353,13 @@ def update_panel(entered, left, up_g, down_g, items, prev_rank, brk_g=()):
     up = "、".join(f"{r['ticker']} {r['chg_1d']:+.1f}%" for r in movers[-5:][::-1])
     return f"""<div class="updbox"><div class="uhead"><span class="ulabel">本版更新（紫色＝相對前一版有變動）</span>
 <span class="ulegend"><span class="upd">紫字</span>＝數值已變（滑鼠停留顯示前版值）· <span class="chip-new">NEW</span>＝新進榜 ·
-<s class="old">A</s><b class="upd">B</b>＝等級變動 · <small class="rk up">▲3</small>／<small class="rk dn">▼3</small>＝名次升降 · <small class="day dn">-1.2%</small>＝9/1 當日漲跌</span></div>
+<s class="old">A</s><b class="upd">B</b>＝等級變動 · <small class="rk up">▲3</small>／<small class="rk dn">▼3</small>＝名次升降 · <small class="day dn">-1.2%</small>＝9/2 當日漲跌</span></div>
 <div class="urow"><b>新進榜 {len(entered)}</b>{chips(entered)}</div>
 <div class="urow"><b>跌出榜 {len(left)}</b>{chips(left)}</div>
 <div class="urow"><b>等級上調 {len(up_g)}</b>{chips(up_g)}</div>
 <div class="urow"><b>突破延伸→E {len(brk_g)}</b>{chips(list(brk_g))}</div>
 <div class="urow"><b>等級下調 {len(down_g)}</b>{chips(down_g)}</div>
-<div class="urow"><b>9/1 當日</b><span class="utxt">最強：{esc(up) or "–"}｜最弱：{esc(dn) or "–"}</span></div><div class="urow"><b>規則修訂</b><span class="utxt">本版依批判性檢視修訂了分級規則（1 月漲幅 &gt;15% 視為延伸而非基底；真實 MA50 取代代理值；Stage 3 先於 1→2 判定；2A 需完整 6 月／1 年數據；52 週高低點以官方序列補正）— 部分等級變動源於規則而非價格，詳見頁尾。</span></div></div>"""
+<div class="urow"><b>9/2 當日</b><span class="utxt">最強：{esc(up) or "–"}｜最弱：{esc(dn) or "–"}</span></div><div class="urow"><b>規則修訂</b><span class="utxt">本版依批判性檢視修訂了分級規則（1 月漲幅 &gt;15% 視為延伸而非基底；真實 MA50 取代代理值；Stage 3 先於 1→2 判定；2A 需完整 6 月／1 年數據；52 週高低點以官方序列補正）— 部分等級變動源於規則而非價格，詳見頁尾。</span></div></div>"""
 
 
 # ------------------------------------------------------------- page 4 summary
@@ -478,7 +478,7 @@ session 的 7 項量化（0–100，加權合計＝確定性總分）：{n_cert}
 <div class="tblwrap"><table class="sortable"><thead><tr><th>代號</th><th>名稱</th><th>產業</th>
 <th class="gr sort">VCP</th><th class="gr sort">2A</th><th class="gr sort">突破前</th>
 <th class="num sort">上升分數</th><th>催化／主因</th><th class="num sort">線上</th>
-<th class="num sort">收盤<small>9/1 官方</small></th><th class="num sort intra">9/2 盤中<small>10:33 ET</small></th><th class="num sort">距高</th><th class="num sort">市值</th>
+<th class="num sort">收盤<small>9/2 官方</small></th><th class="num sort intra">9/3 盤中<small>10:37 ET</small></th><th class="num sort">距高</th><th class="num sort">市值</th>
 <th class="num sort certsum" title="7 項加權合計">確定性<small>總分</small></th>{c7_heads}
 </tr></thead><tbody>{trs}</tbody></table></div>
 </section>"""
@@ -519,7 +519,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
         pkey = {"1": "vcp", "2": "stage", "3": "pre"}[pid[0]]
         prev_items, _ = top50(PREV_ROWS.get(pkey, []), letter_of, online, pred)
         prev_rank = {r["ticker"]: i for i, r in enumerate(prev_items, 1)}
-        cols = (["排名", "前版名次", "代號", "名稱", "產業", "等級", "前版等級", "線上", "催化", "收盤", "基準日", "9/1當日%", "9/2盤中", "9/2盤中%", "低於高點%"]
+        cols = (["排名", "前版名次", "代號", "名稱", "產業", "等級", "前版等級", "線上", "催化", "收盤", "基準日", "9/2當日%", "9/3盤中", "9/3盤中%", "低於高點%"]
                 + [c[0] for c in extra_cols] + ["市值($B)", "確定性", "前版確定性", "分數", "前版分數", "TradingView", "備註"])
         ws.append(cols)
         for i, r in enumerate(items, 1):
@@ -533,7 +533,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
                        letter, old_letter, "線上" if letter in online else "線下",
                        (("🔥 " if cat["pts"] > 0 else "⚠ ") + cat["reason"]) if cat else "",
                        r.get("price"), (r.get("as_of") or "")[:10], r.get("chg_1d"),
-                       r.get("px_0902_intraday"), r.get("chg_0902_intraday"), r.get("off_high_pct")]
+                       r.get("px_0903_intraday"), r.get("chg_0903_intraday"), r.get("off_high_pct")]
                       + [r.get(c[1]) for c in extra_cols]
                       + [round((r.get("mcap") or 0) / 1e9, 2) or None, cert, PREV_CERT.get(t, {}).get("cert"),
                          r.get("score"), po.get("score"), tv_url(t), clean_note(notes.get(t, {}).get("note", ""))])
@@ -577,7 +577,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
 
     ws4 = wb.create_sheet("4. 總表")
     ws4.append(["代號", "名稱", "產業", "交易所", "上升分數", "前版上升分數", "催化", "主因", "VCP", "前版VCP",
-                "Weinstein", "前版Wein", "Pre-breakout", "前版PB", "線上數", "收盤", "9/1當日%", "9/2盤中", "9/2盤中%", "低於高點%", "市值($B)",
+                "Weinstein", "前版Wein", "Pre-breakout", "前版PB", "線上數", "收盤", "9/2當日%", "9/3盤中", "9/3盤中%", "低於高點%", "市值($B)",
                 "級距", "確定性總分", "前版確定性"]
                + [f"{name}({w})" for _, name, w, _ in C7_COLS] + ["HL結構", "TradingView"])
     vl = {"vcp": {k: v[0] for k, v in VCP_TIERS.items()}, "stage": {k: v[0] for k, v in STAGE_TIERS.items()}}
@@ -598,7 +598,7 @@ def write_excel(path, cap_defs, rec, rev, model, stamp_txt, basis_txt):
                     (("🔥 " if cat["pts"] > 0 else "⚠ ") + cat["reason"]) if cat else "",
                     e.get("rise_why", ""), e["vcp"] or "", old_g["vcp"], e["stage"] or "", old_g["stage"],
                     e["pre"] or "", old_g["pre"], e["online_count"], e["price"], e.get("chg_1d"),
-                    e.get("px_0902_intraday"), e.get("chg_0902_intraday"), e["off_high_pct"],
+                    e.get("px_0903_intraday"), e.get("chg_0903_intraday"), e["off_high_pct"],
                     round(mc / 1e9, 2) or None, cap, c["cert"] if c else None, pc]
                    + [c["c7"][k] if c else None for k, _, _, _ in C7_COLS]
                    + [("是" if c["hl_ok"] else "否") if c else "", tv_url(t)])
@@ -659,11 +659,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--rev", default="R8")
     ap.add_argument("--model", default="Opus5;high")
-    ap.add_argument("--prev", default="scan_R15_2026-09-01.json,scan_stage_R8_2026-09-01.json,scan_PB-R8_2026-09-01.json",
+    ap.add_argument("--prev", default="scan_R16_2026-09-02.json,scan_stage_R9_2026-09-02.json,scan_PB-R9_2026-09-02.json",
                     help="previous release's three snapshot files (vcp,stage,pre) for the red diff")
-    ap.add_argument("--prev-rank", default="rank_overlay_R7.json")
-    ap.add_argument("--prev-cert", default="cert7_2026-08-28.json")
-    ap.add_argument("--prev-cat", default="catalysts_R7.json")
+    ap.add_argument("--prev-rank", default="rank_overlay_R11.json")
+    ap.add_argument("--prev-cert", default="cert7_R11.json")
+    ap.add_argument("--prev-cat", default="catalysts_R11.json")
     args = ap.parse_args()
     load_prev(args.prev.split(","), args.prev_rank, args.prev_cert, args.prev_cat)
 
@@ -691,16 +691,16 @@ def main():
                 e["as_of"] = r.get("as_of")
             if e is not None and e.get("chg_1d") is None and r.get("chg_1d") is not None:
                 e["chg_1d"] = r["chg_1d"]
-            if e is not None and e.get("px_0902_intraday") is None and r.get("px_0902_intraday") is not None:
-                e["px_0902_intraday"] = r["px_0902_intraday"]
-                e["chg_0902_intraday"] = r.get("chg_0902_intraday")
+            if e is not None and e.get("px_0903_intraday") is None and r.get("px_0903_intraday") is not None:
+                e["px_0903_intraday"] = r["px_0903_intraday"]
+                e["chg_0903_intraday"] = r.get("chg_0903_intraday")
             if e is not None and (r.get("as_of") or "") > (e.get("as_of") or ""):
                 e["as_of"] = r.get("as_of")
             if e is not None and e.get("chg_1d") is None and r.get("chg_1d") is not None:
                 e["chg_1d"] = r["chg_1d"]
-            if e is not None and e.get("px_0902_intraday") is None and r.get("px_0902_intraday") is not None:
-                e["px_0902_intraday"] = r["px_0902_intraday"]
-                e["chg_0902_intraday"] = r.get("chg_0902_intraday")
+            if e is not None and e.get("px_0903_intraday") is None and r.get("px_0903_intraday") is not None:
+                e["px_0903_intraday"] = r["px_0903_intraday"]
+                e["chg_0903_intraday"] = r.get("chg_0903_intraday")
 
     # count UNIQUE tickers, not row-instances across the three lists
     per_ticker = {}
@@ -728,18 +728,20 @@ def main():
         for r in sn[-1][3]["rows"]:
             if r.get("chg_1d") is not None and r.get("sector"):
                 by_sec.setdefault(r["sector"], {})[r["ticker"]] = r["chg_1d"]
-    intra = [r.get("chg_0902_intraday") for sn in (vcp_snaps, stage_snaps, pre_snaps)
-             for r in sn[-1][3]["rows"] if r.get("chg_0902_intraday") is not None]
+    intra = [r.get("chg_0903_intraday") for sn in (vcp_snaps, stage_snaps, pre_snaps)
+             for r in sn[-1][3]["rows"] if r.get("chg_0903_intraday") is not None]
     intra_med = statistics.median(intra) if intra else 0.0
     meds = sorted(((statistics.median(v.values()), k) for k, v in by_sec.items() if len(v) >= 4))
     for v in by_sec.values(): allmv += list(v.values())
     weakest = "、".join(f"{k} {m:+.1f}%" for m, k in meds[:2])
     strongest = "、".join(f"{k} {m:+.1f}%" for m, k in meds[-2:][::-1])
-    MACRO = (f"宏觀：<b>9/2 收盤指數已反彈</b> — 標普 +0.46% 收 7,666.60、納指 +0.45% 收 26,217.83、"
-             f"道指 +295 點（+0.56%）收 53,061.95，終止三連跌，美債殖利率自多年高位回落，NVDA 與 JNJ 領漲道指。"
-             f"本表個股分級仍以 <b>9/1 官方收盤</b>（完整全日數據）為準；9/2 官方收盤快照尚未發布，"
-             f"表內另列官方 9/2 盤中（10:33 ET）報價供參 — 本清單當時中位數 {intra_med:+.2f}%。"
-             f"9/1 當日：本清單 {len(allmv)} 檔中位數 {statistics.median(allmv):+.2f}%，"
+    MACRO = (f"宏觀：<b>9/3 收盤再漲</b> — 標普 +1.06% 收 7,747.71、納指 +1.40% 收 26,584.06、"
+             f"道指 +624 點（+1.18%）收 53,686.11，為八月以來最佳單日。"
+             f"本表個股分級以 <b>9/2 官方收盤</b>（最新一個完整交易日）為準；9/3 官方收盤快照尚未發布，"
+             f"表內另列官方 9/3 中場（10:37 ET）報價供參 — 當時本清單中位數僅 {intra_med:+.2f}%，"
+             f"<b>大部分漲幅在該時點之後才出現，故中場欄明顯低估 9/3 的實際漲勢</b>。"
+             f"9/2 當日：本清單 {len(allmv)} 檔中位數 {statistics.median(allmv):+.2f}%，"
+             f"軟體與 AI 基建重挫（CRDO −20%、MDB −13.5%、PANW −9.3%），DELL 財報 +15.8%；"
              f"板塊最弱 {weakest}；最強 {strongest}")
 
     now_hkt = datetime.now(timezone.utc) + timedelta(hours=8)
@@ -1004,12 +1006,15 @@ a {{ color:var(--accent); }}
 量縮／收縮／RS／均線，各 0–100 獨立成欄）。<b>點任何數值欄標題即依該欄重新排序</b>（第一下降序、再點升序）。</li>
 <li>確定性 7 項取自 10MA 上升趨勢清單的算法：以官方日線序列偵測「一底高於一底」結構後計算突破進度、跌幅收復、
 低點守住天數、量能對比、回檔收縮、相對強度、均線排列；加權合計＝確定性總分（權重 25/10/15/15/10/10/15）。</li>
-<li><b>9/2 的處理（請務必留意）</b>：上游倉庫在 9/2 只發布了<b>盤中 10:33 ET</b> 的快照，截至本表產生時
-（美東 9/2 20:00 後）<b>仍未發布 9/2 收盤快照</b>。該盤中快照的 price_change 能完全重現我們的 9/1 官方收盤
-（241 檔誤差中位數 0.000%），確認 9/1 基準無誤；但它成交量只有全日的兩成，不是收盤價。因此
-<b>所有分級、分數、確定性仍以 9/1 官方收盤計算</b>，9/2 盤中報價只另立一欄（金色虛線分隔）供參考，不參與任何計算。
-9/2 大盤收盤指數（標普 +0.46%、納指 +0.45%、道指 +0.56%）取自新聞，個股層面未採用新聞數字 —
-查證時發現新聞報導的個股收盤價與官方資料相互矛盾（例如 JNJ 被報為 $227.63，官方 9/1 為 $271.19），故一律不採信。</li>
+<li><b>9/3 的處理（請務必留意）</b>：上游倉庫在 9/3 只發布了<b>中場 10:37 ET</b> 的快照，截至本表產生時
+（美東 9/3 20:00 後）<b>仍未發布 9/3 收盤快照</b>。但這份中場快照有個關鍵用途：它的 price_change 欄正好還原出
+<b>官方 9/2 收盤</b>（全宇宙誤差中位數 +0.47%，與新聞報導的 9/2 標普 +0.46% 完全吻合）—— 9/2 的完整收盤價就是這樣取得的。
+因此本版<b>所有分級、分數、確定性均以 9/2 官方收盤（最新一個完整交易日、含全日成交量）計算</b>；
+9/3 中場報價只另立一欄供參，不參與任何計算。<b>特別注意</b>：9/3 收盤大漲（標普 +1.06%），但中場 10:37 ET 時本清單
+中位數僅 −0.02%，即絕大部分漲幅發生在該時點之後，<b>中場欄嚴重低估 9/3 實際漲勢，不可當作 9/3 表現解讀</b>。</li>
+<li><b>序列擷取修正</b>：上游自 9/2 起改為盤中發布快照。舊的擷取程式會把盤中價當成當日收盤寫入序列，
+足以污染整條歷史。本版已改寫（extract_series4.py）：依抓取時間分為收盤後／開盤前／盤中三類，
+盤中快照<b>只取用其 price_change</b> 還原前一交易日的官方收盤，其價格一律不作為收盤價使用。</li>
 <li><b>數據基準</b>：本版為<b>完整的官方 2026-09-01 收盤重掃</b> —— 上游每日快照倉庫已恢復更新（9/1 22:44 UTC 收盤後快照），
 全部 274 檔中 273 檔取得官方 9/1 收盤（僅 GPS 不在該資料源，沿用舊報價並以紫字標示基準日）。倉庫在 8/31 漏掉一天，
 本版以 9/1 快照的 <code>price_change</code> 反推出每檔的官方 8/31 收盤補齊序列（該日成交量以前後兩日平均代替，
@@ -1019,7 +1024,7 @@ a {{ color:var(--accent); }}
 49 檔具一底高於一底結構）。</li>
 <li><b>紫色標示＝相對前一版的變動</b>（刻意不用紅色，以免與漲跌顏色混淆）：每頁頂部的「本版更新」框列出新進榜／跌出榜／等級升降／
 當日最強最弱；表內紫字為數值已變（滑鼠停留顯示前版值）、<b>NEW</b> 為新進榜、劃線舊等級→紫色新等級為等級變動、
-▲▼ 為名次升降、價格下方的小字為 9/1 當日漲跌。確定性分項 |Δ|≥3 才標示，以免全表泛紅。</li>
+▲▼ 為名次升降、價格下方的小字為 9/2 當日漲跌。確定性分項 |Δ|≥3 才標示，以免全表泛紅。</li>
 <li><b>本版（R9）自我檢視後再修訂</b>：(a) 上一版把「距 52 週低點 ≥30%」這條趨勢模板規則誤用為「站上 200 日線」的代理，
 導致 JPM／V／MA 等距高僅 3% 的健康標的被打入「趨勢弱」— 已改為以「站上 50 日線且距高 ≤25%」作長期趨勢代理，
 並恢復 C 級較寬鬆的判定；D 級由 91 檔回到 75 檔。(b) 73 檔缺 6 個月動能而無法判定 2A／2B，
