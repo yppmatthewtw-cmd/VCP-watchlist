@@ -10,36 +10,43 @@ the move again would double count it (critical-review finding, 2026-09-02).
 """
 import json
 
-FILES = [('scan_R17_2026-09-03.json', 'category'),
-         ('scan_stage_R10_2026-09-03.json', 'stage'),
-         ('scan_PB-R10_2026-09-03.json', 'category')]
+FILES = [('scan_R18_2026-09-05.json', 'category'),
+         ('scan_stage_R11_2026-09-05.json', 'stage'),
+         ('scan_PB-R11_2026-09-05.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
-BASIS = '2026-09-02'
+BASIS = '2026-09-03'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    # 9/2 session (the classification basis). Software/AI-infra sold off on
-    # valuation and growth-pace worries even where results beat; the bid rotated
-    # into financials, healthcare and materials.
-    'DELL': (6, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
-    'CRDO': (-7, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
-    'MDB':  (-6, '2026-09-02', '財報超預期並上調指引，惟 Atlas 增速連三季持平'),
-    'PANW': (-5, '2026-09-02', '財報後獲利了結'),
-        'NVDA': (3, '2026-09-02', 'AI 基建需求續強'),
-    'DDOG': (-3, '2026-09-02', '軟體股同步走弱'),
-                    'AMZN': (-3, '2026-09-01', 'FTC 訴訟'),
+    # 9/3 session (the classification basis): broad rally after Fed's Waller
+    # floated a September hold; software/AI names and crypto-linked brokers led.
+    # 9/4 (after the basis): hot August payrolls (+162k vs 55k est.) lifted
+    # rate-HIKE odds to ~50-60% and the 10y to 4.79%; indexes slipped ~0.3-0.5%.
+    'SNOW': (6, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
+    'HOOD': (6, '2026-09-03', '將納入標普 500；MS 上調至 Overweight、Scotiabank 首評 Outperform'),
+    'COIN': (5, '2026-09-03', '比特幣重上 $81k；推美股永續合約'),
+    'PLTR': (4, '2026-09-03', '擴大與 PwC 合作建 AI 交易平台'),
+    'NOW':  (3, '2026-09-03', '延續 Q2 財報後升勢'),
+    'BE':   (2, '2026-09-03', '高 beta 風險偏好回升，無新催化'),
+    'CIEN': (-7, '2026-09-03', '財報超預期但指引僅持平、毛利率將自高點回落'),
+    'AVGO': (-3, '2026-09-03', '財報超預期仍下跌（sell-the-news）'),
+    'TSLA': (-4, '2026-09-04', 'Cybercab 發表令人失望＋NHTSA 審查，9/4 跌 6%'),
+    'LULU': (-8, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，9/4 跌 17%'),
+    'DELL': (5, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
+    'CRDO': (-6, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
+    'MDB':  (-4, '2026-09-02', '財報超預期並上調指引，惟 Atlas 增速連三季持平'),
+    'PANW': (-4, '2026-09-02', '財報後獲利了結'),
+    'NVDA': (3, '2026-09-02', 'AI 基建需求續強'),
+    'AMZN': (-2, '2026-09-01', 'FTC 訴訟'),
     'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
-    'CRM':  (2, '2026-08-27', '財報＋Anthropic 合作'),
-    'MRVL': (-4, '2026-08-28', '財報指引不如預期'),
-    'AMAT': (-4, '2026-08-28', 'sell-the-news＋中國風險'),
+    'MRVL': (-3, '2026-08-28', '財報指引不如預期'),
+    'AMAT': (-3, '2026-08-28', 'sell-the-news＋中國風險'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
-    'LLY':  (-2, '2026-08-28', 'GLP-1 報銷疑慮'),
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
     'CVX':  (2, '2026-09-01', '美伊衝突推升油價，能源避險'),
     'EOG':  (2, '2026-09-01', '油價破 $90'),
-    'JNJ':  (2, '2026-09-02', '防禦性資金流入'),
 }
-MOVE_MIN = 3.0   # a |9/1 move| >= 3% is shown as a highlight (pts 0)
+MOVE_MIN = 3.0   # a |basis-day move| >= 3% is shown as a highlight (pts 0)
 
 rows_by = {}
 for f, key in FILES:

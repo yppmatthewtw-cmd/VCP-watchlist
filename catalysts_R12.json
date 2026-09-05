@@ -1,0 +1,366 @@
+{
+ "PANW": {
+  "pts": -5,
+  "reason": "9/2 -9.3%，財報後獲利了結",
+  "move": -9.28,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "CRWD": {
+  "pts": 0,
+  "reason": "9/2 -5.4%",
+  "move": -5.42,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "NET": {
+  "pts": 0,
+  "reason": "9/2 -4.5%",
+  "move": -4.47,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "DELL": {
+  "pts": 6,
+  "reason": "9/2 +15.8%，財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B",
+  "move": 15.81,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "SNOW": {
+  "pts": 0,
+  "reason": "9/2 -4.4%",
+  "move": -4.37,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "IOT": {
+  "pts": 0,
+  "reason": "9/2 -5.8%",
+  "move": -5.81,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "AMZN": {
+  "pts": -3,
+  "reason": "FTC 訴訟",
+  "move": 0.02,
+  "date": "2026-09-01",
+  "kind": "news"
+ },
+ "DDOG": {
+  "pts": -3,
+  "reason": "9/2 -6.5%，軟體股同步走弱",
+  "move": -6.53,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "MDB": {
+  "pts": -6,
+  "reason": "9/2 -13.5%，財報超預期並上調指引，惟 Atlas 增速連三季持平",
+  "move": -13.54,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "NVDA": {
+  "pts": 3,
+  "reason": "9/2 +3.2%，AI 基建需求續強",
+  "move": 3.21,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "CRDO": {
+  "pts": -7,
+  "reason": "9/2 -20.0%，財報優於預期，惟憂光通訊增速與估值",
+  "move": -20.04,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "MRVL": {
+  "pts": -4,
+  "reason": "財報指引不如預期",
+  "move": -1.86,
+  "date": "2026-08-28",
+  "kind": "news"
+ },
+ "AMAT": {
+  "pts": -4,
+  "reason": "sell-the-news＋中國風險",
+  "move": -0.77,
+  "date": "2026-08-28",
+  "kind": "news"
+ },
+ "PLTR": {
+  "pts": 0,
+  "reason": "9/2 -5.8%",
+  "move": -5.81,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "ZS": {
+  "pts": 0,
+  "reason": "9/2 -3.2%",
+  "move": -3.16,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CLS": {
+  "pts": 0,
+  "reason": "9/2 +5.1%",
+  "move": 5.119,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "NOW": {
+  "pts": 0,
+  "reason": "9/2 -4.3%",
+  "move": -4.32,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CRM": {
+  "pts": 2,
+  "reason": "財報＋Anthropic 合作",
+  "move": -0.46,
+  "date": "2026-08-27",
+  "kind": "news"
+ },
+ "ORCL": {
+  "pts": 0,
+  "reason": "9/2 +3.1%",
+  "move": 3.13,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "RDDT": {
+  "pts": 0,
+  "reason": "9/2 +9.3%",
+  "move": 9.31,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CEG": {
+  "pts": 0,
+  "reason": "9/2 +3.5%",
+  "move": 3.47,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "VST": {
+  "pts": 0,
+  "reason": "9/2 +3.9%",
+  "move": 3.9,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "SMR": {
+  "pts": 0,
+  "reason": "9/2 +3.8%",
+  "move": 3.8,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CBRS": {
+  "pts": 0,
+  "reason": "9/2 +6.9%",
+  "move": 6.89,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "MNDY": {
+  "pts": 0,
+  "reason": "9/2 +4.0%",
+  "move": 3.992,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "OUST": {
+  "pts": 0,
+  "reason": "9/2 +4.7%",
+  "move": 4.72,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "LQDA": {
+  "pts": 0,
+  "reason": "9/2 +4.1%",
+  "move": 4.14,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "OLN": {
+  "pts": 0,
+  "reason": "9/2 +3.1%",
+  "move": 3.09,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "LLY": {
+  "pts": -2,
+  "reason": "GLP-1 報銷疑慮",
+  "move": 0.01,
+  "date": "2026-08-28",
+  "kind": "news"
+ },
+ "HMY": {
+  "pts": 0,
+  "reason": "9/2 +4.9%",
+  "move": 4.859,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CVX": {
+  "pts": 2,
+  "reason": "美伊衝突推升油價，能源避險",
+  "move": 0.35,
+  "date": "2026-09-01",
+  "kind": "news"
+ },
+ "LUMN": {
+  "pts": 0,
+  "reason": "9/2 +6.7%",
+  "move": 6.74,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "JNJ": {
+  "pts": 2,
+  "reason": "防禦性資金流入",
+  "move": 1.48,
+  "date": "2026-09-02",
+  "kind": "news"
+ },
+ "HOOD": {
+  "pts": 0,
+  "reason": "9/2 +3.4%",
+  "move": 3.36,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CME": {
+  "pts": 0,
+  "reason": "9/2 -3.0%",
+  "move": -3.03,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "REGN": {
+  "pts": 0,
+  "reason": "9/2 +3.4%",
+  "move": 3.42,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "MRNA": {
+  "pts": 2,
+  "reason": "癌症疫苗三期成功（8/19 +177%），其後高位震盪",
+  "move": -2.24,
+  "date": "2026-08-19",
+  "kind": "news"
+ },
+ "VCYT": {
+  "pts": 0,
+  "reason": "9/2 +3.3%",
+  "move": 3.34,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "IOVA": {
+  "pts": 0,
+  "reason": "9/2 +4.1%",
+  "move": 4.11,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "ARWR": {
+  "pts": 0,
+  "reason": "9/2 +3.2%",
+  "move": 3.18,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "GSAT": {
+  "pts": -8,
+  "reason": "被收購，價格封頂",
+  "move": 0.11,
+  "date": "2026-08-27",
+  "kind": "news"
+ },
+ "CNC": {
+  "pts": 0,
+  "reason": "9/2 +3.2%",
+  "move": 3.23,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "BFH": {
+  "pts": 0,
+  "reason": "9/2 +4.3%",
+  "move": 4.34,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "EOG": {
+  "pts": 2,
+  "reason": "油價破 $90",
+  "move": 0.41,
+  "date": "2026-09-01",
+  "kind": "news"
+ },
+ "GNK": {
+  "pts": 0,
+  "reason": "9/2 +3.7%",
+  "move": 3.73,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "RUSHB": {
+  "pts": 0,
+  "reason": "3:2 拆股（已調整）",
+  "move": -0.4,
+  "date": "2026-08-31",
+  "kind": "news"
+ },
+ "BRKR": {
+  "pts": 0,
+  "reason": "9/2 +5.3%",
+  "move": 5.34,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "AXGN": {
+  "pts": 0,
+  "reason": "9/2 -3.2%",
+  "move": -3.17,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "SLDE": {
+  "pts": 0,
+  "reason": "9/2 +3.8%",
+  "move": 3.82,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "VSAT": {
+  "pts": 0,
+  "reason": "9/2 +5.5%",
+  "move": 5.49,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "CBIO": {
+  "pts": 0,
+  "reason": "9/2 +3.4%",
+  "move": 3.4,
+  "date": "2026-09-02",
+  "kind": "move"
+ },
+ "FTNT": {
+  "pts": 0,
+  "reason": "9/2 -4.5%",
+  "move": -4.52,
+  "date": "2026-09-02",
+  "kind": "move"
+ }
+}
