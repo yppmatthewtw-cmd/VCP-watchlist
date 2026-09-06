@@ -1,0 +1,47 @@
+name: Fetch Yahoo daily bars
+
+# Second, independent price source (same mechanism as the 10MA-watchlist repo).
+# The research container cannot reach Yahoo (egress proxy), so the GitHub
+# runner pulls the daily bars for data/yahoo/tickers.txt and commits them;
+# the watchlist build then cross-checks them against the Nasdaq-screener
+# series and uses them for the tickers / days the screener mirror lacks.
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First trading day (YYYY-MM-DD)
+        required: true
+        default: "2025-09-01"
+      end:
+        description: Day after the last trading day wanted (YYYY-MM-DD, exclusive)
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  bars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "yfinance>=0.2.50" pandas
+      - name: Download daily bars
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: python3 scripts/fetch_yahoo.py
+      - name: Commit bars
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/yahoo
+          git commit -m "data: Yahoo daily bars $START -> $END" || { echo "nothing to commit"; exit 0; }
+          # the branch may have moved while the fetch ran; replay this commit on top
+          git pull --rebase --quiet origin "${GITHUB_REF_NAME}"
+          git push
