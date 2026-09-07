@@ -1,0 +1,1920 @@
+{
+ "PANW": {
+  "name": "Palo Alto Networks, Inc.",
+  "sector": "Technology",
+  "mcap": 271606900000.0,
+  "price": 333.26,
+  "exchange": ""
+ },
+ "CRWD": {
+  "name": "CrowdStrike Holdings, Inc.",
+  "sector": "Technology",
+  "mcap": 218200514830.4663,
+  "price": 213.1,
+  "exchange": ""
+ },
+ "ASML": {
+  "name": "ASML Holding N.V.",
+  "sector": "Technology",
+  "mcap": 660945045355.1003,
+  "price": 1714.88,
+  "exchange": ""
+ },
+ "NET": {
+  "name": "Cloudflare, Inc.",
+  "sector": "Technology",
+  "mcap": 99317754107.7257,
+  "price": 278.92,
+  "exchange": ""
+ },
+ "DELL": {
+  "name": "Dell Technologies Inc.",
+  "sector": "Technology",
+  "mcap": 339699322403.1518,
+  "price": 524.14,
+  "exchange": ""
+ },
+ "SNOW": {
+  "name": "Snowflake Inc.",
+  "sector": "Technology",
+  "mcap": 116866587999.99998,
+  "price": 337.18,
+  "exchange": ""
+ },
+ "IOT": {
+  "name": "Samsara Inc.",
+  "sector": "Technology",
+  "mcap": 23424945296.302074,
+  "price": 40.2,
+  "exchange": ""
+ },
+ "TSM": {
+  "name": "Taiwan Semiconductor (ADR)",
+  "sector": "Technology",
+  "mcap": 2224543818374.5195,
+  "price": 428.91,
+  "exchange": ""
+ },
+ "AMD": {
+  "name": "Advanced Micro Devices, Inc.",
+  "sector": "Technology",
+  "mcap": 779621105808.1835,
+  "price": 477.57,
+  "exchange": ""
+ },
+ "HPE": {
+  "name": "Hewlett Packard Enterprise Company",
+  "sector": "Technology",
+  "mcap": 68858583091.87674,
+  "price": 52.0,
+  "exchange": ""
+ },
+ "AMZN": {
+  "name": "Amazon.com, Inc.",
+  "sector": "Consumer Discretionary",
+  "mcap": 2788369921497.279,
+  "price": 258.51,
+  "exchange": ""
+ },
+ "DDOG": {
+  "name": "Datadog, Inc.",
+  "sector": "Technology",
+  "mcap": 76457844860.04056,
+  "price": 212.93,
+  "exchange": ""
+ },
+ "INTC": {
+  "name": "Intel Corp.",
+  "sector": "Technology",
+  "mcap": 506309659153.6584,
+  "price": 95.8,
+  "exchange": ""
+ },
+ "MDB": {
+  "name": "MongoDB, Inc.",
+  "sector": "Technology",
+  "mcap": 29704345180.654255,
+  "price": 368.74,
+  "exchange": ""
+ },
+ "NVDA": {
+  "name": "NVIDIA Corporation",
+  "sector": "Technology",
+  "mcap": 5551676000000.001,
+  "price": 230.36,
+  "exchange": ""
+ },
+ "ALAB": {
+  "name": "Astera Labs, Inc. Common Stock",
+  "sector": "Technology",
+  "mcap": 53849776281.6,
+  "price": 310.4,
+  "exchange": ""
+ },
+ "GOOGL": {
+  "name": "Alphabet Inc.",
+  "sector": "Technology",
+  "mcap": 4139365799999.9995,
+  "price": 338.46,
+  "exchange": ""
+ },
+ "ARM": {
+  "name": "Arm Holdings plc American Depositary Shares",
+  "sector": "Technology",
+  "mcap": 268237688476.22412,
+  "price": 252.09,
+  "exchange": ""
+ },
+ "LRCX": {
+  "name": "Lam Research Corporation",
+  "sector": "Technology",
+  "mcap": 384968905650.0,
+  "price": 307.65,
+  "exchange": ""
+ },
+ "MU": {
+  "name": "Micron Technology, Inc.",
+  "sector": "Technology",
+  "mcap": 1148129783375.4873,
+  "price": 1016.59,
+  "exchange": ""
+ },
+ "KLAC": {
+  "name": "KLA Corporation",
+  "sector": "Technology",
+  "mcap": 242495082924.31113,
+  "price": 185.6,
+  "exchange": ""
+ },
+ "CRDO": {
+  "name": "Credo Technology Group Holding Ltd",
+  "sector": "Technology",
+  "mcap": 32058958653.34006,
+  "price": 170.57,
+  "exchange": ""
+ },
+ "LITE": {
+  "name": "Lumentum Holdings Inc.",
+  "sector": "Telecommunications",
+  "mcap": 79048573500.0,
+  "price": 881.255,
+  "exchange": ""
+ },
+ "ANET": {
+  "name": "Arista Networks, Inc.",
+  "sector": "Telecommunications",
+  "mcap": 244400112289.24167,
+  "price": 193.78,
+  "exchange": ""
+ },
+ "MRVL": {
+  "name": "Marvell Technology, Inc.",
+  "sector": "Technology",
+  "mcap": 196030995000.0,
+  "price": 223.55,
+  "exchange": ""
+ },
+ "TER": {
+  "name": "Teradyne, Inc.",
+  "sector": "Industrials",
+  "mcap": 55818337972.99885,
+  "price": 357.03,
+  "exchange": ""
+ },
+ "AMAT": {
+  "name": "Applied Materials, Inc.",
+  "sector": "Technology",
+  "mcap": 360856693306.5399,
+  "price": 454.71,
+  "exchange": ""
+ },
+ "AVGO": {
+  "name": "Broadcom Inc.",
+  "sector": "Technology",
+  "mcap": 1702737952864.6414,
+  "price": 357.9,
+  "exchange": ""
+ },
+ "JBL": {
+  "name": "Jabil Inc.",
+  "sector": "Technology",
+  "mcap": 32543726230.38509,
+  "price": 310.57,
+  "exchange": ""
+ },
+ "MSFT": {
+  "name": "Microsoft Corporation",
+  "sector": "Technology",
+  "mcap": 3710545081853.186,
+  "price": 499.7,
+  "exchange": ""
+ },
+ "PLTR": {
+  "name": "Palantir Technologies Inc.",
+  "sector": "Technology",
+  "mcap": 418749983168.79486,
+  "price": 174.33,
+  "exchange": ""
+ },
+ "MPWR": {
+  "name": "Monolithic Power Systems, Inc.",
+  "sector": "Technology",
+  "mcap": 60144151980.00001,
+  "price": 1223.86,
+  "exchange": ""
+ },
+ "CIEN": {
+  "name": "Ciena Corporation",
+  "sector": "Utilities",
+  "mcap": 45438487962.217636,
+  "price": 321.0,
+  "exchange": ""
+ },
+ "COHR": {
+  "name": "Coherent, Inc.",
+  "sector": "Technology",
+  "mcap": 55197276857.887924,
+  "price": 281.86,
+  "exchange": ""
+ },
+ "AAOI": {
+  "name": "Applied Optoelectronics, Inc.",
+  "sector": "Technology",
+  "mcap": 8960160677.684433,
+  "price": 105.53,
+  "exchange": ""
+ },
+ "ZS": {
+  "name": "Zscaler, Inc.",
+  "sector": "Technology",
+  "mcap": 27458277345.244766,
+  "price": 169.8,
+  "exchange": ""
+ },
+ "QCOM": {
+  "name": "QUALCOMM Incorporated",
+  "sector": "Technology",
+  "mcap": 177216471829.2718,
+  "price": 168.74,
+  "exchange": ""
+ },
+ "SMCI": {
+  "name": "Super Micro Computer, Inc.",
+  "sector": "Technology",
+  "mcap": 26009259552.72238,
+  "price": 39.59,
+  "exchange": ""
+ },
+ "CLS": {
+  "name": "Celestica Inc.",
+  "sector": "Technology",
+  "mcap": 35911849971.09582,
+  "price": 312.35,
+  "exchange": ""
+ },
+ "CDNS": {
+  "name": "Cadence Design Systems, Inc.",
+  "sector": "Technology",
+  "mcap": 80607531100.0,
+  "price": 292.7,
+  "exchange": ""
+ },
+ "NOW": {
+  "name": "ServiceNow, Inc.",
+  "sector": "Technology",
+  "mcap": 146062840000.0,
+  "price": 141.26,
+  "exchange": ""
+ },
+ "FN": {
+  "name": "Fabrinet",
+  "sector": "Utilities",
+  "mcap": 14599123593.916527,
+  "price": 407.4,
+  "exchange": ""
+ },
+ "SNPS": {
+  "name": "Synopsys, Inc.",
+  "sector": "Technology",
+  "mcap": 75474176660.74678,
+  "price": 393.84,
+  "exchange": ""
+ },
+ "MOD": {
+  "name": "Modine Manufacturing Company",
+  "sector": "Consumer Discretionary",
+  "mcap": 10338919739.480577,
+  "price": 194.66,
+  "exchange": ""
+ },
+ "CRM": {
+  "name": "Salesforce, Inc.",
+  "sector": "Technology",
+  "mcap": 213346290000.00003,
+  "price": 259.23,
+  "exchange": ""
+ },
+ "TSLA": {
+  "name": "Tesla, Inc.",
+  "sector": "Industrials",
+  "mcap": 1398455741267.2832,
+  "price": 354.08,
+  "exchange": ""
+ },
+ "ORCL": {
+  "name": "Oracle Corporation",
+  "sector": "Technology",
+  "mcap": 457361185380.0,
+  "price": 158.78,
+  "exchange": ""
+ },
+ "APP": {
+  "name": "AppLovin Corporation",
+  "sector": "Technology",
+  "mcap": 107275724560.0,
+  "price": 320.56,
+  "exchange": ""
+ },
+ "META": {
+  "name": "Meta Platforms, Inc.",
+  "sector": "Technology",
+  "mcap": 1571225414393.7556,
+  "price": 616.77,
+  "exchange": ""
+ },
+ "AI": {
+  "name": "C3.ai, Inc.",
+  "sector": "Technology",
+  "mcap": 1674511954.6629527,
+  "price": 10.46,
+  "exchange": ""
+ },
+ "SOUN": {
+  "name": "SoundHound AI, Inc.",
+  "sector": "Technology",
+  "mcap": 2993300348.675646,
+  "price": 6.74,
+  "exchange": ""
+ },
+ "BBAI": {
+  "name": "BigBear.ai Holdings, Inc.",
+  "sector": "Technology",
+  "mcap": 1400123919.283784,
+  "price": 2.92,
+  "exchange": ""
+ },
+ "TEM": {
+  "name": "Tempus AI, Inc.",
+  "sector": "Technology",
+  "mcap": 11732158736.250818,
+  "price": 64.62,
+  "exchange": ""
+ },
+ "RDDT": {
+  "name": "Reddit, Inc.",
+  "sector": "Technology",
+  "mcap": 29717564934.699337,
+  "price": 154.46,
+  "exchange": ""
+ },
+ "AXON": {
+  "name": "Axon Enterprise, Inc.",
+  "sector": "Industrials",
+  "mcap": 41891697792.77765,
+  "price": 515.67,
+  "exchange": ""
+ },
+ "DUOL": {
+  "name": "Duolingo, Inc.",
+  "sector": "Technology",
+  "mcap": 7226607109.810224,
+  "price": 154.46,
+  "exchange": ""
+ },
+ "VRT": {
+  "name": "Vertiv Holdings Co",
+  "sector": "Technology",
+  "mcap": 108000732171.94342,
+  "price": 280.53,
+  "exchange": ""
+ },
+ "ETN": {
+  "name": "Eaton Corporation plc",
+  "sector": "Technology",
+  "mcap": 159574140000.0,
+  "price": 410.85,
+  "exchange": ""
+ },
+ "PWR": {
+  "name": "Quanta Services, Inc.",
+  "sector": "Industrials",
+  "mcap": 91994187305.11305,
+  "price": 624.41,
+  "exchange": ""
+ },
+ "GEV": {
+  "name": "GE Vernova Inc.",
+  "sector": "Technology",
+  "mcap": 250872916622.82214,
+  "price": 941.95,
+  "exchange": ""
+ },
+ "CEG": {
+  "name": "Constellation Energy Corporation",
+  "sector": "Utilities",
+  "mcap": 105923734026.17111,
+  "price": 298.96,
+  "exchange": ""
+ },
+ "VST": {
+  "name": "Vistra Corp.",
+  "sector": "Utilities",
+  "mcap": 50110334613.196014,
+  "price": 149.3,
+  "exchange": ""
+ },
+ "TLN": {
+  "name": "Talen Energy Corporation",
+  "sector": "Utilities",
+  "mcap": 15188820102.994917,
+  "price": 317.0,
+  "exchange": ""
+ },
+ "OKLO": {
+  "name": "Oklo Inc.",
+  "sector": "Utilities",
+  "mcap": 7676948415.755162,
+  "price": 41.27,
+  "exchange": ""
+ },
+ "SMR": {
+  "name": "NuScale Power Corporation",
+  "sector": "Industrials",
+  "mcap": 4168315738.7203298,
+  "price": 9.7,
+  "exchange": ""
+ },
+ "NBIS": {
+  "name": "Nebius Group N.V.",
+  "sector": "Technology",
+  "mcap": 61545302803.1266,
+  "price": 226.39,
+  "exchange": ""
+ },
+ "CRWV": {
+  "name": "CoreWeave, Inc. Class A Common Stock",
+  "sector": "Technology",
+  "mcap": 49285310754.82277,
+  "price": 89.36,
+  "exchange": ""
+ },
+ "IREN": {
+  "name": "IREN Limited",
+  "sector": "Finance",
+  "mcap": 17606540392.34811,
+  "price": 44.68,
+  "exchange": ""
+ },
+ "APLD": {
+  "name": "Applied Digital Corp.",
+  "sector": "Technology",
+  "mcap": 7686040483.200228,
+  "price": 26.37,
+  "exchange": ""
+ },
+ "CBRS": {
+  "name": "Cerebras Systems Inc.",
+  "sector": "Technology",
+  "mcap": 49900326811.96235,
+  "price": 210.05,
+  "exchange": ""
+ },
+ "CGNX": {
+  "name": "Cognex Corporation",
+  "sector": "Industrials",
+  "mcap": 10471934164.722357,
+  "price": 62.25,
+  "exchange": ""
+ },
+ "MNDY": {
+  "name": "monday.com Ltd.",
+  "sector": "Technology",
+  "mcap": 3907535390.0799994,
+  "price": 91.07,
+  "exchange": ""
+ },
+ "BE": {
+  "name": "Bloom Energy Corporation",
+  "sector": "Energy",
+  "mcap": 74477129983.34949,
+  "price": 252.87,
+  "exchange": ""
+ },
+ "OUST": {
+  "name": "Ouster's Q2 2026 revenue rose ",
+  "sector": "Industrials",
+  "mcap": 2627052291.573049,
+  "price": 36.43,
+  "exchange": ""
+ },
+ "JPM": {
+  "name": "JPMorgan Chase",
+  "sector": "Finance",
+  "mcap": 953331896975.0493,
+  "price": 358.64,
+  "exchange": ""
+ },
+ "BAC": {
+  "name": "Bank of America",
+  "sector": "Finance",
+  "mcap": 438305467517.94904,
+  "price": 62.68,
+  "exchange": ""
+ },
+ "PNC": {
+  "name": "PNC Financial",
+  "sector": "Finance",
+  "mcap": 97980564614.84921,
+  "price": 245.6,
+  "exchange": ""
+ },
+ "AXP": {
+  "name": "American Express",
+  "sector": "Finance",
+  "mcap": 220259055131.18533,
+  "price": 326.16,
+  "exchange": ""
+ },
+ "V": {
+  "name": "Visa",
+  "sector": "Consumer Discretionary",
+  "mcap": 670158282240.3756,
+  "price": 375.07,
+  "exchange": ""
+ },
+ "MA": {
+  "name": "Mastercard",
+  "sector": "Consumer Discretionary",
+  "mcap": 507393717347.6985,
+  "price": 579.21,
+  "exchange": ""
+ },
+ "MET": {
+  "name": "MetLife",
+  "sector": "Finance",
+  "mcap": 62035257614.227455,
+  "price": 97.62,
+  "exchange": ""
+ },
+ "GS": {
+  "name": "Goldman Sachs",
+  "sector": "Finance",
+  "mcap": 302413536062.5172,
+  "price": 1038.61,
+  "exchange": ""
+ },
+ "KKR": {
+  "name": "KKR",
+  "sector": "Finance",
+  "mcap": 96702283295.39627,
+  "price": 107.73,
+  "exchange": ""
+ },
+ "MAR": {
+  "name": "Marriott",
+  "sector": "Consumer Discretionary",
+  "mcap": 87750463575.11964,
+  "price": 336.51,
+  "exchange": ""
+ },
+ "TXRH": {
+  "name": "Texas Roadhouse",
+  "sector": "Consumer Discretionary",
+  "mcap": 12442893932.936405,
+  "price": 189.56,
+  "exchange": ""
+ },
+ "LULU": {
+  "name": "Lululemon",
+  "sector": "Consumer Discretionary",
+  "mcap": 10909942854.184185,
+  "price": 100.61,
+  "exchange": ""
+ },
+ "ROST": {
+  "name": "Ross Stores",
+  "sector": "Consumer Discretionary",
+  "mcap": 73694637945.50421,
+  "price": 230.69,
+  "exchange": ""
+ },
+ "URBN": {
+  "name": "Urban Outfitters",
+  "sector": "Consumer Discretionary",
+  "mcap": 6933872670.048002,
+  "price": 80.97,
+  "exchange": ""
+ },
+ "NFLX": {
+  "name": "Netflix",
+  "sector": "Consumer Discretionary",
+  "mcap": 325828279646.5376,
+  "price": 78.25,
+  "exchange": ""
+ },
+ "DASH": {
+  "name": "DoorDash",
+  "sector": "Consumer Discretionary",
+  "mcap": 91742172200.8483,
+  "price": 211.73,
+  "exchange": ""
+ },
+ "SBUX": {
+  "name": "Starbucks",
+  "sector": "Consumer Discretionary",
+  "mcap": 119095800000.0,
+  "price": 104.47,
+  "exchange": ""
+ },
+ "COST": {
+  "name": "Costco",
+  "sector": "Consumer Discretionary",
+  "mcap": 406111279974.5632,
+  "price": 915.74,
+  "exchange": ""
+ },
+ "HST": {
+  "name": "Host Hotels",
+  "sector": "Real Estate",
+  "mcap": 15106992998.0,
+  "price": 22.05,
+  "exchange": ""
+ },
+ "LQDA": {
+  "name": "Liquidia",
+  "sector": "Health Care",
+  "mcap": 6145680455.907761,
+  "price": 68.66,
+  "exchange": ""
+ },
+ "AXTI": {
+  "name": "AXT",
+  "sector": "Technology",
+  "mcap": 4041932787.4099913,
+  "price": 61.64,
+  "exchange": ""
+ },
+ "WDC": {
+  "name": "Western Digital",
+  "sector": "Technology",
+  "mcap": 168538469682.07962,
+  "price": 467.46,
+  "exchange": ""
+ },
+ "MCHP": {
+  "name": "Microchip",
+  "sector": "Technology",
+  "mcap": 40274954611.430145,
+  "price": 74.17,
+  "exchange": ""
+ },
+ "BX": {
+  "name": "Blackstone",
+  "sector": "Finance",
+  "mcap": 102197609271.1,
+  "price": 136.15,
+  "exchange": ""
+ },
+ "ICE": {
+  "name": "Intercontinental Exchange",
+  "sector": "Finance",
+  "mcap": 90530474973.24112,
+  "price": 161.26,
+  "exchange": ""
+ },
+ "UNM": {
+  "name": "Unum Group",
+  "sector": "Finance",
+  "mcap": 15173706588.638868,
+  "price": 95.85,
+  "exchange": ""
+ },
+ "GL": {
+  "name": "Globe Life",
+  "sector": "Finance",
+  "mcap": 13392553128.421757,
+  "price": 174.27,
+  "exchange": ""
+ },
+ "LMT": {
+  "name": "Lockheed Martin",
+  "sector": "Industrials",
+  "mcap": 121229766735.85991,
+  "price": 525.28,
+  "exchange": ""
+ },
+ "RTX": {
+  "name": "RTX Corp",
+  "sector": "Industrials",
+  "mcap": 270616357733.83997,
+  "price": 200.79,
+  "exchange": ""
+ },
+ "BA": {
+  "name": "Boeing",
+  "sector": "Industrials",
+  "mcap": 167756036744.79834,
+  "price": 212.25,
+  "exchange": ""
+ },
+ "HII": {
+  "name": "Huntington Ingalls",
+  "sector": "Industrials",
+  "mcap": 11266956706.001213,
+  "price": 285.93,
+  "exchange": ""
+ },
+ "CAT": {
+  "name": "Caterpillar",
+  "sector": "Industrials",
+  "mcap": 374147779153.04785,
+  "price": 813.94,
+  "exchange": ""
+ },
+ "UNP": {
+  "name": "Union Pacific",
+  "sector": "Industrials",
+  "mcap": 172056145730.89932,
+  "price": 289.62,
+  "exchange": ""
+ },
+ "NSC": {
+  "name": "Norfolk Southern",
+  "sector": "Industrials",
+  "mcap": 73999474568.99873,
+  "price": 329.46,
+  "exchange": ""
+ },
+ "FLR": {
+  "name": "Fluor",
+  "sector": "Industrials",
+  "mcap": 7510898322.856546,
+  "price": 56.16,
+  "exchange": ""
+ },
+ "GWW": {
+  "name": "W.W. Grainger",
+  "sector": "Industrials",
+  "mcap": 62384726669.28015,
+  "price": 1324.49,
+  "exchange": ""
+ },
+ "GLW": {
+  "name": "Corning",
+  "sector": "Industrials",
+  "mcap": 132912219472.95291,
+  "price": 154.3,
+  "exchange": ""
+ },
+ "HUBB": {
+  "name": "Hubbell",
+  "sector": "Technology",
+  "mcap": 24341022111.562954,
+  "price": 460.72,
+  "exchange": ""
+ },
+ "RDW": {
+  "name": "Redwire",
+  "sector": "Industrials",
+  "mcap": 2632422172.8201385,
+  "price": 10.53,
+  "exchange": ""
+ },
+ "OLN": {
+  "name": "Olin",
+  "sector": "Industrials",
+  "mcap": 1979875851.7053678,
+  "price": 17.37,
+  "exchange": ""
+ },
+ "LLY": {
+  "name": "Eli Lilly",
+  "sector": "Health Care",
+  "mcap": 1081958156228.4249,
+  "price": 1149.36,
+  "exchange": ""
+ },
+ "ABBV": {
+  "name": "AbbVie",
+  "sector": "Health Care",
+  "mcap": 453194898911.5742,
+  "price": 256.46,
+  "exchange": ""
+ },
+ "UNH": {
+  "name": "UnitedHealth",
+  "sector": "Health Care",
+  "mcap": 356470817537.4758,
+  "price": 397.14,
+  "exchange": ""
+ },
+ "MRK": {
+  "name": "Merck",
+  "sector": "Health Care",
+  "mcap": 370889912340.4401,
+  "price": 150.33,
+  "exchange": ""
+ },
+ "LH": {
+  "name": "Labcorp",
+  "sector": "Health Care",
+  "mcap": 26510779000.0,
+  "price": 326.89,
+  "exchange": ""
+ },
+ "NEM": {
+  "name": "Newmont",
+  "sector": "Basic Materials",
+  "mcap": 134967442992.25891,
+  "price": 128.09,
+  "exchange": ""
+ },
+ "HMY": {
+  "name": "Harmony Gold",
+  "sector": "Basic Materials",
+  "mcap": 12866741765.360647,
+  "price": 20.27,
+  "exchange": ""
+ },
+ "XOM": {
+  "name": "ExxonMobil",
+  "sector": "Energy",
+  "mcap": 655726600261.0,
+  "price": 159.47,
+  "exchange": ""
+ },
+ "CVX": {
+  "name": "Chevron",
+  "sector": "Energy",
+  "mcap": 412145887756.4906,
+  "price": 208.6,
+  "exchange": ""
+ },
+ "OXY": {
+  "name": "Occidental",
+  "sector": "Energy",
+  "mcap": 60018227755.02187,
+  "price": 60.04,
+  "exchange": ""
+ },
+ "CCJ": {
+  "name": "Cameco",
+  "sector": "Basic Materials",
+  "mcap": 43875592203.43018,
+  "price": 100.74,
+  "exchange": ""
+ },
+ "FCX": {
+  "name": "Freeport-McMoRan",
+  "sector": "Basic Materials",
+  "mcap": 104441554447.94655,
+  "price": 72.73,
+  "exchange": ""
+ },
+ "NEE": {
+  "name": "NextEra Energy",
+  "sector": "Utilities",
+  "mcap": 174033161976.8501,
+  "price": 83.43,
+  "exchange": ""
+ },
+ "KO": {
+  "name": "Coca-Cola",
+  "sector": "Consumer Staples",
+  "mcap": 378925511830.6518,
+  "price": 88.07,
+  "exchange": ""
+ },
+ "TGT": {
+  "name": "Target",
+  "sector": "Consumer Discretionary",
+  "mcap": 74704555268.04079,
+  "price": 164.44,
+  "exchange": ""
+ },
+ "H": {
+  "name": "Hyatt Hotels",
+  "sector": "Consumer Discretionary",
+  "mcap": 15623335525.572393,
+  "price": 165.85,
+  "exchange": ""
+ },
+ "HLT": {
+  "name": "Hilton",
+  "sector": "Consumer Discretionary",
+  "mcap": 70035698694.24539,
+  "price": 311.18,
+  "exchange": ""
+ },
+ "NKE": {
+  "name": "Nike",
+  "sector": "Consumer Discretionary",
+  "mcap": 56966350195.378975,
+  "price": 38.4,
+  "exchange": ""
+ },
+ "TPR": {
+  "name": "Tapestry",
+  "sector": "Consumer Discretionary",
+  "mcap": 24353699551.39341,
+  "price": 122.14,
+  "exchange": ""
+ },
+ "TJX": {
+  "name": "TJX Companies",
+  "sector": "Consumer Discretionary",
+  "mcap": 145284573976.97427,
+  "price": 132.08,
+  "exchange": ""
+ },
+ "BIRK": {
+  "name": "Birkenstock",
+  "sector": "Consumer Discretionary",
+  "mcap": 5614290936.160189,
+  "price": 34.0,
+  "exchange": ""
+ },
+ "AEO": {
+  "name": "American Eagle",
+  "sector": "Consumer Discretionary",
+  "mcap": 2914100261.2173915,
+  "price": 17.39,
+  "exchange": ""
+ },
+ "BOOT": {
+  "name": "Boot Barn",
+  "sector": "Consumer Discretionary",
+  "mcap": 4672648580.393829,
+  "price": 154.29,
+  "exchange": ""
+ },
+ "GAP": {
+  "name": "Gap",
+  "sector": "Consumer Discretionary",
+  "mcap": 7878989172.547576,
+  "price": 22.43,
+  "exchange": ""
+ },
+ "SPOT": {
+  "name": "Spotify",
+  "sector": "Consumer Discretionary",
+  "mcap": 111649737620.90526,
+  "price": 542.43,
+  "exchange": ""
+ },
+ "ENVA": {
+  "name": "Enova International",
+  "sector": "Finance",
+  "mcap": 5741066385.309221,
+  "price": 230.58,
+  "exchange": ""
+ },
+ "LUMN": {
+  "name": "Lumen",
+  "sector": "Telecommunications",
+  "mcap": 6982885385.373285,
+  "price": 6.77,
+  "exchange": ""
+ },
+ "CAH": {
+  "name": "Cardinal Health",
+  "sector": "Health Care",
+  "mcap": 57488068447.00002,
+  "price": 247.18,
+  "exchange": ""
+ },
+ "PBF": {
+  "name": "PBF Energy",
+  "sector": "Energy",
+  "mcap": 8812028537.052631,
+  "price": 74.34,
+  "exchange": ""
+ },
+ "PARR": {
+  "name": "Par Pacific",
+  "sector": "Energy",
+  "mcap": 4074101667.952828,
+  "price": 81.32,
+  "exchange": ""
+ },
+ "XPO": {
+  "name": "XPO",
+  "sector": "Consumer Discretionary",
+  "mcap": 22609396391.525352,
+  "price": 193.1,
+  "exchange": ""
+ },
+ "ETR": {
+  "name": "Entergy",
+  "sector": "Utilities",
+  "mcap": 50055560790.639465,
+  "price": 107.27,
+  "exchange": ""
+ },
+ "JNJ": {
+  "name": "Johnson & Johnson",
+  "sector": "Health Care",
+  "mcap": 663276390852.5352,
+  "price": 275.23,
+  "exchange": ""
+ },
+ "COIN": {
+  "name": "Coinbase",
+  "sector": "Finance",
+  "mcap": 48714849462.66548,
+  "price": 184.64,
+  "exchange": ""
+ },
+ "HOOD": {
+  "name": "Robinhood",
+  "sector": "Finance",
+  "mcap": 109786936355.92523,
+  "price": 122.11,
+  "exchange": ""
+ },
+ "UBSI": {
+  "name": "United Bankshares",
+  "sector": "Finance",
+  "mcap": 6515047271.230817,
+  "price": 47.83,
+  "exchange": ""
+ },
+ "LOB": {
+  "name": "Live Oak Bancshares",
+  "sector": "Finance",
+  "mcap": 1833294188.7004418,
+  "price": 39.61,
+  "exchange": ""
+ },
+ "CME": {
+  "name": "CME Group",
+  "sector": "Finance",
+  "mcap": 101146050889.25002,
+  "price": 281.29,
+  "exchange": ""
+ },
+ "PCAR": {
+  "name": "PACCAR",
+  "sector": "Industrials",
+  "mcap": 65637709639.159386,
+  "price": 124.7,
+  "exchange": ""
+ },
+ "CSX": {
+  "name": "CSX",
+  "sector": "Industrials",
+  "mcap": 91530785648.58496,
+  "price": 49.41,
+  "exchange": ""
+ },
+ "VRTX": {
+  "name": "Vertex Pharma",
+  "sector": "Health Care",
+  "mcap": 138420079815.27545,
+  "price": 546.12,
+  "exchange": ""
+ },
+ "ISRG": {
+  "name": "Intuitive Surgical",
+  "sector": "Health Care",
+  "mcap": 129547056534.42044,
+  "price": 366.7,
+  "exchange": ""
+ },
+ "REGN": {
+  "name": "Regeneron",
+  "sector": "Health Care",
+  "mcap": 85217902667.28058,
+  "price": 827.72,
+  "exchange": ""
+ },
+ "GILD": {
+  "name": "Gilead",
+  "sector": "Health Care",
+  "mcap": 187233228405.45114,
+  "price": 151.0,
+  "exchange": ""
+ },
+ "MRNA": {
+  "name": "Moderna",
+  "sector": "Health Care",
+  "mcap": 58108783643.63073,
+  "price": 145.55,
+  "exchange": ""
+ },
+ "VCYT": {
+  "name": "Veracyte",
+  "sector": "Health Care",
+  "mcap": 3419017789.078512,
+  "price": 42.53,
+  "exchange": ""
+ },
+ "CLDX": {
+  "name": "Celldex",
+  "sector": "Health Care",
+  "mcap": 3116051829.8004074,
+  "price": 39.68,
+  "exchange": ""
+ },
+ "UFPT": {
+  "name": "UFP Technologies",
+  "sector": "Health Care",
+  "mcap": 2236906693.898809,
+  "price": 288.79,
+  "exchange": ""
+ },
+ "ANGO": {
+  "name": "AngioDynamics",
+  "sector": "Health Care",
+  "mcap": 628252313.1646401,
+  "price": 15.2,
+  "exchange": ""
+ },
+ "IOVA": {
+  "name": "Iovance",
+  "sector": "Health Care",
+  "mcap": 3981618887.763022,
+  "price": 8.79,
+  "exchange": ""
+ },
+ "RVMD": {
+  "name": "Revolution Medicines",
+  "sector": "Health Care",
+  "mcap": 45014934507.956696,
+  "price": 210.02,
+  "exchange": ""
+ },
+ "BLFS": {
+  "name": "BioLife Solutions",
+  "sector": "Health Care",
+  "mcap": 1723961315.6772995,
+  "price": 35.25,
+  "exchange": ""
+ },
+ "RPRX": {
+  "name": "Royalty Pharma",
+  "sector": "Health Care",
+  "mcap": 36777077007.76008,
+  "price": 63.96,
+  "exchange": ""
+ },
+ "ARWR": {
+  "name": "Arrowhead Pharmaceuticals Inc. Common St",
+  "sector": "Health Care",
+  "mcap": 12195910680.52828,
+  "price": 86.34,
+  "exchange": "nasdaq"
+ },
+ "EQNR": {
+  "name": "Equinor ASA",
+  "sector": "Energy",
+  "mcap": 105236407652.65007,
+  "price": 42.09,
+  "exchange": "nyse"
+ },
+ "BNY": {
+  "name": "The Bank of New York Mellon Corporation ",
+  "sector": "Finance",
+  "mcap": 111844622767.46068,
+  "price": 164.84,
+  "exchange": "nyse"
+ },
+ "MEDP": {
+  "name": "Medpace Holdings Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 16503882485.226353,
+  "price": 591.29,
+  "exchange": "nasdaq"
+ },
+ "STT": {
+  "name": "State Street Corporation Common Stock",
+  "sector": "Finance",
+  "mcap": 53363564868.698975,
+  "price": 194.26,
+  "exchange": "nyse"
+ },
+ "DD": {
+  "name": "DuPont de Nemours Inc. Common Stock",
+  "sector": "Industrials",
+  "mcap": 17770305080.502415,
+  "price": 131.59,
+  "exchange": "nyse"
+ },
+ "JAZZ": {
+  "name": "Jazz Pharmaceuticals plc Common Stock (I",
+  "sector": "Health Care",
+  "mcap": 16021566749.505037,
+  "price": 246.81,
+  "exchange": "nasdaq"
+ },
+ "CLDT": {
+  "name": "Chatham Lodging Trust (REIT) Common Shar",
+  "sector": "Real Estate",
+  "mcap": 607215606.7708895,
+  "price": 13.04,
+  "exchange": "nyse"
+ },
+ "MATX": {
+  "name": "Matson Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 6745921089.959861,
+  "price": 225.59,
+  "exchange": "nyse"
+ },
+ "WST": {
+  "name": "West Pharmaceutical Services Inc. Common",
+  "sector": "Health Care",
+  "mcap": 23925647806.761692,
+  "price": 339.97,
+  "exchange": "nyse"
+ },
+ "FANG": {
+  "name": "Diamondback Energy Inc. Common Stock",
+  "sector": "Energy",
+  "mcap": 55786451604.92974,
+  "price": 199.22,
+  "exchange": "nasdaq"
+ },
+ "GSAT": {
+  "name": "Globalstar Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 10668249532.70028,
+  "price": 82.34,
+  "exchange": "nasdaq"
+ },
+ "CNC": {
+  "name": "Centene Corporation Common Stock",
+  "sector": "Health Care",
+  "mcap": 33117424800.49374,
+  "price": 67.04,
+  "exchange": "nyse"
+ },
+ "CBL": {
+  "name": "CBL & Associates Properties Inc. Common ",
+  "sector": "Real Estate",
+  "mcap": 1701232779.7201016,
+  "price": 54.98,
+  "exchange": "nyse"
+ },
+ "CNI": {
+  "name": "Canadian National Railway Company Common",
+  "sector": "Industrials",
+  "mcap": 74527817000.0,
+  "price": 123.37,
+  "exchange": "nyse"
+ },
+ "SU": {
+  "name": "Suncor Energy  Inc. Common Stock",
+  "sector": "Energy",
+  "mcap": 78751161776.20035,
+  "price": 67.33,
+  "exchange": "nyse"
+ },
+ "RLAY": {
+  "name": "Relay Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 4172456654.0,
+  "price": 19.04,
+  "exchange": "nasdaq"
+ },
+ "BFH": {
+  "name": "Bread Financial Holdings Inc. Common Sto",
+  "sector": "Consumer Discretionary",
+  "mcap": 4259544243.0786724,
+  "price": 110.87,
+  "exchange": "nyse"
+ },
+ "MBX": {
+  "name": "MBX Biosciences Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2972441124.672164,
+  "price": 61.72,
+  "exchange": "nasdaq"
+ },
+ "APLE": {
+  "name": "Apple Hospitality REIT Inc. Common Share",
+  "sector": "Real Estate",
+  "mcap": 3682890088.4899006,
+  "price": 15.6,
+  "exchange": "nyse"
+ },
+ "PVLA": {
+  "name": "Palvella Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2265577917.041656,
+  "price": 157.24,
+  "exchange": "nasdaq"
+ },
+ "UNF": {
+  "name": "Unifirst Corporation Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 4976221884.581534,
+  "price": 275.17,
+  "exchange": "nyse"
+ },
+ "RCUS": {
+  "name": "Arcus Biosciences Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 3776707932.0797844,
+  "price": 29.66,
+  "exchange": "nyse"
+ },
+ "ALRS": {
+  "name": "Alerus Financial Corporation Common Stoc",
+  "sector": "Finance",
+  "mcap": 842301104.0238663,
+  "price": 33.79,
+  "exchange": "nasdaq"
+ },
+ "EXPD": {
+  "name": "Expeditors International of Washington I",
+  "sector": "Industrials",
+  "mcap": 24542229433.90072,
+  "price": 188.8,
+  "exchange": "nyse"
+ },
+ "SYRE": {
+  "name": "Spyre Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 7845701342.535791,
+  "price": 88.98,
+  "exchange": "nasdaq"
+ },
+ "CYRX": {
+  "name": "CryoPort Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 800762270.5973,
+  "price": 15.81,
+  "exchange": "nasdaq"
+ },
+ "HSHP": {
+  "name": "Himalaya Shipping Ltd. Common Shares",
+  "sector": "Consumer Discretionary",
+  "mcap": 857862500.0000001,
+  "price": 18.35,
+  "exchange": "nyse"
+ },
+ "DRH": {
+  "name": "Diamondrock Hospitality Company Common S",
+  "sector": "Real Estate",
+  "mcap": 2471636626.0240564,
+  "price": 12.08,
+  "exchange": "nasdaq"
+ },
+ "NHC": {
+  "name": "National HealthCare Corporation Common S",
+  "sector": "Health Care",
+  "mcap": 3424207403.1991963,
+  "price": 218.64,
+  "exchange": "amex"
+ },
+ "TRVI": {
+  "name": "Trevi Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2459133015.8136497,
+  "price": 17.26,
+  "exchange": "nasdaq"
+ },
+ "SOBO": {
+  "name": "South Bow Corporation Common Shares",
+  "sector": "Energy",
+  "mcap": 7728060430.531916,
+  "price": 37.05,
+  "exchange": "nyse"
+ },
+ "RRBI": {
+  "name": "Red River Bancshares Inc. Common Stock",
+  "sector": "Finance",
+  "mcap": 680533196.5128505,
+  "price": 103.36,
+  "exchange": "nasdaq"
+ },
+ "FTI": {
+  "name": "TechnipFMC plc Ordinary Share",
+  "sector": "Consumer Discretionary",
+  "mcap": 31310404737.59615,
+  "price": 79.84,
+  "exchange": "nyse"
+ },
+ "GEO": {
+  "name": "Geo Group Inc (The) REIT",
+  "sector": "Consumer Discretionary",
+  "mcap": 4181554183.3144774,
+  "price": 31.77,
+  "exchange": "nyse"
+ },
+ "UHAL": {
+  "name": "U-Haul Holding Company Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 13061298929.099396,
+  "price": 67.19,
+  "exchange": "nyse"
+ },
+ "TRST": {
+  "name": "TrustCo Bank Corp NY Common Stock",
+  "sector": "Finance",
+  "mcap": 986246700.5986441,
+  "price": 57.92,
+  "exchange": "nasdaq"
+ },
+ "HSBC": {
+  "name": "HSBC Holdings plc. Common Stock",
+  "sector": "Finance",
+  "mcap": 368106304580.7207,
+  "price": 107.11,
+  "exchange": "nyse"
+ },
+ "MSGS": {
+  "name": "Madison Square Garden Sports Corp. Class",
+  "sector": "Consumer Discretionary",
+  "mcap": 9419109721.956272,
+  "price": 391.16,
+  "exchange": "nyse"
+ },
+ "MAX": {
+  "name": "MediaAlpha Inc. Class A Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 738230935.0745633,
+  "price": 12.05,
+  "exchange": "nyse"
+ },
+ "DNTH": {
+  "name": "Dianthus Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 6046506261.373249,
+  "price": 108.1,
+  "exchange": "nasdaq"
+ },
+ "TGTX": {
+  "name": "TG Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 8569570932.49456,
+  "price": 55.985,
+  "exchange": "nasdaq"
+ },
+ "EBC": {
+  "name": "Eastern Bankshares Inc. Common Stock",
+  "sector": "Finance",
+  "mcap": 5082096916.640504,
+  "price": 22.24,
+  "exchange": "nasdaq"
+ },
+ "WSFS": {
+  "name": "WSFS Financial Corporation Common Stock",
+  "sector": "Finance",
+  "mcap": 4055061318.749558,
+  "price": 79.37,
+  "exchange": "nasdaq"
+ },
+ "BNS": {
+  "name": "Bank Nova Scotia Halifax Pfd 3 Ordinary ",
+  "sector": "Finance",
+  "mcap": 115097190114.8045,
+  "price": 93.82,
+  "exchange": "nyse"
+ },
+ "CHRD": {
+  "name": "Chord Energy Corporation Common Stock",
+  "sector": "Energy",
+  "mcap": 8007221481.758725,
+  "price": 146.39,
+  "exchange": "nasdaq"
+ },
+ "OFG": {
+  "name": "OFG Bancorp Common Stock",
+  "sector": "Finance",
+  "mcap": 2249369590.8214083,
+  "price": 53.22,
+  "exchange": "nyse"
+ },
+ "TIGO": {
+  "name": "Millicom International Cellular S.A. Com",
+  "sector": "Telecommunications",
+  "mcap": 15887896814.010818,
+  "price": 94.83,
+  "exchange": "nasdaq"
+ },
+ "KMX": {
+  "name": "CarMax Inc",
+  "sector": "Consumer Discretionary",
+  "mcap": 8981553266.204027,
+  "price": 63.29,
+  "exchange": "nyse"
+ },
+ "CDP": {
+  "name": "COPT Defense Properties Common Shares of",
+  "sector": "Real Estate",
+  "mcap": 3987511703.4199595,
+  "price": 35.16,
+  "exchange": "nyse"
+ },
+ "AMN": {
+  "name": "AMN Healthcare Services Inc",
+  "sector": "Consumer Discretionary",
+  "mcap": 1309073696.214253,
+  "price": 33.8,
+  "exchange": "nyse"
+ },
+ "BJRI": {
+  "name": "BJ's Restaurants Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 1274085786.1269653,
+  "price": 59.89,
+  "exchange": "nasdaq"
+ },
+ "EOG": {
+  "name": "EOG Resources Inc. Common Stock",
+  "sector": "Energy",
+  "mcap": 76156391063.68303,
+  "price": 145.19,
+  "exchange": "nyse"
+ },
+ "TRGP": {
+  "name": "Targa Resources Inc. Common Stock",
+  "sector": "Utilities",
+  "mcap": 62195717640.850914,
+  "price": 290.05,
+  "exchange": "nyse"
+ },
+ "VOYA": {
+  "name": "Voya Financial Inc. Common Stock",
+  "sector": "Finance",
+  "mcap": 9430173967.62526,
+  "price": 104.09,
+  "exchange": "nyse"
+ },
+ "CCBG": {
+  "name": "Capital City Bank Group Common Stock",
+  "sector": "Finance",
+  "mcap": 887153316.1967213,
+  "price": 51.84,
+  "exchange": "nasdaq"
+ },
+ "KARO": {
+  "name": "Karooooo Ltd. Ordinary Shares",
+  "sector": "Technology",
+  "mcap": 2022893284.50288,
+  "price": 65.48,
+  "exchange": "nasdaq"
+ },
+ "FBP": {
+  "name": "First BanCorp. New Common Stock",
+  "sector": "Finance",
+  "mcap": 4352572320.948104,
+  "price": 28.51,
+  "exchange": "nyse"
+ },
+ "KFRC": {
+  "name": "Kforce Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 976577770.0,
+  "price": 54.53,
+  "exchange": "nyse"
+ },
+ "NWBI": {
+  "name": "Northwest Bancshares Inc. Common Stock",
+  "sector": "Finance",
+  "mcap": 2287691485.931212,
+  "price": 15.62,
+  "exchange": "nasdaq"
+ },
+ "IBKR": {
+  "name": "Interactive Brokers Group Inc. Class A C",
+  "sector": "Finance",
+  "mcap": 41964100197.94965,
+  "price": 92.62,
+  "exchange": "nasdaq"
+ },
+ "HG": {
+  "name": "Hamilton Insurance Group Ltd. Class B Co",
+  "sector": "Finance",
+  "mcap": 2962302237.1099243,
+  "price": 35.6,
+  "exchange": "nyse"
+ },
+ "AMAL": {
+  "name": "Amalgamated Financial Corp. Common Stock",
+  "sector": "Finance",
+  "mcap": 1470190228.0851064,
+  "price": 49.17,
+  "exchange": "nasdaq"
+ },
+ "MEOH": {
+  "name": "Methanex Corporation Common Stock",
+  "sector": "Industrials",
+  "mcap": 4542829522.960545,
+  "price": 58.72,
+  "exchange": "nasdaq"
+ },
+ "GNK": {
+  "name": "Genco Shipping & Trading Limited Ordinar",
+  "sector": "Consumer Discretionary",
+  "mcap": 1205169627.9501083,
+  "price": 27.65,
+  "exchange": "nyse"
+ },
+ "HTO": {
+  "name": "H2O America Common Stock",
+  "sector": "Utilities",
+  "mcap": 2692229633.3598013,
+  "price": 64.32,
+  "exchange": "nasdaq"
+ },
+ "RUSHB": {
+  "name": "Rush Enterprises Inc. Class B",
+  "sector": "Consumer Discretionary",
+  "mcap": 6048967099.826206,
+  "price": 51.82,
+  "exchange": "nasdaq"
+ },
+ "AMRX": {
+  "name": "Amneal Pharmaceuticals Inc. Class A Comm",
+  "sector": "Health Care",
+  "mcap": 6074282536.301027,
+  "price": 17.44,
+  "exchange": "nasdaq"
+ },
+ "CF": {
+  "name": "CF Industries Holdings Inc. Common Stock",
+  "sector": "Industrials",
+  "mcap": 20180939635.09798,
+  "price": 133.35,
+  "exchange": "nyse"
+ },
+ "BRKR": {
+  "name": "Bruker Corporation Common Stock",
+  "sector": "Industrials",
+  "mcap": 8913019985.801527,
+  "price": 58.5,
+  "exchange": "nasdaq"
+ },
+ "NEO": {
+  "name": "NeoGenomics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2232903146.9961886,
+  "price": 17.38,
+  "exchange": "nasdaq"
+ },
+ "WT": {
+  "name": "WisdomTree Inc. Common Stock",
+  "sector": "Finance",
+  "mcap": 3771136442.533091,
+  "price": 24.89,
+  "exchange": "nyse"
+ },
+ "ADPT": {
+  "name": "Adaptive Biotechnologies Corporation Com",
+  "sector": "Health Care",
+  "mcap": 3874987043.285209,
+  "price": 24.28,
+  "exchange": "nasdaq"
+ },
+ "AXGN": {
+  "name": "Axogen Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2595605847.6296773,
+  "price": 48.28,
+  "exchange": "nasdaq"
+ },
+ "CORT": {
+  "name": "Corcept Therapeutics Incorporated Common",
+  "sector": "Health Care",
+  "mcap": 12065943073.018188,
+  "price": 111.62,
+  "exchange": "nasdaq"
+ },
+ "SLDE": {
+  "name": "Slide Insurance Holdings Inc. Common Sto",
+  "sector": "Finance",
+  "mcap": 2881745107.507384,
+  "price": 24.67,
+  "exchange": "nasdaq"
+ },
+ "CVE": {
+  "name": "Cenovus Energy Inc Common Stock",
+  "sector": "Energy",
+  "mcap": 60693750000.0,
+  "price": 32.37,
+  "exchange": "nyse"
+ },
+ "SENEA": {
+  "name": "Seneca Foods Corp. Class A Common Stock",
+  "sector": "Consumer Staples",
+  "mcap": 1325046139.9532347,
+  "price": 195.71,
+  "exchange": "nasdaq"
+ },
+ "AWR": {
+  "name": "American States Water Company Common Sto",
+  "sector": "Utilities",
+  "mcap": 3508941969.677701,
+  "price": 88.53,
+  "exchange": "nyse"
+ },
+ "VSAT": {
+  "name": "ViaSat Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 10375767609.046526,
+  "price": 75.32,
+  "exchange": "nasdaq"
+ },
+ "ELVN": {
+  "name": "Enliven Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 4346421542.741268,
+  "price": 59.32,
+  "exchange": "nasdaq"
+ },
+ "KNSA": {
+  "name": "Kiniksa Pharmaceuticals International pl",
+  "sector": "Health Care",
+  "mcap": 6078850852.732245,
+  "price": 77.91,
+  "exchange": "nasdaq"
+ },
+ "WKC": {
+  "name": "World Kinect Corporation Common Stock",
+  "sector": "Energy",
+  "mcap": 1810767348.2032146,
+  "price": 35.4,
+  "exchange": "nyse"
+ },
+ "CXW": {
+  "name": "CoreCivic Inc. Common Stock",
+  "sector": "Real Estate",
+  "mcap": 3432593003.515534,
+  "price": 34.71,
+  "exchange": "nyse"
+ },
+ "CNQ": {
+  "name": "Canadian Natural Resources Limited Commo",
+  "sector": "Energy",
+  "mcap": 104393666400.0,
+  "price": 50.46,
+  "exchange": "nyse"
+ },
+ "DINO": {
+  "name": "HF Sinclair Corporation Common Stock",
+  "sector": "Energy",
+  "mcap": 18740195523.39613,
+  "price": 105.41,
+  "exchange": "nyse"
+ },
+ "KFY": {
+  "name": "Korn Ferry Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 4649420851.054953,
+  "price": 85.35,
+  "exchange": "nyse"
+ },
+ "PK": {
+  "name": "Park Hotels & Resorts Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 3072422916.1535916,
+  "price": 15.26,
+  "exchange": "nyse"
+ },
+ "RAPP": {
+  "name": "Rapport Therapeutics Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 2195966150.644332,
+  "price": 45.77,
+  "exchange": "nasdaq"
+ },
+ "ZD": {
+  "name": "Ziff Davis Inc. Common Stock",
+  "sector": "Telecommunications",
+  "mcap": 1909797485.120946,
+  "price": 55.7,
+  "exchange": "nasdaq"
+ },
+ "ATI": {
+  "name": "ATI Inc. Common Stock",
+  "sector": "Industrials",
+  "mcap": 28684291178.719078,
+  "price": 210.65,
+  "exchange": "nyse"
+ },
+ "IMO": {
+  "name": "Imperial Oil Limited Common Stock",
+  "sector": "Energy",
+  "mcap": 62199731659.99999,
+  "price": 128.62,
+  "exchange": "amex"
+ },
+ "GD": {
+  "name": "General Dynamics Corporation Common Stoc",
+  "sector": "Industrials",
+  "mcap": 97235550311.09988,
+  "price": 359.39,
+  "exchange": "nyse"
+ },
+ "WTTR": {
+  "name": "Select Water Solutions Inc. Class A comm",
+  "sector": "Energy",
+  "mcap": 2777925509.6174693,
+  "price": 20.06,
+  "exchange": "nyse"
+ },
+ "INSW": {
+  "name": "International Seaways Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 5176021999.760398,
+  "price": 104.5,
+  "exchange": "nyse"
+ },
+ "REX": {
+  "name": "REX American Resources Corporation",
+  "sector": "Industrials",
+  "mcap": 1365597788.0617373,
+  "price": 41.46,
+  "exchange": "nyse"
+ },
+ "PGC": {
+  "name": "Peapack-Gladstone Financial Corporation ",
+  "sector": "Finance",
+  "mcap": 822222413.8001299,
+  "price": 46.38,
+  "exchange": "nasdaq"
+ },
+ "PEB": {
+  "name": "Pebblebrook Hotel Trust Common Shares of",
+  "sector": "Real Estate",
+  "mcap": 2034554169.805415,
+  "price": 18.03,
+  "exchange": "nyse"
+ },
+ "PKE": {
+  "name": "Park Aerospace Corp. Common Stock",
+  "sector": "Industrials",
+  "mcap": 680377880.0347323,
+  "price": 31.28,
+  "exchange": "nyse"
+ },
+ "CBIO": {
+  "name": "Crescent Biopharma Inc. Common Stock",
+  "sector": "Health Care",
+  "mcap": 775565466.7986546,
+  "price": 20.88,
+  "exchange": "nasdaq"
+ },
+ "FTNT": {
+  "name": "Fortinet Inc. Common Stock",
+  "sector": "Technology",
+  "mcap": 114672106827.12152,
+  "price": 156.29,
+  "exchange": "nasdaq"
+ },
+ "PBR": {
+  "name": "Petroleo Brasileiro S.A. Petrobras ADS",
+  "sector": "Energy",
+  "mcap": 129660651585.8547,
+  "price": 20.12,
+  "exchange": "nyse"
+ },
+ "CM": {
+  "name": "Canadian Imperial Bank of Commerce Commo",
+  "sector": "Finance",
+  "mcap": 106684846214.82094,
+  "price": 117.5,
+  "exchange": "nyse"
+ },
+ "MS": {
+  "name": "Morgan Stanley Common Stock",
+  "sector": "Finance",
+  "mcap": 341943693094.5625,
+  "price": 217.72,
+  "exchange": "nyse"
+ },
+ "FCFS": {
+  "name": "FirstCash Holdings Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "mcap": 9785545516.0,
+  "price": 225.62,
+  "exchange": "nasdaq"
+ },
+ "TD": {
+  "name": "Toronto Dominion Bank (The) Common Stock",
+  "sector": "Finance",
+  "mcap": 199278227110.0,
+  "price": 121.63,
+  "exchange": "nyse"
+ },
+ "SNX": {
+  "name": "TD SYNNEX Corporation Common Stock",
+  "sector": "Technology",
+  "mcap": 21000366625.239964,
+  "price": 262.64,
+  "exchange": "nyse"
+ }
+}

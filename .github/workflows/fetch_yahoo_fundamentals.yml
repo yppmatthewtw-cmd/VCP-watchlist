@@ -1,0 +1,39 @@
+name: Fetch Yahoo fundamentals
+
+# Quarterly income-statement data for the Combined Watchlist universe. The
+# research container cannot reach Yahoo (egress proxy), so the runner pulls it
+# with yfinance and commits data/yahoo/fundamentals_<end>.json.gz.
+on:
+  workflow_dispatch:
+    inputs:
+      end:
+        description: Tag for the output file (YYYY-MM-DD)
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  fundamentals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "yfinance>=0.2.50" pandas
+      - name: Download fundamentals
+        env:
+          END: ${{ inputs.end }}
+        run: python3 scripts/fetch_yahoo_fundamentals.py
+      - name: Commit fundamentals
+        env:
+          END: ${{ inputs.end }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/yahoo
+          git commit -m "data: Yahoo quarterly fundamentals $END" || { echo "nothing to commit"; exit 0; }
+          git pull --rebase --quiet origin "${GITHUB_REF_NAME}"
+          git push
