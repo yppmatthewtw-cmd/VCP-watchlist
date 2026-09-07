@@ -84,9 +84,23 @@ def est_rows(df):
 
 symbols = [s.strip() for s in open(LIST) if s.strip()]
 ysym = {s: s.replace(".", "-").replace("/", "-") for s in symbols}
-print(f"{len(symbols)} tickers -> {OUT}", flush=True)
 
-data, failed = {}, []
+# Reruns are idempotent and self-healing: an existing file is loaded and only
+# the tickers that are missing or came back without a revenue line (Yahoo
+# sometimes truncates the timeseries response under load) are fetched again.
+data = {}
+if os.path.exists(OUT):
+    with gzip.open(OUT, "rt") as f:
+        data = json.load(f)
+    keep = {t: v for t, v in data.items()
+            if v.get("quarters") and "Total Revenue" in v["quarters"][0]}
+    todo = [s for s in symbols if s not in keep]
+    print(f"{len(data)} tickers on file, {len(keep)} complete -> refetching {len(todo)}", flush=True)
+    symbols = todo
+else:
+    print(f"{len(symbols)} tickers -> {OUT}", flush=True)
+
+failed = []
 for n, s in enumerate(symbols, 1):
     rec = {}
     for attempt in range(3):
@@ -94,8 +108,8 @@ for n, s in enumerate(symbols, 1):
             tk = yf.Ticker(ysym[s])
             q = frame_rows(tk.quarterly_income_stmt, 6)
             a = frame_rows(tk.income_stmt, 3)
-            if not q and not a:
-                raise ValueError("no income statement")
+            if not q or "Total Revenue" not in q[0]:
+                raise ValueError("truncated income statement")
             rec["quarters"], rec["annual"] = q, a
             break
         except Exception as e:                       # rate limit / transient / delisted
@@ -118,17 +132,22 @@ for n, s in enumerate(symbols, 1):
                 rec[key] = est_rows(v)
         except Exception:
             pass
-    data[s] = rec
+    if rec.get("quarters") or rec.get("annual"):
+        data[s] = rec
     if n % 25 == 0:
         print(f"  {n}/{len(symbols)} done, {len(failed)} failed", flush=True)
     time.sleep(0.4)
 
-if len(data) < 0.8 * len(symbols):
+full = sum(1 for v in data.values() if v.get("quarters") and "Total Revenue" in v["quarters"][0])
+if not symbols:
+    print("nothing to refetch")
+elif len(data) < 0.8 * len(symbols):
     sys.exit(f"only {len(data)}/{len(symbols)} tickers returned; refusing to commit")
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with gzip.open(OUT, "wt") as f:
     json.dump(data, f, ensure_ascii=False)
 nq = sum(len(v.get("quarters", [])) for v in data.values())
-print(f"wrote {OUT}: {len(data)} tickers, {nq} quarterly statements, {len(failed)} failed")
+print(f"wrote {OUT}: {len(data)} tickers ({full} with a revenue line), "
+      f"{nq} quarterly statements, {len(failed)} failed")
 if failed:
     print("failed:", " ".join(failed)[:2000])
