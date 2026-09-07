@@ -146,13 +146,53 @@ def track_text(qs):
     return f"{shape}：{arrow}（百萬）"
 
 
+def cur0(f):
+    i = f.get("info", {})
+    return i.get("financialCurrency") or i.get("currency") or "USD"
+
+
+def material(r):
+    """A one-off item worth naming: >=1% of revenue, or >=$10M when pre-revenue."""
+    u, rev = r["unusual"], r["unusual_rev"]
+    if not u:
+        return False
+    return abs(u) >= 0.01 * rev if rev else abs(u) >= 10
+
+
+def one_off_text(r):
+    if not material(r):
+        return "無重大"
+    pct = f"・營收 {abs(r['unusual'])/r['unusual_rev']*100:.1f}%" if r["unusual_rev"] else "・（本季無營收）"
+    return money(r["unusual"], r["cur"]) + pct
+
+
 rows = []
 for t, meta in META.items():
     f = FUND.get(t, {})
-    qs = [q_metrics(q) for q in f.get("quarters", [])]
-    qs = [q for q in qs if q["rev"] is not None or q["net"] is not None]
+    raw = f.get("quarters", [])
+    qs = [q for q in (q_metrics(x) for x in raw) if q["rev"] is not None or q["net"] is not None]
     info = f.get("info", {})
-    cur = info.get("financialCurrency") or info.get("currency") or "USD"
+    # Yahoo files EPS for a just-reported quarter days before the rest of the
+    # statement; that stub column is dropped above, so say which quarter is missing.
+    pending = pending_note = None
+    pending_ok = False
+    if raw and qs and raw[0]["period"] != qs[0]["period"]:
+        pending = raw[0]["period"]
+        eps, sh = raw[0].get("Diluted EPS"), raw[0].get("Diluted Average Shares")
+        # Corroborate the stub quarter: its EPS plus the three reported quarters
+        # should reproduce Yahoo's trailing EPS. Only then is the implied net
+        # income shown, and it is labelled as derived.
+        tr = (f.get("info") or {}).get("trailingEps")
+        prior = [x.get("Diluted EPS") for x in raw[1:4]]
+        if eps is not None and tr and all(v is not None for v in prior):
+            pending_ok = abs(eps + sum(prior) - tr) <= max(0.05 * abs(tr), 0.05)
+        pending_note = f"⚠ {pending} 季 Yahoo 只出 EPS"
+        if eps is not None:
+            pending_note += f" {eps:+.2f}"
+            if sh and pending_ok:
+                pending_note += f"（TTM 對得上，推算淨利約 {money(eps * sh / 1e6, cur0(f))}）"
+        pending_note += "，未出損益表；Q0 為上一季"
+    cur = cur0(f)
     q0 = qs[0] if qs else None
     yoy = None
     if len(qs) >= 5 and q0 and q0["rev"] and qs[4]["rev"]:
@@ -176,7 +216,8 @@ for t, meta in META.items():
         "unusual": q0["unusual"] if q0 else None, "unusual_rev": (q0["rev"] if q0 else None),
         "track": track_text(qs) if qs else "—",
         "grade": grade, "verdict": verdict,
-        "asof": qs[0]["period"] if qs else "—",
+        "asof": qs[0]["period"] if qs else "—", "pending": pending, "pending_note": pending_note,
+        "pending_ok": pending_ok,
         "next": (f.get("next_earnings") or "")[:10],
         "q0": q0,
     })
@@ -221,6 +262,11 @@ lines = [
     (f"• D（{n_by['D']} 隻）營運仍虧損且未見收窄。", None),
     (f"• —（{n_by['—']} 隻）Yahoo 無足夠季度損益表數據（多為外國發行人或半年度披露者）。", None),
     ("", None),
+    ("【最新一季尚未入 Yahoo 損益表的 {np} 隻】", Font(b=True, sz=10)),
+    ("• 這些股票的最新一季已公布 EPS，但 Yahoo 尚未填上完整損益表，本表的 Q0 因此是「上一季」，並在【資料截至】欄以 ⚠ 標明。", None),
+    ("• 該季 EPS 已用「stub 季 EPS ＋ 之前三季 EPS ≒ Yahoo trailing EPS」核對（{nok}/{np} 對得上），核對通過者一併列出由 EPS×股數推算的淨利（推算值，非公告原文）。", None),
+    ("  {plist}", None),
+    ("", None),
     ("【分頁】", Font(b=True, sz=10)),
     ("• 營收營利表：主表，274 隻，按級別 A→D、再按市值排序；欄標題可篩選、可排序。", None),
     ("• 一次性項目：最新一季一次性項目金額達營收 2% 或 5,000 萬以上者，按絕對金額排序。", None),
@@ -231,6 +277,16 @@ lines = [
     ("【免責】本表為公開資料整理與研究參考，非投資建議。財務數據以各公司正式公告為準；Yahoo 的損益表分類偶有錯漏，", None),
     ("  下判斷前請以公司財報原文覆核。", None),
 ]
+pend = [r for r in rows if r["pending"]]
+subs = {"{np}": str(len(pend)), "{nok}": str(sum(1 for r in pend if r["pending_ok"])),
+        "{plist}": "、".join(f"{r['t']}({r['pending'][5:].replace('-', '/')})" for r in sorted(pend, key=lambda r: r["t"]))}
+def fill(txt):
+    for k, v in subs.items():
+        txt = txt.replace(k, v)
+    return txt
+
+lines = [(fill(txt), font) for txt, font in lines]
+
 for i, (txt, font) in enumerate(lines, 1):
     c = ws.cell(row=i, column=1, value=txt)
     c.font = font or Font(sz=9.5)
@@ -262,11 +318,10 @@ for i, r in enumerate(rows, 2):
             r["periods"], *r["rev"], r["yoy"], r["rev_est"],
             *r["prof"], r["eps_est"],
             r["op_m"], r["net_m"], r["gross_m"],
-            (money(r["unusual"], r["cur"]) + (f"・營收 {abs(r['unusual'])/r['unusual_rev']*100:.1f}%"
-                                              if r["unusual"] and r["unusual_rev"] else ""))
-            if r["unusual"] and r["unusual_rev"] and abs(r["unusual"]) >= 0.01 * r["unusual_rev"] else "無重大",
+            one_off_text(r),
             r["track"], r["verdict"], r["grade"],
-            f"{r['asof']}" + (f" / {r['next']}" if r["next"] else "")]
+            f"{r['asof']}" + (f" / {r['next']}" if r["next"] else "")
+            + (f"\n{r['pending_note']}" if r["pending"] else "")]
     for j, v in enumerate(vals, 1):
         c = ws.cell(row=i, column=j, value=v)
         c.font, c.border = BODY_FONT, MONO
@@ -300,8 +355,9 @@ ws.auto_filter.ref = f"A1:{get_column_letter(len(HDR))}{len(rows)+1}"
 
 # ---------------------------------------------------------------- 一次性項目
 ws = wb.create_sheet("一次性項目")
-one = [r for r in rows if r["unusual"] and r["unusual_rev"]
-       and (abs(r["unusual"]) >= 0.02 * r["unusual_rev"] or abs(r["unusual"]) >= 50)]
+one = [r for r in rows if r["unusual"]
+       and ((r["unusual_rev"] and abs(r["unusual"]) >= 0.02 * r["unusual_rev"])
+            or abs(r["unusual"]) >= 50)]
 one.sort(key=lambda r: -abs(r["unusual"]))
 ws["A1"] = "最新一季（Q0）帳上一次性 / 非經常項目 — 金額達營收 2% 或 5,000 萬以上者"
 ws["A1"].font = TITLE_FONT
@@ -324,7 +380,8 @@ for i, r in enumerate(one, 5):
     if ex is not None and q0["net"] is not None and (ex > 0) != (q0["net"] > 0):
         direction += "（剔除後盈虧號相反）"
     for j, v in enumerate([r["t"], r["name"], r["sector"], r["asof"], r["unusual"],
-                           r["unusual"] / r["unusual_rev"] * 100, q0["net"] if q0 else None,
+                           (r["unusual"] / r["unusual_rev"] * 100) if r["unusual_rev"] else None,
+                           q0["net"] if q0 else None,
                            q0["op"] if q0 else None, ex, direction, r["grade"]], 1):
         c = ws.cell(row=i, column=j, value=v)
         c.font, c.border = BODY_FONT, MONO

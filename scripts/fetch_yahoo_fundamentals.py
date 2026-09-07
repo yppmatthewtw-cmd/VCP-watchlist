@@ -93,7 +93,7 @@ if os.path.exists(OUT):
     with gzip.open(OUT, "rt") as f:
         data = json.load(f)
     keep = {t: v for t, v in data.items()
-            if v.get("quarters") and "Total Revenue" in v["quarters"][0]}
+            if any("Total Revenue" in q for q in v.get("quarters", []))}
     todo = [s for s in symbols if s not in keep]
     print(f"{len(data)} tickers on file, {len(keep)} complete -> refetching {len(todo)}", flush=True)
     symbols = todo
@@ -108,8 +108,10 @@ for n, s in enumerate(symbols, 1):
             tk = yf.Ticker(ysym[s])
             q = frame_rows(tk.quarterly_income_stmt, 6)
             a = frame_rows(tk.income_stmt, 3)
-            if not q or "Total Revenue" not in q[0]:
+            if not any("Total Revenue" in x for x in q):
                 raise ValueError("truncated income statement")
+            # Yahoo publishes EPS for the newest quarter days before the rest of
+            # the statement; keep the stub so the workbook can say so.
             rec["quarters"], rec["annual"] = q, a
             break
         except Exception as e:                       # rate limit / transient / delisted
@@ -138,7 +140,7 @@ for n, s in enumerate(symbols, 1):
         print(f"  {n}/{len(symbols)} done, {len(failed)} failed", flush=True)
     time.sleep(0.4)
 
-full = sum(1 for v in data.values() if v.get("quarters") and "Total Revenue" in v["quarters"][0])
+full = sum(1 for v in data.values() if any("Total Revenue" in q for q in v.get("quarters", [])))
 if not symbols:
     print("nothing to refetch")
 elif len(data) < 0.8 * len(symbols):
