@@ -19,14 +19,14 @@ is as-traded. So, per symbol:
      52-week high/low per symbol on the same basis.
 
 Writes scratchpad/work10/series5.pkl (series4 schema + src / long / split_adj)
-and yahoo_crosscheck_R14.json.
+and yahoo_crosscheck_R<rev>.json (XC_OUT, default R15).
 """
-import csv, glob, gzip, json, pickle, statistics, sys
+import csv, glob, gzip, json, os, pickle, statistics, sys
 from collections import defaultdict
 from datetime import date, timedelta
 
 SCRATCH = "/tmp/claude-0/-home-user-VCP-watchlist/ff996f21-17e8-5ead-916f-161009f304a9/scratchpad/work10"
-NEW_DAY = "2026-09-04"
+NEW_DAY = os.environ.get("NEW_DAY", "")     # auto: newest Yahoo day with broad coverage
 FILES = sorted(glob.glob("data/yahoo/eod_*.csv.gz"))
 EXTRA = [f for f in sys.argv[1:] if f.endswith(".csv.gz")]   # optional stand-in files (lower priority)
 if not FILES and not EXTRA:
@@ -36,7 +36,8 @@ CLEAN = sorted(CLEAN + [1 / x for x in CLEAN])
 
 d = pickle.load(open(f"{SCRATCH}/series4.pkl", "rb"))
 CAL, SER, FILLED = d["cal"], d["series"], d.get("filled", {})
-assert CAL[-1] == "2026-09-03", CAL[-1]
+cal_idx = {dd: i for i, dd in enumerate(CAL)}
+assert CAL[-1] == os.environ.get("OFFICIAL_LAST", "2026-09-04"), CAL[-1]
 
 Y = {}
 for f in EXTRA + FILES:                      # repo files win over stand-ins
@@ -49,6 +50,18 @@ for f in EXTRA + FILES:                      # repo files win over stand-ins
     print(f"{f}: cumulative {len(Y)} symbols")
 
 
+# The newest Yahoo session is only usable once Yahoo has rolled the daily bar for
+# the whole market — for hours after a close only a few hundred symbols (mostly
+# closed-end funds) have one. Take the newest day covered by >=80% of symbols.
+if not NEW_DAY:
+    import collections
+    cov = collections.Counter(dd for v in Y.values() for dd in v)
+    days = sorted(dd for dd, n in cov.items() if n >= 0.8 * len(Y))
+    NEW_DAY = days[-1] if days else CAL[-1]
+    thin = sorted(dd for dd, n in cov.items() if dd > NEW_DAY)
+    print(f"new day: {NEW_DAY} (coverage {cov[NEW_DAY]}/{len(Y)})"
+          + (f" | ignored thin days: {[(t, cov[t]) for t in thin]}" if thin else ""))
+
 def clean_ratio(r):
     for c in CLEAN:
         if abs(r / c - 1) < 0.006:
@@ -56,7 +69,8 @@ def clean_ratio(r):
     return None
 
 
-cal = CAL + [NEW_DAY]
+EXTEND = NEW_DAY > CAL[-1]                  # nothing to add once the official feed catches up
+cal = CAL + [NEW_DAY] if EXTEND else list(CAL)
 series, src, split_adj = {}, {}, {}
 diffs, by_day, bad = [], defaultdict(list), defaultdict(int)
 n_ext = n_vol = 0
@@ -99,18 +113,23 @@ for s, (fi, cs, vs, ff) in SER.items():
                 diffs.append(dv); by_day[dd].append(dv)
                 if dv > 0.5:
                     bad[s] += 1
-        # 4. real full-day volume for recovered days
-        for k, syms in filled_days.items():
-            if s in syms and k in yb and k in CAL:
-                j = CAL.index(k) - fi
-                if 0 <= j < len(vs) and yb[k][1] > 0:
-                    vs[j] = yb[k][1]; n_vol += 1
+        # 4. volume: Yahoo's full-day volume wherever it exists.
+        # The official feed's volume is only right for days it published after the
+        # close. On a day whose close had to be recovered from the NEXT session's
+        # mid-session snapshot, the volume stored alongside it is that snapshot's
+        # partial volume (checked: MSFT/NVDA/XOM carried 9/4's volume on 9/3), and
+        # on a forward-filled day it is a neighbour's. Both feed the volume-dry-up
+        # item of the certainty score, so take Yahoo's throughout.
+        for k, (yc, yv) in yb.items():
+            if yv > 0 and k in cal_idx:
+                j = cal_idx[k] - fi
+                if 0 <= j < len(vs) and abs(vs[j] - yv) > 1:
+                    vs[j] = yv; n_vol += 1
         # 3. extend to the new day
-        if fi + len(cs) == len(CAL) and NEW_DAY in yb:
+        if EXTEND and fi + len(cs) == len(CAL) and NEW_DAY in yb:
             cs.append(yb[NEW_DAY][0]); vs.append(yb[NEW_DAY][1])
-            n_ext += 1; src[s] = "official+yahoo"
-        else:
-            src[s] = "official"
+            n_ext += 1
+        src[s] = "official+yahoo"
     else:
         src[s] = "official"
     series[s] = (fi, cs, vs, ff)
@@ -167,7 +186,9 @@ print(f"cross-check: {xc['n_symbols']} symbols, {xc['n_pairs']} pairs, median {x
 print("  per day:", {k: xc["per_day"][k] for k in sorted(xc["per_day"])})
 print("  symbols with >0.5% days:", xc["worst"][:15])
 print(f"  splits detected (official window moved onto Yahoo basis): {len(split_adj)} {sorted(split_adj.items())[:20]}")
-print(f"extended to {NEW_DAY}: {n_ext} symbols | recovered-day volumes replaced: {n_vol}")
+print((f"extended to {NEW_DAY}: {n_ext} symbols" if EXTEND else
+       f"no extension needed (official feed already at {CAL[-1]})")
+      + f" | volumes taken from Yahoo: {n_vol} symbol-days")
 
 # 5. Yahoo-only full series
 n_y = 0
@@ -199,6 +220,6 @@ print(f"long-history stats: {len(long)} symbols, {sum(1 for v in long.values() i
 
 pickle.dump({"cal": cal, "series": series, "filled": FILLED, "src": src, "long": long, "split_adj": split_adj},
             open(f"{SCRATCH}/series5.pkl", "wb"))
-json.dump(xc, open("yahoo_crosscheck_R14.json", "w"), ensure_ascii=False, indent=1)
+json.dump(xc, open(os.environ.get("XC_OUT", "yahoo_crosscheck_R15.json"), "w"), ensure_ascii=False, indent=1)
 full = sum(1 for s, (fi, cs, vs, ff) in series.items() if fi + len(cs) == len(cal))
 print(f"series5: calendar {cal[0]} -> {cal[-1]} ({len(cal)} days), {len(series)} symbols, {full} complete to {NEW_DAY}")
