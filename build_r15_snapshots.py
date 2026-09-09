@@ -238,45 +238,46 @@ JOBS = [("scan_R19_2026-09-06.json", "scan_R20_2026-09-09.json", "vcp"),
         ("scan_stage_R12_2026-09-06.json", "scan_stage_R13_2026-09-09.json", "stage"),
         ("scan_PB-R12_2026-09-06.json", "scan_PB-R13_2026-09-09.json", "pb")]
 
-# pass 1: official prices + level lifting for every list
-staged = []
-for src, dst, mode in JOBS:
-    scan = json.load(open(src))
-    out, flags, n = [], [], 0
-    for r in scan["rows"]:
-        before = r.get("stage" if mode == "stage" else "category")
-        r2, upd, flag = apply_official(r)
-        r2["_before"] = before
-        n += upd
-        if flag: flags.append(flag)
-        out.append(r2)
-    staged.append((scan, dst, mode, out, n, flags))
+if __name__ == "__main__":
+    # pass 1: official prices + level lifting for every list
+    staged = []
+    for src, dst, mode in JOBS:
+        scan = json.load(open(src))
+        out, flags, n = [], [], 0
+        for r in scan["rows"]:
+            before = r.get("stage" if mode == "stage" else "category")
+            r2, upd, flag = apply_official(r)
+            r2["_before"] = before
+            n += upd
+            if flag: flags.append(flag)
+            out.append(r2)
+        staged.append((scan, dst, mode, out, n, flags))
 
-# unify the 52-week levels per ticker across the three lists (one 距高 per ticker)
-yh = defaultdict(float); yl = {}
-for _, _, _, rows, _, _ in staged:
-    for r in rows:
-        t = r["ticker"]
-        yh[t] = max(yh[t], r.get("year_high") or 0)
-        if r.get("year_low"):
-            yl[t] = min(yl.get(t, r["year_low"]), r["year_low"])
+    # unify the 52-week levels per ticker across the three lists (one 距高 per ticker)
+    yh = defaultdict(float); yl = {}
+    for _, _, _, rows, _, _ in staged:
+        for r in rows:
+            t = r["ticker"]
+            yh[t] = max(yh[t], r.get("year_high") or 0)
+            if r.get("year_low"):
+                yl[t] = min(yl.get(t, r["year_low"]), r["year_low"])
 
-# pass 2: classify with the unified levels
-for scan, dst, mode, rows, n, flags in staged:
-    key = "stage" if mode == "stage" else "category"
-    moved = []
-    for r in rows:
-        t = r["ticker"]
-        if yh[t]: r["year_high"] = yh[t]
-        if t in yl: r["year_low"] = yl[t]
-        if "stale" in r:
-            continue
-        r = stage_classify(r) if mode == "stage" else vcp_classify(r)
-        if r.get(key) != r["_before"]:
-            moved.append((t, r["_before"], r[key]))
-        r.pop("_before", None)
-    for r in rows: r.pop("_before", None)
-    scan.update(rows=rows)
-    json.dump(scan, open(dst, "w"), ensure_ascii=False, indent=1)
-    print(f"{dst}: {n}/{len(rows)} official | {dict(Counter(r.get(key) for r in rows))}")
-    print(f"  >5% corrections: {len(flags)} | reclassified {len(moved)}: {moved[:10]}{' ...' if len(moved) > 10 else ''}")
+    # pass 2: classify with the unified levels
+    for scan, dst, mode, rows, n, flags in staged:
+        key = "stage" if mode == "stage" else "category"
+        moved = []
+        for r in rows:
+            t = r["ticker"]
+            if yh[t]: r["year_high"] = yh[t]
+            if t in yl: r["year_low"] = yl[t]
+            if "stale" in r:
+                continue
+            r = stage_classify(r) if mode == "stage" else vcp_classify(r)
+            if r.get(key) != r["_before"]:
+                moved.append((t, r["_before"], r[key]))
+            r.pop("_before", None)
+        for r in rows: r.pop("_before", None)
+        scan.update(rows=rows)
+        json.dump(scan, open(dst, "w"), ensure_ascii=False, indent=1)
+        print(f"{dst}: {n}/{len(rows)} official | {dict(Counter(r.get(key) for r in rows))}")
+        print(f"  >5% corrections: {len(flags)} | reclassified {len(moved)}: {moved[:10]}{' ...' if len(moved) > 10 else ''}")

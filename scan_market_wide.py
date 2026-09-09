@@ -13,7 +13,7 @@ Output: market_scan_<date>.json
 """
 import json, pickle, statistics, sys
 
-from build_r14_snapshots import stage_classify, vcp_classify   # same rules; R15 clone loads a cert file that may not exist yet
+from build_r15_snapshots import stage_classify, vcp_classify
 
 SCRATCH = "/tmp/claude-0/-home-user-VCP-watchlist/ff996f21-17e8-5ead-916f-161009f304a9/scratchpad/work10"
 d = pickle.load(open(f"{SCRATCH}/series5.pkl", "rb"))
