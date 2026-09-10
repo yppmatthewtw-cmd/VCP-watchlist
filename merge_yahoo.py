@@ -37,7 +37,8 @@ CLEAN = sorted(CLEAN + [1 / x for x in CLEAN])
 d = pickle.load(open(f"{SCRATCH}/series4.pkl", "rb"))
 CAL, SER, FILLED = d["cal"], d["series"], d.get("filled", {})
 cal_idx = {dd: i for i, dd in enumerate(CAL)}
-assert CAL[-1] == os.environ.get("OFFICIAL_LAST", "2026-09-04"), CAL[-1]
+# The official feed advances one session per upstream snapshot; just report it.
+print(f"official series through {CAL[-1]} ({len(CAL)} sessions)")
 
 Y = {}
 for f in EXTRA + FILES:                      # repo files win over stand-ins

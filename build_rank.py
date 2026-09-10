@@ -18,37 +18,36 @@ BASIS = '2026-09-09'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    # 9/8 session (the classification basis). Middle East escalation (US-Iran
-    # exchanges around Hormuz, Houthi strikes on Saudi facilities) lifted crude
-    # (WTI ~$94, Brent ~$99) and rotated money into energy, utilities and
-    # defence; AI power and optical names ran hard while software sold off.
-    'LITE': (6, '2026-09-08', 'AI 光通訊全線大漲，收 $978.53（+11%）；高盛看 2028 年市場 $154B'),
-    'INTC': (6, '2026-09-08', '$200 億股票增發（每股 $95）強化 AI 與代工資本開支'),
-    'COHR': (4, '2026-09-08', 'AI 光通訊同步走強'),
-    'GLW':  (4, '2026-09-08', '光纖／光連接受惠 AI 資料中心需求'),
-    'CIEN': (3, '2026-09-08', '光通訊板塊輪動，收復財報後跌幅'),
-    'SMR':  (4, '2026-09-08', '核電／小型模組化反應爐板塊輪動（AI 電力需求），無個別公告'),
-    'BE':   (4, '2026-09-08', '離網供電需求急升（Oracle／Intel／CoreWeave 合約）'),
-    'CRWV': (3, '2026-09-08', 'AI 資料中心電力主題'),
-    'NBIS': (3, '2026-09-08', 'AI 基建續強'),
-    'ALAB': (-4, '2026-09-08', 'AI 互連估值回吐，資金轉向光通訊'),
-    'CVX':  (2, '2026-09-08', '中東衝突升級，WTI 逼近 $94、布蘭特近 $99'),
-    'XOM':  (2, '2026-09-08', '油價急升，能源避險'),
-    'OXY':  (2, '2026-09-08', '油價急升'),
+    # 9/9 session (the classification basis). Brent broke $101 and long yields
+    # hit 52-week highs after further US-Iran escalation, so the tape was risk-off
+    # (median -0.80%) with energy the only sector median in the green; the day's
+    # winners were single-name AI news, and AI-infrastructure hardware was sold.
+    'NET':  (7, '2026-09-09', '與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber），+10.5%'),
+    'META': (6, '2026-09-09', '發布 Muse AI agent（訂閱制），+6.5%'),
+    'VRT':  (-6, '2026-09-09', 'AI 資料中心基建獲利了結、估值偏高＋UIG 收購整合疑慮，−9.6%'),
+    'EQNR': (2, '2026-09-09', '布蘭特破 $101，能源受惠'),
+    'CVX':  (2, '2026-09-09', '布蘭特破 $101、WTI 約 $96（美伊衝突升級）'),
+    'XOM':  (2, '2026-09-09', '油價續升，能源避險'),
+    'OXY':  (2, '2026-09-09', '油價續升'),
+    # 9/8
+    'LITE': (5, '2026-09-08', 'AI 光通訊全線大漲，收 $978.53（+11%）'),
+    'INTC': (5, '2026-09-08', '$200 億股票增發（每股 $95）強化 AI 與代工資本開支'),
+    'COHR': (3, '2026-09-08', 'AI 光通訊同步走強'),
+    'GLW':  (3, '2026-09-08', '光纖／光連接受惠 AI 資料中心需求'),
+    'SMR':  (3, '2026-09-08', '核電／SMR 板塊輪動（AI 電力需求）'),
+    'BE':   (3, '2026-09-08', '離網供電需求急升（Oracle／Intel／CoreWeave 合約）'),
+    'ALAB': (-3, '2026-09-08', 'AI 互連估值回吐，資金轉向光通訊'),
     'LMT':  (2, '2026-09-08', '中東衝突升級，防務股獲上調評級'),
-    # earlier sessions, still the reason a name is where it is
-    'KLAC': (3, '2026-09-04', '半導體設備領漲（+7.3%），AI 交易擴散至設備／檢測'),
-    'LRCX': (2, '2026-09-04', '半導體設備同步走強（+5.1%）'),
-    'LULU': (-7, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
+    # earlier, still explanatory
+    'KLAC': (2, '2026-09-04', '半導體設備領漲（+7.3%）'),
+    'LULU': (-6, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
     'TSLA': (-3, '2026-09-04', 'Cybercab 發表令人失望＋NHTSA 審查'),
-    'SNOW': (4, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
-    'HOOD': (4, '2026-09-03', '將納入標普 500；MS 上調至 Overweight'),
-    'COIN': (3, '2026-09-03', '比特幣重上 $81k；推美股永續合約'),
-    'PLTR': (2, '2026-09-03', '擴大與 PwC 合作建 AI 交易平台'),
-    'AVGO': (-2, '2026-09-03', '財報超預期仍下跌（sell-the-news）'),
-    'DELL': (3, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
-    'CRDO': (-4, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
-    'MDB':  (-3, '2026-09-02', '財報超預期並上調指引，惟 Atlas 增速連三季持平'),
+    'SNOW': (3, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
+    'HOOD': (3, '2026-09-03', '將納入標普 500；MS 上調至 Overweight'),
+    'COIN': (2, '2026-09-03', '比特幣重上 $81k；推美股永續合約'),
+    'CIEN': (-2, '2026-09-03', '財報超預期但指引僅持平'),
+    'DELL': (2, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
+    'CRDO': (-3, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
     'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
