@@ -220,6 +220,6 @@ print(f"long-history stats: {len(long)} symbols, {sum(1 for v in long.values() i
 
 pickle.dump({"cal": cal, "series": series, "filled": FILLED, "src": src, "long": long, "split_adj": split_adj},
             open(f"{SCRATCH}/series5.pkl", "wb"))
-json.dump(xc, open(os.environ.get("XC_OUT", "yahoo_crosscheck_R15.json"), "w"), ensure_ascii=False, indent=1)
+json.dump(xc, open(os.environ.get("XC_OUT", "yahoo_crosscheck_R16.json"), "w"), ensure_ascii=False, indent=1)
 full = sum(1 for s, (fi, cs, vs, ff) in series.items() if fi + len(cs) == len(cal))
 print(f"series5: calendar {cal[0]} -> {cal[-1]} ({len(cal)} days), {len(series)} symbols, {full} complete to {NEW_DAY}")
