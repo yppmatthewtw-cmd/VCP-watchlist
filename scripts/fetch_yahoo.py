@@ -58,6 +58,42 @@ for i in range(0, len(symbols), BATCH):
     print(f"batch {i // BATCH}: {got}/{len(batch)} symbols with bars")
     time.sleep(2)
 
+# Second pass: Yahoo rate-limits the later batches of a long run, and the
+# symbols in them are dropped silently — on a 3,052-name list that reliably
+# lost the tail of the alphabet. Retry what failed, in small batches, slowly.
+if failed:
+    retry, failed2 = sorted(set(failed)), []
+    print(f"retry pass: {len(retry)} symbols", flush=True)
+    for i in range(0, len(retry), 25):
+        batch = retry[i:i + 25]
+        for attempt in range(4):
+            try:
+                df = yf.download(batch, start=START, end=END, interval="1d", auto_adjust=False,
+                                 actions=False, group_by="ticker", threads=False, progress=False)
+                break
+            except Exception as e:
+                print(f"retry batch {i // 25}: attempt {attempt + 1} failed: {e}")
+                time.sleep(30 * (attempt + 1))
+        else:
+            failed2 += batch; continue
+        got = 0
+        for y in batch:
+            try:
+                sub = df[y] if isinstance(df.columns, pd.MultiIndex) else df
+            except KeyError:
+                failed2.append(y); continue
+            sub = sub.dropna(subset=["Close"])
+            if sub.empty:
+                failed2.append(y); continue
+            sub = sub.reset_index().rename(columns=str.lower)
+            sub["symbol"] = back[y]
+            frames.append(sub[["symbol", "date", "open", "high", "low", "close", "adj close", "volume"]])
+            got += 1
+        print(f"retry batch {i // 25}: {got}/{len(batch)} recovered", flush=True)
+        time.sleep(5)
+    print(f"retry pass recovered {len(retry) - len(failed2)}/{len(retry)}")
+    failed = failed2
+
 if not frames:
     sys.exit("no data at all; refusing to write")
 all_ = pd.concat(frames)
