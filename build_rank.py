@@ -18,36 +18,38 @@ BASIS = '2026-09-10'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    # 9/9 session (the classification basis). Brent broke $101 and long yields
-    # hit 52-week highs after further US-Iran escalation, so the tape was risk-off
-    # (median -0.80%) with energy the only sector median in the green; the day's
-    # winners were single-name AI news, and AI-infrastructure hardware was sold.
-    'NET':  (7, '2026-09-09', '與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber），+10.5%'),
-    'META': (6, '2026-09-09', '發布 Muse AI agent（訂閱制），+6.5%'),
-    'VRT':  (-6, '2026-09-09', 'AI 資料中心基建獲利了結、估值偏高＋UIG 收購整合疑慮，−9.6%'),
+    # 9/10 session (the classification basis). Fourth straight down day: WTI
+    # closed above $100 for the first time this cycle and August PPI ran at
+    # 5.4% y/y, so the AI power / data-centre complex that led on 9/8 was sold
+    # hardest (Technology sector median -2.1%) while beaten-down software bounced.
+    'AEO':  (-8, '2026-09-10', '財報 EPS $0.79 大勝（含 $1.96 億關稅退款），惟同店 +6% 遜預期、AE 品牌 −1%、毛利率 −3.3pp，跌 14%'),
+    'RDDT': (6, '2026-09-10', 'Piper Sandler：8 月月活按月 +8%（年內最快）、按年 +18%；另傳 Meta 推 Hatch AI agent 存取 Reddit'),
+    'OKLO': (-4, '2026-09-10', 'AI 電力／核電板塊獲利了結'),
+    'SMR':  (-4, '2026-09-10', 'AI 電力／核電板塊獲利了結'),
+    'CRWV': (-4, '2026-09-10', 'AI 資料中心基建續遭沽售'),
+    'VRT':  (-4, '2026-09-10', 'AI 基建連續第二日回吐'),
+    'INTC': (-4, '2026-09-10', '增發後回吐，半導體全線走弱'),
+    'LRCX': (-3, '2026-09-10', '半導體設備回吐'),
+    # 9/9
+    'NET':  (5, '2026-09-09', '與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber），+10.5%'),
+    'META': (5, '2026-09-09', '發布 Muse AI agent（訂閱制），+6.5%'),
     'EQNR': (2, '2026-09-09', '布蘭特破 $101，能源受惠'),
-    'CVX':  (2, '2026-09-09', '布蘭特破 $101、WTI 約 $96（美伊衝突升級）'),
-    'XOM':  (2, '2026-09-09', '油價續升，能源避險'),
-    'OXY':  (2, '2026-09-09', '油價續升'),
     # 9/8
-    'LITE': (5, '2026-09-08', 'AI 光通訊全線大漲，收 $978.53（+11%）'),
-    'INTC': (5, '2026-09-08', '$200 億股票增發（每股 $95）強化 AI 與代工資本開支'),
-    'COHR': (3, '2026-09-08', 'AI 光通訊同步走強'),
-    'GLW':  (3, '2026-09-08', '光纖／光連接受惠 AI 資料中心需求'),
-    'SMR':  (3, '2026-09-08', '核電／SMR 板塊輪動（AI 電力需求）'),
-    'BE':   (3, '2026-09-08', '離網供電需求急升（Oracle／Intel／CoreWeave 合約）'),
-    'ALAB': (-3, '2026-09-08', 'AI 互連估值回吐，資金轉向光通訊'),
+    'LITE': (4, '2026-09-08', 'AI 光通訊全線大漲（+11%）'),
+    'COHR': (2, '2026-09-08', 'AI 光通訊同步走強'),
+    'GLW':  (2, '2026-09-08', '光纖／光連接受惠 AI 資料中心需求'),
+    'BE':   (2, '2026-09-08', '離網供電需求急升（Oracle／Intel／CoreWeave 合約）'),
     'LMT':  (2, '2026-09-08', '中東衝突升級，防務股獲上調評級'),
+    # oil complex — the only sector holding up through the four-day slide
+    'CVX':  (2, '2026-09-10', 'WTI 收 $102.48（+6.7%）首上 $100'),
+    'XOM':  (2, '2026-09-10', '油價破 $100，能源避險'),
+    'OXY':  (2, '2026-09-10', '油價破 $100'),
     # earlier, still explanatory
-    'KLAC': (2, '2026-09-04', '半導體設備領漲（+7.3%）'),
-    'LULU': (-6, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
+    'LULU': (-5, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
     'TSLA': (-3, '2026-09-04', 'Cybercab 發表令人失望＋NHTSA 審查'),
     'SNOW': (3, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
-    'HOOD': (3, '2026-09-03', '將納入標普 500；MS 上調至 Overweight'),
-    'COIN': (2, '2026-09-03', '比特幣重上 $81k；推美股永續合約'),
-    'CIEN': (-2, '2026-09-03', '財報超預期但指引僅持平'),
+    'HOOD': (3, '2026-09-03', '納入標普 500；MS 上調至 Overweight'),
     'DELL': (2, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
-    'CRDO': (-3, '2026-09-02', '財報優於預期，惟憂光通訊增速與估值'),
     'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
