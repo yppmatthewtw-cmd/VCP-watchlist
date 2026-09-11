@@ -10,11 +10,11 @@ the move again would double count it (critical-review finding, 2026-09-02).
 """
 import json
 
-FILES = [('scan_R21_2026-09-10.json', 'category'),
-         ('scan_stage_R14_2026-09-10.json', 'stage'),
-         ('scan_PB-R14_2026-09-10.json', 'category')]
+FILES = [('scan_R22_2026-09-11.json', 'category'),
+         ('scan_stage_R15_2026-09-11.json', 'stage'),
+         ('scan_PB-R15_2026-09-11.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
-BASIS = '2026-09-09'
+BASIS = '2026-09-10'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
