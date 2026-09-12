@@ -10,47 +10,45 @@ the move again would double count it (critical-review finding, 2026-09-02).
 """
 import json
 
-FILES = [('scan_R22_2026-09-11.json', 'category'),
-         ('scan_stage_R15_2026-09-11.json', 'stage'),
-         ('scan_PB-R15_2026-09-11.json', 'category')]
+FILES = [('scan_R23_2026-09-12.json', 'category'),
+         ('scan_stage_R16_2026-09-12.json', 'stage'),
+         ('scan_PB-R16_2026-09-12.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
-BASIS = '2026-09-10'
+BASIS = '2026-09-11'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    # 9/10 session (the classification basis). Fourth straight down day: WTI
-    # closed above $100 for the first time this cycle and August PPI ran at
-    # 5.4% y/y, so the AI power / data-centre complex that led on 9/8 was sold
-    # hardest (Technology sector median -2.1%) while beaten-down software bounced.
-    'AEO':  (-8, '2026-09-10', '財報 EPS $0.79 大勝（含 $1.96 億關稅退款），惟同店 +6% 遜預期、AE 品牌 −1%、毛利率 −3.3pp，跌 14%'),
-    'RDDT': (6, '2026-09-10', 'Piper Sandler：8 月月活按月 +8%（年內最快）、按年 +18%；另傳 Meta 推 Hatch AI agent 存取 Reddit'),
-    'OKLO': (-4, '2026-09-10', 'AI 電力／核電板塊獲利了結'),
-    'SMR':  (-4, '2026-09-10', 'AI 電力／核電板塊獲利了結'),
-    'CRWV': (-4, '2026-09-10', 'AI 資料中心基建續遭沽售'),
-    'VRT':  (-4, '2026-09-10', 'AI 基建連續第二日回吐'),
-    'INTC': (-4, '2026-09-10', '增發後回吐，半導體全線走弱'),
-    'LRCX': (-3, '2026-09-10', '半導體設備回吐'),
+    # 9/11 session (the classification basis). CPI landed close to expectations
+    # (headline 3.4% y/y, core 2.4% with core 0.1pp hot) and oil eased, ending a
+    # four-day slide; Oracle's capex guidance sent AI server names flying while
+    # the SMR/nuclear complex broke down on a UBS downgrade and an Oklo ATM.
+    'HPE':  (7, '2026-09-11', 'Oracle 資本開支指引帶動 AI 伺服器需求＋9/2 上調全年指引，+12.4%'),
+    'DELL': (7, '2026-09-11', 'Oracle 資本開支指引；Q2 營收 +58%、AI 訂單 $60.9B／backlog $95B，+12.0%'),
+    'SMCI': (5, '2026-09-11', 'AI 伺服器同步走強'),
+    'ANET': (4, '2026-09-11', 'AI 資料中心網絡受惠 Oracle 資本開支'),
+    'CLS':  (4, '2026-09-11', 'AI 硬件代工同步走強'),
+    'BE':   (4, '2026-09-11', '資料中心供電需求'),
+    'SMR':  (-8, '2026-09-11', 'UBS 降至賣出、目標價削至 $6（工期逾五年、無確定客戶、三年燒錢 $7 億），−15.7%'),
+    'OKLO': (-6, '2026-09-11', '新設 $10 億 ATM 增發計劃＋核電板塊同步下挫，−9.2%'),
+    # 9/10
+    'AEO':  (-6, '2026-09-10', '財報 EPS 大勝（含關稅退款），惟同店遜預期、AE 品牌 −1%、毛利率 −3.3pp，跌 14%'),
+    'RDDT': (4, '2026-09-10', 'Piper Sandler：8 月月活按月 +8%、按年 +18%'),
     # 9/9
-    'NET':  (5, '2026-09-09', '與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber），+10.5%'),
-    'META': (5, '2026-09-09', '發布 Muse AI agent（訂閱制），+6.5%'),
-    'EQNR': (2, '2026-09-09', '布蘭特破 $101，能源受惠'),
+    'NET':  (4, '2026-09-09', '與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber）'),
+    'META': (4, '2026-09-09', '發布 Muse AI agent（訂閱制）'),
     # 9/8
-    'LITE': (4, '2026-09-08', 'AI 光通訊全線大漲（+11%）'),
-    'COHR': (2, '2026-09-08', 'AI 光通訊同步走強'),
-    'GLW':  (2, '2026-09-08', '光纖／光連接受惠 AI 資料中心需求'),
-    'BE':   (2, '2026-09-08', '離網供電需求急升（Oracle／Intel／CoreWeave 合約）'),
+    'LITE': (3, '2026-09-08', 'AI 光通訊全線大漲（+11%）'),
+    'INTC': (2, '2026-09-08', '$200 億股票增發（每股 $95）強化 AI 與代工資本開支'),
     'LMT':  (2, '2026-09-08', '中東衝突升級，防務股獲上調評級'),
-    # oil complex — the only sector holding up through the four-day slide
-    'CVX':  (2, '2026-09-10', 'WTI 收 $102.48（+6.7%）首上 $100'),
-    'XOM':  (2, '2026-09-10', '油價破 $100，能源避險'),
-    'OXY':  (2, '2026-09-10', '油價破 $100'),
+    # oil complex — crude eased back on 9/11 after topping $100
+    'CVX':  (1, '2026-09-11', '油價自 $102 高位回落，能源板塊持平'),
+    'XOM':  (1, '2026-09-11', '油價自高位回落'),
     # earlier, still explanatory
-    'LULU': (-5, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
-    'TSLA': (-3, '2026-09-04', 'Cybercab 發表令人失望＋NHTSA 審查'),
-    'SNOW': (3, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
-    'HOOD': (3, '2026-09-03', '納入標普 500；MS 上調至 Overweight'),
-    'DELL': (2, '2026-09-02', '財報創紀錄：AI 伺服器訂單 $60.9B、backlog $95B'),
-    'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
+    'LULU': (-4, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
+    'TSLA': (-2, '2026-09-04', 'Cybercab 發表令人失望＋NHTSA 審查'),
+    'SNOW': (2, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
+    'HOOD': (2, '2026-09-03', '納入標普 500；MS 上調至 Overweight'),
+    'MRNA': (3, '2026-09-11', '生技反彈，+5.4%（8/19 癌症疫苗三期成功後高位震盪）'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
 }
