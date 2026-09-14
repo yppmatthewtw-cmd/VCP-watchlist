@@ -1,0 +1,331 @@
+{
+ "NET": {
+  "pts": 4,
+  "reason": "與 OpenAI 合推 AI 資安平台（GPT-5.6 Cyber）",
+  "move": -1.49,
+  "date": "2026-09-09",
+  "kind": "news"
+ },
+ "DELL": {
+  "pts": 7,
+  "reason": "9/11 +12.0%，Oracle 資本開支指引；Q2 營收 +58%、AI 訂單 $60.9B／backlog $95B，+12.0%",
+  "move": 11.98,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "SNOW": {
+  "pts": 2,
+  "reason": "財報超預期：產品營收 +37%、上調全年指引",
+  "move": -0.22,
+  "date": "2026-09-03",
+  "kind": "news"
+ },
+ "HPE": {
+  "pts": 7,
+  "reason": "9/11 +12.4%，Oracle 資本開支指引帶動 AI 伺服器需求＋9/2 上調全年指引，+12.4%",
+  "move": 12.44,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "INTC": {
+  "pts": 2,
+  "reason": "$200 億股票增發（每股 $95）強化 AI 與代工資本開支",
+  "move": 2.61,
+  "date": "2026-09-08",
+  "kind": "news"
+ },
+ "MDB": {
+  "pts": 0,
+  "reason": "9/11 -3.1%",
+  "move": -3.12,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "ARM": {
+  "pts": 0,
+  "reason": "9/11 +4.2%",
+  "move": 4.17,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "LITE": {
+  "pts": 3,
+  "reason": "AI 光通訊全線大漲（+11%）",
+  "move": -0.93,
+  "date": "2026-09-08",
+  "kind": "news"
+ },
+ "ANET": {
+  "pts": 4,
+  "reason": "9/11 +5.6%，AI 資料中心網絡受惠 Oracle 資本開支",
+  "move": 5.61,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "MRVL": {
+  "pts": 0,
+  "reason": "9/11 +4.0%",
+  "move": 4.03,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "JBL": {
+  "pts": 0,
+  "reason": "9/11 +5.0%",
+  "move": 5.05,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "MPWR": {
+  "pts": 0,
+  "reason": "9/11 +4.1%",
+  "move": 4.08,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "CIEN": {
+  "pts": 0,
+  "reason": "9/11 +4.5%",
+  "move": 4.48,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "COHR": {
+  "pts": 0,
+  "reason": "9/11 +4.2%",
+  "move": 4.16,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "SMCI": {
+  "pts": 5,
+  "reason": "9/11 +7.3%，AI 伺服器同步走強",
+  "move": 7.28,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "CLS": {
+  "pts": 4,
+  "reason": "9/11 +6.6%，AI 硬件代工同步走強",
+  "move": 6.56,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "MOD": {
+  "pts": 0,
+  "reason": "9/11 +5.6%",
+  "move": 5.6,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "TSLA": {
+  "pts": -2,
+  "reason": "Cybercab 發表令人失望＋NHTSA 審查",
+  "move": 0.52,
+  "date": "2026-09-04",
+  "kind": "news"
+ },
+ "APP": {
+  "pts": 0,
+  "reason": "9/11 +3.0%",
+  "move": 3.01,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "META": {
+  "pts": 4,
+  "reason": "發布 Muse AI agent（訂閱制）",
+  "move": 0.57,
+  "date": "2026-09-09",
+  "kind": "news"
+ },
+ "RDDT": {
+  "pts": 4,
+  "reason": "Piper Sandler：8 月月活按月 +8%、按年 +18%",
+  "move": 1.56,
+  "date": "2026-09-10",
+  "kind": "news"
+ },
+ "VRT": {
+  "pts": 0,
+  "reason": "9/11 +3.6%",
+  "move": 3.6,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "ETN": {
+  "pts": 0,
+  "reason": "9/11 +4.0%",
+  "move": 3.96,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "PWR": {
+  "pts": 0,
+  "reason": "9/11 +5.2%",
+  "move": 5.15,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "GEV": {
+  "pts": 0,
+  "reason": "9/11 +3.6%",
+  "move": 3.61,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "OKLO": {
+  "pts": -6,
+  "reason": "9/11 -9.2%，新設 $10 億 ATM 增發計劃＋核電板塊同步下挫，−9.2%",
+  "move": -9.18,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "SMR": {
+  "pts": -8,
+  "reason": "9/11 -15.7%，UBS 降至賣出、目標價削至 $6（工期逾五年、無確定客戶、三年燒錢 $7 億），−15.7%",
+  "move": -15.67,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "CGNX": {
+  "pts": 0,
+  "reason": "9/11 +4.1%",
+  "move": 4.1,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "BE": {
+  "pts": 4,
+  "reason": "9/11 +6.7%，資料中心供電需求",
+  "move": 6.68,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "LULU": {
+  "pts": -4,
+  "reason": "財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%",
+  "move": 2.16,
+  "date": "2026-09-04",
+  "kind": "news"
+ },
+ "URBN": {
+  "pts": 0,
+  "reason": "9/11 +3.9%",
+  "move": 3.94,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "MCHP": {
+  "pts": 0,
+  "reason": "9/11 +3.7%",
+  "move": 3.66,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "LMT": {
+  "pts": 2,
+  "reason": "中東衝突升級，防務股獲上調評級",
+  "move": -1.12,
+  "date": "2026-09-08",
+  "kind": "news"
+ },
+ "XOM": {
+  "pts": 1,
+  "reason": "油價自高位回落",
+  "move": 0.46,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "CVX": {
+  "pts": 1,
+  "reason": "油價自 $102 高位回落，能源板塊持平",
+  "move": 0.61,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "AEO": {
+  "pts": -6,
+  "reason": "9/11 +3.4%，財報 EPS 大勝（含關稅退款），惟同店遜預期、AE 品牌 −1%、毛利率 −3.3pp，跌 14%",
+  "move": 3.37,
+  "date": "2026-09-10",
+  "kind": "news"
+ },
+ "HOOD": {
+  "pts": 2,
+  "reason": "納入標普 500；MS 上調至 Overweight",
+  "move": -0.67,
+  "date": "2026-09-03",
+  "kind": "news"
+ },
+ "MRNA": {
+  "pts": 3,
+  "reason": "9/11 +5.4%，生技反彈，+5.4%（8/19 癌症疫苗三期成功後高位震盪）",
+  "move": 5.38,
+  "date": "2026-09-11",
+  "kind": "news"
+ },
+ "CLDX": {
+  "pts": 0,
+  "reason": "9/11 -3.1%",
+  "move": -3.15,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "IOVA": {
+  "pts": 0,
+  "reason": "9/11 +5.7%",
+  "move": 5.65,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "GSAT": {
+  "pts": -8,
+  "reason": "被收購，價格封頂",
+  "move": 0.62,
+  "date": "2026-08-27",
+  "kind": "news"
+ },
+ "MBX": {
+  "pts": 0,
+  "reason": "9/11 -3.1%",
+  "move": -3.15,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "RCUS": {
+  "pts": 0,
+  "reason": "9/11 -6.0%",
+  "move": -5.97,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "RUSHB": {
+  "pts": 0,
+  "reason": "3:2 拆股（已調整）",
+  "move": 1.36,
+  "date": "2026-08-31",
+  "kind": "news"
+ },
+ "ELVN": {
+  "pts": 0,
+  "reason": "9/11 -3.4%",
+  "move": -3.4,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "PKE": {
+  "pts": 0,
+  "reason": "9/11 +3.4%",
+  "move": 3.42,
+  "date": "2026-09-11",
+  "kind": "move"
+ },
+ "SNX": {
+  "pts": 0,
+  "reason": "9/11 +5.3%",
+  "move": 5.35,
+  "date": "2026-09-11",
+  "kind": "move"
+ }
+}
