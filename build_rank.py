@@ -10,50 +10,49 @@ the move again would double count it (critical-review finding, 2026-09-02).
 """
 import json
 
-FILES = [('scan_R24_2026-09-15.json', 'category'),
-         ('scan_stage_R17_2026-09-15.json', 'stage'),
-         ('scan_PB-R17_2026-09-15.json', 'category')]
+FILES = [('scan_R25_2026-09-16.json', 'category'),
+         ('scan_stage_R18_2026-09-16.json', 'stage'),
+         ('scan_PB-R18_2026-09-16.json', 'category')]
 ONLINE = {'A_VCP待突破', 'E_突破延伸中', 'B_上升結構', '2A_初升段', '2B_主升段', '1轉2_轉強觀察'}
-BASIS = '2026-09-14'
+BASIS = '2026-09-15'
 
 # Qualitative NEWS catalysts only: (pts, date, text). Text must not contain '、'.
 NEWS = {
-    # 9/14 session (the classification basis). Anthropic CEO Dario Amodei's
-    # Saturday essay "We Must Pace the Frontier" — calling for a slower pace of
-    # frontier capability gains, citing autonomous agents capable of large-scale
-    # cyberattacks — was read as bullish for security spend and bearish for AI
-    # hardware: cyber names ripped, semis / optics / AI servers were dumped
-    # (Technology sector median -3.8%), with oil and a 4.97% 10-year adding to it.
-    'ZS':   (8, '2026-09-14', 'AI 安全警告帶動資安股，+16.5%'),
-    'CRWD': (8, '2026-09-14', 'Amodei 警示自主 AI 代理可發動大規模網攻，資安需求預期上升，+13.8%（曾創新高）'),
-    'PANW': (7, '2026-09-14', '資安板塊全線急升，+13.1%'),
-    'FTNT': (6, '2026-09-14', '資安板塊全線急升，+9.0%'),
-    'NET':  (5, '2026-09-14', '資安／邊緣防護受惠，+7.8%'),
-    'GLW':  (-7, '2026-09-14', 'AI 光通訊遭重錘，−13.7%'),
-    'TER':  (-7, '2026-09-14', '半導體測試設備急挫，−13.3%'),
-    'COHR': (-7, '2026-09-14', 'AI 光通訊遭重錘，−12.7%'),
-    'ALAB': (-6, '2026-09-14', 'AI 互連急挫，−11.7%'),
-    'HPE':  (-6, '2026-09-14', 'AI 伺服器回吐上週升幅，−10.8%'),
-    'LITE': (-6, '2026-09-14', 'AI 光通訊遭重錘，−9.9%'),
-    'ARM':  (-5, '2026-09-14', '晶片股全線下挫（VanEck 半導體 ETF −4%），−9.7%'),
-    'GEV':  (-5, '2026-09-14', 'AI 電力基建回吐，−8.6%'),
-    'COIN': (5, '2026-09-14', '加密資產交投回暖，+9.2%'),
+    # 9/15 session (the classification basis). FOMC opened with the 10-year at
+    # 5.041%, its highest since 2007; indexes slipped again but the AI names
+    # that were dumped on 9/14 bounced, and refiners / E&P ran with crude
+    # (Energy sector median +2.7%, the only group clearly green).
+    'ENVA': (-8, '2026-09-15', '撤回收購 Grasshopper Bancorp 的監管申請（銀行牌照受阻），Citizens JMP 目標價 $270→$215；重申全年指引並加快回購，−23.4%'),
+    'QCOM': (4, '2026-09-15', 'AI 晶片股回穩，+4.2%'),
+    'CIEN': (3, '2026-09-15', '光通訊自 9/14 重挫中反彈，+4.6%'),
+    'PBF':  (4, '2026-09-15', '煉油毛利擴張、油價續升，+6.1%'),
+    'DINO': (3, '2026-09-15', '煉油股同步走強，+5.0%'),
+    'SU':   (3, '2026-09-15', '油價續升，+4.6%'),
+    'EOG':  (3, '2026-09-15', '油價續升，能源為當日唯一明顯造好板塊（中位 +2.7%）'),
+    'CHRD': (3, '2026-09-15', '頁岩 E&P 受惠油價'),
+    'CVX':  (2, '2026-09-15', '油價續升，能源避險'),
+    'XOM':  (2, '2026-09-15', '油價續升'),
+    'COIN': (-5, '2026-09-15', '加密資產回落，−10.1%'),
+    'AXON': (-5, '2026-09-15', '高估值成長股回吐，−9.8%'),
+    # 9/14 — the AI-safety rotation that still explains most of the table
+    'ZS':   (6, '2026-09-14', 'Amodei「We Must Pace the Frontier」文章觸發資安買盤，+16.5%'),
+    'CRWD': (6, '2026-09-14', '同上，+13.8%（曾創新高）'),
+    'PANW': (5, '2026-09-14', '資安板塊全線急升，+13.1%'),
+    'FTNT': (4, '2026-09-14', '資安板塊全線急升'),
+    'NET':  (4, '2026-09-14', '資安／邊緣防護受惠'),
+    'GLW':  (-5, '2026-09-14', 'AI 光通訊遭重錘，−13.7%'),
+    'TER':  (-5, '2026-09-14', '半導體測試設備急挫，−13.3%'),
+    'COHR': (-4, '2026-09-14', 'AI 光通訊遭重錘（9/15 已反彈約 2%）'),
+    'ALAB': (-4, '2026-09-14', 'AI 互連急挫，−11.7%'),
+    'HPE':  (-4, '2026-09-14', 'AI 伺服器回吐上週升幅'),
+    'ARM':  (-4, '2026-09-14', '晶片股全線下挫（VanEck 半導體 ETF −4%）'),
     # 9/11
-    'DELL': (4, '2026-09-11', 'Oracle 資本開支指引；Q2 營收 +58%、AI 訂單 $60.9B／backlog $95B'),
-    'SMR':  (-6, '2026-09-11', 'UBS 降至賣出、目標價削至 $6（工期逾五年、無確定客戶、三年燒錢 $7 億）'),
-    'OKLO': (-5, '2026-09-11', '新設 $10 億 ATM 增發計劃＋核電板塊下挫'),
-    # 9/10
-    'AEO':  (-5, '2026-09-10', '財報 EPS 大勝（含關稅退款），惟同店遜預期、毛利率 −3.3pp，跌 14%'),
-    'RDDT': (3, '2026-09-10', 'Piper Sandler：8 月月活按月 +8%、按年 +18%'),
-    # 9/9
-    'META': (3, '2026-09-09', '發布 Muse AI agent（訂閱制）'),
-    # macro / oil
-    'CVX':  (1, '2026-09-14', '中東局勢緊張、油價續升'),
-    'XOM':  (1, '2026-09-14', '油價續升'),
+    'DELL': (3, '2026-09-11', 'Oracle 資本開支指引；Q2 營收 +58%、AI 訂單 $60.9B／backlog $95B'),
+    'SMR':  (-5, '2026-09-11', 'UBS 降至賣出、目標價削至 $6'),
+    'OKLO': (-4, '2026-09-11', '新設 $10 億 ATM 增發計劃'),
     # earlier, still explanatory
-    'LULU': (-4, '2026-09-04', '財報：營收 −4%、同店 −9%，大砍全年指引，跌 17%'),
-    'SNOW': (2, '2026-09-03', '財報超預期：產品營收 +37%、上調全年指引'),
-    'HOOD': (2, '2026-09-03', '納入標普 500；MS 上調至 Overweight'),
+    'AEO':  (-4, '2026-09-10', '財報同店遜預期、毛利率 −3.3pp，9/10 跌 14%'),
+    'LULU': (-3, '2026-09-04', '財報大砍全年指引，跌 17%'),
     'MRNA': (2, '2026-08-19', '癌症疫苗三期成功（8/19 +177%），其後高位震盪'),
     'GSAT': (-8, '2026-08-27', '被收購，價格封頂'),
     'RUSHB': (0, '2026-08-31', '3:2 拆股（已調整）'),
