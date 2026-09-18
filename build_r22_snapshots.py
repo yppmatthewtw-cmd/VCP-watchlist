@@ -2,7 +2,7 @@
 """R22 snapshot refresh: 2026-09-17 closes (Yahoo, cross-checked against the official series) for the whole universe, with
 the classification fixes from the 2026-09-02 critical review.
 
-Sources: cert7_2026-09-17.json (official series, 241 tickers) + the 9/17 HEAD (mid-session) snapshot for market cap / sector only
+Sources: cert7_2026-09-16.json (official series, 241 tickers) + the 9/17 HEAD (mid-session) snapshot for market cap / sector only
 tickers.csv (33 more, mostly foreign issuers). Every row gets the official
 close, official 21/63-day momentum, 21-day close range, MA50, market cap and
 sector, its 52-week levels lifted to any higher/lower official close in the
@@ -27,11 +27,11 @@ from collections import Counter, defaultdict
 
 SCRATCH = "/tmp/claude-0/-home-user-VCP-watchlist/ff996f21-17e8-5ead-916f-161009f304a9/scratchpad/work10"
 ZREPO = "/home/user/zyhe16/top-us-stock-tickers"
-AS_OF = "2026-09-17"
+AS_OF = "2026-09-16"
 ALIAS = {"GPS": "GAP"}
 SPLIT_LEVELS = {"RUSHB": ("3:2 2026-08-31", 2 / 3), "RUSHA": ("3:2 2026-08-31", 2 / 3)}
 
-CERT = json.load(open("cert7_2026-09-17.json"))
+CERT = json.load(open("cert7_2026-09-16.json"))
 d = pickle.load(open(f"{SCRATCH}/series5adj.pkl", "rb"))
 CAL, SER = d["cal"], d["series"]
 

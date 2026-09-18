@@ -203,7 +203,7 @@ for s in have:
                "days52_y": LONG.get(s, {}).get("days52"),
                "chg_6m_y": LONG.get(s, {}).get("chg_6m"), "chg_1y_y": LONG.get(s, {}).get("chg_1y")}
 
-json.dump(cert, open("cert7_2026-09-17.json", "w"), ensure_ascii=False, indent=1)
+json.dump(cert, open("cert7_2026-09-16.json", "w"), ensure_ascii=False, indent=1)
 # any NEW split-like cliff since the last build (9/15 -> 9/16)? (Yahoo-aligned series should show none)
 for sym in have:
     fi, cs, vs, ff = SER[sym]

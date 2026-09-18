@@ -35,7 +35,7 @@ def off_cell(v):
         return "–"
     return "0.0%" if abs(v) < 0.05 else f"-{v:.1f}%"
 
-CERT = json.load(open("cert7_2026-09-17.json"))
+CERT = json.load(open("cert7_2026-09-16.json"))
 CATALYST = json.load(open("catalysts.json"))
 
 C7_COLS = [("break", "突破", "25%", "兩底間中繼高點突破（未破按進度×0.6）"),
@@ -69,7 +69,7 @@ def clean_note(txt, limit=80):
     return (cut[:m] if m > limit // 2 else cut).rstrip("，。 ") + "…"
 
 
-NEWEST = "2026-09-17"
+NEWEST = "2026-09-16"
 
 
 PREV = {}          # ticker -> {"vcp": row, "stage": row, "pre": row} from the previous release
@@ -355,7 +355,7 @@ def update_panel(entered, left, up_g, down_g, items, prev_rank, brk_g=()):
 <div class="urow"><b>等級上調 {len(up_g)}</b>{chips(up_g)}</div>
 <div class="urow"><b>突破延伸→E {len(brk_g)}</b>{chips(list(brk_g))}</div>
 <div class="urow"><b>等級下調 {len(down_g)}</b>{chips(down_g)}</div>
-<div class="urow"><b>9/17 當日</b><span class="utxt">最強：{esc(up) or "–"}｜最弱：{esc(dn) or "–"}</span></div><div class="urow"><b>數據驗證</b><span class="utxt">本版分級規則與 R20 相同，等級變動全部來自價格與財報。<b>R20 以 Yahoo 單一來源發布的 9/15 收盤，已被 9/16 官方中場快照的 price_change 獨立驗證：240 檔、中位偏差 0.000%、無一檔偏差 &gt;0.1%</b>；本版 9/16 收盤同樣來自 Yahoo，官方序列已延伸至 9/15。</span></div></div>"""
+<div class="urow"><b>9/16 當日</b><span class="utxt">最強：{esc(up) or "–"}｜最弱：{esc(dn) or "–"}</span></div><div class="urow"><b>數據驗證</b><span class="utxt">本版分級規則與 R21 相同，等級變動全部來自價格。<b>R21 以 Yahoo 單一來源發布的 9/16 收盤，已被 9/17 官方中場快照的 price_change 獨立驗證：240 檔、中位偏差 0.000%，偏差 &gt;0.1% 只有 4 檔（TGTX／TLN／UNM／TXRH，R21 表內已標示 stale）</b>。<b>本版 R22 的 9/16 收盤改為官方正式收盤價</b>，274 檔全部有當日官方價、無一檔 stale；9/17 收盤 Yahoo 尚未發布（截至 22:20 ET 只有 199／2,980 檔），故分級基準仍為 9/16。</span></div></div>"""
 
 
 # ------------------------------------------------------------- page 4 summary
@@ -733,10 +733,10 @@ def main():
     MACRO = (f"宏觀：<b>9/16 收盤（本表分級基準）</b>— {IDX}"
              f"本清單 {len(allmv)} 檔中位數 {statistics.median(allmv):+.2f}%，板塊最弱 {weakest}；最強 {strongest}。"
              f"下一焦點：加息後的殖利率走向與 10 月 FOMC。"
-             f"<b>數據</b>：上游快照倉庫仍只在美東上午發布中場快照（9/16 為 11:00 ET），9/16 收盤與成交量取自 <b>Yahoo Finance 日線</b>"
+             f"<b>數據</b>：9/17 中場快照（11:04 ET）已回收 9/16 的官方正式收盤價，本版 274 檔全部採用官方收盤；成交量取自 <b>Yahoo Finance 日線</b>"
              f"（GitHub Actions runner 以 yfinance 拉取），並與官方序列逐日交叉核對"
              f"（{XC['n_symbols']:,} 檔 × 全窗 {XC['n_pairs']:,} 個收盤，中位偏差 {XC['median_pct']:.3f}%）；"
-             f"<b>上版（R20）的 9/15 收盤已被 9/16 官方快照獨立驗證：240 檔中位偏差 0.000%、<u>無一檔偏差 &gt;0.1%</u></b>")
+             f"<b>上版（R21）的 9/16 收盤已被 9/17 官方快照獨立驗證：240 檔中位偏差 0.000%，偏差 &gt;0.1% 僅 4 檔且全部為 R21 已標示 stale 者</b>。<u>9/17 收盤數據 Yahoo 未發布，本版基準日仍為 9/16</u>")
 
     now_hkt = datetime.now(timezone.utc) + timedelta(hours=8)
     stamp = now_hkt.strftime("%m.%d_%H.%M")
